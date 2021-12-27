@@ -1,5 +1,5 @@
 [package]
-name = "ccg2-rs"
+name = "ccg2-pac"
 version = "0.1.0"
 edition = "2021"
 
