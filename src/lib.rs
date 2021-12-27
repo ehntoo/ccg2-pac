@@ -33,7 +33,24 @@ use generic::*;
 #[doc = r"Common register and bit access and modify traits"]
 pub mod generic;
 #[cfg(feature = "rt")]
-extern "C" {}
+extern "C" {
+    fn PICU0();
+    fn PICU1();
+    fn PICU2();
+    fn GANGEDPICU();
+    fn USBPD0();
+    fn WDT();
+    fn SCB0();
+    fn SCB1();
+    fn SPCIF();
+    fn USBPD1();
+    fn TCPWM0();
+    fn TCPWM1();
+    fn TCPWM2();
+    fn TCPWM3();
+    fn TCPWM4();
+    fn TCPWM5();
+}
 #[doc(hidden)]
 pub union Vector {
     _handler: unsafe extern "C" fn(),
@@ -43,14 +60,67 @@ pub union Vector {
 #[doc(hidden)]
 #[link_section = ".vector_table.interrupts"]
 #[no_mangle]
-pub static __INTERRUPTS: [Vector; 0] = [];
+pub static __INTERRUPTS: [Vector; 16] = [
+    Vector { _handler: PICU0 },
+    Vector { _handler: PICU1 },
+    Vector { _handler: PICU2 },
+    Vector {
+        _handler: GANGEDPICU,
+    },
+    Vector { _handler: USBPD0 },
+    Vector { _handler: WDT },
+    Vector { _handler: SCB0 },
+    Vector { _handler: SCB1 },
+    Vector { _handler: SPCIF },
+    Vector { _handler: USBPD1 },
+    Vector { _handler: TCPWM0 },
+    Vector { _handler: TCPWM1 },
+    Vector { _handler: TCPWM2 },
+    Vector { _handler: TCPWM3 },
+    Vector { _handler: TCPWM4 },
+    Vector { _handler: TCPWM5 },
+];
 #[doc = r"Enumeration of all the interrupts."]
 #[derive(Copy, Clone, Debug, PartialEq, Eq)]
-pub enum Interrupt {}
+#[repr(u16)]
+pub enum Interrupt {
+    #[doc = "0 - PICU0"]
+    PICU0 = 0,
+    #[doc = "1 - PICU1"]
+    PICU1 = 1,
+    #[doc = "2 - PICU2"]
+    PICU2 = 2,
+    #[doc = "3 - GANGEDPICU"]
+    GANGEDPICU = 3,
+    #[doc = "4 - USBPD0"]
+    USBPD0 = 4,
+    #[doc = "5 - WDT"]
+    WDT = 5,
+    #[doc = "6 - SCB0"]
+    SCB0 = 6,
+    #[doc = "7 - SCB1"]
+    SCB1 = 7,
+    #[doc = "8 - SPCIF"]
+    SPCIF = 8,
+    #[doc = "9 - USBPD1"]
+    USBPD1 = 9,
+    #[doc = "10 - TCPWM0"]
+    TCPWM0 = 10,
+    #[doc = "11 - TCPWM1"]
+    TCPWM1 = 11,
+    #[doc = "12 - TCPWM2"]
+    TCPWM2 = 12,
+    #[doc = "13 - TCPWM3"]
+    TCPWM3 = 13,
+    #[doc = "14 - TCPWM4"]
+    TCPWM4 = 14,
+    #[doc = "15 - TCPWM5"]
+    TCPWM5 = 15,
+}
 unsafe impl cortex_m::interrupt::InterruptNumber for Interrupt {
     #[inline(always)]
     fn number(self) -> u16 {
-        match self {}
+        self as u16
     }
 }
 #[doc = "PERI"]
