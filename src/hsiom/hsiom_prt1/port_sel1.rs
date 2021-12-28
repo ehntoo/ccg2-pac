@@ -38,38 +38,22 @@ impl From<crate::W<PORT_SEL1_SPEC>> for W {
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u8)]
 pub enum IO0_SEL_A {
+    #[doc = "8: `1000`"]
+    TCPWM0_LINE = 8,
+    #[doc = "9: `1001`"]
+    TCPWM0_TR_COMPARE_MATCH = 9,
+    #[doc = "10: `1010`"]
+    SCB1_UART_TX = 10,
+    #[doc = "11: `1011`"]
+    TCPWM0_TR_OVERFLOW = 11,
+    #[doc = "12: `1100`"]
+    USBPD0_TX_DATA_EN = 12,
+    #[doc = "14: `1110`"]
+    SCB1_SPI_CLK = 14,
+    #[doc = "15: `1111`"]
+    SCB1_I2C_SCL = 15,
     #[doc = "0: `0`"]
     GPIO = 0,
-    #[doc = "1: `1`"]
-    GPIO_DSI = 1,
-    #[doc = "2: `10`"]
-    DSI_DSI = 2,
-    #[doc = "3: `11`"]
-    DSI_GPIO = 3,
-    #[doc = "4: `100`"]
-    CSD_SENSE = 4,
-    #[doc = "5: `101`"]
-    CSD_SHIELD = 5,
-    #[doc = "6: `110`"]
-    AMUXA = 6,
-    #[doc = "7: `111`"]
-    AMUXB = 7,
-    #[doc = "8: `1000`"]
-    ACT_0 = 8,
-    #[doc = "9: `1001`"]
-    ACT_1 = 9,
-    #[doc = "10: `1010`"]
-    ACT_2 = 10,
-    #[doc = "11: `1011`"]
-    ACT_3 = 11,
-    #[doc = "12: `1100`"]
-    DS_0 = 12,
-    #[doc = "13: `1101`"]
-    DS_1 = 13,
-    #[doc = "14: `1110`"]
-    DS_2 = 14,
-    #[doc = "15: `1111`"]
-    DS_3 = 15,
 }
 impl From<IO0_SEL_A> for u8 {
     #[inline(always)]
@@ -86,106 +70,58 @@ impl IO0_SEL_R {
     }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> IO0_SEL_A {
+    pub fn variant(&self) -> Option<IO0_SEL_A> {
         match self.bits {
-            0 => IO0_SEL_A::GPIO,
-            1 => IO0_SEL_A::GPIO_DSI,
-            2 => IO0_SEL_A::DSI_DSI,
-            3 => IO0_SEL_A::DSI_GPIO,
-            4 => IO0_SEL_A::CSD_SENSE,
-            5 => IO0_SEL_A::CSD_SHIELD,
-            6 => IO0_SEL_A::AMUXA,
-            7 => IO0_SEL_A::AMUXB,
-            8 => IO0_SEL_A::ACT_0,
-            9 => IO0_SEL_A::ACT_1,
-            10 => IO0_SEL_A::ACT_2,
-            11 => IO0_SEL_A::ACT_3,
-            12 => IO0_SEL_A::DS_0,
-            13 => IO0_SEL_A::DS_1,
-            14 => IO0_SEL_A::DS_2,
-            15 => IO0_SEL_A::DS_3,
-            _ => unreachable!(),
+            8 => Some(IO0_SEL_A::TCPWM0_LINE),
+            9 => Some(IO0_SEL_A::TCPWM0_TR_COMPARE_MATCH),
+            10 => Some(IO0_SEL_A::SCB1_UART_TX),
+            11 => Some(IO0_SEL_A::TCPWM0_TR_OVERFLOW),
+            12 => Some(IO0_SEL_A::USBPD0_TX_DATA_EN),
+            14 => Some(IO0_SEL_A::SCB1_SPI_CLK),
+            15 => Some(IO0_SEL_A::SCB1_I2C_SCL),
+            0 => Some(IO0_SEL_A::GPIO),
+            _ => None,
         }
+    }
+    #[doc = "Checks if the value of the field is `TCPWM0_LINE`"]
+    #[inline(always)]
+    pub fn is_tcpwm0_line(&self) -> bool {
+        **self == IO0_SEL_A::TCPWM0_LINE
+    }
+    #[doc = "Checks if the value of the field is `TCPWM0_TR_COMPARE_MATCH`"]
+    #[inline(always)]
+    pub fn is_tcpwm0_tr_compare_match(&self) -> bool {
+        **self == IO0_SEL_A::TCPWM0_TR_COMPARE_MATCH
+    }
+    #[doc = "Checks if the value of the field is `SCB1_UART_TX`"]
+    #[inline(always)]
+    pub fn is_scb1_uart_tx(&self) -> bool {
+        **self == IO0_SEL_A::SCB1_UART_TX
+    }
+    #[doc = "Checks if the value of the field is `TCPWM0_TR_OVERFLOW`"]
+    #[inline(always)]
+    pub fn is_tcpwm0_tr_overflow(&self) -> bool {
+        **self == IO0_SEL_A::TCPWM0_TR_OVERFLOW
+    }
+    #[doc = "Checks if the value of the field is `USBPD0_TX_DATA_EN`"]
+    #[inline(always)]
+    pub fn is_usbpd0_tx_data_en(&self) -> bool {
+        **self == IO0_SEL_A::USBPD0_TX_DATA_EN
+    }
+    #[doc = "Checks if the value of the field is `SCB1_SPI_CLK`"]
+    #[inline(always)]
+    pub fn is_scb1_spi_clk(&self) -> bool {
+        **self == IO0_SEL_A::SCB1_SPI_CLK
+    }
+    #[doc = "Checks if the value of the field is `SCB1_I2C_SCL`"]
+    #[inline(always)]
+    pub fn is_scb1_i2c_scl(&self) -> bool {
+        **self == IO0_SEL_A::SCB1_I2C_SCL
     }
     #[doc = "Checks if the value of the field is `GPIO`"]
     #[inline(always)]
     pub fn is_gpio(&self) -> bool {
         **self == IO0_SEL_A::GPIO
-    }
-    #[doc = "Checks if the value of the field is `GPIO_DSI`"]
-    #[inline(always)]
-    pub fn is_gpio_dsi(&self) -> bool {
-        **self == IO0_SEL_A::GPIO_DSI
-    }
-    #[doc = "Checks if the value of the field is `DSI_DSI`"]
-    #[inline(always)]
-    pub fn is_dsi_dsi(&self) -> bool {
-        **self == IO0_SEL_A::DSI_DSI
-    }
-    #[doc = "Checks if the value of the field is `DSI_GPIO`"]
-    #[inline(always)]
-    pub fn is_dsi_gpio(&self) -> bool {
-        **self == IO0_SEL_A::DSI_GPIO
-    }
-    #[doc = "Checks if the value of the field is `CSD_SENSE`"]
-    #[inline(always)]
-    pub fn is_csd_sense(&self) -> bool {
-        **self == IO0_SEL_A::CSD_SENSE
-    }
-    #[doc = "Checks if the value of the field is `CSD_SHIELD`"]
-    #[inline(always)]
-    pub fn is_csd_shield(&self) -> bool {
-        **self == IO0_SEL_A::CSD_SHIELD
-    }
-    #[doc = "Checks if the value of the field is `AMUXA`"]
-    #[inline(always)]
-    pub fn is_amuxa(&self) -> bool {
-        **self == IO0_SEL_A::AMUXA
-    }
-    #[doc = "Checks if the value of the field is `AMUXB`"]
-    #[inline(always)]
-    pub fn is_amuxb(&self) -> bool {
-        **self == IO0_SEL_A::AMUXB
-    }
-    #[doc = "Checks if the value of the field is `ACT_0`"]
-    #[inline(always)]
-    pub fn is_act_0(&self) -> bool {
-        **self == IO0_SEL_A::ACT_0
-    }
-    #[doc = "Checks if the value of the field is `ACT_1`"]
-    #[inline(always)]
-    pub fn is_act_1(&self) -> bool {
-        **self == IO0_SEL_A::ACT_1
-    }
-    #[doc = "Checks if the value of the field is `ACT_2`"]
-    #[inline(always)]
-    pub fn is_act_2(&self) -> bool {
-        **self == IO0_SEL_A::ACT_2
-    }
-    #[doc = "Checks if the value of the field is `ACT_3`"]
-    #[inline(always)]
-    pub fn is_act_3(&self) -> bool {
-        **self == IO0_SEL_A::ACT_3
-    }
-    #[doc = "Checks if the value of the field is `DS_0`"]
-    #[inline(always)]
-    pub fn is_ds_0(&self) -> bool {
-        **self == IO0_SEL_A::DS_0
-    }
-    #[doc = "Checks if the value of the field is `DS_1`"]
-    #[inline(always)]
-    pub fn is_ds_1(&self) -> bool {
-        **self == IO0_SEL_A::DS_1
-    }
-    #[doc = "Checks if the value of the field is `DS_2`"]
-    #[inline(always)]
-    pub fn is_ds_2(&self) -> bool {
-        **self == IO0_SEL_A::DS_2
-    }
-    #[doc = "Checks if the value of the field is `DS_3`"]
-    #[inline(always)]
-    pub fn is_ds_3(&self) -> bool {
-        **self == IO0_SEL_A::DS_3
     }
 }
 impl core::ops::Deref for IO0_SEL_R {
@@ -203,105 +139,139 @@ impl<'a> IO0_SEL_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: IO0_SEL_A) -> &'a mut W {
-        self.bits(variant.into())
+        unsafe { self.bits(variant.into()) }
+    }
+    #[doc = "`1000`"]
+    #[inline(always)]
+    pub fn tcpwm0_line(self) -> &'a mut W {
+        self.variant(IO0_SEL_A::TCPWM0_LINE)
+    }
+    #[doc = "`1001`"]
+    #[inline(always)]
+    pub fn tcpwm0_tr_compare_match(self) -> &'a mut W {
+        self.variant(IO0_SEL_A::TCPWM0_TR_COMPARE_MATCH)
+    }
+    #[doc = "`1010`"]
+    #[inline(always)]
+    pub fn scb1_uart_tx(self) -> &'a mut W {
+        self.variant(IO0_SEL_A::SCB1_UART_TX)
+    }
+    #[doc = "`1011`"]
+    #[inline(always)]
+    pub fn tcpwm0_tr_overflow(self) -> &'a mut W {
+        self.variant(IO0_SEL_A::TCPWM0_TR_OVERFLOW)
+    }
+    #[doc = "`1100`"]
+    #[inline(always)]
+    pub fn usbpd0_tx_data_en(self) -> &'a mut W {
+        self.variant(IO0_SEL_A::USBPD0_TX_DATA_EN)
+    }
+    #[doc = "`1110`"]
+    #[inline(always)]
+    pub fn scb1_spi_clk(self) -> &'a mut W {
+        self.variant(IO0_SEL_A::SCB1_SPI_CLK)
+    }
+    #[doc = "`1111`"]
+    #[inline(always)]
+    pub fn scb1_i2c_scl(self) -> &'a mut W {
+        self.variant(IO0_SEL_A::SCB1_I2C_SCL)
     }
     #[doc = "`0`"]
     #[inline(always)]
     pub fn gpio(self) -> &'a mut W {
         self.variant(IO0_SEL_A::GPIO)
     }
-    #[doc = "`1`"]
-    #[inline(always)]
-    pub fn gpio_dsi(self) -> &'a mut W {
-        self.variant(IO0_SEL_A::GPIO_DSI)
-    }
-    #[doc = "`10`"]
-    #[inline(always)]
-    pub fn dsi_dsi(self) -> &'a mut W {
-        self.variant(IO0_SEL_A::DSI_DSI)
-    }
-    #[doc = "`11`"]
-    #[inline(always)]
-    pub fn dsi_gpio(self) -> &'a mut W {
-        self.variant(IO0_SEL_A::DSI_GPIO)
-    }
-    #[doc = "`100`"]
-    #[inline(always)]
-    pub fn csd_sense(self) -> &'a mut W {
-        self.variant(IO0_SEL_A::CSD_SENSE)
-    }
-    #[doc = "`101`"]
-    #[inline(always)]
-    pub fn csd_shield(self) -> &'a mut W {
-        self.variant(IO0_SEL_A::CSD_SHIELD)
-    }
-    #[doc = "`110`"]
-    #[inline(always)]
-    pub fn amuxa(self) -> &'a mut W {
-        self.variant(IO0_SEL_A::AMUXA)
-    }
-    #[doc = "`111`"]
-    #[inline(always)]
-    pub fn amuxb(self) -> &'a mut W {
-        self.variant(IO0_SEL_A::AMUXB)
-    }
-    #[doc = "`1000`"]
-    #[inline(always)]
-    pub fn act_0(self) -> &'a mut W {
-        self.variant(IO0_SEL_A::ACT_0)
-    }
-    #[doc = "`1001`"]
-    #[inline(always)]
-    pub fn act_1(self) -> &'a mut W {
-        self.variant(IO0_SEL_A::ACT_1)
-    }
-    #[doc = "`1010`"]
-    #[inline(always)]
-    pub fn act_2(self) -> &'a mut W {
-        self.variant(IO0_SEL_A::ACT_2)
-    }
-    #[doc = "`1011`"]
-    #[inline(always)]
-    pub fn act_3(self) -> &'a mut W {
-        self.variant(IO0_SEL_A::ACT_3)
-    }
-    #[doc = "`1100`"]
-    #[inline(always)]
-    pub fn ds_0(self) -> &'a mut W {
-        self.variant(IO0_SEL_A::DS_0)
-    }
-    #[doc = "`1101`"]
-    #[inline(always)]
-    pub fn ds_1(self) -> &'a mut W {
-        self.variant(IO0_SEL_A::DS_1)
-    }
-    #[doc = "`1110`"]
-    #[inline(always)]
-    pub fn ds_2(self) -> &'a mut W {
-        self.variant(IO0_SEL_A::DS_2)
-    }
-    #[doc = "`1111`"]
-    #[inline(always)]
-    pub fn ds_3(self) -> &'a mut W {
-        self.variant(IO0_SEL_A::DS_3)
-    }
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
-    pub fn bits(self, value: u8) -> &'a mut W {
+    pub unsafe fn bits(self, value: u8) -> &'a mut W {
         self.w.bits = (self.w.bits & !0x0f) | (value as u32 & 0x0f);
         self.w
     }
 }
+#[doc = "\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
+pub enum IO1_SEL_A {
+    #[doc = "8: `1000`"]
+    TCPWM1_LINE = 8,
+    #[doc = "9: `1001`"]
+    TCPWM1_TR_COMPARE_MATCH = 9,
+    #[doc = "10: `1010`"]
+    SCB1_UART_CTS = 10,
+    #[doc = "11: `1011`"]
+    TCPWM1_TR_OVERFLOW = 11,
+    #[doc = "12: `1100`"]
+    CPUSS0_SWD_DATA = 12,
+    #[doc = "14: `1110`"]
+    SCB1_SPI_MOSI = 14,
+    #[doc = "0: `0`"]
+    GPIO = 0,
+}
+impl From<IO1_SEL_A> for u8 {
+    #[inline(always)]
+    fn from(variant: IO1_SEL_A) -> Self {
+        variant as _
+    }
+}
 #[doc = "Field `IO1_SEL` reader - "]
-pub struct IO1_SEL_R(crate::FieldReader<u8, u8>);
+pub struct IO1_SEL_R(crate::FieldReader<u8, IO1_SEL_A>);
 impl IO1_SEL_R {
     #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         IO1_SEL_R(crate::FieldReader::new(bits))
     }
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> Option<IO1_SEL_A> {
+        match self.bits {
+            8 => Some(IO1_SEL_A::TCPWM1_LINE),
+            9 => Some(IO1_SEL_A::TCPWM1_TR_COMPARE_MATCH),
+            10 => Some(IO1_SEL_A::SCB1_UART_CTS),
+            11 => Some(IO1_SEL_A::TCPWM1_TR_OVERFLOW),
+            12 => Some(IO1_SEL_A::CPUSS0_SWD_DATA),
+            14 => Some(IO1_SEL_A::SCB1_SPI_MOSI),
+            0 => Some(IO1_SEL_A::GPIO),
+            _ => None,
+        }
+    }
+    #[doc = "Checks if the value of the field is `TCPWM1_LINE`"]
+    #[inline(always)]
+    pub fn is_tcpwm1_line(&self) -> bool {
+        **self == IO1_SEL_A::TCPWM1_LINE
+    }
+    #[doc = "Checks if the value of the field is `TCPWM1_TR_COMPARE_MATCH`"]
+    #[inline(always)]
+    pub fn is_tcpwm1_tr_compare_match(&self) -> bool {
+        **self == IO1_SEL_A::TCPWM1_TR_COMPARE_MATCH
+    }
+    #[doc = "Checks if the value of the field is `SCB1_UART_CTS`"]
+    #[inline(always)]
+    pub fn is_scb1_uart_cts(&self) -> bool {
+        **self == IO1_SEL_A::SCB1_UART_CTS
+    }
+    #[doc = "Checks if the value of the field is `TCPWM1_TR_OVERFLOW`"]
+    #[inline(always)]
+    pub fn is_tcpwm1_tr_overflow(&self) -> bool {
+        **self == IO1_SEL_A::TCPWM1_TR_OVERFLOW
+    }
+    #[doc = "Checks if the value of the field is `CPUSS0_SWD_DATA`"]
+    #[inline(always)]
+    pub fn is_cpuss0_swd_data(&self) -> bool {
+        **self == IO1_SEL_A::CPUSS0_SWD_DATA
+    }
+    #[doc = "Checks if the value of the field is `SCB1_SPI_MOSI`"]
+    #[inline(always)]
+    pub fn is_scb1_spi_mosi(&self) -> bool {
+        **self == IO1_SEL_A::SCB1_SPI_MOSI
+    }
+    #[doc = "Checks if the value of the field is `GPIO`"]
+    #[inline(always)]
+    pub fn is_gpio(&self) -> bool {
+        **self == IO1_SEL_A::GPIO
+    }
 }
 impl core::ops::Deref for IO1_SEL_R {
-    type Target = crate::FieldReader<u8, u8>;
+    type Target = crate::FieldReader<u8, IO1_SEL_A>;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         &self.0
@@ -312,6 +282,46 @@ pub struct IO1_SEL_W<'a> {
     w: &'a mut W,
 }
 impl<'a> IO1_SEL_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: IO1_SEL_A) -> &'a mut W {
+        unsafe { self.bits(variant.into()) }
+    }
+    #[doc = "`1000`"]
+    #[inline(always)]
+    pub fn tcpwm1_line(self) -> &'a mut W {
+        self.variant(IO1_SEL_A::TCPWM1_LINE)
+    }
+    #[doc = "`1001`"]
+    #[inline(always)]
+    pub fn tcpwm1_tr_compare_match(self) -> &'a mut W {
+        self.variant(IO1_SEL_A::TCPWM1_TR_COMPARE_MATCH)
+    }
+    #[doc = "`1010`"]
+    #[inline(always)]
+    pub fn scb1_uart_cts(self) -> &'a mut W {
+        self.variant(IO1_SEL_A::SCB1_UART_CTS)
+    }
+    #[doc = "`1011`"]
+    #[inline(always)]
+    pub fn tcpwm1_tr_overflow(self) -> &'a mut W {
+        self.variant(IO1_SEL_A::TCPWM1_TR_OVERFLOW)
+    }
+    #[doc = "`1100`"]
+    #[inline(always)]
+    pub fn cpuss0_swd_data(self) -> &'a mut W {
+        self.variant(IO1_SEL_A::CPUSS0_SWD_DATA)
+    }
+    #[doc = "`1110`"]
+    #[inline(always)]
+    pub fn scb1_spi_mosi(self) -> &'a mut W {
+        self.variant(IO1_SEL_A::SCB1_SPI_MOSI)
+    }
+    #[doc = "`0`"]
+    #[inline(always)]
+    pub fn gpio(self) -> &'a mut W {
+        self.variant(IO1_SEL_A::GPIO)
+    }
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
@@ -319,16 +329,74 @@ impl<'a> IO1_SEL_W<'a> {
         self.w
     }
 }
+#[doc = "\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
+pub enum IO2_SEL_A {
+    #[doc = "8: `1000`"]
+    TCPWM2_LINE = 8,
+    #[doc = "9: `1001`"]
+    TCPWM2_TR_COMPARE_MATCH = 9,
+    #[doc = "11: `1011`"]
+    TCPWM2_TR_OVERFLOW = 11,
+    #[doc = "12: `1100`"]
+    CPUSS0_SWD_CLK = 12,
+    #[doc = "0: `0`"]
+    GPIO = 0,
+}
+impl From<IO2_SEL_A> for u8 {
+    #[inline(always)]
+    fn from(variant: IO2_SEL_A) -> Self {
+        variant as _
+    }
+}
 #[doc = "Field `IO2_SEL` reader - "]
-pub struct IO2_SEL_R(crate::FieldReader<u8, u8>);
+pub struct IO2_SEL_R(crate::FieldReader<u8, IO2_SEL_A>);
 impl IO2_SEL_R {
     #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         IO2_SEL_R(crate::FieldReader::new(bits))
     }
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> Option<IO2_SEL_A> {
+        match self.bits {
+            8 => Some(IO2_SEL_A::TCPWM2_LINE),
+            9 => Some(IO2_SEL_A::TCPWM2_TR_COMPARE_MATCH),
+            11 => Some(IO2_SEL_A::TCPWM2_TR_OVERFLOW),
+            12 => Some(IO2_SEL_A::CPUSS0_SWD_CLK),
+            0 => Some(IO2_SEL_A::GPIO),
+            _ => None,
+        }
+    }
+    #[doc = "Checks if the value of the field is `TCPWM2_LINE`"]
+    #[inline(always)]
+    pub fn is_tcpwm2_line(&self) -> bool {
+        **self == IO2_SEL_A::TCPWM2_LINE
+    }
+    #[doc = "Checks if the value of the field is `TCPWM2_TR_COMPARE_MATCH`"]
+    #[inline(always)]
+    pub fn is_tcpwm2_tr_compare_match(&self) -> bool {
+        **self == IO2_SEL_A::TCPWM2_TR_COMPARE_MATCH
+    }
+    #[doc = "Checks if the value of the field is `TCPWM2_TR_OVERFLOW`"]
+    #[inline(always)]
+    pub fn is_tcpwm2_tr_overflow(&self) -> bool {
+        **self == IO2_SEL_A::TCPWM2_TR_OVERFLOW
+    }
+    #[doc = "Checks if the value of the field is `CPUSS0_SWD_CLK`"]
+    #[inline(always)]
+    pub fn is_cpuss0_swd_clk(&self) -> bool {
+        **self == IO2_SEL_A::CPUSS0_SWD_CLK
+    }
+    #[doc = "Checks if the value of the field is `GPIO`"]
+    #[inline(always)]
+    pub fn is_gpio(&self) -> bool {
+        **self == IO2_SEL_A::GPIO
+    }
 }
 impl core::ops::Deref for IO2_SEL_R {
-    type Target = crate::FieldReader<u8, u8>;
+    type Target = crate::FieldReader<u8, IO2_SEL_A>;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         &self.0
@@ -339,6 +407,36 @@ pub struct IO2_SEL_W<'a> {
     w: &'a mut W,
 }
 impl<'a> IO2_SEL_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: IO2_SEL_A) -> &'a mut W {
+        unsafe { self.bits(variant.into()) }
+    }
+    #[doc = "`1000`"]
+    #[inline(always)]
+    pub fn tcpwm2_line(self) -> &'a mut W {
+        self.variant(IO2_SEL_A::TCPWM2_LINE)
+    }
+    #[doc = "`1001`"]
+    #[inline(always)]
+    pub fn tcpwm2_tr_compare_match(self) -> &'a mut W {
+        self.variant(IO2_SEL_A::TCPWM2_TR_COMPARE_MATCH)
+    }
+    #[doc = "`1011`"]
+    #[inline(always)]
+    pub fn tcpwm2_tr_overflow(self) -> &'a mut W {
+        self.variant(IO2_SEL_A::TCPWM2_TR_OVERFLOW)
+    }
+    #[doc = "`1100`"]
+    #[inline(always)]
+    pub fn cpuss0_swd_clk(self) -> &'a mut W {
+        self.variant(IO2_SEL_A::CPUSS0_SWD_CLK)
+    }
+    #[doc = "`0`"]
+    #[inline(always)]
+    pub fn gpio(self) -> &'a mut W {
+        self.variant(IO2_SEL_A::GPIO)
+    }
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
@@ -346,16 +444,82 @@ impl<'a> IO2_SEL_W<'a> {
         self.w
     }
 }
+#[doc = "\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
+pub enum IO3_SEL_A {
+    #[doc = "8: `1000`"]
+    SRSS0_EXT_CLK = 8,
+    #[doc = "10: `1010`"]
+    SCB1_UART_RX = 10,
+    #[doc = "13: `1101`"]
+    SCB0_SPI_SELECT0 = 13,
+    #[doc = "14: `1110`"]
+    SCB1_SPI_MISO = 14,
+    #[doc = "15: `1111`"]
+    SCB1_I2C_SDA = 15,
+    #[doc = "0: `0`"]
+    GPIO = 0,
+}
+impl From<IO3_SEL_A> for u8 {
+    #[inline(always)]
+    fn from(variant: IO3_SEL_A) -> Self {
+        variant as _
+    }
+}
 #[doc = "Field `IO3_SEL` reader - "]
-pub struct IO3_SEL_R(crate::FieldReader<u8, u8>);
+pub struct IO3_SEL_R(crate::FieldReader<u8, IO3_SEL_A>);
 impl IO3_SEL_R {
     #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         IO3_SEL_R(crate::FieldReader::new(bits))
     }
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> Option<IO3_SEL_A> {
+        match self.bits {
+            8 => Some(IO3_SEL_A::SRSS0_EXT_CLK),
+            10 => Some(IO3_SEL_A::SCB1_UART_RX),
+            13 => Some(IO3_SEL_A::SCB0_SPI_SELECT0),
+            14 => Some(IO3_SEL_A::SCB1_SPI_MISO),
+            15 => Some(IO3_SEL_A::SCB1_I2C_SDA),
+            0 => Some(IO3_SEL_A::GPIO),
+            _ => None,
+        }
+    }
+    #[doc = "Checks if the value of the field is `SRSS0_EXT_CLK`"]
+    #[inline(always)]
+    pub fn is_srss0_ext_clk(&self) -> bool {
+        **self == IO3_SEL_A::SRSS0_EXT_CLK
+    }
+    #[doc = "Checks if the value of the field is `SCB1_UART_RX`"]
+    #[inline(always)]
+    pub fn is_scb1_uart_rx(&self) -> bool {
+        **self == IO3_SEL_A::SCB1_UART_RX
+    }
+    #[doc = "Checks if the value of the field is `SCB0_SPI_SELECT0`"]
+    #[inline(always)]
+    pub fn is_scb0_spi_select0(&self) -> bool {
+        **self == IO3_SEL_A::SCB0_SPI_SELECT0
+    }
+    #[doc = "Checks if the value of the field is `SCB1_SPI_MISO`"]
+    #[inline(always)]
+    pub fn is_scb1_spi_miso(&self) -> bool {
+        **self == IO3_SEL_A::SCB1_SPI_MISO
+    }
+    #[doc = "Checks if the value of the field is `SCB1_I2C_SDA`"]
+    #[inline(always)]
+    pub fn is_scb1_i2c_sda(&self) -> bool {
+        **self == IO3_SEL_A::SCB1_I2C_SDA
+    }
+    #[doc = "Checks if the value of the field is `GPIO`"]
+    #[inline(always)]
+    pub fn is_gpio(&self) -> bool {
+        **self == IO3_SEL_A::GPIO
+    }
 }
 impl core::ops::Deref for IO3_SEL_R {
-    type Target = crate::FieldReader<u8, u8>;
+    type Target = crate::FieldReader<u8, IO3_SEL_A>;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         &self.0
@@ -366,6 +530,41 @@ pub struct IO3_SEL_W<'a> {
     w: &'a mut W,
 }
 impl<'a> IO3_SEL_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: IO3_SEL_A) -> &'a mut W {
+        unsafe { self.bits(variant.into()) }
+    }
+    #[doc = "`1000`"]
+    #[inline(always)]
+    pub fn srss0_ext_clk(self) -> &'a mut W {
+        self.variant(IO3_SEL_A::SRSS0_EXT_CLK)
+    }
+    #[doc = "`1010`"]
+    #[inline(always)]
+    pub fn scb1_uart_rx(self) -> &'a mut W {
+        self.variant(IO3_SEL_A::SCB1_UART_RX)
+    }
+    #[doc = "`1101`"]
+    #[inline(always)]
+    pub fn scb0_spi_select0(self) -> &'a mut W {
+        self.variant(IO3_SEL_A::SCB0_SPI_SELECT0)
+    }
+    #[doc = "`1110`"]
+    #[inline(always)]
+    pub fn scb1_spi_miso(self) -> &'a mut W {
+        self.variant(IO3_SEL_A::SCB1_SPI_MISO)
+    }
+    #[doc = "`1111`"]
+    #[inline(always)]
+    pub fn scb1_i2c_sda(self) -> &'a mut W {
+        self.variant(IO3_SEL_A::SCB1_I2C_SDA)
+    }
+    #[doc = "`0`"]
+    #[inline(always)]
+    pub fn gpio(self) -> &'a mut W {
+        self.variant(IO3_SEL_A::GPIO)
+    }
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
@@ -373,16 +572,42 @@ impl<'a> IO3_SEL_W<'a> {
         self.w
     }
 }
+#[doc = "\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
+pub enum IO4_SEL_A {
+    #[doc = "0: `0`"]
+    GPIO = 0,
+}
+impl From<IO4_SEL_A> for u8 {
+    #[inline(always)]
+    fn from(variant: IO4_SEL_A) -> Self {
+        variant as _
+    }
+}
 #[doc = "Field `IO4_SEL` reader - "]
-pub struct IO4_SEL_R(crate::FieldReader<u8, u8>);
+pub struct IO4_SEL_R(crate::FieldReader<u8, IO4_SEL_A>);
 impl IO4_SEL_R {
     #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         IO4_SEL_R(crate::FieldReader::new(bits))
     }
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> Option<IO4_SEL_A> {
+        match self.bits {
+            0 => Some(IO4_SEL_A::GPIO),
+            _ => None,
+        }
+    }
+    #[doc = "Checks if the value of the field is `GPIO`"]
+    #[inline(always)]
+    pub fn is_gpio(&self) -> bool {
+        **self == IO4_SEL_A::GPIO
+    }
 }
 impl core::ops::Deref for IO4_SEL_R {
-    type Target = crate::FieldReader<u8, u8>;
+    type Target = crate::FieldReader<u8, IO4_SEL_A>;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         &self.0
@@ -393,6 +618,16 @@ pub struct IO4_SEL_W<'a> {
     w: &'a mut W,
 }
 impl<'a> IO4_SEL_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: IO4_SEL_A) -> &'a mut W {
+        unsafe { self.bits(variant.into()) }
+    }
+    #[doc = "`0`"]
+    #[inline(always)]
+    pub fn gpio(self) -> &'a mut W {
+        self.variant(IO4_SEL_A::GPIO)
+    }
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
@@ -400,16 +635,98 @@ impl<'a> IO4_SEL_W<'a> {
         self.w
     }
 }
+#[doc = "\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
+pub enum IO5_SEL_A {
+    #[doc = "8: `1000`"]
+    TCPWM3_LINE = 8,
+    #[doc = "9: `1001`"]
+    TCPWM3_TR_COMPARE_MATCH = 9,
+    #[doc = "10: `1010`"]
+    SCB1_UART_RTS = 10,
+    #[doc = "11: `1011`"]
+    TCPWM3_TR_OVERFLOW = 11,
+    #[doc = "12: `1100`"]
+    USBPD0_CMP_OUT = 12,
+    #[doc = "13: `1101`"]
+    SCB0_SPI_MISO = 13,
+    #[doc = "14: `1110`"]
+    SCB1_SPI_SELECT0 = 14,
+    #[doc = "0: `0`"]
+    GPIO = 0,
+}
+impl From<IO5_SEL_A> for u8 {
+    #[inline(always)]
+    fn from(variant: IO5_SEL_A) -> Self {
+        variant as _
+    }
+}
 #[doc = "Field `IO5_SEL` reader - "]
-pub struct IO5_SEL_R(crate::FieldReader<u8, u8>);
+pub struct IO5_SEL_R(crate::FieldReader<u8, IO5_SEL_A>);
 impl IO5_SEL_R {
     #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         IO5_SEL_R(crate::FieldReader::new(bits))
     }
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> Option<IO5_SEL_A> {
+        match self.bits {
+            8 => Some(IO5_SEL_A::TCPWM3_LINE),
+            9 => Some(IO5_SEL_A::TCPWM3_TR_COMPARE_MATCH),
+            10 => Some(IO5_SEL_A::SCB1_UART_RTS),
+            11 => Some(IO5_SEL_A::TCPWM3_TR_OVERFLOW),
+            12 => Some(IO5_SEL_A::USBPD0_CMP_OUT),
+            13 => Some(IO5_SEL_A::SCB0_SPI_MISO),
+            14 => Some(IO5_SEL_A::SCB1_SPI_SELECT0),
+            0 => Some(IO5_SEL_A::GPIO),
+            _ => None,
+        }
+    }
+    #[doc = "Checks if the value of the field is `TCPWM3_LINE`"]
+    #[inline(always)]
+    pub fn is_tcpwm3_line(&self) -> bool {
+        **self == IO5_SEL_A::TCPWM3_LINE
+    }
+    #[doc = "Checks if the value of the field is `TCPWM3_TR_COMPARE_MATCH`"]
+    #[inline(always)]
+    pub fn is_tcpwm3_tr_compare_match(&self) -> bool {
+        **self == IO5_SEL_A::TCPWM3_TR_COMPARE_MATCH
+    }
+    #[doc = "Checks if the value of the field is `SCB1_UART_RTS`"]
+    #[inline(always)]
+    pub fn is_scb1_uart_rts(&self) -> bool {
+        **self == IO5_SEL_A::SCB1_UART_RTS
+    }
+    #[doc = "Checks if the value of the field is `TCPWM3_TR_OVERFLOW`"]
+    #[inline(always)]
+    pub fn is_tcpwm3_tr_overflow(&self) -> bool {
+        **self == IO5_SEL_A::TCPWM3_TR_OVERFLOW
+    }
+    #[doc = "Checks if the value of the field is `USBPD0_CMP_OUT`"]
+    #[inline(always)]
+    pub fn is_usbpd0_cmp_out(&self) -> bool {
+        **self == IO5_SEL_A::USBPD0_CMP_OUT
+    }
+    #[doc = "Checks if the value of the field is `SCB0_SPI_MISO`"]
+    #[inline(always)]
+    pub fn is_scb0_spi_miso(&self) -> bool {
+        **self == IO5_SEL_A::SCB0_SPI_MISO
+    }
+    #[doc = "Checks if the value of the field is `SCB1_SPI_SELECT0`"]
+    #[inline(always)]
+    pub fn is_scb1_spi_select0(&self) -> bool {
+        **self == IO5_SEL_A::SCB1_SPI_SELECT0
+    }
+    #[doc = "Checks if the value of the field is `GPIO`"]
+    #[inline(always)]
+    pub fn is_gpio(&self) -> bool {
+        **self == IO5_SEL_A::GPIO
+    }
 }
 impl core::ops::Deref for IO5_SEL_R {
-    type Target = crate::FieldReader<u8, u8>;
+    type Target = crate::FieldReader<u8, IO5_SEL_A>;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         &self.0
@@ -420,6 +737,51 @@ pub struct IO5_SEL_W<'a> {
     w: &'a mut W,
 }
 impl<'a> IO5_SEL_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: IO5_SEL_A) -> &'a mut W {
+        unsafe { self.bits(variant.into()) }
+    }
+    #[doc = "`1000`"]
+    #[inline(always)]
+    pub fn tcpwm3_line(self) -> &'a mut W {
+        self.variant(IO5_SEL_A::TCPWM3_LINE)
+    }
+    #[doc = "`1001`"]
+    #[inline(always)]
+    pub fn tcpwm3_tr_compare_match(self) -> &'a mut W {
+        self.variant(IO5_SEL_A::TCPWM3_TR_COMPARE_MATCH)
+    }
+    #[doc = "`1010`"]
+    #[inline(always)]
+    pub fn scb1_uart_rts(self) -> &'a mut W {
+        self.variant(IO5_SEL_A::SCB1_UART_RTS)
+    }
+    #[doc = "`1011`"]
+    #[inline(always)]
+    pub fn tcpwm3_tr_overflow(self) -> &'a mut W {
+        self.variant(IO5_SEL_A::TCPWM3_TR_OVERFLOW)
+    }
+    #[doc = "`1100`"]
+    #[inline(always)]
+    pub fn usbpd0_cmp_out(self) -> &'a mut W {
+        self.variant(IO5_SEL_A::USBPD0_CMP_OUT)
+    }
+    #[doc = "`1101`"]
+    #[inline(always)]
+    pub fn scb0_spi_miso(self) -> &'a mut W {
+        self.variant(IO5_SEL_A::SCB0_SPI_MISO)
+    }
+    #[doc = "`1110`"]
+    #[inline(always)]
+    pub fn scb1_spi_select0(self) -> &'a mut W {
+        self.variant(IO5_SEL_A::SCB1_SPI_SELECT0)
+    }
+    #[doc = "`0`"]
+    #[inline(always)]
+    pub fn gpio(self) -> &'a mut W {
+        self.variant(IO5_SEL_A::GPIO)
+    }
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
@@ -427,16 +789,42 @@ impl<'a> IO5_SEL_W<'a> {
         self.w
     }
 }
+#[doc = "\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
+pub enum IO6_SEL_A {
+    #[doc = "0: `0`"]
+    GPIO = 0,
+}
+impl From<IO6_SEL_A> for u8 {
+    #[inline(always)]
+    fn from(variant: IO6_SEL_A) -> Self {
+        variant as _
+    }
+}
 #[doc = "Field `IO6_SEL` reader - "]
-pub struct IO6_SEL_R(crate::FieldReader<u8, u8>);
+pub struct IO6_SEL_R(crate::FieldReader<u8, IO6_SEL_A>);
 impl IO6_SEL_R {
     #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         IO6_SEL_R(crate::FieldReader::new(bits))
     }
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> Option<IO6_SEL_A> {
+        match self.bits {
+            0 => Some(IO6_SEL_A::GPIO),
+            _ => None,
+        }
+    }
+    #[doc = "Checks if the value of the field is `GPIO`"]
+    #[inline(always)]
+    pub fn is_gpio(&self) -> bool {
+        **self == IO6_SEL_A::GPIO
+    }
 }
 impl core::ops::Deref for IO6_SEL_R {
-    type Target = crate::FieldReader<u8, u8>;
+    type Target = crate::FieldReader<u8, IO6_SEL_A>;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         &self.0
@@ -447,6 +835,16 @@ pub struct IO6_SEL_W<'a> {
     w: &'a mut W,
 }
 impl<'a> IO6_SEL_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: IO6_SEL_A) -> &'a mut W {
+        unsafe { self.bits(variant.into()) }
+    }
+    #[doc = "`0`"]
+    #[inline(always)]
+    pub fn gpio(self) -> &'a mut W {
+        self.variant(IO6_SEL_A::GPIO)
+    }
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
@@ -454,16 +852,98 @@ impl<'a> IO6_SEL_W<'a> {
         self.w
     }
 }
+#[doc = "\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
+pub enum IO7_SEL_A {
+    #[doc = "8: `1000`"]
+    TCPWM4_LINE = 8,
+    #[doc = "9: `1001`"]
+    TCPWM4_TR_COMPARE_MATCH = 9,
+    #[doc = "10: `1010`"]
+    SCB0_UART_TX = 10,
+    #[doc = "11: `1011`"]
+    TCPWM4_TR_OVERFLOW = 11,
+    #[doc = "12: `1100`"]
+    USBPD0_TX_DATA = 12,
+    #[doc = "13: `1101`"]
+    SCB0_SPI_MOSI = 13,
+    #[doc = "15: `1111`"]
+    SCB0_I2C_SDA = 15,
+    #[doc = "0: `0`"]
+    GPIO = 0,
+}
+impl From<IO7_SEL_A> for u8 {
+    #[inline(always)]
+    fn from(variant: IO7_SEL_A) -> Self {
+        variant as _
+    }
+}
 #[doc = "Field `IO7_SEL` reader - "]
-pub struct IO7_SEL_R(crate::FieldReader<u8, u8>);
+pub struct IO7_SEL_R(crate::FieldReader<u8, IO7_SEL_A>);
 impl IO7_SEL_R {
     #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         IO7_SEL_R(crate::FieldReader::new(bits))
     }
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> Option<IO7_SEL_A> {
+        match self.bits {
+            8 => Some(IO7_SEL_A::TCPWM4_LINE),
+            9 => Some(IO7_SEL_A::TCPWM4_TR_COMPARE_MATCH),
+            10 => Some(IO7_SEL_A::SCB0_UART_TX),
+            11 => Some(IO7_SEL_A::TCPWM4_TR_OVERFLOW),
+            12 => Some(IO7_SEL_A::USBPD0_TX_DATA),
+            13 => Some(IO7_SEL_A::SCB0_SPI_MOSI),
+            15 => Some(IO7_SEL_A::SCB0_I2C_SDA),
+            0 => Some(IO7_SEL_A::GPIO),
+            _ => None,
+        }
+    }
+    #[doc = "Checks if the value of the field is `TCPWM4_LINE`"]
+    #[inline(always)]
+    pub fn is_tcpwm4_line(&self) -> bool {
+        **self == IO7_SEL_A::TCPWM4_LINE
+    }
+    #[doc = "Checks if the value of the field is `TCPWM4_TR_COMPARE_MATCH`"]
+    #[inline(always)]
+    pub fn is_tcpwm4_tr_compare_match(&self) -> bool {
+        **self == IO7_SEL_A::TCPWM4_TR_COMPARE_MATCH
+    }
+    #[doc = "Checks if the value of the field is `SCB0_UART_TX`"]
+    #[inline(always)]
+    pub fn is_scb0_uart_tx(&self) -> bool {
+        **self == IO7_SEL_A::SCB0_UART_TX
+    }
+    #[doc = "Checks if the value of the field is `TCPWM4_TR_OVERFLOW`"]
+    #[inline(always)]
+    pub fn is_tcpwm4_tr_overflow(&self) -> bool {
+        **self == IO7_SEL_A::TCPWM4_TR_OVERFLOW
+    }
+    #[doc = "Checks if the value of the field is `USBPD0_TX_DATA`"]
+    #[inline(always)]
+    pub fn is_usbpd0_tx_data(&self) -> bool {
+        **self == IO7_SEL_A::USBPD0_TX_DATA
+    }
+    #[doc = "Checks if the value of the field is `SCB0_SPI_MOSI`"]
+    #[inline(always)]
+    pub fn is_scb0_spi_mosi(&self) -> bool {
+        **self == IO7_SEL_A::SCB0_SPI_MOSI
+    }
+    #[doc = "Checks if the value of the field is `SCB0_I2C_SDA`"]
+    #[inline(always)]
+    pub fn is_scb0_i2c_sda(&self) -> bool {
+        **self == IO7_SEL_A::SCB0_I2C_SDA
+    }
+    #[doc = "Checks if the value of the field is `GPIO`"]
+    #[inline(always)]
+    pub fn is_gpio(&self) -> bool {
+        **self == IO7_SEL_A::GPIO
+    }
 }
 impl core::ops::Deref for IO7_SEL_R {
-    type Target = crate::FieldReader<u8, u8>;
+    type Target = crate::FieldReader<u8, IO7_SEL_A>;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         &self.0
@@ -474,6 +954,51 @@ pub struct IO7_SEL_W<'a> {
     w: &'a mut W,
 }
 impl<'a> IO7_SEL_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: IO7_SEL_A) -> &'a mut W {
+        unsafe { self.bits(variant.into()) }
+    }
+    #[doc = "`1000`"]
+    #[inline(always)]
+    pub fn tcpwm4_line(self) -> &'a mut W {
+        self.variant(IO7_SEL_A::TCPWM4_LINE)
+    }
+    #[doc = "`1001`"]
+    #[inline(always)]
+    pub fn tcpwm4_tr_compare_match(self) -> &'a mut W {
+        self.variant(IO7_SEL_A::TCPWM4_TR_COMPARE_MATCH)
+    }
+    #[doc = "`1010`"]
+    #[inline(always)]
+    pub fn scb0_uart_tx(self) -> &'a mut W {
+        self.variant(IO7_SEL_A::SCB0_UART_TX)
+    }
+    #[doc = "`1011`"]
+    #[inline(always)]
+    pub fn tcpwm4_tr_overflow(self) -> &'a mut W {
+        self.variant(IO7_SEL_A::TCPWM4_TR_OVERFLOW)
+    }
+    #[doc = "`1100`"]
+    #[inline(always)]
+    pub fn usbpd0_tx_data(self) -> &'a mut W {
+        self.variant(IO7_SEL_A::USBPD0_TX_DATA)
+    }
+    #[doc = "`1101`"]
+    #[inline(always)]
+    pub fn scb0_spi_mosi(self) -> &'a mut W {
+        self.variant(IO7_SEL_A::SCB0_SPI_MOSI)
+    }
+    #[doc = "`1111`"]
+    #[inline(always)]
+    pub fn scb0_i2c_sda(self) -> &'a mut W {
+        self.variant(IO7_SEL_A::SCB0_I2C_SDA)
+    }
+    #[doc = "`0`"]
+    #[inline(always)]
+    pub fn gpio(self) -> &'a mut W {
+        self.variant(IO7_SEL_A::GPIO)
+    }
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
