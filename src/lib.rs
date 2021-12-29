@@ -347,6 +347,34 @@ impl core::fmt::Debug for USBPD {
 }
 #[doc = "USBPD"]
 pub mod usbpd;
+#[doc = "CPUSS"]
+pub struct CPUSS {
+    _marker: PhantomData<*const ()>,
+}
+unsafe impl Send for CPUSS {}
+impl CPUSS {
+    #[doc = r"Pointer to the register block"]
+    pub const PTR: *const cpuss::RegisterBlock = 0x4010_0000 as *const _;
+    #[doc = r"Return the pointer to the register block"]
+    #[inline(always)]
+    pub const fn ptr() -> *const cpuss::RegisterBlock {
+        Self::PTR
+    }
+}
+impl Deref for CPUSS {
+    type Target = cpuss::RegisterBlock;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        unsafe { &*Self::PTR }
+    }
+}
+impl core::fmt::Debug for CPUSS {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("CPUSS").finish()
+    }
+}
+#[doc = "CPUSS"]
+pub mod cpuss;
 #[no_mangle]
 static mut DEVICE_PERIPHERALS: bool = false;
 #[doc = r"All the peripherals"]
@@ -368,6 +396,8 @@ pub struct Peripherals {
     pub TCPWM: TCPWM,
     #[doc = "USBPD"]
     pub USBPD: USBPD,
+    #[doc = "CPUSS"]
+    pub CPUSS: CPUSS,
 }
 impl Peripherals {
     #[doc = r"Returns all the peripherals *once*"]
@@ -408,6 +438,9 @@ impl Peripherals {
                 _marker: PhantomData,
             },
             USBPD: USBPD {
+                _marker: PhantomData,
+            },
+            CPUSS: CPUSS {
                 _marker: PhantomData,
             },
         }
