@@ -34,7 +34,7 @@ impl From<crate::W<TX_HARD_CABLE_ORDER_SET_SPEC>> for W {
         W(writer)
     }
 }
-#[doc = "Field `TX_RESET_OS` reader - "]
+#[doc = "Field `TX_RESET_OS` reader - Transmit Hard/Cable Reset order Set. Default: Hard Reset Value 0xE7393 Cable Reset Value: 0xE0F8C"]
 pub struct TX_RESET_OS_R(crate::FieldReader<u32, u32>);
 impl TX_RESET_OS_R {
     #[inline(always)]
@@ -49,7 +49,7 @@ impl core::ops::Deref for TX_RESET_OS_R {
         &self.0
     }
 }
-#[doc = "Field `TX_RESET_OS` writer - "]
+#[doc = "Field `TX_RESET_OS` writer - Transmit Hard/Cable Reset order Set. Default: Hard Reset Value 0xE7393 Cable Reset Value: 0xE0F8C"]
 pub struct TX_RESET_OS_W<'a> {
     w: &'a mut W,
 }
@@ -62,14 +62,14 @@ impl<'a> TX_RESET_OS_W<'a> {
     }
 }
 impl R {
-    #[doc = "Bits 0:19"]
+    #[doc = "Bits 0:19 - Transmit Hard/Cable Reset order Set. Default: Hard Reset Value 0xE7393 Cable Reset Value: 0xE0F8C"]
     #[inline(always)]
     pub fn tx_reset_os(&self) -> TX_RESET_OS_R {
         TX_RESET_OS_R::new((self.bits & 0x000f_ffff) as u32)
     }
 }
 impl W {
-    #[doc = "Bits 0:19"]
+    #[doc = "Bits 0:19 - Transmit Hard/Cable Reset order Set. Default: Hard Reset Value 0xE7393 Cable Reset Value: 0xE0F8C"]
     #[inline(always)]
     pub fn tx_reset_os(&mut self) -> TX_RESET_OS_W {
         TX_RESET_OS_W { w: self }
@@ -81,7 +81,7 @@ impl W {
         self
     }
 }
-#[doc = "\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [tx_hard_cable_order_set](index.html) module"]
+#[doc = "Transmit Hard/Cable reset order set\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [tx_hard_cable_order_set](index.html) module"]
 pub struct TX_HARD_CABLE_ORDER_SET_SPEC;
 impl crate::RegisterSpec for TX_HARD_CABLE_ORDER_SET_SPEC {
     type Ux = u32;

@@ -13,7 +13,7 @@ impl From<crate::R<INTR_CAUSE_SPEC>> for R {
         R(reader)
     }
 }
-#[doc = "Field `PORT_INT` reader - "]
+#[doc = "Field `PORT_INT` reader - Each IO port has an associated bit field in this register. The bit field reflects the IO port's interrupt line (bit field i reflects \"gpio_interrupts\\[i\\]\" for IO port i). The register is used when the system uses a shared/combined interrupt line \"gpio_interrupt\". The SW ISR reads the register to deternine which IO port(s) is responsible for the shared/combined interrupt line \"gpio_interrupt\". Once, the IO port(s) is determined, the IO port's INTR register is read to determine the IO pad(s) in the IO port that caused the interrupt."]
 pub struct PORT_INT_R(crate::FieldReader<u8, u8>);
 impl PORT_INT_R {
     #[inline(always)]
@@ -29,13 +29,13 @@ impl core::ops::Deref for PORT_INT_R {
     }
 }
 impl R {
-    #[doc = "Bits 0:2"]
+    #[doc = "Bits 0:2 - Each IO port has an associated bit field in this register. The bit field reflects the IO port's interrupt line (bit field i reflects \"gpio_interrupts\\[i\\]\" for IO port i). The register is used when the system uses a shared/combined interrupt line \"gpio_interrupt\". The SW ISR reads the register to deternine which IO port(s) is responsible for the shared/combined interrupt line \"gpio_interrupt\". Once, the IO port(s) is determined, the IO port's INTR register is read to determine the IO pad(s) in the IO port that caused the interrupt."]
     #[inline(always)]
     pub fn port_int(&self) -> PORT_INT_R {
         PORT_INT_R::new((self.bits & 0x07) as u8)
     }
 }
-#[doc = "\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [intr_cause](index.html) module"]
+#[doc = "Interrupt port cause register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [intr_cause](index.html) module"]
 pub struct INTR_CAUSE_SPEC;
 impl crate::RegisterSpec for INTR_CAUSE_SPEC {
     type Ux = u32;

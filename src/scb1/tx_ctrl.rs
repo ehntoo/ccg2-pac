@@ -34,7 +34,7 @@ impl From<crate::W<TX_CTRL_SPEC>> for W {
         W(writer)
     }
 }
-#[doc = "Field `DATA_WIDTH` reader - "]
+#[doc = "Field `DATA_WIDTH` reader - Dataframe width. DATA_WIDTH + 1 is the amount of bits in a transmitted data frame. This number does not include start, parity and stop bits. For UART mode, the valid range is \\[3, 8\\]. For SPI, the valid range is \\[3, 15\\]. For I2C the only valid value is 7."]
 pub struct DATA_WIDTH_R(crate::FieldReader<u8, u8>);
 impl DATA_WIDTH_R {
     #[inline(always)]
@@ -49,7 +49,7 @@ impl core::ops::Deref for DATA_WIDTH_R {
         &self.0
     }
 }
-#[doc = "Field `DATA_WIDTH` writer - "]
+#[doc = "Field `DATA_WIDTH` writer - Dataframe width. DATA_WIDTH + 1 is the amount of bits in a transmitted data frame. This number does not include start, parity and stop bits. For UART mode, the valid range is \\[3, 8\\]. For SPI, the valid range is \\[3, 15\\]. For I2C the only valid value is 7."]
 pub struct DATA_WIDTH_W<'a> {
     w: &'a mut W,
 }
@@ -61,7 +61,7 @@ impl<'a> DATA_WIDTH_W<'a> {
         self.w
     }
 }
-#[doc = "Field `MSB_FIRST` reader - "]
+#[doc = "Field `MSB_FIRST` reader - Least significant bit first ('0') or most significant bit first ('1'). For I2C, this field should be '1'."]
 pub struct MSB_FIRST_R(crate::FieldReader<bool, bool>);
 impl MSB_FIRST_R {
     #[inline(always)]
@@ -76,7 +76,7 @@ impl core::ops::Deref for MSB_FIRST_R {
         &self.0
     }
 }
-#[doc = "Field `MSB_FIRST` writer - "]
+#[doc = "Field `MSB_FIRST` writer - Least significant bit first ('0') or most significant bit first ('1'). For I2C, this field should be '1'."]
 pub struct MSB_FIRST_W<'a> {
     w: &'a mut W,
 }
@@ -99,24 +99,24 @@ impl<'a> MSB_FIRST_W<'a> {
     }
 }
 impl R {
-    #[doc = "Bits 0:3"]
+    #[doc = "Bits 0:3 - Dataframe width. DATA_WIDTH + 1 is the amount of bits in a transmitted data frame. This number does not include start, parity and stop bits. For UART mode, the valid range is \\[3, 8\\]. For SPI, the valid range is \\[3, 15\\]. For I2C the only valid value is 7."]
     #[inline(always)]
     pub fn data_width(&self) -> DATA_WIDTH_R {
         DATA_WIDTH_R::new((self.bits & 0x0f) as u8)
     }
-    #[doc = "Bit 8"]
+    #[doc = "Bit 8 - Least significant bit first ('0') or most significant bit first ('1'). For I2C, this field should be '1'."]
     #[inline(always)]
     pub fn msb_first(&self) -> MSB_FIRST_R {
         MSB_FIRST_R::new(((self.bits >> 8) & 0x01) != 0)
     }
 }
 impl W {
-    #[doc = "Bits 0:3"]
+    #[doc = "Bits 0:3 - Dataframe width. DATA_WIDTH + 1 is the amount of bits in a transmitted data frame. This number does not include start, parity and stop bits. For UART mode, the valid range is \\[3, 8\\]. For SPI, the valid range is \\[3, 15\\]. For I2C the only valid value is 7."]
     #[inline(always)]
     pub fn data_width(&mut self) -> DATA_WIDTH_W {
         DATA_WIDTH_W { w: self }
     }
-    #[doc = "Bit 8"]
+    #[doc = "Bit 8 - Least significant bit first ('0') or most significant bit first ('1'). For I2C, this field should be '1'."]
     #[inline(always)]
     pub fn msb_first(&mut self) -> MSB_FIRST_W {
         MSB_FIRST_W { w: self }
@@ -128,7 +128,7 @@ impl W {
         self
     }
 }
-#[doc = "\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [tx_ctrl](index.html) module"]
+#[doc = "Transmitter control register.\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [tx_ctrl](index.html) module"]
 pub struct TX_CTRL_SPEC;
 impl crate::RegisterSpec for TX_CTRL_SPEC {
     type Ux = u32;

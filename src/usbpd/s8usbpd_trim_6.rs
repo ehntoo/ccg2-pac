@@ -34,7 +34,7 @@ impl From<crate::W<S8USBPD_TRIM_6_SPEC>> for W {
         W(writer)
     }
 }
-#[doc = "Field `V1P575_TRIM` reader - "]
+#[doc = "Field `V1P575_TRIM` reader - Trim bits for 1.575V comparator reference"]
 pub struct V1P575_TRIM_R(crate::FieldReader<u8, u8>);
 impl V1P575_TRIM_R {
     #[inline(always)]
@@ -49,7 +49,7 @@ impl core::ops::Deref for V1P575_TRIM_R {
         &self.0
     }
 }
-#[doc = "Field `V1P575_TRIM` writer - "]
+#[doc = "Field `V1P575_TRIM` writer - Trim bits for 1.575V comparator reference"]
 pub struct V1P575_TRIM_W<'a> {
     w: &'a mut W,
 }
@@ -61,7 +61,7 @@ impl<'a> V1P575_TRIM_W<'a> {
         self.w
     }
 }
-#[doc = "Field `REF_TRIM` reader - "]
+#[doc = "Field `REF_TRIM` reader - Beta multiplier reference trim bits. Refer to GPM-541 for trim settings."]
 pub struct REF_TRIM_R(crate::FieldReader<u8, u8>);
 impl REF_TRIM_R {
     #[inline(always)]
@@ -76,7 +76,7 @@ impl core::ops::Deref for REF_TRIM_R {
         &self.0
     }
 }
-#[doc = "Field `REF_TRIM` writer - "]
+#[doc = "Field `REF_TRIM` writer - Beta multiplier reference trim bits. Refer to GPM-541 for trim settings."]
 pub struct REF_TRIM_W<'a> {
     w: &'a mut W,
 }
@@ -89,24 +89,24 @@ impl<'a> REF_TRIM_W<'a> {
     }
 }
 impl R {
-    #[doc = "Bits 0:2"]
+    #[doc = "Bits 0:2 - Trim bits for 1.575V comparator reference"]
     #[inline(always)]
     pub fn v1p575_trim(&self) -> V1P575_TRIM_R {
         V1P575_TRIM_R::new((self.bits & 0x07) as u8)
     }
-    #[doc = "Bits 3:6"]
+    #[doc = "Bits 3:6 - Beta multiplier reference trim bits. Refer to GPM-541 for trim settings."]
     #[inline(always)]
     pub fn ref_trim(&self) -> REF_TRIM_R {
         REF_TRIM_R::new(((self.bits >> 3) & 0x0f) as u8)
     }
 }
 impl W {
-    #[doc = "Bits 0:2"]
+    #[doc = "Bits 0:2 - Trim bits for 1.575V comparator reference"]
     #[inline(always)]
     pub fn v1p575_trim(&mut self) -> V1P575_TRIM_W {
         V1P575_TRIM_W { w: self }
     }
-    #[doc = "Bits 3:6"]
+    #[doc = "Bits 3:6 - Beta multiplier reference trim bits. Refer to GPM-541 for trim settings."]
     #[inline(always)]
     pub fn ref_trim(&mut self) -> REF_TRIM_W {
         REF_TRIM_W { w: self }
@@ -118,7 +118,7 @@ impl W {
         self
     }
 }
-#[doc = "\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [s8usbpd_trim_6](index.html) module"]
+#[doc = "S8USBPD C-connector Trim Register6. Production trims stored in flash\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [s8usbpd_trim_6](index.html) module"]
 pub struct S8USBPD_TRIM_6_SPEC;
 impl crate::RegisterSpec for S8USBPD_TRIM_6_SPEC {
     type Ux = u32;

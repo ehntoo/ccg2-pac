@@ -34,7 +34,7 @@ impl From<crate::W<CLK_SELECT_SPEC>> for W {
         W(writer)
     }
 }
-#[doc = "\n\nValue on reset: 0"]
+#[doc = "Selects a source for clk_hf and dsi_in\\[0\\]. Note that not all products support all clock sources. Selecting a clock source that is not supported will result in undefined behavior.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u8)]
 pub enum HFCLK_SEL_A {
@@ -51,7 +51,7 @@ impl From<HFCLK_SEL_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `HFCLK_SEL` reader - "]
+#[doc = "Field `HFCLK_SEL` reader - Selects a source for clk_hf and dsi_in\\[0\\]. Note that not all products support all clock sources. Selecting a clock source that is not supported will result in undefined behavior."]
 pub struct HFCLK_SEL_R(crate::FieldReader<u8, HFCLK_SEL_A>);
 impl HFCLK_SEL_R {
     #[inline(always)]
@@ -91,7 +91,7 @@ impl core::ops::Deref for HFCLK_SEL_R {
         &self.0
     }
 }
-#[doc = "Field `HFCLK_SEL` writer - "]
+#[doc = "Field `HFCLK_SEL` writer - Selects a source for clk_hf and dsi_in\\[0\\]. Note that not all products support all clock sources. Selecting a clock source that is not supported will result in undefined behavior."]
 pub struct HFCLK_SEL_W<'a> {
     w: &'a mut W,
 }
@@ -123,7 +123,7 @@ impl<'a> HFCLK_SEL_W<'a> {
         self.w
     }
 }
-#[doc = "\n\nValue on reset: 2"]
+#[doc = "Selects clk_hf predivider value.\n\nValue on reset: 2"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u8)]
 pub enum HFCLK_DIV_A {
@@ -142,7 +142,7 @@ impl From<HFCLK_DIV_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `HFCLK_DIV` reader - "]
+#[doc = "Field `HFCLK_DIV` reader - Selects clk_hf predivider value."]
 pub struct HFCLK_DIV_R(crate::FieldReader<u8, HFCLK_DIV_A>);
 impl HFCLK_DIV_R {
     #[inline(always)]
@@ -188,7 +188,7 @@ impl core::ops::Deref for HFCLK_DIV_R {
         &self.0
     }
 }
-#[doc = "Field `HFCLK_DIV` writer - "]
+#[doc = "Field `HFCLK_DIV` writer - Selects clk_hf predivider value."]
 pub struct HFCLK_DIV_W<'a> {
     w: &'a mut W,
 }
@@ -225,7 +225,7 @@ impl<'a> HFCLK_DIV_W<'a> {
         self.w
     }
 }
-#[doc = "\n\nValue on reset: 0"]
+#[doc = "Selects clock source for charge pump clock. This clock is not guaranteed to be glitch free when changing any of its sources or settings.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u8)]
 pub enum PUMP_SEL_A {
@@ -242,7 +242,7 @@ impl From<PUMP_SEL_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `PUMP_SEL` reader - "]
+#[doc = "Field `PUMP_SEL` reader - Selects clock source for charge pump clock. This clock is not guaranteed to be glitch free when changing any of its sources or settings."]
 pub struct PUMP_SEL_R(crate::FieldReader<u8, PUMP_SEL_A>);
 impl PUMP_SEL_R {
     #[inline(always)]
@@ -282,7 +282,7 @@ impl core::ops::Deref for PUMP_SEL_R {
         &self.0
     }
 }
-#[doc = "Field `PUMP_SEL` writer - "]
+#[doc = "Field `PUMP_SEL` writer - Selects clock source for charge pump clock. This clock is not guaranteed to be glitch free when changing any of its sources or settings."]
 pub struct PUMP_SEL_W<'a> {
     w: &'a mut W,
 }
@@ -314,7 +314,7 @@ impl<'a> PUMP_SEL_W<'a> {
         self.w
     }
 }
-#[doc = "\n\nValue on reset: 0"]
+#[doc = "Select clk_sys prescaler value.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u8)]
 pub enum SYSCLK_DIV_A {
@@ -333,7 +333,7 @@ impl From<SYSCLK_DIV_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `SYSCLK_DIV` reader - "]
+#[doc = "Field `SYSCLK_DIV` reader - Select clk_sys prescaler value."]
 pub struct SYSCLK_DIV_R(crate::FieldReader<u8, SYSCLK_DIV_A>);
 impl SYSCLK_DIV_R {
     #[inline(always)]
@@ -379,7 +379,7 @@ impl core::ops::Deref for SYSCLK_DIV_R {
         &self.0
     }
 }
-#[doc = "Field `SYSCLK_DIV` writer - "]
+#[doc = "Field `SYSCLK_DIV` writer - Select clk_sys prescaler value."]
 pub struct SYSCLK_DIV_W<'a> {
     w: &'a mut W,
 }
@@ -417,44 +417,44 @@ impl<'a> SYSCLK_DIV_W<'a> {
     }
 }
 impl R {
-    #[doc = "Bits 0:1"]
+    #[doc = "Bits 0:1 - Selects a source for clk_hf and dsi_in\\[0\\]. Note that not all products support all clock sources. Selecting a clock source that is not supported will result in undefined behavior."]
     #[inline(always)]
     pub fn hfclk_sel(&self) -> HFCLK_SEL_R {
         HFCLK_SEL_R::new((self.bits & 0x03) as u8)
     }
-    #[doc = "Bits 2:3"]
+    #[doc = "Bits 2:3 - Selects clk_hf predivider value."]
     #[inline(always)]
     pub fn hfclk_div(&self) -> HFCLK_DIV_R {
         HFCLK_DIV_R::new(((self.bits >> 2) & 0x03) as u8)
     }
-    #[doc = "Bits 4:5"]
+    #[doc = "Bits 4:5 - Selects clock source for charge pump clock. This clock is not guaranteed to be glitch free when changing any of its sources or settings."]
     #[inline(always)]
     pub fn pump_sel(&self) -> PUMP_SEL_R {
         PUMP_SEL_R::new(((self.bits >> 4) & 0x03) as u8)
     }
-    #[doc = "Bits 6:7"]
+    #[doc = "Bits 6:7 - Select clk_sys prescaler value."]
     #[inline(always)]
     pub fn sysclk_div(&self) -> SYSCLK_DIV_R {
         SYSCLK_DIV_R::new(((self.bits >> 6) & 0x03) as u8)
     }
 }
 impl W {
-    #[doc = "Bits 0:1"]
+    #[doc = "Bits 0:1 - Selects a source for clk_hf and dsi_in\\[0\\]. Note that not all products support all clock sources. Selecting a clock source that is not supported will result in undefined behavior."]
     #[inline(always)]
     pub fn hfclk_sel(&mut self) -> HFCLK_SEL_W {
         HFCLK_SEL_W { w: self }
     }
-    #[doc = "Bits 2:3"]
+    #[doc = "Bits 2:3 - Selects clk_hf predivider value."]
     #[inline(always)]
     pub fn hfclk_div(&mut self) -> HFCLK_DIV_W {
         HFCLK_DIV_W { w: self }
     }
-    #[doc = "Bits 4:5"]
+    #[doc = "Bits 4:5 - Selects clock source for charge pump clock. This clock is not guaranteed to be glitch free when changing any of its sources or settings."]
     #[inline(always)]
     pub fn pump_sel(&mut self) -> PUMP_SEL_W {
         PUMP_SEL_W { w: self }
     }
-    #[doc = "Bits 6:7"]
+    #[doc = "Bits 6:7 - Select clk_sys prescaler value."]
     #[inline(always)]
     pub fn sysclk_div(&mut self) -> SYSCLK_DIV_W {
         SYSCLK_DIV_W { w: self }
@@ -466,7 +466,7 @@ impl W {
         self
     }
 }
-#[doc = "\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [clk_select](index.html) module"]
+#[doc = "Clock Select Register Configures direction of all clock multiplexers and selectors. See Section 20.3 in SAS for details on clock network topology. See PAS for DSI signal connectivity list.\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [clk_select](index.html) module"]
 pub struct CLK_SELECT_SPEC;
 impl crate::RegisterSpec for CLK_SELECT_SPEC {
     type Ux = u32;

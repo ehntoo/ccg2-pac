@@ -34,7 +34,7 @@ impl From<crate::W<TX_MEM_DATA4_SPEC>> for W {
         W(writer)
     }
 }
-#[doc = "Field `DATA` reader - "]
+#[doc = "Field `DATA` reader - Header/Data information in the transmitter SRAM. SOP/CRC/EOP will be appened by HW. The CPU is required to program the TX Header into lower 16-bit of register address 0x0050. The data read(Tx Header, 16-bit) from this address provides the number of 4-bytes required to be transmitted. If the byte count is zero in the Tx Header, then no more read will be issued to SRAM."]
 pub struct DATA_R(crate::FieldReader<u32, u32>);
 impl DATA_R {
     #[inline(always)]
@@ -49,7 +49,7 @@ impl core::ops::Deref for DATA_R {
         &self.0
     }
 }
-#[doc = "Field `DATA` writer - "]
+#[doc = "Field `DATA` writer - Header/Data information in the transmitter SRAM. SOP/CRC/EOP will be appened by HW. The CPU is required to program the TX Header into lower 16-bit of register address 0x0050. The data read(Tx Header, 16-bit) from this address provides the number of 4-bytes required to be transmitted. If the byte count is zero in the Tx Header, then no more read will be issued to SRAM."]
 pub struct DATA_W<'a> {
     w: &'a mut W,
 }
@@ -62,14 +62,14 @@ impl<'a> DATA_W<'a> {
     }
 }
 impl R {
-    #[doc = "Bits 0:31"]
+    #[doc = "Bits 0:31 - Header/Data information in the transmitter SRAM. SOP/CRC/EOP will be appened by HW. The CPU is required to program the TX Header into lower 16-bit of register address 0x0050. The data read(Tx Header, 16-bit) from this address provides the number of 4-bytes required to be transmitted. If the byte count is zero in the Tx Header, then no more read will be issued to SRAM."]
     #[inline(always)]
     pub fn data(&self) -> DATA_R {
         DATA_R::new((self.bits & 0xffff_ffff) as u32)
     }
 }
 impl W {
-    #[doc = "Bits 0:31"]
+    #[doc = "Bits 0:31 - Header/Data information in the transmitter SRAM. SOP/CRC/EOP will be appened by HW. The CPU is required to program the TX Header into lower 16-bit of register address 0x0050. The data read(Tx Header, 16-bit) from this address provides the number of 4-bytes required to be transmitted. If the byte count is zero in the Tx Header, then no more read will be issued to SRAM."]
     #[inline(always)]
     pub fn data(&mut self) -> DATA_W {
         DATA_W { w: self }
@@ -81,7 +81,7 @@ impl W {
         self
     }
 }
-#[doc = "\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [tx_mem_data4](index.html) module"]
+#[doc = "TX SRAM Data The memory for the TX USB power controller is a 32 byte SRAM. Address map for this Memory is: 0x0030: The Tx Header 0x0034:0x004C: The TX Data Object Any access to address space 0x0030 - 0x004C will map to SRAM address x0-x15\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [tx_mem_data4](index.html) module"]
 pub struct TX_MEM_DATA4_SPEC;
 impl crate::RegisterSpec for TX_MEM_DATA4_SPEC {
     type Ux = u32;

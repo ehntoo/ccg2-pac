@@ -34,7 +34,7 @@ impl From<crate::W<PWR_ADFT_SELECT_SPEC>> for W {
         W(writer)
     }
 }
-#[doc = "\n\nValue on reset: 0"]
+#[doc = "Selects the current or voltage source from SRSS-Lite that needs to be observed. Currents are only available through amuxbusa. Voltages are available though both amuxbusa and amuxbusb (Kelvin connections).\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u8)]
 pub enum SRSS_SEL_A {
@@ -109,7 +109,7 @@ impl From<SRSS_SEL_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `SRSS_SEL` reader - "]
+#[doc = "Field `SRSS_SEL` reader - Selects the current or voltage source from SRSS-Lite that needs to be observed. Currents are only available through amuxbusa. Voltages are available though both amuxbusa and amuxbusb (Kelvin connections)."]
 pub struct SRSS_SEL_R(crate::FieldReader<u8, SRSS_SEL_A>);
 impl SRSS_SEL_R {
     #[inline(always)]
@@ -323,7 +323,7 @@ impl core::ops::Deref for SRSS_SEL_R {
         &self.0
     }
 }
-#[doc = "Field `SRSS_SEL` writer - "]
+#[doc = "Field `SRSS_SEL` writer - Selects the current or voltage source from SRSS-Lite that needs to be observed. Currents are only available through amuxbusa. Voltages are available though both amuxbusa and amuxbusb (Kelvin connections)."]
 pub struct SRSS_SEL_W<'a> {
     w: &'a mut W,
 }
@@ -500,7 +500,7 @@ impl<'a> SRSS_SEL_W<'a> {
         self.w
     }
 }
-#[doc = "Field `SRSS_AMUXA` reader - "]
+#[doc = "Field `SRSS_AMUXA` reader - Connect amuxbusa to selected ADFT signal. 0: do not connect 1: connect"]
 pub struct SRSS_AMUXA_R(crate::FieldReader<bool, bool>);
 impl SRSS_AMUXA_R {
     #[inline(always)]
@@ -515,7 +515,7 @@ impl core::ops::Deref for SRSS_AMUXA_R {
         &self.0
     }
 }
-#[doc = "Field `SRSS_AMUXA` writer - "]
+#[doc = "Field `SRSS_AMUXA` writer - Connect amuxbusa to selected ADFT signal. 0: do not connect 1: connect"]
 pub struct SRSS_AMUXA_W<'a> {
     w: &'a mut W,
 }
@@ -537,7 +537,7 @@ impl<'a> SRSS_AMUXA_W<'a> {
         self.w
     }
 }
-#[doc = "Field `SRSS_AMUXB` reader - "]
+#[doc = "Field `SRSS_AMUXB` reader - Connect amuxbusb to selected ADFT signal. 0: do not connect 1: connect"]
 pub struct SRSS_AMUXB_R(crate::FieldReader<bool, bool>);
 impl SRSS_AMUXB_R {
     #[inline(always)]
@@ -552,7 +552,7 @@ impl core::ops::Deref for SRSS_AMUXB_R {
         &self.0
     }
 }
-#[doc = "Field `SRSS_AMUXB` writer - "]
+#[doc = "Field `SRSS_AMUXB` writer - Connect amuxbusb to selected ADFT signal. 0: do not connect 1: connect"]
 pub struct SRSS_AMUXB_W<'a> {
     w: &'a mut W,
 }
@@ -574,7 +574,7 @@ impl<'a> SRSS_AMUXB_W<'a> {
         self.w
     }
 }
-#[doc = "Field `BLEED_EN` reader - "]
+#[doc = "Field `BLEED_EN` reader - When set enables bleeder cells on various switched power nets to accelerate discharge during low power mode testing."]
 pub struct BLEED_EN_R(crate::FieldReader<bool, bool>);
 impl BLEED_EN_R {
     #[inline(always)]
@@ -589,7 +589,7 @@ impl core::ops::Deref for BLEED_EN_R {
         &self.0
     }
 }
-#[doc = "Field `BLEED_EN` writer - "]
+#[doc = "Field `BLEED_EN` writer - When set enables bleeder cells on various switched power nets to accelerate discharge during low power mode testing."]
 pub struct BLEED_EN_W<'a> {
     w: &'a mut W,
 }
@@ -611,7 +611,7 @@ impl<'a> BLEED_EN_W<'a> {
         self.w
     }
 }
-#[doc = "Field `POR_TRIGGER` reader - "]
+#[doc = "Field `POR_TRIGGER` reader - Setting this bit will trigger a rst_por_hv_n reset from the s8srsslta. The system will go through POR reset."]
 pub struct POR_TRIGGER_R(crate::FieldReader<bool, bool>);
 impl POR_TRIGGER_R {
     #[inline(always)]
@@ -626,7 +626,7 @@ impl core::ops::Deref for POR_TRIGGER_R {
         &self.0
     }
 }
-#[doc = "Field `POR_TRIGGER` writer - "]
+#[doc = "Field `POR_TRIGGER` writer - Setting this bit will trigger a rst_por_hv_n reset from the s8srsslta. The system will go through POR reset."]
 pub struct POR_TRIGGER_W<'a> {
     w: &'a mut W,
 }
@@ -648,7 +648,7 @@ impl<'a> POR_TRIGGER_W<'a> {
         self.w
     }
 }
-#[doc = "Field `SRSS_EN` reader - "]
+#[doc = "Field `SRSS_EN` reader - Enables/disables the system resources ADFT observability. Disable this bit before changing the ADFT selection. This prevents glitches and transients from affecting the references. There is no internal hardware break-before-make."]
 pub struct SRSS_EN_R(crate::FieldReader<bool, bool>);
 impl SRSS_EN_R {
     #[inline(always)]
@@ -663,7 +663,7 @@ impl core::ops::Deref for SRSS_EN_R {
         &self.0
     }
 }
-#[doc = "Field `SRSS_EN` writer - "]
+#[doc = "Field `SRSS_EN` writer - Enables/disables the system resources ADFT observability. Disable this bit before changing the ADFT selection. This prevents glitches and transients from affecting the references. There is no internal hardware break-before-make."]
 pub struct SRSS_EN_W<'a> {
     w: &'a mut W,
 }
@@ -686,64 +686,64 @@ impl<'a> SRSS_EN_W<'a> {
     }
 }
 impl R {
-    #[doc = "Bits 0:4"]
+    #[doc = "Bits 0:4 - Selects the current or voltage source from SRSS-Lite that needs to be observed. Currents are only available through amuxbusa. Voltages are available though both amuxbusa and amuxbusb (Kelvin connections)."]
     #[inline(always)]
     pub fn srss_sel(&self) -> SRSS_SEL_R {
         SRSS_SEL_R::new((self.bits & 0x1f) as u8)
     }
-    #[doc = "Bit 8"]
+    #[doc = "Bit 8 - Connect amuxbusa to selected ADFT signal. 0: do not connect 1: connect"]
     #[inline(always)]
     pub fn srss_amuxa(&self) -> SRSS_AMUXA_R {
         SRSS_AMUXA_R::new(((self.bits >> 8) & 0x01) != 0)
     }
-    #[doc = "Bit 9"]
+    #[doc = "Bit 9 - Connect amuxbusb to selected ADFT signal. 0: do not connect 1: connect"]
     #[inline(always)]
     pub fn srss_amuxb(&self) -> SRSS_AMUXB_R {
         SRSS_AMUXB_R::new(((self.bits >> 9) & 0x01) != 0)
     }
-    #[doc = "Bit 29"]
+    #[doc = "Bit 29 - When set enables bleeder cells on various switched power nets to accelerate discharge during low power mode testing."]
     #[inline(always)]
     pub fn bleed_en(&self) -> BLEED_EN_R {
         BLEED_EN_R::new(((self.bits >> 29) & 0x01) != 0)
     }
-    #[doc = "Bit 30"]
+    #[doc = "Bit 30 - Setting this bit will trigger a rst_por_hv_n reset from the s8srsslta. The system will go through POR reset."]
     #[inline(always)]
     pub fn por_trigger(&self) -> POR_TRIGGER_R {
         POR_TRIGGER_R::new(((self.bits >> 30) & 0x01) != 0)
     }
-    #[doc = "Bit 31"]
+    #[doc = "Bit 31 - Enables/disables the system resources ADFT observability. Disable this bit before changing the ADFT selection. This prevents glitches and transients from affecting the references. There is no internal hardware break-before-make."]
     #[inline(always)]
     pub fn srss_en(&self) -> SRSS_EN_R {
         SRSS_EN_R::new(((self.bits >> 31) & 0x01) != 0)
     }
 }
 impl W {
-    #[doc = "Bits 0:4"]
+    #[doc = "Bits 0:4 - Selects the current or voltage source from SRSS-Lite that needs to be observed. Currents are only available through amuxbusa. Voltages are available though both amuxbusa and amuxbusb (Kelvin connections)."]
     #[inline(always)]
     pub fn srss_sel(&mut self) -> SRSS_SEL_W {
         SRSS_SEL_W { w: self }
     }
-    #[doc = "Bit 8"]
+    #[doc = "Bit 8 - Connect amuxbusa to selected ADFT signal. 0: do not connect 1: connect"]
     #[inline(always)]
     pub fn srss_amuxa(&mut self) -> SRSS_AMUXA_W {
         SRSS_AMUXA_W { w: self }
     }
-    #[doc = "Bit 9"]
+    #[doc = "Bit 9 - Connect amuxbusb to selected ADFT signal. 0: do not connect 1: connect"]
     #[inline(always)]
     pub fn srss_amuxb(&mut self) -> SRSS_AMUXB_W {
         SRSS_AMUXB_W { w: self }
     }
-    #[doc = "Bit 29"]
+    #[doc = "Bit 29 - When set enables bleeder cells on various switched power nets to accelerate discharge during low power mode testing."]
     #[inline(always)]
     pub fn bleed_en(&mut self) -> BLEED_EN_W {
         BLEED_EN_W { w: self }
     }
-    #[doc = "Bit 30"]
+    #[doc = "Bit 30 - Setting this bit will trigger a rst_por_hv_n reset from the s8srsslta. The system will go through POR reset."]
     #[inline(always)]
     pub fn por_trigger(&mut self) -> POR_TRIGGER_W {
         POR_TRIGGER_W { w: self }
     }
-    #[doc = "Bit 31"]
+    #[doc = "Bit 31 - Enables/disables the system resources ADFT observability. Disable this bit before changing the ADFT selection. This prevents glitches and transients from affecting the references. There is no internal hardware break-before-make."]
     #[inline(always)]
     pub fn srss_en(&mut self) -> SRSS_EN_W {
         SRSS_EN_W { w: self }
@@ -755,7 +755,7 @@ impl W {
         self
     }
 }
-#[doc = "\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [pwr_adft_select](index.html) module"]
+#[doc = "Power ADFT Mode Selection Register Controls System Resources ADFT mode settings and observability. Writes to this register are ignored and settings in this register have no effect unless the part is in a XRES key selected DfT mode. Entire register is engineering only. Note that PWR_DDFT_XRES can be used to enter an XRES key if XRES key sequence is not desired.\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [pwr_adft_select](index.html) module"]
 pub struct PWR_ADFT_SELECT_SPEC;
 impl crate::RegisterSpec for PWR_ADFT_SELECT_SPEC {
     type Ux = u32;

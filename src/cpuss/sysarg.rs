@@ -34,7 +34,7 @@ impl From<crate::W<SYSARG_SPEC>> for W {
         W(writer)
     }
 }
-#[doc = "Field `SYSCALL_ARG` reader - "]
+#[doc = "Field `SYSCALL_ARG` reader - Argument to System Call specified in SYSREQ. Semantics of argument depends on system call made. Typically a pointer to a parameter block."]
 pub struct SYSCALL_ARG_R(crate::FieldReader<u32, u32>);
 impl SYSCALL_ARG_R {
     #[inline(always)]
@@ -49,7 +49,7 @@ impl core::ops::Deref for SYSCALL_ARG_R {
         &self.0
     }
 }
-#[doc = "Field `SYSCALL_ARG` writer - "]
+#[doc = "Field `SYSCALL_ARG` writer - Argument to System Call specified in SYSREQ. Semantics of argument depends on system call made. Typically a pointer to a parameter block."]
 pub struct SYSCALL_ARG_W<'a> {
     w: &'a mut W,
 }
@@ -62,14 +62,14 @@ impl<'a> SYSCALL_ARG_W<'a> {
     }
 }
 impl R {
-    #[doc = "Bits 0:31"]
+    #[doc = "Bits 0:31 - Argument to System Call specified in SYSREQ. Semantics of argument depends on system call made. Typically a pointer to a parameter block."]
     #[inline(always)]
     pub fn syscall_arg(&self) -> SYSCALL_ARG_R {
         SYSCALL_ARG_R::new((self.bits & 0xffff_ffff) as u32)
     }
 }
 impl W {
-    #[doc = "Bits 0:31"]
+    #[doc = "Bits 0:31 - Argument to System Call specified in SYSREQ. Semantics of argument depends on system call made. Typically a pointer to a parameter block."]
     #[inline(always)]
     pub fn syscall_arg(&mut self) -> SYSCALL_ARG_W {
         SYSCALL_ARG_W { w: self }
@@ -81,7 +81,7 @@ impl W {
         self
     }
 }
-#[doc = "\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [sysarg](index.html) module"]
+#[doc = "SYSARG control register Used to make system requests to SROM code. System Requests transition from User Mode to Privileged Mode. See SAS for more details. Firmware/ATE should write CPUSS_SYSARG first and CPUSS_SYSREQ register next.\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [sysarg](index.html) module"]
 pub struct SYSARG_SPEC;
 impl crate::RegisterSpec for SYSARG_SPEC {
     type Ux = u32;

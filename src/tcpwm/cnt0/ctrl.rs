@@ -34,7 +34,7 @@ impl From<crate::W<CTRL_SPEC>> for W {
         W(writer)
     }
 }
-#[doc = "Field `AUTO_RELOAD_CC` reader - "]
+#[doc = "Field `AUTO_RELOAD_CC` reader - Specifies switching of the CC and buffered CC values. This field has a function in TIMER, PWM, PWM_DT and PWM_PR modes. Timer mode: '0': never switch. '1': switch on a compare match event. PWM, PWM_DT, PWM_PR modes: '0: never switch. '1': switch on a terminal count event with an actively pending switch event."]
 pub struct AUTO_RELOAD_CC_R(crate::FieldReader<bool, bool>);
 impl AUTO_RELOAD_CC_R {
     #[inline(always)]
@@ -49,7 +49,7 @@ impl core::ops::Deref for AUTO_RELOAD_CC_R {
         &self.0
     }
 }
-#[doc = "Field `AUTO_RELOAD_CC` writer - "]
+#[doc = "Field `AUTO_RELOAD_CC` writer - Specifies switching of the CC and buffered CC values. This field has a function in TIMER, PWM, PWM_DT and PWM_PR modes. Timer mode: '0': never switch. '1': switch on a compare match event. PWM, PWM_DT, PWM_PR modes: '0: never switch. '1': switch on a terminal count event with an actively pending switch event."]
 pub struct AUTO_RELOAD_CC_W<'a> {
     w: &'a mut W,
 }
@@ -71,7 +71,7 @@ impl<'a> AUTO_RELOAD_CC_W<'a> {
         self.w
     }
 }
-#[doc = "Field `AUTO_RELOAD_PERIOD` reader - "]
+#[doc = "Field `AUTO_RELOAD_PERIOD` reader - Specifies switching of the PERIOD and buffered PERIOD values. This field has a function in PWM, PWM_DT and PWM_PR modes. '0': never switch. '1': switch on a terminal count event with and actively pending siwtch event."]
 pub struct AUTO_RELOAD_PERIOD_R(crate::FieldReader<bool, bool>);
 impl AUTO_RELOAD_PERIOD_R {
     #[inline(always)]
@@ -86,7 +86,7 @@ impl core::ops::Deref for AUTO_RELOAD_PERIOD_R {
         &self.0
     }
 }
-#[doc = "Field `AUTO_RELOAD_PERIOD` writer - "]
+#[doc = "Field `AUTO_RELOAD_PERIOD` writer - Specifies switching of the PERIOD and buffered PERIOD values. This field has a function in PWM, PWM_DT and PWM_PR modes. '0': never switch. '1': switch on a terminal count event with and actively pending siwtch event."]
 pub struct AUTO_RELOAD_PERIOD_W<'a> {
     w: &'a mut W,
 }
@@ -108,7 +108,7 @@ impl<'a> AUTO_RELOAD_PERIOD_W<'a> {
         self.w
     }
 }
-#[doc = "Field `PWM_SYNC_KILL` reader - "]
+#[doc = "Field `PWM_SYNC_KILL` reader - Specifies asynchronous/synchronous kill behavior: '1': synchronous kill mode: the kill event disables the \"dt_line_out\" and \"dt_line_compl_out\" signals till the next terminal count event (synchronous kill). In synchronous kill mode, STOP_EDGE should be RISING_EDGE. '0': asynchronous kill mode: the kill event only disables the \"dt_line_out\" and \"dt_line_compl_out\" signals when present. In asynchronous kill mode, STOP_EDGE should be NO_EDGE_DET. This field has a function in PWM and PWM_DT modes only. This field is only used when PWM_STOP_ON_KILL is '0'."]
 pub struct PWM_SYNC_KILL_R(crate::FieldReader<bool, bool>);
 impl PWM_SYNC_KILL_R {
     #[inline(always)]
@@ -123,7 +123,7 @@ impl core::ops::Deref for PWM_SYNC_KILL_R {
         &self.0
     }
 }
-#[doc = "Field `PWM_SYNC_KILL` writer - "]
+#[doc = "Field `PWM_SYNC_KILL` writer - Specifies asynchronous/synchronous kill behavior: '1': synchronous kill mode: the kill event disables the \"dt_line_out\" and \"dt_line_compl_out\" signals till the next terminal count event (synchronous kill). In synchronous kill mode, STOP_EDGE should be RISING_EDGE. '0': asynchronous kill mode: the kill event only disables the \"dt_line_out\" and \"dt_line_compl_out\" signals when present. In asynchronous kill mode, STOP_EDGE should be NO_EDGE_DET. This field has a function in PWM and PWM_DT modes only. This field is only used when PWM_STOP_ON_KILL is '0'."]
 pub struct PWM_SYNC_KILL_W<'a> {
     w: &'a mut W,
 }
@@ -145,7 +145,7 @@ impl<'a> PWM_SYNC_KILL_W<'a> {
         self.w
     }
 }
-#[doc = "Field `PWM_STOP_ON_KILL` reader - "]
+#[doc = "Field `PWM_STOP_ON_KILL` reader - Specifies whether the counter stops on a kill events: '0': kill event does NOT stop counter. '1': kill event stops counter. This field has a function in PWM, PWM_DT and PWM_PR modes only."]
 pub struct PWM_STOP_ON_KILL_R(crate::FieldReader<bool, bool>);
 impl PWM_STOP_ON_KILL_R {
     #[inline(always)]
@@ -160,7 +160,7 @@ impl core::ops::Deref for PWM_STOP_ON_KILL_R {
         &self.0
     }
 }
-#[doc = "Field `PWM_STOP_ON_KILL` writer - "]
+#[doc = "Field `PWM_STOP_ON_KILL` writer - Specifies whether the counter stops on a kill events: '0': kill event does NOT stop counter. '1': kill event stops counter. This field has a function in PWM, PWM_DT and PWM_PR modes only."]
 pub struct PWM_STOP_ON_KILL_W<'a> {
     w: &'a mut W,
 }
@@ -182,7 +182,7 @@ impl<'a> PWM_STOP_ON_KILL_W<'a> {
         self.w
     }
 }
-#[doc = "\n\nValue on reset: 0"]
+#[doc = "Generic 8-bit control field. In PWM_DT mode, this field is used to determine the dead time: amount of dead time cycles in the counter clock domain. In all other modes, the lower 3 bits of this field determine pre-scaling of the selected counter clock.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u8)]
 pub enum GENERIC_A {
@@ -209,7 +209,7 @@ impl From<GENERIC_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `GENERIC` reader - "]
+#[doc = "Field `GENERIC` reader - Generic 8-bit control field. In PWM_DT mode, this field is used to determine the dead time: amount of dead time cycles in the counter clock domain. In all other modes, the lower 3 bits of this field determine pre-scaling of the selected counter clock."]
 pub struct GENERIC_R(crate::FieldReader<u8, GENERIC_A>);
 impl GENERIC_R {
     #[inline(always)]
@@ -279,7 +279,7 @@ impl core::ops::Deref for GENERIC_R {
         &self.0
     }
 }
-#[doc = "Field `GENERIC` writer - "]
+#[doc = "Field `GENERIC` writer - Generic 8-bit control field. In PWM_DT mode, this field is used to determine the dead time: amount of dead time cycles in the counter clock domain. In all other modes, the lower 3 bits of this field determine pre-scaling of the selected counter clock."]
 pub struct GENERIC_W<'a> {
     w: &'a mut W,
 }
@@ -336,7 +336,7 @@ impl<'a> GENERIC_W<'a> {
         self.w
     }
 }
-#[doc = "\n\nValue on reset: 0"]
+#[doc = "Determines counter direction.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u8)]
 pub enum UP_DOWN_MODE_A {
@@ -355,7 +355,7 @@ impl From<UP_DOWN_MODE_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `UP_DOWN_MODE` reader - "]
+#[doc = "Field `UP_DOWN_MODE` reader - Determines counter direction."]
 pub struct UP_DOWN_MODE_R(crate::FieldReader<u8, UP_DOWN_MODE_A>);
 impl UP_DOWN_MODE_R {
     #[inline(always)]
@@ -401,7 +401,7 @@ impl core::ops::Deref for UP_DOWN_MODE_R {
         &self.0
     }
 }
-#[doc = "Field `UP_DOWN_MODE` writer - "]
+#[doc = "Field `UP_DOWN_MODE` writer - Determines counter direction."]
 pub struct UP_DOWN_MODE_W<'a> {
     w: &'a mut W,
 }
@@ -438,7 +438,7 @@ impl<'a> UP_DOWN_MODE_W<'a> {
         self.w
     }
 }
-#[doc = "Field `ONE_SHOT` reader - "]
+#[doc = "Field `ONE_SHOT` reader - When '0', counter runs continuous. When '1', counter is turned off by hardware when a terminal count event is generated."]
 pub struct ONE_SHOT_R(crate::FieldReader<bool, bool>);
 impl ONE_SHOT_R {
     #[inline(always)]
@@ -453,7 +453,7 @@ impl core::ops::Deref for ONE_SHOT_R {
         &self.0
     }
 }
-#[doc = "Field `ONE_SHOT` writer - "]
+#[doc = "Field `ONE_SHOT` writer - When '0', counter runs continuous. When '1', counter is turned off by hardware when a terminal count event is generated."]
 pub struct ONE_SHOT_W<'a> {
     w: &'a mut W,
 }
@@ -475,7 +475,8 @@ impl<'a> ONE_SHOT_W<'a> {
         self.w
     }
 }
-#[doc = "\n\nValue on reset: 0"]
+#[doc = "In QUAD mode selects quadrature encoding mode (X1/X2/X4). In PWM, PWM_DT and PWM_PR modes, these two bits can be used to invert \"dt_line_out\" and \"dt_line_compl_out\". Inversion is the last step in generation of \"dt_line_out\" and \"dt_line_compl_out\"; i.e. a disabled output line \"dt_line_out\" has the value QUADRATURE_MODE\\[0\\]
+and a disabled output line \"dt_line_compl_out\" has the value QUADRATURE_MODE\\[1\\].\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u8)]
 pub enum QUADRATURE_MODE_A {
@@ -492,7 +493,8 @@ impl From<QUADRATURE_MODE_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `QUADRATURE_MODE` reader - "]
+#[doc = "Field `QUADRATURE_MODE` reader - In QUAD mode selects quadrature encoding mode (X1/X2/X4). In PWM, PWM_DT and PWM_PR modes, these two bits can be used to invert \"dt_line_out\" and \"dt_line_compl_out\". Inversion is the last step in generation of \"dt_line_out\" and \"dt_line_compl_out\"; i.e. a disabled output line \"dt_line_out\" has the value QUADRATURE_MODE\\[0\\]
+and a disabled output line \"dt_line_compl_out\" has the value QUADRATURE_MODE\\[1\\]."]
 pub struct QUADRATURE_MODE_R(crate::FieldReader<u8, QUADRATURE_MODE_A>);
 impl QUADRATURE_MODE_R {
     #[inline(always)]
@@ -532,7 +534,8 @@ impl core::ops::Deref for QUADRATURE_MODE_R {
         &self.0
     }
 }
-#[doc = "Field `QUADRATURE_MODE` writer - "]
+#[doc = "Field `QUADRATURE_MODE` writer - In QUAD mode selects quadrature encoding mode (X1/X2/X4). In PWM, PWM_DT and PWM_PR modes, these two bits can be used to invert \"dt_line_out\" and \"dt_line_compl_out\". Inversion is the last step in generation of \"dt_line_out\" and \"dt_line_compl_out\"; i.e. a disabled output line \"dt_line_out\" has the value QUADRATURE_MODE\\[0\\]
+and a disabled output line \"dt_line_compl_out\" has the value QUADRATURE_MODE\\[1\\]."]
 pub struct QUADRATURE_MODE_W<'a> {
     w: &'a mut W,
 }
@@ -564,7 +567,7 @@ impl<'a> QUADRATURE_MODE_W<'a> {
         self.w
     }
 }
-#[doc = "\n\nValue on reset: 0"]
+#[doc = "Counter mode.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u8)]
 pub enum MODE_A {
@@ -587,7 +590,7 @@ impl From<MODE_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `MODE` reader - "]
+#[doc = "Field `MODE` reader - Counter mode."]
 pub struct MODE_R(crate::FieldReader<u8, MODE_A>);
 impl MODE_R {
     #[inline(always)]
@@ -645,7 +648,7 @@ impl core::ops::Deref for MODE_R {
         &self.0
     }
 }
-#[doc = "Field `MODE` writer - "]
+#[doc = "Field `MODE` writer - Counter mode."]
 pub struct MODE_W<'a> {
     w: &'a mut W,
 }
@@ -693,94 +696,96 @@ impl<'a> MODE_W<'a> {
     }
 }
 impl R {
-    #[doc = "Bit 0"]
+    #[doc = "Bit 0 - Specifies switching of the CC and buffered CC values. This field has a function in TIMER, PWM, PWM_DT and PWM_PR modes. Timer mode: '0': never switch. '1': switch on a compare match event. PWM, PWM_DT, PWM_PR modes: '0: never switch. '1': switch on a terminal count event with an actively pending switch event."]
     #[inline(always)]
     pub fn auto_reload_cc(&self) -> AUTO_RELOAD_CC_R {
         AUTO_RELOAD_CC_R::new((self.bits & 0x01) != 0)
     }
-    #[doc = "Bit 1"]
+    #[doc = "Bit 1 - Specifies switching of the PERIOD and buffered PERIOD values. This field has a function in PWM, PWM_DT and PWM_PR modes. '0': never switch. '1': switch on a terminal count event with and actively pending siwtch event."]
     #[inline(always)]
     pub fn auto_reload_period(&self) -> AUTO_RELOAD_PERIOD_R {
         AUTO_RELOAD_PERIOD_R::new(((self.bits >> 1) & 0x01) != 0)
     }
-    #[doc = "Bit 2"]
+    #[doc = "Bit 2 - Specifies asynchronous/synchronous kill behavior: '1': synchronous kill mode: the kill event disables the \"dt_line_out\" and \"dt_line_compl_out\" signals till the next terminal count event (synchronous kill). In synchronous kill mode, STOP_EDGE should be RISING_EDGE. '0': asynchronous kill mode: the kill event only disables the \"dt_line_out\" and \"dt_line_compl_out\" signals when present. In asynchronous kill mode, STOP_EDGE should be NO_EDGE_DET. This field has a function in PWM and PWM_DT modes only. This field is only used when PWM_STOP_ON_KILL is '0'."]
     #[inline(always)]
     pub fn pwm_sync_kill(&self) -> PWM_SYNC_KILL_R {
         PWM_SYNC_KILL_R::new(((self.bits >> 2) & 0x01) != 0)
     }
-    #[doc = "Bit 3"]
+    #[doc = "Bit 3 - Specifies whether the counter stops on a kill events: '0': kill event does NOT stop counter. '1': kill event stops counter. This field has a function in PWM, PWM_DT and PWM_PR modes only."]
     #[inline(always)]
     pub fn pwm_stop_on_kill(&self) -> PWM_STOP_ON_KILL_R {
         PWM_STOP_ON_KILL_R::new(((self.bits >> 3) & 0x01) != 0)
     }
-    #[doc = "Bits 8:15"]
+    #[doc = "Bits 8:15 - Generic 8-bit control field. In PWM_DT mode, this field is used to determine the dead time: amount of dead time cycles in the counter clock domain. In all other modes, the lower 3 bits of this field determine pre-scaling of the selected counter clock."]
     #[inline(always)]
     pub fn generic(&self) -> GENERIC_R {
         GENERIC_R::new(((self.bits >> 8) & 0xff) as u8)
     }
-    #[doc = "Bits 16:17"]
+    #[doc = "Bits 16:17 - Determines counter direction."]
     #[inline(always)]
     pub fn up_down_mode(&self) -> UP_DOWN_MODE_R {
         UP_DOWN_MODE_R::new(((self.bits >> 16) & 0x03) as u8)
     }
-    #[doc = "Bit 18"]
+    #[doc = "Bit 18 - When '0', counter runs continuous. When '1', counter is turned off by hardware when a terminal count event is generated."]
     #[inline(always)]
     pub fn one_shot(&self) -> ONE_SHOT_R {
         ONE_SHOT_R::new(((self.bits >> 18) & 0x01) != 0)
     }
-    #[doc = "Bits 20:21"]
+    #[doc = "Bits 20:21 - In QUAD mode selects quadrature encoding mode (X1/X2/X4). In PWM, PWM_DT and PWM_PR modes, these two bits can be used to invert \"dt_line_out\" and \"dt_line_compl_out\". Inversion is the last step in generation of \"dt_line_out\" and \"dt_line_compl_out\"; i.e. a disabled output line \"dt_line_out\" has the value QUADRATURE_MODE\\[0\\]
+and a disabled output line \"dt_line_compl_out\" has the value QUADRATURE_MODE\\[1\\]."]
     #[inline(always)]
     pub fn quadrature_mode(&self) -> QUADRATURE_MODE_R {
         QUADRATURE_MODE_R::new(((self.bits >> 20) & 0x03) as u8)
     }
-    #[doc = "Bits 24:26"]
+    #[doc = "Bits 24:26 - Counter mode."]
     #[inline(always)]
     pub fn mode(&self) -> MODE_R {
         MODE_R::new(((self.bits >> 24) & 0x07) as u8)
     }
 }
 impl W {
-    #[doc = "Bit 0"]
+    #[doc = "Bit 0 - Specifies switching of the CC and buffered CC values. This field has a function in TIMER, PWM, PWM_DT and PWM_PR modes. Timer mode: '0': never switch. '1': switch on a compare match event. PWM, PWM_DT, PWM_PR modes: '0: never switch. '1': switch on a terminal count event with an actively pending switch event."]
     #[inline(always)]
     pub fn auto_reload_cc(&mut self) -> AUTO_RELOAD_CC_W {
         AUTO_RELOAD_CC_W { w: self }
     }
-    #[doc = "Bit 1"]
+    #[doc = "Bit 1 - Specifies switching of the PERIOD and buffered PERIOD values. This field has a function in PWM, PWM_DT and PWM_PR modes. '0': never switch. '1': switch on a terminal count event with and actively pending siwtch event."]
     #[inline(always)]
     pub fn auto_reload_period(&mut self) -> AUTO_RELOAD_PERIOD_W {
         AUTO_RELOAD_PERIOD_W { w: self }
     }
-    #[doc = "Bit 2"]
+    #[doc = "Bit 2 - Specifies asynchronous/synchronous kill behavior: '1': synchronous kill mode: the kill event disables the \"dt_line_out\" and \"dt_line_compl_out\" signals till the next terminal count event (synchronous kill). In synchronous kill mode, STOP_EDGE should be RISING_EDGE. '0': asynchronous kill mode: the kill event only disables the \"dt_line_out\" and \"dt_line_compl_out\" signals when present. In asynchronous kill mode, STOP_EDGE should be NO_EDGE_DET. This field has a function in PWM and PWM_DT modes only. This field is only used when PWM_STOP_ON_KILL is '0'."]
     #[inline(always)]
     pub fn pwm_sync_kill(&mut self) -> PWM_SYNC_KILL_W {
         PWM_SYNC_KILL_W { w: self }
     }
-    #[doc = "Bit 3"]
+    #[doc = "Bit 3 - Specifies whether the counter stops on a kill events: '0': kill event does NOT stop counter. '1': kill event stops counter. This field has a function in PWM, PWM_DT and PWM_PR modes only."]
     #[inline(always)]
     pub fn pwm_stop_on_kill(&mut self) -> PWM_STOP_ON_KILL_W {
         PWM_STOP_ON_KILL_W { w: self }
     }
-    #[doc = "Bits 8:15"]
+    #[doc = "Bits 8:15 - Generic 8-bit control field. In PWM_DT mode, this field is used to determine the dead time: amount of dead time cycles in the counter clock domain. In all other modes, the lower 3 bits of this field determine pre-scaling of the selected counter clock."]
     #[inline(always)]
     pub fn generic(&mut self) -> GENERIC_W {
         GENERIC_W { w: self }
     }
-    #[doc = "Bits 16:17"]
+    #[doc = "Bits 16:17 - Determines counter direction."]
     #[inline(always)]
     pub fn up_down_mode(&mut self) -> UP_DOWN_MODE_W {
         UP_DOWN_MODE_W { w: self }
     }
-    #[doc = "Bit 18"]
+    #[doc = "Bit 18 - When '0', counter runs continuous. When '1', counter is turned off by hardware when a terminal count event is generated."]
     #[inline(always)]
     pub fn one_shot(&mut self) -> ONE_SHOT_W {
         ONE_SHOT_W { w: self }
     }
-    #[doc = "Bits 20:21"]
+    #[doc = "Bits 20:21 - In QUAD mode selects quadrature encoding mode (X1/X2/X4). In PWM, PWM_DT and PWM_PR modes, these two bits can be used to invert \"dt_line_out\" and \"dt_line_compl_out\". Inversion is the last step in generation of \"dt_line_out\" and \"dt_line_compl_out\"; i.e. a disabled output line \"dt_line_out\" has the value QUADRATURE_MODE\\[0\\]
+and a disabled output line \"dt_line_compl_out\" has the value QUADRATURE_MODE\\[1\\]."]
     #[inline(always)]
     pub fn quadrature_mode(&mut self) -> QUADRATURE_MODE_W {
         QUADRATURE_MODE_W { w: self }
     }
-    #[doc = "Bits 24:26"]
+    #[doc = "Bits 24:26 - Counter mode."]
     #[inline(always)]
     pub fn mode(&mut self) -> MODE_W {
         MODE_W { w: self }
@@ -792,7 +797,7 @@ impl W {
         self
     }
 }
-#[doc = "\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [ctrl](index.html) module"]
+#[doc = "Counter control register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [ctrl](index.html) module"]
 pub struct CTRL_SPEC;
 impl crate::RegisterSpec for CTRL_SPEC {
     type Ux = u32;

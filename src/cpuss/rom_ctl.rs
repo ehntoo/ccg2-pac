@@ -34,7 +34,9 @@ impl From<crate::W<ROM_CTL_SPEC>> for W {
         W(writer)
     }
 }
-#[doc = "Field `ROM_WS` reader - "]
+#[doc = "Field `ROM_WS` reader - Amount of ROM wait states: '0': 0 wait states. Use this setting for newer, faster ROM design. Use this setting for older, slower ROM design and frequencies in the range \\[0, 24\\]
+MHz. '1': 1 wait state. Use this setting for older, slower ROM design and frequencies in the range <24, 48\\]
+MHz. CPUSSv2 supports two types of ROM memory: an older, slower design (operating at up to 24 MHz) and a newer, faster design (operating at up to 48 MHz). The older design requires 1 wait state for frequencies above 24 MHz. The newer design never requires wait states. All chips after Street Fighter will use the newer design. As a result, all chips after Street Fighter can always use 0 wait states."]
 pub struct ROM_WS_R(crate::FieldReader<bool, bool>);
 impl ROM_WS_R {
     #[inline(always)]
@@ -49,7 +51,9 @@ impl core::ops::Deref for ROM_WS_R {
         &self.0
     }
 }
-#[doc = "Field `ROM_WS` writer - "]
+#[doc = "Field `ROM_WS` writer - Amount of ROM wait states: '0': 0 wait states. Use this setting for newer, faster ROM design. Use this setting for older, slower ROM design and frequencies in the range \\[0, 24\\]
+MHz. '1': 1 wait state. Use this setting for older, slower ROM design and frequencies in the range <24, 48\\]
+MHz. CPUSSv2 supports two types of ROM memory: an older, slower design (operating at up to 24 MHz) and a newer, faster design (operating at up to 48 MHz). The older design requires 1 wait state for frequencies above 24 MHz. The newer design never requires wait states. All chips after Street Fighter will use the newer design. As a result, all chips after Street Fighter can always use 0 wait states."]
 pub struct ROM_WS_W<'a> {
     w: &'a mut W,
 }
@@ -72,14 +76,18 @@ impl<'a> ROM_WS_W<'a> {
     }
 }
 impl R {
-    #[doc = "Bit 0"]
+    #[doc = "Bit 0 - Amount of ROM wait states: '0': 0 wait states. Use this setting for newer, faster ROM design. Use this setting for older, slower ROM design and frequencies in the range \\[0, 24\\]
+MHz. '1': 1 wait state. Use this setting for older, slower ROM design and frequencies in the range <24, 48\\]
+MHz. CPUSSv2 supports two types of ROM memory: an older, slower design (operating at up to 24 MHz) and a newer, faster design (operating at up to 48 MHz). The older design requires 1 wait state for frequencies above 24 MHz. The newer design never requires wait states. All chips after Street Fighter will use the newer design. As a result, all chips after Street Fighter can always use 0 wait states."]
     #[inline(always)]
     pub fn rom_ws(&self) -> ROM_WS_R {
         ROM_WS_R::new((self.bits & 0x01) != 0)
     }
 }
 impl W {
-    #[doc = "Bit 0"]
+    #[doc = "Bit 0 - Amount of ROM wait states: '0': 0 wait states. Use this setting for newer, faster ROM design. Use this setting for older, slower ROM design and frequencies in the range \\[0, 24\\]
+MHz. '1': 1 wait state. Use this setting for older, slower ROM design and frequencies in the range <24, 48\\]
+MHz. CPUSSv2 supports two types of ROM memory: an older, slower design (operating at up to 24 MHz) and a newer, faster design (operating at up to 48 MHz). The older design requires 1 wait state for frequencies above 24 MHz. The newer design never requires wait states. All chips after Street Fighter will use the newer design. As a result, all chips after Street Fighter can always use 0 wait states."]
     #[inline(always)]
     pub fn rom_ws(&mut self) -> ROM_WS_W {
         ROM_WS_W { w: self }
@@ -91,7 +99,7 @@ impl W {
         self
     }
 }
-#[doc = "\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [rom_ctl](index.html) module"]
+#[doc = "ROM control register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [rom_ctl](index.html) module"]
 pub struct ROM_CTL_SPEC;
 impl crate::RegisterSpec for ROM_CTL_SPEC {
     type Ux = u32;

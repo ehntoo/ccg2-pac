@@ -34,7 +34,7 @@ impl From<crate::W<WDT_DISABLE_KEY_SPEC>> for W {
         W(writer)
     }
 }
-#[doc = "Field `KEY` reader - "]
+#[doc = "Field `KEY` reader - Disables WDT reset when equal to 0xACED8865. The WDT reset functions normally for any other setting."]
 pub struct KEY_R(crate::FieldReader<u32, u32>);
 impl KEY_R {
     #[inline(always)]
@@ -49,7 +49,7 @@ impl core::ops::Deref for KEY_R {
         &self.0
     }
 }
-#[doc = "Field `KEY` writer - "]
+#[doc = "Field `KEY` writer - Disables WDT reset when equal to 0xACED8865. The WDT reset functions normally for any other setting."]
 pub struct KEY_W<'a> {
     w: &'a mut W,
 }
@@ -62,14 +62,14 @@ impl<'a> KEY_W<'a> {
     }
 }
 impl R {
-    #[doc = "Bits 0:31"]
+    #[doc = "Bits 0:31 - Disables WDT reset when equal to 0xACED8865. The WDT reset functions normally for any other setting."]
     #[inline(always)]
     pub fn key(&self) -> KEY_R {
         KEY_R::new((self.bits & 0xffff_ffff) as u32)
     }
 }
 impl W {
-    #[doc = "Bits 0:31"]
+    #[doc = "Bits 0:31 - Disables WDT reset when equal to 0xACED8865. The WDT reset functions normally for any other setting."]
     #[inline(always)]
     pub fn key(&mut self) -> KEY_W {
         KEY_W { w: self }
@@ -81,7 +81,7 @@ impl W {
         self
     }
 }
-#[doc = "\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [wdt_disable_key](index.html) module"]
+#[doc = "Watchdog Disable Key Register This key can be used to disable the watchdog timer reset generation in applications that do not require absolute brown-out safety and do not want to deal with the hassle of feeding the watchdog regularly. Setting the key will also enable the CLK_ILO_CONFIG.ENABLE bit to be effective. It will not have any other effect, i.e. the WDT timer/interrupt functionality can still be used.\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [wdt_disable_key](index.html) module"]
 pub struct WDT_DISABLE_KEY_SPEC;
 impl crate::RegisterSpec for WDT_DISABLE_KEY_SPEC {
     type Ux = u32;

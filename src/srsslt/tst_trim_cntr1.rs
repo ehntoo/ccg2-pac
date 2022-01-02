@@ -34,7 +34,7 @@ impl From<crate::W<TST_TRIM_CNTR1_SPEC>> for W {
         W(writer)
     }
 }
-#[doc = "Field `COUNTER` reader - "]
+#[doc = "Field `COUNTER` reader - Down-counter clocked on clk_sys. By writing non-zero value to this counter TRIM_CNTR2.COUNTER clears and counts up. TRIM_CNTR1.COUNTER counts down until TRIM_CNTR1.COUNTER==0"]
 pub struct COUNTER_R(crate::FieldReader<u16, u16>);
 impl COUNTER_R {
     #[inline(always)]
@@ -49,7 +49,7 @@ impl core::ops::Deref for COUNTER_R {
         &self.0
     }
 }
-#[doc = "Field `COUNTER` writer - "]
+#[doc = "Field `COUNTER` writer - Down-counter clocked on clk_sys. By writing non-zero value to this counter TRIM_CNTR2.COUNTER clears and counts up. TRIM_CNTR1.COUNTER counts down until TRIM_CNTR1.COUNTER==0"]
 pub struct COUNTER_W<'a> {
     w: &'a mut W,
 }
@@ -61,7 +61,7 @@ impl<'a> COUNTER_W<'a> {
         self.w
     }
 }
-#[doc = "Field `COUNTER_DONE` reader - "]
+#[doc = "Field `COUNTER_DONE` reader - Status bit indicating that TRIM_CNTR1.COUNTER==0 and TRIM_CNT2.COUNTER stopped counting up"]
 pub struct COUNTER_DONE_R(crate::FieldReader<bool, bool>);
 impl COUNTER_DONE_R {
     #[inline(always)]
@@ -77,19 +77,19 @@ impl core::ops::Deref for COUNTER_DONE_R {
     }
 }
 impl R {
-    #[doc = "Bits 0:15"]
+    #[doc = "Bits 0:15 - Down-counter clocked on clk_sys. By writing non-zero value to this counter TRIM_CNTR2.COUNTER clears and counts up. TRIM_CNTR1.COUNTER counts down until TRIM_CNTR1.COUNTER==0"]
     #[inline(always)]
     pub fn counter(&self) -> COUNTER_R {
         COUNTER_R::new((self.bits & 0xffff) as u16)
     }
-    #[doc = "Bit 31"]
+    #[doc = "Bit 31 - Status bit indicating that TRIM_CNTR1.COUNTER==0 and TRIM_CNT2.COUNTER stopped counting up"]
     #[inline(always)]
     pub fn counter_done(&self) -> COUNTER_DONE_R {
         COUNTER_DONE_R::new(((self.bits >> 31) & 0x01) != 0)
     }
 }
 impl W {
-    #[doc = "Bits 0:15"]
+    #[doc = "Bits 0:15 - Down-counter clocked on clk_sys. By writing non-zero value to this counter TRIM_CNTR2.COUNTER clears and counts up. TRIM_CNTR1.COUNTER counts down until TRIM_CNTR1.COUNTER==0"]
     #[inline(always)]
     pub fn counter(&mut self) -> COUNTER_W {
         COUNTER_W { w: self }
@@ -101,7 +101,7 @@ impl W {
         self
     }
 }
-#[doc = "\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [tst_trim_cntr1](index.html) module"]
+#[doc = "IMO trim down-counter and status (clk_sys)\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [tst_trim_cntr1](index.html) module"]
 pub struct TST_TRIM_CNTR1_SPEC;
 impl crate::RegisterSpec for TST_TRIM_CNTR1_SPEC {
     type Ux = u32;

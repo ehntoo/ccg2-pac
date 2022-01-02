@@ -34,7 +34,7 @@ impl From<crate::W<WOUNDING_SPEC>> for W {
         W(writer)
     }
 }
-#[doc = "Field `RAM_WOUND` reader - "]
+#[doc = "Field `RAM_WOUND` reader - Indicates the amount of accessible RAM 0 memory capacitty in this part. The value in this field is effectively write-once (it is only possible to set bits, not clear them). The remainder portion of SRAM is not accessible and will return an AHB-Lite bus error. \"0\": entire memory accessible \"1\": first 1/2 of the memory accessible \"2\": first 1/4 of the memory accessible \"3\": first 1/8 of the memory accessible \"4\": first 1/16 of the memory accessible \"5\": first 1/32 of the memory accessible \"6\": first 1/64 of the memory accessible \"7\": first 1/128 of the memory accessible"]
 pub struct RAM_WOUND_R(crate::FieldReader<u8, u8>);
 impl RAM_WOUND_R {
     #[inline(always)]
@@ -49,7 +49,7 @@ impl core::ops::Deref for RAM_WOUND_R {
         &self.0
     }
 }
-#[doc = "Field `RAM_WOUND` writer - "]
+#[doc = "Field `RAM_WOUND` writer - Indicates the amount of accessible RAM 0 memory capacitty in this part. The value in this field is effectively write-once (it is only possible to set bits, not clear them). The remainder portion of SRAM is not accessible and will return an AHB-Lite bus error. \"0\": entire memory accessible \"1\": first 1/2 of the memory accessible \"2\": first 1/4 of the memory accessible \"3\": first 1/8 of the memory accessible \"4\": first 1/16 of the memory accessible \"5\": first 1/32 of the memory accessible \"6\": first 1/64 of the memory accessible \"7\": first 1/128 of the memory accessible"]
 pub struct RAM_WOUND_W<'a> {
     w: &'a mut W,
 }
@@ -61,7 +61,7 @@ impl<'a> RAM_WOUND_W<'a> {
         self.w
     }
 }
-#[doc = "Field `FLASH_WOUND` reader - "]
+#[doc = "Field `FLASH_WOUND` reader - Indicates the amount of accessible flash in this part. The value in this field is effectively write-once (it is only possible to set bits, not clear them). The remainder portion of flash is not accessible and will return an AHB-Lite bus error. \"0\": entire memory accessible \"1\": first 1/2 of the memory accessible \"2\": first 1/4 of the memory accessible \"3\": first 1/8 of the memory accessible \"4\": first 1/16 of the memory accessible \"5\": first 1/32 of the memory accessible \"6\": first 1/64 of the memory accessible \"7\": first 1/128 of the memory accessible (used for the DEAD protection mode)"]
 pub struct FLASH_WOUND_R(crate::FieldReader<u8, u8>);
 impl FLASH_WOUND_R {
     #[inline(always)]
@@ -76,7 +76,7 @@ impl core::ops::Deref for FLASH_WOUND_R {
         &self.0
     }
 }
-#[doc = "Field `FLASH_WOUND` writer - "]
+#[doc = "Field `FLASH_WOUND` writer - Indicates the amount of accessible flash in this part. The value in this field is effectively write-once (it is only possible to set bits, not clear them). The remainder portion of flash is not accessible and will return an AHB-Lite bus error. \"0\": entire memory accessible \"1\": first 1/2 of the memory accessible \"2\": first 1/4 of the memory accessible \"3\": first 1/8 of the memory accessible \"4\": first 1/16 of the memory accessible \"5\": first 1/32 of the memory accessible \"6\": first 1/64 of the memory accessible \"7\": first 1/128 of the memory accessible (used for the DEAD protection mode)"]
 pub struct FLASH_WOUND_W<'a> {
     w: &'a mut W,
 }
@@ -89,24 +89,24 @@ impl<'a> FLASH_WOUND_W<'a> {
     }
 }
 impl R {
-    #[doc = "Bits 16:18"]
+    #[doc = "Bits 16:18 - Indicates the amount of accessible RAM 0 memory capacitty in this part. The value in this field is effectively write-once (it is only possible to set bits, not clear them). The remainder portion of SRAM is not accessible and will return an AHB-Lite bus error. \"0\": entire memory accessible \"1\": first 1/2 of the memory accessible \"2\": first 1/4 of the memory accessible \"3\": first 1/8 of the memory accessible \"4\": first 1/16 of the memory accessible \"5\": first 1/32 of the memory accessible \"6\": first 1/64 of the memory accessible \"7\": first 1/128 of the memory accessible"]
     #[inline(always)]
     pub fn ram_wound(&self) -> RAM_WOUND_R {
         RAM_WOUND_R::new(((self.bits >> 16) & 0x07) as u8)
     }
-    #[doc = "Bits 20:22"]
+    #[doc = "Bits 20:22 - Indicates the amount of accessible flash in this part. The value in this field is effectively write-once (it is only possible to set bits, not clear them). The remainder portion of flash is not accessible and will return an AHB-Lite bus error. \"0\": entire memory accessible \"1\": first 1/2 of the memory accessible \"2\": first 1/4 of the memory accessible \"3\": first 1/8 of the memory accessible \"4\": first 1/16 of the memory accessible \"5\": first 1/32 of the memory accessible \"6\": first 1/64 of the memory accessible \"7\": first 1/128 of the memory accessible (used for the DEAD protection mode)"]
     #[inline(always)]
     pub fn flash_wound(&self) -> FLASH_WOUND_R {
         FLASH_WOUND_R::new(((self.bits >> 20) & 0x07) as u8)
     }
 }
 impl W {
-    #[doc = "Bits 16:18"]
+    #[doc = "Bits 16:18 - Indicates the amount of accessible RAM 0 memory capacitty in this part. The value in this field is effectively write-once (it is only possible to set bits, not clear them). The remainder portion of SRAM is not accessible and will return an AHB-Lite bus error. \"0\": entire memory accessible \"1\": first 1/2 of the memory accessible \"2\": first 1/4 of the memory accessible \"3\": first 1/8 of the memory accessible \"4\": first 1/16 of the memory accessible \"5\": first 1/32 of the memory accessible \"6\": first 1/64 of the memory accessible \"7\": first 1/128 of the memory accessible"]
     #[inline(always)]
     pub fn ram_wound(&mut self) -> RAM_WOUND_W {
         RAM_WOUND_W { w: self }
     }
-    #[doc = "Bits 20:22"]
+    #[doc = "Bits 20:22 - Indicates the amount of accessible flash in this part. The value in this field is effectively write-once (it is only possible to set bits, not clear them). The remainder portion of flash is not accessible and will return an AHB-Lite bus error. \"0\": entire memory accessible \"1\": first 1/2 of the memory accessible \"2\": first 1/4 of the memory accessible \"3\": first 1/8 of the memory accessible \"4\": first 1/16 of the memory accessible \"5\": first 1/32 of the memory accessible \"6\": first 1/64 of the memory accessible \"7\": first 1/128 of the memory accessible (used for the DEAD protection mode)"]
     #[inline(always)]
     pub fn flash_wound(&mut self) -> FLASH_WOUND_W {
         FLASH_WOUND_W { w: self }
@@ -118,7 +118,7 @@ impl W {
         self
     }
 }
-#[doc = "\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [wounding](index.html) module"]
+#[doc = "Wounding register Wounding is based on the FLASH/SRAM memory address range. This range is always the next power of 2 multiple of the FLASH/SRAM memory capacity. E.g., a 48 KByte SRAM capacity has a 64 KByte memory address range. With RAM_WOUND is \"0\", all 48 KByte SRAM capacity is accessible. With RAM_WOUND is \"1\", the first 32 KByte SRAM capacity is accessible. With RAM_WOUND is \"2\", the first 16 KByte SRAM capacity is accessible.\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [wounding](index.html) module"]
 pub struct WOUNDING_SPEC;
 impl crate::RegisterSpec for WOUNDING_SPEC {
     type Ux = u32;

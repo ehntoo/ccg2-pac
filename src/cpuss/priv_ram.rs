@@ -34,7 +34,7 @@ impl From<crate::W<PRIV_RAM_SPEC>> for W {
         W(writer)
     }
 }
-#[doc = "Field `RAM_PROT_LIMIT` reader - "]
+#[doc = "Field `RAM_PROT_LIMIT` reader - Indicates the limit where the privileged area of SRAM starts in increments of 256 Bytes. \"0\": Entire SRAM is Privileged. \"1\": First 256 Bytes are User accessable. Any number larger than the size of the SRAM indicates that the entire SRAM is user mode accessible."]
 pub struct RAM_PROT_LIMIT_R(crate::FieldReader<u16, u16>);
 impl RAM_PROT_LIMIT_R {
     #[inline(always)]
@@ -49,7 +49,7 @@ impl core::ops::Deref for RAM_PROT_LIMIT_R {
         &self.0
     }
 }
-#[doc = "Field `RAM_PROT_LIMIT` writer - "]
+#[doc = "Field `RAM_PROT_LIMIT` writer - Indicates the limit where the privileged area of SRAM starts in increments of 256 Bytes. \"0\": Entire SRAM is Privileged. \"1\": First 256 Bytes are User accessable. Any number larger than the size of the SRAM indicates that the entire SRAM is user mode accessible."]
 pub struct RAM_PROT_LIMIT_W<'a> {
     w: &'a mut W,
 }
@@ -62,14 +62,14 @@ impl<'a> RAM_PROT_LIMIT_W<'a> {
     }
 }
 impl R {
-    #[doc = "Bits 0:8"]
+    #[doc = "Bits 0:8 - Indicates the limit where the privileged area of SRAM starts in increments of 256 Bytes. \"0\": Entire SRAM is Privileged. \"1\": First 256 Bytes are User accessable. Any number larger than the size of the SRAM indicates that the entire SRAM is user mode accessible."]
     #[inline(always)]
     pub fn ram_prot_limit(&self) -> RAM_PROT_LIMIT_R {
         RAM_PROT_LIMIT_R::new((self.bits & 0x01ff) as u16)
     }
 }
 impl W {
-    #[doc = "Bits 0:8"]
+    #[doc = "Bits 0:8 - Indicates the limit where the privileged area of SRAM starts in increments of 256 Bytes. \"0\": Entire SRAM is Privileged. \"1\": First 256 Bytes are User accessable. Any number larger than the size of the SRAM indicates that the entire SRAM is user mode accessible."]
     #[inline(always)]
     pub fn ram_prot_limit(&mut self) -> RAM_PROT_LIMIT_W {
         RAM_PROT_LIMIT_W { w: self }
@@ -81,7 +81,7 @@ impl W {
         self
     }
 }
-#[doc = "\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [priv_ram](index.html) module"]
+#[doc = "RAM privilege register User mode accesses to a privileged address result in an AHB-Lite bus error. If the RAM memory capacity is not a power of two, the RAM memory region has an unpopulated/unaccounted memory are (at the end of the RAM memory region). A user mode access to an unpopulated, privileged area (as indicated by the LIMIT field(s)) address results in an AHB-Lite bus error. A user mode access to a unpopulated area, without any access violations, behaves as follows: Reads return \"0\" and writes are ignore (RZWI).\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [priv_ram](index.html) module"]
 pub struct PRIV_RAM_SPEC;
 impl crate::RegisterSpec for PRIV_RAM_SPEC {
     type Ux = u32;

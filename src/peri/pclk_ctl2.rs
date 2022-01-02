@@ -34,7 +34,7 @@ impl From<crate::W<PCLK_CTL2_SPEC>> for W {
         W(writer)
     }
 }
-#[doc = "Field `SEL_DIV` reader - "]
+#[doc = "Field `SEL_DIV` reader - Specifies one of the dividers of the divider type specified by SEL_TYPE. If SEL_DIV is \"63\" and \"SEL_TYPE\" is \"3\" (default/reset value), no divider is specified and no clock control signal(s) are generated. When transitioning a clock between two out of phase dividers, spurious clock control signals may be generated for one �clk_hf� cycle during this transition. These clock control signals may cause a single clock period that is smaller than any of the two divider periods. To prevent these spurious clock signals, the clock multiplexer can be disconnected (SEL_DIV is \"63\" and \"SEL_TYPE\" is \"3\") for a transition time that is larger than the smaller of the two divider periods."]
 pub struct SEL_DIV_R(crate::FieldReader<u8, u8>);
 impl SEL_DIV_R {
     #[inline(always)]
@@ -49,7 +49,7 @@ impl core::ops::Deref for SEL_DIV_R {
         &self.0
     }
 }
-#[doc = "Field `SEL_DIV` writer - "]
+#[doc = "Field `SEL_DIV` writer - Specifies one of the dividers of the divider type specified by SEL_TYPE. If SEL_DIV is \"63\" and \"SEL_TYPE\" is \"3\" (default/reset value), no divider is specified and no clock control signal(s) are generated. When transitioning a clock between two out of phase dividers, spurious clock control signals may be generated for one �clk_hf� cycle during this transition. These clock control signals may cause a single clock period that is smaller than any of the two divider periods. To prevent these spurious clock signals, the clock multiplexer can be disconnected (SEL_DIV is \"63\" and \"SEL_TYPE\" is \"3\") for a transition time that is larger than the smaller of the two divider periods."]
 pub struct SEL_DIV_W<'a> {
     w: &'a mut W,
 }
@@ -61,7 +61,7 @@ impl<'a> SEL_DIV_W<'a> {
         self.w
     }
 }
-#[doc = "Field `SEL_TYPE` reader - "]
+#[doc = "Field `SEL_TYPE` reader - Specifies divider type: 0: 8.0 (integer) clock dividers. 1: 16.0 (integer) clock dividers. 2: 16.5 (fractional) clock dividers. 3: 24.5 (fractional) clock dividers."]
 pub struct SEL_TYPE_R(crate::FieldReader<u8, u8>);
 impl SEL_TYPE_R {
     #[inline(always)]
@@ -76,7 +76,7 @@ impl core::ops::Deref for SEL_TYPE_R {
         &self.0
     }
 }
-#[doc = "Field `SEL_TYPE` writer - "]
+#[doc = "Field `SEL_TYPE` writer - Specifies divider type: 0: 8.0 (integer) clock dividers. 1: 16.0 (integer) clock dividers. 2: 16.5 (fractional) clock dividers. 3: 24.5 (fractional) clock dividers."]
 pub struct SEL_TYPE_W<'a> {
     w: &'a mut W,
 }
@@ -89,24 +89,24 @@ impl<'a> SEL_TYPE_W<'a> {
     }
 }
 impl R {
-    #[doc = "Bits 0:1"]
+    #[doc = "Bits 0:1 - Specifies one of the dividers of the divider type specified by SEL_TYPE. If SEL_DIV is \"63\" and \"SEL_TYPE\" is \"3\" (default/reset value), no divider is specified and no clock control signal(s) are generated. When transitioning a clock between two out of phase dividers, spurious clock control signals may be generated for one �clk_hf� cycle during this transition. These clock control signals may cause a single clock period that is smaller than any of the two divider periods. To prevent these spurious clock signals, the clock multiplexer can be disconnected (SEL_DIV is \"63\" and \"SEL_TYPE\" is \"3\") for a transition time that is larger than the smaller of the two divider periods."]
     #[inline(always)]
     pub fn sel_div(&self) -> SEL_DIV_R {
         SEL_DIV_R::new((self.bits & 0x03) as u8)
     }
-    #[doc = "Bits 6:7"]
+    #[doc = "Bits 6:7 - Specifies divider type: 0: 8.0 (integer) clock dividers. 1: 16.0 (integer) clock dividers. 2: 16.5 (fractional) clock dividers. 3: 24.5 (fractional) clock dividers."]
     #[inline(always)]
     pub fn sel_type(&self) -> SEL_TYPE_R {
         SEL_TYPE_R::new(((self.bits >> 6) & 0x03) as u8)
     }
 }
 impl W {
-    #[doc = "Bits 0:1"]
+    #[doc = "Bits 0:1 - Specifies one of the dividers of the divider type specified by SEL_TYPE. If SEL_DIV is \"63\" and \"SEL_TYPE\" is \"3\" (default/reset value), no divider is specified and no clock control signal(s) are generated. When transitioning a clock between two out of phase dividers, spurious clock control signals may be generated for one �clk_hf� cycle during this transition. These clock control signals may cause a single clock period that is smaller than any of the two divider periods. To prevent these spurious clock signals, the clock multiplexer can be disconnected (SEL_DIV is \"63\" and \"SEL_TYPE\" is \"3\") for a transition time that is larger than the smaller of the two divider periods."]
     #[inline(always)]
     pub fn sel_div(&mut self) -> SEL_DIV_W {
         SEL_DIV_W { w: self }
     }
-    #[doc = "Bits 6:7"]
+    #[doc = "Bits 6:7 - Specifies divider type: 0: 8.0 (integer) clock dividers. 1: 16.0 (integer) clock dividers. 2: 16.5 (fractional) clock dividers. 3: 24.5 (fractional) clock dividers."]
     #[inline(always)]
     pub fn sel_type(&mut self) -> SEL_TYPE_W {
         SEL_TYPE_W { w: self }
@@ -118,7 +118,7 @@ impl W {
         self
     }
 }
-#[doc = "\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [pclk_ctl2](index.html) module"]
+#[doc = "Programmable clock control register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [pclk_ctl2](index.html) module"]
 pub struct PCLK_CTL2_SPEC;
 impl crate::RegisterSpec for PCLK_CTL2_SPEC {
     type Ux = u32;

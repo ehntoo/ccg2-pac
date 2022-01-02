@@ -34,7 +34,7 @@ impl From<crate::W<INTER_PACKET_COUNTER_SPEC>> for W {
         W(writer)
     }
 }
-#[doc = "Field `BUS_IDLE_CNT` reader - "]
+#[doc = "Field `BUS_IDLE_CNT` reader - USED FOR TX->TX This register is used by DUT to create gap between two back to back transmit packets. For example: For a DFP application if DFP wants to send Hard Reset after a valid packet, then this register could be used for complying with Inter-Packet Gap of 25 usec specified by spec. In cable application, after sending Good CRC handshake for request from DUT, this register could be used to comply with 750usec requirement of cable response after sending Good CRC pkt."]
 pub struct BUS_IDLE_CNT_R(crate::FieldReader<u16, u16>);
 impl BUS_IDLE_CNT_R {
     #[inline(always)]
@@ -49,7 +49,7 @@ impl core::ops::Deref for BUS_IDLE_CNT_R {
         &self.0
     }
 }
-#[doc = "Field `BUS_IDLE_CNT` writer - "]
+#[doc = "Field `BUS_IDLE_CNT` writer - USED FOR TX->TX This register is used by DUT to create gap between two back to back transmit packets. For example: For a DFP application if DFP wants to send Hard Reset after a valid packet, then this register could be used for complying with Inter-Packet Gap of 25 usec specified by spec. In cable application, after sending Good CRC handshake for request from DUT, this register could be used to comply with 750usec requirement of cable response after sending Good CRC pkt."]
 pub struct BUS_IDLE_CNT_W<'a> {
     w: &'a mut W,
 }
@@ -61,7 +61,7 @@ impl<'a> BUS_IDLE_CNT_W<'a> {
         self.w
     }
 }
-#[doc = "Field `IDLE_COUNTER` reader - "]
+#[doc = "Field `IDLE_COUNTER` reader - RX -> AUTO_GOODCRC_RESPONSE This counter specifies how long the HW should wait after the end of RX packet to send GoodCRC message. This can be used to comply with interpacket gap of 25usec. 0: Counter is disabled. Hardware will issue goodcrc message if needed after end of the RX Packet"]
 pub struct IDLE_COUNTER_R(crate::FieldReader<u16, u16>);
 impl IDLE_COUNTER_R {
     #[inline(always)]
@@ -76,7 +76,7 @@ impl core::ops::Deref for IDLE_COUNTER_R {
         &self.0
     }
 }
-#[doc = "Field `IDLE_COUNTER` writer - "]
+#[doc = "Field `IDLE_COUNTER` writer - RX -> AUTO_GOODCRC_RESPONSE This counter specifies how long the HW should wait after the end of RX packet to send GoodCRC message. This can be used to comply with interpacket gap of 25usec. 0: Counter is disabled. Hardware will issue goodcrc message if needed after end of the RX Packet"]
 pub struct IDLE_COUNTER_W<'a> {
     w: &'a mut W,
 }
@@ -88,7 +88,7 @@ impl<'a> IDLE_COUNTER_W<'a> {
         self.w
     }
 }
-#[doc = "Field `IFG_COUNTER` reader - "]
+#[doc = "Field `IFG_COUNTER` reader - END OF ANY RX ON CC-LINE On any RX Packet, this counter will start at end of RX Packet and will reset on Start of RX Packet. This register can be again used to comply with Interpacket Gap (25 usec + end of IDLE detection(12 usec)). CPU after seeing no activity on the bus can immedeately set the TX_GO/TX_SEND_RST bit and this register will make sure that we don't violate any interpacket gap requirement. 0: Counter is disabled."]
 pub struct IFG_COUNTER_R(crate::FieldReader<u16, u16>);
 impl IFG_COUNTER_R {
     #[inline(always)]
@@ -103,7 +103,7 @@ impl core::ops::Deref for IFG_COUNTER_R {
         &self.0
     }
 }
-#[doc = "Field `IFG_COUNTER` writer - "]
+#[doc = "Field `IFG_COUNTER` writer - END OF ANY RX ON CC-LINE On any RX Packet, this counter will start at end of RX Packet and will reset on Start of RX Packet. This register can be again used to comply with Interpacket Gap (25 usec + end of IDLE detection(12 usec)). CPU after seeing no activity on the bus can immedeately set the TX_GO/TX_SEND_RST bit and this register will make sure that we don't violate any interpacket gap requirement. 0: Counter is disabled."]
 pub struct IFG_COUNTER_W<'a> {
     w: &'a mut W,
 }
@@ -116,34 +116,34 @@ impl<'a> IFG_COUNTER_W<'a> {
     }
 }
 impl R {
-    #[doc = "Bits 0:10"]
+    #[doc = "Bits 0:10 - USED FOR TX->TX This register is used by DUT to create gap between two back to back transmit packets. For example: For a DFP application if DFP wants to send Hard Reset after a valid packet, then this register could be used for complying with Inter-Packet Gap of 25 usec specified by spec. In cable application, after sending Good CRC handshake for request from DUT, this register could be used to comply with 750usec requirement of cable response after sending Good CRC pkt."]
     #[inline(always)]
     pub fn bus_idle_cnt(&self) -> BUS_IDLE_CNT_R {
         BUS_IDLE_CNT_R::new((self.bits & 0x07ff) as u16)
     }
-    #[doc = "Bits 11:20"]
+    #[doc = "Bits 11:20 - RX -> AUTO_GOODCRC_RESPONSE This counter specifies how long the HW should wait after the end of RX packet to send GoodCRC message. This can be used to comply with interpacket gap of 25usec. 0: Counter is disabled. Hardware will issue goodcrc message if needed after end of the RX Packet"]
     #[inline(always)]
     pub fn idle_counter(&self) -> IDLE_COUNTER_R {
         IDLE_COUNTER_R::new(((self.bits >> 11) & 0x03ff) as u16)
     }
-    #[doc = "Bits 21:31"]
+    #[doc = "Bits 21:31 - END OF ANY RX ON CC-LINE On any RX Packet, this counter will start at end of RX Packet and will reset on Start of RX Packet. This register can be again used to comply with Interpacket Gap (25 usec + end of IDLE detection(12 usec)). CPU after seeing no activity on the bus can immedeately set the TX_GO/TX_SEND_RST bit and this register will make sure that we don't violate any interpacket gap requirement. 0: Counter is disabled."]
     #[inline(always)]
     pub fn ifg_counter(&self) -> IFG_COUNTER_R {
         IFG_COUNTER_R::new(((self.bits >> 21) & 0x07ff) as u16)
     }
 }
 impl W {
-    #[doc = "Bits 0:10"]
+    #[doc = "Bits 0:10 - USED FOR TX->TX This register is used by DUT to create gap between two back to back transmit packets. For example: For a DFP application if DFP wants to send Hard Reset after a valid packet, then this register could be used for complying with Inter-Packet Gap of 25 usec specified by spec. In cable application, after sending Good CRC handshake for request from DUT, this register could be used to comply with 750usec requirement of cable response after sending Good CRC pkt."]
     #[inline(always)]
     pub fn bus_idle_cnt(&mut self) -> BUS_IDLE_CNT_W {
         BUS_IDLE_CNT_W { w: self }
     }
-    #[doc = "Bits 11:20"]
+    #[doc = "Bits 11:20 - RX -> AUTO_GOODCRC_RESPONSE This counter specifies how long the HW should wait after the end of RX packet to send GoodCRC message. This can be used to comply with interpacket gap of 25usec. 0: Counter is disabled. Hardware will issue goodcrc message if needed after end of the RX Packet"]
     #[inline(always)]
     pub fn idle_counter(&mut self) -> IDLE_COUNTER_W {
         IDLE_COUNTER_W { w: self }
     }
-    #[doc = "Bits 21:31"]
+    #[doc = "Bits 21:31 - END OF ANY RX ON CC-LINE On any RX Packet, this counter will start at end of RX Packet and will reset on Start of RX Packet. This register can be again used to comply with Interpacket Gap (25 usec + end of IDLE detection(12 usec)). CPU after seeing no activity on the bus can immedeately set the TX_GO/TX_SEND_RST bit and this register will make sure that we don't violate any interpacket gap requirement. 0: Counter is disabled."]
     #[inline(always)]
     pub fn ifg_counter(&mut self) -> IFG_COUNTER_W {
         IFG_COUNTER_W { w: self }
@@ -155,7 +155,7 @@ impl W {
         self
     }
 }
-#[doc = "\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [inter_packet_counter](index.html) module"]
+#[doc = "The Inter Packet counters Counters used for IDLE/IFG and by this IP All the timers/counters have a resolution of 1 UI (Unit Interval) of a Bit. If transmit rate is 300Khz, then each count will tick for 3.33 usec.\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [inter_packet_counter](index.html) module"]
 pub struct INTER_PACKET_COUNTER_SPEC;
 impl crate::RegisterSpec for INTER_PACKET_COUNTER_SPEC {
     type Ux = u32;

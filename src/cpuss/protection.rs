@@ -34,7 +34,7 @@ impl From<crate::W<PROTECTION_SPEC>> for W {
         W(writer)
     }
 }
-#[doc = "Field `PROTECTION_MODE` reader - "]
+#[doc = "Field `PROTECTION_MODE` reader - Current protection mode; this field is available as a global signal everywhere in the system. Writes to this field are ignored when PROTECTION_LOCK is '1': 0b1xxx: BOOT 0b01xx: KILL 0b001x: PROTECTED 0b0001: OPEN 0b0000: VIRGIN (also used for DEAD mode, but then FLASH_LOCK is also set)"]
 pub struct PROTECTION_MODE_R(crate::FieldReader<u8, u8>);
 impl PROTECTION_MODE_R {
     #[inline(always)]
@@ -49,7 +49,7 @@ impl core::ops::Deref for PROTECTION_MODE_R {
         &self.0
     }
 }
-#[doc = "Field `PROTECTION_MODE` writer - "]
+#[doc = "Field `PROTECTION_MODE` writer - Current protection mode; this field is available as a global signal everywhere in the system. Writes to this field are ignored when PROTECTION_LOCK is '1': 0b1xxx: BOOT 0b01xx: KILL 0b001x: PROTECTED 0b0001: OPEN 0b0000: VIRGIN (also used for DEAD mode, but then FLASH_LOCK is also set)"]
 pub struct PROTECTION_MODE_W<'a> {
     w: &'a mut W,
 }
@@ -61,7 +61,7 @@ impl<'a> PROTECTION_MODE_W<'a> {
         self.w
     }
 }
-#[doc = "Field `FLASH_LOCK` reader - "]
+#[doc = "Field `FLASH_LOCK` reader - Setting this bit will force SPCIF.ADDRESS.AXA to be ignored, which prevents SM Flash from being erased or overwritten. It is used to indicate the DEAD protection mode. Writes to this field are ignored when PROTECTION_LOCK is '1'"]
 pub struct FLASH_LOCK_R(crate::FieldReader<bool, bool>);
 impl FLASH_LOCK_R {
     #[inline(always)]
@@ -76,7 +76,7 @@ impl core::ops::Deref for FLASH_LOCK_R {
         &self.0
     }
 }
-#[doc = "Field `FLASH_LOCK` writer - "]
+#[doc = "Field `FLASH_LOCK` writer - Setting this bit will force SPCIF.ADDRESS.AXA to be ignored, which prevents SM Flash from being erased or overwritten. It is used to indicate the DEAD protection mode. Writes to this field are ignored when PROTECTION_LOCK is '1'"]
 pub struct FLASH_LOCK_W<'a> {
     w: &'a mut W,
 }
@@ -98,7 +98,7 @@ impl<'a> FLASH_LOCK_W<'a> {
         self.w
     }
 }
-#[doc = "Field `PROTECTION_LOCK` reader - "]
+#[doc = "Field `PROTECTION_LOCK` reader - Setting this field will block (ignore) any further writes to the PROTECTION_MODE field in this register. Once '1', this field cannot be cleared."]
 pub struct PROTECTION_LOCK_R(crate::FieldReader<bool, bool>);
 impl PROTECTION_LOCK_R {
     #[inline(always)]
@@ -113,7 +113,7 @@ impl core::ops::Deref for PROTECTION_LOCK_R {
         &self.0
     }
 }
-#[doc = "Field `PROTECTION_LOCK` writer - "]
+#[doc = "Field `PROTECTION_LOCK` writer - Setting this field will block (ignore) any further writes to the PROTECTION_MODE field in this register. Once '1', this field cannot be cleared."]
 pub struct PROTECTION_LOCK_W<'a> {
     w: &'a mut W,
 }
@@ -136,34 +136,34 @@ impl<'a> PROTECTION_LOCK_W<'a> {
     }
 }
 impl R {
-    #[doc = "Bits 0:3"]
+    #[doc = "Bits 0:3 - Current protection mode; this field is available as a global signal everywhere in the system. Writes to this field are ignored when PROTECTION_LOCK is '1': 0b1xxx: BOOT 0b01xx: KILL 0b001x: PROTECTED 0b0001: OPEN 0b0000: VIRGIN (also used for DEAD mode, but then FLASH_LOCK is also set)"]
     #[inline(always)]
     pub fn protection_mode(&self) -> PROTECTION_MODE_R {
         PROTECTION_MODE_R::new((self.bits & 0x0f) as u8)
     }
-    #[doc = "Bit 30"]
+    #[doc = "Bit 30 - Setting this bit will force SPCIF.ADDRESS.AXA to be ignored, which prevents SM Flash from being erased or overwritten. It is used to indicate the DEAD protection mode. Writes to this field are ignored when PROTECTION_LOCK is '1'"]
     #[inline(always)]
     pub fn flash_lock(&self) -> FLASH_LOCK_R {
         FLASH_LOCK_R::new(((self.bits >> 30) & 0x01) != 0)
     }
-    #[doc = "Bit 31"]
+    #[doc = "Bit 31 - Setting this field will block (ignore) any further writes to the PROTECTION_MODE field in this register. Once '1', this field cannot be cleared."]
     #[inline(always)]
     pub fn protection_lock(&self) -> PROTECTION_LOCK_R {
         PROTECTION_LOCK_R::new(((self.bits >> 31) & 0x01) != 0)
     }
 }
 impl W {
-    #[doc = "Bits 0:3"]
+    #[doc = "Bits 0:3 - Current protection mode; this field is available as a global signal everywhere in the system. Writes to this field are ignored when PROTECTION_LOCK is '1': 0b1xxx: BOOT 0b01xx: KILL 0b001x: PROTECTED 0b0001: OPEN 0b0000: VIRGIN (also used for DEAD mode, but then FLASH_LOCK is also set)"]
     #[inline(always)]
     pub fn protection_mode(&mut self) -> PROTECTION_MODE_W {
         PROTECTION_MODE_W { w: self }
     }
-    #[doc = "Bit 30"]
+    #[doc = "Bit 30 - Setting this bit will force SPCIF.ADDRESS.AXA to be ignored, which prevents SM Flash from being erased or overwritten. It is used to indicate the DEAD protection mode. Writes to this field are ignored when PROTECTION_LOCK is '1'"]
     #[inline(always)]
     pub fn flash_lock(&mut self) -> FLASH_LOCK_W {
         FLASH_LOCK_W { w: self }
     }
-    #[doc = "Bit 31"]
+    #[doc = "Bit 31 - Setting this field will block (ignore) any further writes to the PROTECTION_MODE field in this register. Once '1', this field cannot be cleared."]
     #[inline(always)]
     pub fn protection_lock(&mut self) -> PROTECTION_LOCK_W {
         PROTECTION_LOCK_W { w: self }
@@ -175,7 +175,7 @@ impl W {
         self
     }
 }
-#[doc = "\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [protection](index.html) module"]
+#[doc = "Protection control register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [protection](index.html) module"]
 pub struct PROTECTION_SPEC;
 impl crate::RegisterSpec for PROTECTION_SPEC {
     type Ux = u32;

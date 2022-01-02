@@ -34,7 +34,7 @@ impl From<crate::W<TST_DDFT_CTRL_SPEC>> for W {
         W(writer)
     }
 }
-#[doc = "\n\nValue on reset: 15"]
+#[doc = "Select signal for DDFT output #0\n\nValue on reset: 15"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u8)]
 pub enum DFT_SEL0_A {
@@ -77,7 +77,7 @@ impl From<DFT_SEL0_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `DFT_SEL0` reader - "]
+#[doc = "Field `DFT_SEL0` reader - Select signal for DDFT output #0"]
 pub struct DFT_SEL0_R(crate::FieldReader<u8, DFT_SEL0_A>);
 impl DFT_SEL0_R {
     #[inline(always)]
@@ -195,7 +195,7 @@ impl core::ops::Deref for DFT_SEL0_R {
         &self.0
     }
 }
-#[doc = "Field `DFT_SEL0` writer - "]
+#[doc = "Field `DFT_SEL0` writer - Select signal for DDFT output #0"]
 pub struct DFT_SEL0_W<'a> {
     w: &'a mut W,
 }
@@ -292,7 +292,7 @@ impl<'a> DFT_SEL0_W<'a> {
         self.w
     }
 }
-#[doc = "\n\nValue on reset: 15"]
+#[doc = "Select signal for DDFT output #1\n\nValue on reset: 15"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u8)]
 pub enum DFT_SEL1_A {
@@ -335,7 +335,7 @@ impl From<DFT_SEL1_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `DFT_SEL1` reader - "]
+#[doc = "Field `DFT_SEL1` reader - Select signal for DDFT output #1"]
 pub struct DFT_SEL1_R(crate::FieldReader<u8, DFT_SEL1_A>);
 impl DFT_SEL1_R {
     #[inline(always)]
@@ -453,7 +453,7 @@ impl core::ops::Deref for DFT_SEL1_R {
         &self.0
     }
 }
-#[doc = "Field `DFT_SEL1` writer - "]
+#[doc = "Field `DFT_SEL1` writer - Select signal for DDFT output #1"]
 pub struct DFT_SEL1_W<'a> {
     w: &'a mut W,
 }
@@ -550,7 +550,7 @@ impl<'a> DFT_SEL1_W<'a> {
         self.w
     }
 }
-#[doc = "Field `ENABLE` reader - "]
+#[doc = "Field `ENABLE` reader - 1: Enables DDFT functionality. Connects output of DDFT mux to designated DDFT pin."]
 pub struct ENABLE_R(crate::FieldReader<bool, bool>);
 impl ENABLE_R {
     #[inline(always)]
@@ -565,7 +565,7 @@ impl core::ops::Deref for ENABLE_R {
         &self.0
     }
 }
-#[doc = "Field `ENABLE` writer - "]
+#[doc = "Field `ENABLE` writer - 1: Enables DDFT functionality. Connects output of DDFT mux to designated DDFT pin."]
 pub struct ENABLE_W<'a> {
     w: &'a mut W,
 }
@@ -588,34 +588,34 @@ impl<'a> ENABLE_W<'a> {
     }
 }
 impl R {
-    #[doc = "Bits 0:3"]
+    #[doc = "Bits 0:3 - Select signal for DDFT output #0"]
     #[inline(always)]
     pub fn dft_sel0(&self) -> DFT_SEL0_R {
         DFT_SEL0_R::new((self.bits & 0x0f) as u8)
     }
-    #[doc = "Bits 8:11"]
+    #[doc = "Bits 8:11 - Select signal for DDFT output #1"]
     #[inline(always)]
     pub fn dft_sel1(&self) -> DFT_SEL1_R {
         DFT_SEL1_R::new(((self.bits >> 8) & 0x0f) as u8)
     }
-    #[doc = "Bit 31"]
+    #[doc = "Bit 31 - 1: Enables DDFT functionality. Connects output of DDFT mux to designated DDFT pin."]
     #[inline(always)]
     pub fn enable(&self) -> ENABLE_R {
         ENABLE_R::new(((self.bits >> 31) & 0x01) != 0)
     }
 }
 impl W {
-    #[doc = "Bits 0:3"]
+    #[doc = "Bits 0:3 - Select signal for DDFT output #0"]
     #[inline(always)]
     pub fn dft_sel0(&mut self) -> DFT_SEL0_W {
         DFT_SEL0_W { w: self }
     }
-    #[doc = "Bits 8:11"]
+    #[doc = "Bits 8:11 - Select signal for DDFT output #1"]
     #[inline(always)]
     pub fn dft_sel1(&mut self) -> DFT_SEL1_W {
         DFT_SEL1_W { w: self }
     }
-    #[doc = "Bit 31"]
+    #[doc = "Bit 31 - 1: Enables DDFT functionality. Connects output of DDFT mux to designated DDFT pin."]
     #[inline(always)]
     pub fn enable(&mut self) -> ENABLE_W {
         ENABLE_W { w: self }
@@ -627,7 +627,7 @@ impl W {
         self
     }
 }
-#[doc = "\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [tst_ddft_ctrl](index.html) module"]
+#[doc = "Digital DFT Control Register Controls system level DDFT observability muxes and comparators.\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [tst_ddft_ctrl](index.html) module"]
 pub struct TST_DDFT_CTRL_SPEC;
 impl crate::RegisterSpec for TST_DDFT_CTRL_SPEC {
     type Ux = u32;

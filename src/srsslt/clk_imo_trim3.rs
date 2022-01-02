@@ -34,7 +34,7 @@ impl From<crate::W<CLK_IMO_TRIM3_SPEC>> for W {
         W(writer)
     }
 }
-#[doc = "Field `STEPSIZE` reader - "]
+#[doc = "Field `STEPSIZE` reader - IMO trim stepsize bits. These bits are determined at manufacturing time to adjust for process variation. They are used to tune the stepsize of the FSOFFSET and OFFSET trims."]
 pub struct STEPSIZE_R(crate::FieldReader<u8, u8>);
 impl STEPSIZE_R {
     #[inline(always)]
@@ -49,7 +49,7 @@ impl core::ops::Deref for STEPSIZE_R {
         &self.0
     }
 }
-#[doc = "Field `STEPSIZE` writer - "]
+#[doc = "Field `STEPSIZE` writer - IMO trim stepsize bits. These bits are determined at manufacturing time to adjust for process variation. They are used to tune the stepsize of the FSOFFSET and OFFSET trims."]
 pub struct STEPSIZE_W<'a> {
     w: &'a mut W,
 }
@@ -61,7 +61,7 @@ impl<'a> STEPSIZE_W<'a> {
         self.w
     }
 }
-#[doc = "Field `TCTRIM` reader - "]
+#[doc = "Field `TCTRIM` reader - IMO temperature compesation trim. These bits are determined at manufacturing time to adjust for temperature dependence. This bits are dependent on frequency and need to be changed using the Cypress provided frequency change algorithm."]
 pub struct TCTRIM_R(crate::FieldReader<u8, u8>);
 impl TCTRIM_R {
     #[inline(always)]
@@ -76,7 +76,7 @@ impl core::ops::Deref for TCTRIM_R {
         &self.0
     }
 }
-#[doc = "Field `TCTRIM` writer - "]
+#[doc = "Field `TCTRIM` writer - IMO temperature compesation trim. These bits are determined at manufacturing time to adjust for temperature dependence. This bits are dependent on frequency and need to be changed using the Cypress provided frequency change algorithm."]
 pub struct TCTRIM_W<'a> {
     w: &'a mut W,
 }
@@ -89,24 +89,24 @@ impl<'a> TCTRIM_W<'a> {
     }
 }
 impl R {
-    #[doc = "Bits 0:4"]
+    #[doc = "Bits 0:4 - IMO trim stepsize bits. These bits are determined at manufacturing time to adjust for process variation. They are used to tune the stepsize of the FSOFFSET and OFFSET trims."]
     #[inline(always)]
     pub fn stepsize(&self) -> STEPSIZE_R {
         STEPSIZE_R::new((self.bits & 0x1f) as u8)
     }
-    #[doc = "Bits 5:6"]
+    #[doc = "Bits 5:6 - IMO temperature compesation trim. These bits are determined at manufacturing time to adjust for temperature dependence. This bits are dependent on frequency and need to be changed using the Cypress provided frequency change algorithm."]
     #[inline(always)]
     pub fn tctrim(&self) -> TCTRIM_R {
         TCTRIM_R::new(((self.bits >> 5) & 0x03) as u8)
     }
 }
 impl W {
-    #[doc = "Bits 0:4"]
+    #[doc = "Bits 0:4 - IMO trim stepsize bits. These bits are determined at manufacturing time to adjust for process variation. They are used to tune the stepsize of the FSOFFSET and OFFSET trims."]
     #[inline(always)]
     pub fn stepsize(&mut self) -> STEPSIZE_W {
         STEPSIZE_W { w: self }
     }
-    #[doc = "Bits 5:6"]
+    #[doc = "Bits 5:6 - IMO temperature compesation trim. These bits are determined at manufacturing time to adjust for temperature dependence. This bits are dependent on frequency and need to be changed using the Cypress provided frequency change algorithm."]
     #[inline(always)]
     pub fn tctrim(&mut self) -> TCTRIM_W {
         TCTRIM_W { w: self }
@@ -118,7 +118,7 @@ impl W {
         self
     }
 }
-#[doc = "\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [clk_imo_trim3](index.html) module"]
+#[doc = "IMO Trim Register IMO Trim Bits. Entire register is engineering only.\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [clk_imo_trim3](index.html) module"]
 pub struct CLK_IMO_TRIM3_SPEC;
 impl crate::RegisterSpec for CLK_IMO_TRIM3_SPEC {
     type Ux = u32;

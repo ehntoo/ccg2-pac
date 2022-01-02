@@ -13,7 +13,7 @@ impl From<crate::R<PS_SPEC>> for R {
         R(reader)
     }
 }
-#[doc = "Field `DATA0` reader - "]
+#[doc = "Field `DATA0` reader - IO pad 0 state: 1: Logic high, if the pin voltage is above the input buffer threshold, logic high. 0: Logic low, if the pin voltage is below that threshold, logic low. If the drive mode for the pin is set to high Z Analog, the pin state will read 0 independent of the voltage on the pin."]
 pub struct DATA0_R(crate::FieldReader<bool, bool>);
 impl DATA0_R {
     #[inline(always)]
@@ -28,7 +28,7 @@ impl core::ops::Deref for DATA0_R {
         &self.0
     }
 }
-#[doc = "Field `DATA1` reader - "]
+#[doc = "Field `DATA1` reader - IO pad 1 state."]
 pub struct DATA1_R(crate::FieldReader<bool, bool>);
 impl DATA1_R {
     #[inline(always)]
@@ -73,7 +73,7 @@ impl core::ops::Deref for DATA3_R {
         &self.0
     }
 }
-#[doc = "Field `FLT_DATA` reader - "]
+#[doc = "Field `FLT_DATA` reader - Reads of this register return the logical state of the filtered pin."]
 pub struct FLT_DATA_R(crate::FieldReader<bool, bool>);
 impl FLT_DATA_R {
     #[inline(always)]
@@ -89,12 +89,12 @@ impl core::ops::Deref for FLT_DATA_R {
     }
 }
 impl R {
-    #[doc = "Bit 0"]
+    #[doc = "Bit 0 - IO pad 0 state: 1: Logic high, if the pin voltage is above the input buffer threshold, logic high. 0: Logic low, if the pin voltage is below that threshold, logic low. If the drive mode for the pin is set to high Z Analog, the pin state will read 0 independent of the voltage on the pin."]
     #[inline(always)]
     pub fn data0(&self) -> DATA0_R {
         DATA0_R::new((self.bits & 0x01) != 0)
     }
-    #[doc = "Bit 1"]
+    #[doc = "Bit 1 - IO pad 1 state."]
     #[inline(always)]
     pub fn data1(&self) -> DATA1_R {
         DATA1_R::new(((self.bits >> 1) & 0x01) != 0)
@@ -109,13 +109,13 @@ impl R {
     pub fn data3(&self) -> DATA3_R {
         DATA3_R::new(((self.bits >> 3) & 0x01) != 0)
     }
-    #[doc = "Bit 8"]
+    #[doc = "Bit 8 - Reads of this register return the logical state of the filtered pin."]
     #[inline(always)]
     pub fn flt_data(&self) -> FLT_DATA_R {
         FLT_DATA_R::new(((self.bits >> 8) & 0x01) != 0)
     }
 }
-#[doc = "\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [ps](index.html) module"]
+#[doc = "Port IO pad state register Used to read. Writes to this register have no effect. If the drive mode for the pin is set to high Z Analog, the state will read 0 independent of the voltage on the pin.\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [ps](index.html) module"]
 pub struct PS_SPEC;
 impl crate::RegisterSpec for PS_SPEC {
     type Ux = u32;

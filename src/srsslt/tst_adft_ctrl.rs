@@ -34,7 +34,7 @@ impl From<crate::W<TST_ADFT_CTRL_SPEC>> for W {
         W(writer)
     }
 }
-#[doc = "Field `BUF_AUTO_ZERO` reader - "]
+#[doc = "Field `BUF_AUTO_ZERO` reader - The ADFT buffer/comparator has a common mode dependent offset that can be greatly reduced by using this register bit. After settling the input signal(s), toggle this bit high briefly to sample and componsate for the offset. The buffer/comparator output will be unreliable when this bit is set."]
 pub struct BUF_AUTO_ZERO_R(crate::FieldReader<bool, bool>);
 impl BUF_AUTO_ZERO_R {
     #[inline(always)]
@@ -49,7 +49,7 @@ impl core::ops::Deref for BUF_AUTO_ZERO_R {
         &self.0
     }
 }
-#[doc = "Field `BUF_AUTO_ZERO` writer - "]
+#[doc = "Field `BUF_AUTO_ZERO` writer - The ADFT buffer/comparator has a common mode dependent offset that can be greatly reduced by using this register bit. After settling the input signal(s), toggle this bit high briefly to sample and componsate for the offset. The buffer/comparator output will be unreliable when this bit is set."]
 pub struct BUF_AUTO_ZERO_W<'a> {
     w: &'a mut W,
 }
@@ -71,7 +71,7 @@ impl<'a> BUF_AUTO_ZERO_W<'a> {
         self.w
     }
 }
-#[doc = "Field `BUF_MODE` reader - "]
+#[doc = "Field `BUF_MODE` reader - Selects the operating mode for the ADFT buffer/comparator: 0: Voltage buffer, input is amuxbusa, output is amuxbusb 1: Voltage buffer, input is amuxbusb, output is amuxbusa 2: Comparator, input+ is amuxbusa, input- is amuxbusb 3: Comparator, input+ is amuxbusb, input- is amuxbusa"]
 pub struct BUF_MODE_R(crate::FieldReader<u8, u8>);
 impl BUF_MODE_R {
     #[inline(always)]
@@ -86,7 +86,7 @@ impl core::ops::Deref for BUF_MODE_R {
         &self.0
     }
 }
-#[doc = "Field `BUF_MODE` writer - "]
+#[doc = "Field `BUF_MODE` writer - Selects the operating mode for the ADFT buffer/comparator: 0: Voltage buffer, input is amuxbusa, output is amuxbusb 1: Voltage buffer, input is amuxbusb, output is amuxbusa 2: Comparator, input+ is amuxbusa, input- is amuxbusb 3: Comparator, input+ is amuxbusb, input- is amuxbusa"]
 pub struct BUF_MODE_W<'a> {
     w: &'a mut W,
 }
@@ -98,7 +98,7 @@ impl<'a> BUF_MODE_W<'a> {
         self.w
     }
 }
-#[doc = "Field `BUF_COMP_OUT` reader - "]
+#[doc = "Field `BUF_COMP_OUT` reader - Output of the ADFT comparator, 0 if in analog voltage buffer mode. This bit is also observable as a DDFT signal (see PWR_DDFT_SELECT)."]
 pub struct BUF_COMP_OUT_R(crate::FieldReader<bool, bool>);
 impl BUF_COMP_OUT_R {
     #[inline(always)]
@@ -113,7 +113,7 @@ impl core::ops::Deref for BUF_COMP_OUT_R {
         &self.0
     }
 }
-#[doc = "Field `BUF_EN` reader - "]
+#[doc = "Field `BUF_EN` reader - Enables the functionality of the ADFT buffer/comparator"]
 pub struct BUF_EN_R(crate::FieldReader<bool, bool>);
 impl BUF_EN_R {
     #[inline(always)]
@@ -128,7 +128,7 @@ impl core::ops::Deref for BUF_EN_R {
         &self.0
     }
 }
-#[doc = "Field `BUF_EN` writer - "]
+#[doc = "Field `BUF_EN` writer - Enables the functionality of the ADFT buffer/comparator"]
 pub struct BUF_EN_W<'a> {
     w: &'a mut W,
 }
@@ -151,39 +151,39 @@ impl<'a> BUF_EN_W<'a> {
     }
 }
 impl R {
-    #[doc = "Bit 0"]
+    #[doc = "Bit 0 - The ADFT buffer/comparator has a common mode dependent offset that can be greatly reduced by using this register bit. After settling the input signal(s), toggle this bit high briefly to sample and componsate for the offset. The buffer/comparator output will be unreliable when this bit is set."]
     #[inline(always)]
     pub fn buf_auto_zero(&self) -> BUF_AUTO_ZERO_R {
         BUF_AUTO_ZERO_R::new((self.bits & 0x01) != 0)
     }
-    #[doc = "Bits 8:9"]
+    #[doc = "Bits 8:9 - Selects the operating mode for the ADFT buffer/comparator: 0: Voltage buffer, input is amuxbusa, output is amuxbusb 1: Voltage buffer, input is amuxbusb, output is amuxbusa 2: Comparator, input+ is amuxbusa, input- is amuxbusb 3: Comparator, input+ is amuxbusb, input- is amuxbusa"]
     #[inline(always)]
     pub fn buf_mode(&self) -> BUF_MODE_R {
         BUF_MODE_R::new(((self.bits >> 8) & 0x03) as u8)
     }
-    #[doc = "Bit 16"]
+    #[doc = "Bit 16 - Output of the ADFT comparator, 0 if in analog voltage buffer mode. This bit is also observable as a DDFT signal (see PWR_DDFT_SELECT)."]
     #[inline(always)]
     pub fn buf_comp_out(&self) -> BUF_COMP_OUT_R {
         BUF_COMP_OUT_R::new(((self.bits >> 16) & 0x01) != 0)
     }
-    #[doc = "Bit 31"]
+    #[doc = "Bit 31 - Enables the functionality of the ADFT buffer/comparator"]
     #[inline(always)]
     pub fn buf_en(&self) -> BUF_EN_R {
         BUF_EN_R::new(((self.bits >> 31) & 0x01) != 0)
     }
 }
 impl W {
-    #[doc = "Bit 0"]
+    #[doc = "Bit 0 - The ADFT buffer/comparator has a common mode dependent offset that can be greatly reduced by using this register bit. After settling the input signal(s), toggle this bit high briefly to sample and componsate for the offset. The buffer/comparator output will be unreliable when this bit is set."]
     #[inline(always)]
     pub fn buf_auto_zero(&mut self) -> BUF_AUTO_ZERO_W {
         BUF_AUTO_ZERO_W { w: self }
     }
-    #[doc = "Bits 8:9"]
+    #[doc = "Bits 8:9 - Selects the operating mode for the ADFT buffer/comparator: 0: Voltage buffer, input is amuxbusa, output is amuxbusb 1: Voltage buffer, input is amuxbusb, output is amuxbusa 2: Comparator, input+ is amuxbusa, input- is amuxbusb 3: Comparator, input+ is amuxbusb, input- is amuxbusa"]
     #[inline(always)]
     pub fn buf_mode(&mut self) -> BUF_MODE_W {
         BUF_MODE_W { w: self }
     }
-    #[doc = "Bit 31"]
+    #[doc = "Bit 31 - Enables the functionality of the ADFT buffer/comparator"]
     #[inline(always)]
     pub fn buf_en(&mut self) -> BUF_EN_W {
         BUF_EN_W { w: self }
@@ -195,7 +195,7 @@ impl W {
         self
     }
 }
-#[doc = "\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [tst_adft_ctrl](index.html) module"]
+#[doc = "ADFT buffer/comparator control register Controls System Resources ADFT mode settings and observability. Writes to this register are ignored and settings in this register have no effect unless the part is in a XRES key selected DfT mode. Entire register is engineering only. Note that PWR_DDFT_XRES can be used to enter an XRES key if XRES key sequence is not desired.\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [tst_adft_ctrl](index.html) module"]
 pub struct TST_ADFT_CTRL_SPEC;
 impl crate::RegisterSpec for TST_ADFT_CTRL_SPEC {
     type Ux = u32;

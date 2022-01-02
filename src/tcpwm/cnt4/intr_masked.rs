@@ -13,7 +13,7 @@ impl From<crate::R<INTR_MASKED_SPEC>> for R {
         R(reader)
     }
 }
-#[doc = "Field `TC` reader - "]
+#[doc = "Field `TC` reader - Logical and of corresponding request and mask bits."]
 pub struct TC_R(crate::FieldReader<bool, bool>);
 impl TC_R {
     #[inline(always)]
@@ -28,7 +28,7 @@ impl core::ops::Deref for TC_R {
         &self.0
     }
 }
-#[doc = "Field `CC_MATCH` reader - "]
+#[doc = "Field `CC_MATCH` reader - Logical and of corresponding request and mask bits."]
 pub struct CC_MATCH_R(crate::FieldReader<bool, bool>);
 impl CC_MATCH_R {
     #[inline(always)]
@@ -44,18 +44,18 @@ impl core::ops::Deref for CC_MATCH_R {
     }
 }
 impl R {
-    #[doc = "Bit 0"]
+    #[doc = "Bit 0 - Logical and of corresponding request and mask bits."]
     #[inline(always)]
     pub fn tc(&self) -> TC_R {
         TC_R::new((self.bits & 0x01) != 0)
     }
-    #[doc = "Bit 1"]
+    #[doc = "Bit 1 - Logical and of corresponding request and mask bits."]
     #[inline(always)]
     pub fn cc_match(&self) -> CC_MATCH_R {
         CC_MATCH_R::new(((self.bits >> 1) & 0x01) != 0)
     }
 }
-#[doc = "\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [intr_masked](index.html) module"]
+#[doc = "Interrupt masked request register When read, this register reflects a bitwise AND between the interrupt request and mask registers.\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [intr_masked](index.html) module"]
 pub struct INTR_MASKED_SPEC;
 impl crate::RegisterSpec for INTR_MASKED_SPEC {
     type Ux = u32;

@@ -13,7 +13,7 @@ impl From<crate::R<INTR_M_MASKED_SPEC>> for R {
         R(reader)
     }
 }
-#[doc = "Field `I2C_ARB_LOST` reader - "]
+#[doc = "Field `I2C_ARB_LOST` reader - Logical and of corresponding request and mask bits."]
 pub struct I2C_ARB_LOST_R(crate::FieldReader<bool, bool>);
 impl I2C_ARB_LOST_R {
     #[inline(always)]
@@ -28,7 +28,7 @@ impl core::ops::Deref for I2C_ARB_LOST_R {
         &self.0
     }
 }
-#[doc = "Field `I2C_NACK` reader - "]
+#[doc = "Field `I2C_NACK` reader - Logical and of corresponding request and mask bits."]
 pub struct I2C_NACK_R(crate::FieldReader<bool, bool>);
 impl I2C_NACK_R {
     #[inline(always)]
@@ -43,7 +43,7 @@ impl core::ops::Deref for I2C_NACK_R {
         &self.0
     }
 }
-#[doc = "Field `I2C_ACK` reader - "]
+#[doc = "Field `I2C_ACK` reader - Logical and of corresponding request and mask bits."]
 pub struct I2C_ACK_R(crate::FieldReader<bool, bool>);
 impl I2C_ACK_R {
     #[inline(always)]
@@ -58,7 +58,7 @@ impl core::ops::Deref for I2C_ACK_R {
         &self.0
     }
 }
-#[doc = "Field `I2C_STOP` reader - "]
+#[doc = "Field `I2C_STOP` reader - Logical and of corresponding request and mask bits."]
 pub struct I2C_STOP_R(crate::FieldReader<bool, bool>);
 impl I2C_STOP_R {
     #[inline(always)]
@@ -73,7 +73,7 @@ impl core::ops::Deref for I2C_STOP_R {
         &self.0
     }
 }
-#[doc = "Field `I2C_BUS_ERROR` reader - "]
+#[doc = "Field `I2C_BUS_ERROR` reader - Logical and of corresponding request and mask bits."]
 pub struct I2C_BUS_ERROR_R(crate::FieldReader<bool, bool>);
 impl I2C_BUS_ERROR_R {
     #[inline(always)]
@@ -88,7 +88,7 @@ impl core::ops::Deref for I2C_BUS_ERROR_R {
         &self.0
     }
 }
-#[doc = "Field `SPI_DONE` reader - "]
+#[doc = "Field `SPI_DONE` reader - Logical and of corresponding request and mask bits."]
 pub struct SPI_DONE_R(crate::FieldReader<bool, bool>);
 impl SPI_DONE_R {
     #[inline(always)]
@@ -104,38 +104,38 @@ impl core::ops::Deref for SPI_DONE_R {
     }
 }
 impl R {
-    #[doc = "Bit 0"]
+    #[doc = "Bit 0 - Logical and of corresponding request and mask bits."]
     #[inline(always)]
     pub fn i2c_arb_lost(&self) -> I2C_ARB_LOST_R {
         I2C_ARB_LOST_R::new((self.bits & 0x01) != 0)
     }
-    #[doc = "Bit 1"]
+    #[doc = "Bit 1 - Logical and of corresponding request and mask bits."]
     #[inline(always)]
     pub fn i2c_nack(&self) -> I2C_NACK_R {
         I2C_NACK_R::new(((self.bits >> 1) & 0x01) != 0)
     }
-    #[doc = "Bit 2"]
+    #[doc = "Bit 2 - Logical and of corresponding request and mask bits."]
     #[inline(always)]
     pub fn i2c_ack(&self) -> I2C_ACK_R {
         I2C_ACK_R::new(((self.bits >> 2) & 0x01) != 0)
     }
-    #[doc = "Bit 4"]
+    #[doc = "Bit 4 - Logical and of corresponding request and mask bits."]
     #[inline(always)]
     pub fn i2c_stop(&self) -> I2C_STOP_R {
         I2C_STOP_R::new(((self.bits >> 4) & 0x01) != 0)
     }
-    #[doc = "Bit 8"]
+    #[doc = "Bit 8 - Logical and of corresponding request and mask bits."]
     #[inline(always)]
     pub fn i2c_bus_error(&self) -> I2C_BUS_ERROR_R {
         I2C_BUS_ERROR_R::new(((self.bits >> 8) & 0x01) != 0)
     }
-    #[doc = "Bit 9"]
+    #[doc = "Bit 9 - Logical and of corresponding request and mask bits."]
     #[inline(always)]
     pub fn spi_done(&self) -> SPI_DONE_R {
         SPI_DONE_R::new(((self.bits >> 9) & 0x01) != 0)
     }
 }
-#[doc = "\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [intr_m_masked](index.html) module"]
+#[doc = "Master interrupt masked request register When read, this register reflects a bitwise and between the interrupt request and mask registers. This register allows SW to read the status of all mask enabled interrupt causes with a single load operation, rather than two load operations: one for the interrupt causes and one for the masks. This simplifies Firmware development. The associated interrupt is active ('1'), when INTR_M_MASKED != 0.\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [intr_m_masked](index.html) module"]
 pub struct INTR_M_MASKED_SPEC;
 impl crate::RegisterSpec for INTR_M_MASKED_SPEC {
     type Ux = u32;

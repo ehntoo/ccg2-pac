@@ -13,7 +13,7 @@ impl From<crate::R<INTR1_MASKED_SPEC>> for R {
         R(reader)
     }
 }
-#[doc = "Field `VCONN1_CHANGED_MASKED` reader - "]
+#[doc = "Field `VCONN1_CHANGED_MASKED` reader - Logical and of corresponding request and mask bits."]
 pub struct VCONN1_CHANGED_MASKED_R(crate::FieldReader<bool, bool>);
 impl VCONN1_CHANGED_MASKED_R {
     #[inline(always)]
@@ -28,7 +28,7 @@ impl core::ops::Deref for VCONN1_CHANGED_MASKED_R {
         &self.0
     }
 }
-#[doc = "Field `VCONN2_CHANGED_MASKED` reader - "]
+#[doc = "Field `VCONN2_CHANGED_MASKED` reader - Logical and of corresponding request and mask bits."]
 pub struct VCONN2_CHANGED_MASKED_R(crate::FieldReader<bool, bool>);
 impl VCONN2_CHANGED_MASKED_R {
     #[inline(always)]
@@ -43,7 +43,7 @@ impl core::ops::Deref for VCONN2_CHANGED_MASKED_R {
         &self.0
     }
 }
-#[doc = "Field `CC1_CHANGED_MASKED` reader - "]
+#[doc = "Field `CC1_CHANGED_MASKED` reader - Logical and of corresponding request and mask bits."]
 pub struct CC1_CHANGED_MASKED_R(crate::FieldReader<bool, bool>);
 impl CC1_CHANGED_MASKED_R {
     #[inline(always)]
@@ -58,7 +58,7 @@ impl core::ops::Deref for CC1_CHANGED_MASKED_R {
         &self.0
     }
 }
-#[doc = "Field `CC2_CHANGED_MASKED` reader - "]
+#[doc = "Field `CC2_CHANGED_MASKED` reader - Logical and of corresponding request and mask bits."]
 pub struct CC2_CHANGED_MASKED_R(crate::FieldReader<bool, bool>);
 impl CC2_CHANGED_MASKED_R {
     #[inline(always)]
@@ -73,7 +73,7 @@ impl core::ops::Deref for CC2_CHANGED_MASKED_R {
         &self.0
     }
 }
-#[doc = "Field `VCMP_LA_CHANGED_MASKED` reader - "]
+#[doc = "Field `VCMP_LA_CHANGED_MASKED` reader - Logical and of corresponding request and mask bits."]
 pub struct VCMP_LA_CHANGED_MASKED_R(crate::FieldReader<bool, bool>);
 impl VCMP_LA_CHANGED_MASKED_R {
     #[inline(always)]
@@ -88,7 +88,7 @@ impl core::ops::Deref for VCMP_LA_CHANGED_MASKED_R {
         &self.0
     }
 }
-#[doc = "Field `VCMP_UP_CHANGED_MASKED` reader - "]
+#[doc = "Field `VCMP_UP_CHANGED_MASKED` reader - Logical and of corresponding request and mask bits."]
 pub struct VCMP_UP_CHANGED_MASKED_R(crate::FieldReader<bool, bool>);
 impl VCMP_UP_CHANGED_MASKED_R {
     #[inline(always)]
@@ -103,7 +103,7 @@ impl core::ops::Deref for VCMP_UP_CHANGED_MASKED_R {
         &self.0
     }
 }
-#[doc = "Field `VCMP_DN_CHANGED_MASKED` reader - "]
+#[doc = "Field `VCMP_DN_CHANGED_MASKED` reader - Logical and of corresponding request and mask bits."]
 pub struct VCMP_DN_CHANGED_MASKED_R(crate::FieldReader<bool, bool>);
 impl VCMP_DN_CHANGED_MASKED_R {
     #[inline(always)]
@@ -119,43 +119,43 @@ impl core::ops::Deref for VCMP_DN_CHANGED_MASKED_R {
     }
 }
 impl R {
-    #[doc = "Bit 0"]
+    #[doc = "Bit 0 - Logical and of corresponding request and mask bits."]
     #[inline(always)]
     pub fn vconn1_changed_masked(&self) -> VCONN1_CHANGED_MASKED_R {
         VCONN1_CHANGED_MASKED_R::new((self.bits & 0x01) != 0)
     }
-    #[doc = "Bit 1"]
+    #[doc = "Bit 1 - Logical and of corresponding request and mask bits."]
     #[inline(always)]
     pub fn vconn2_changed_masked(&self) -> VCONN2_CHANGED_MASKED_R {
         VCONN2_CHANGED_MASKED_R::new(((self.bits >> 1) & 0x01) != 0)
     }
-    #[doc = "Bit 2"]
+    #[doc = "Bit 2 - Logical and of corresponding request and mask bits."]
     #[inline(always)]
     pub fn cc1_changed_masked(&self) -> CC1_CHANGED_MASKED_R {
         CC1_CHANGED_MASKED_R::new(((self.bits >> 2) & 0x01) != 0)
     }
-    #[doc = "Bit 3"]
+    #[doc = "Bit 3 - Logical and of corresponding request and mask bits."]
     #[inline(always)]
     pub fn cc2_changed_masked(&self) -> CC2_CHANGED_MASKED_R {
         CC2_CHANGED_MASKED_R::new(((self.bits >> 3) & 0x01) != 0)
     }
-    #[doc = "Bit 4"]
+    #[doc = "Bit 4 - Logical and of corresponding request and mask bits."]
     #[inline(always)]
     pub fn vcmp_la_changed_masked(&self) -> VCMP_LA_CHANGED_MASKED_R {
         VCMP_LA_CHANGED_MASKED_R::new(((self.bits >> 4) & 0x01) != 0)
     }
-    #[doc = "Bit 5"]
+    #[doc = "Bit 5 - Logical and of corresponding request and mask bits."]
     #[inline(always)]
     pub fn vcmp_up_changed_masked(&self) -> VCMP_UP_CHANGED_MASKED_R {
         VCMP_UP_CHANGED_MASKED_R::new(((self.bits >> 5) & 0x01) != 0)
     }
-    #[doc = "Bit 6"]
+    #[doc = "Bit 6 - Logical and of corresponding request and mask bits."]
     #[inline(always)]
     pub fn vcmp_dn_changed_masked(&self) -> VCMP_DN_CHANGED_MASKED_R {
         VCMP_DN_CHANGED_MASKED_R::new(((self.bits >> 6) & 0x01) != 0)
     }
 }
-#[doc = "\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [intr1_masked](index.html) module"]
+#[doc = "INTR1 Masked\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [intr1_masked](index.html) module"]
 pub struct INTR1_MASKED_SPEC;
 impl crate::RegisterSpec for INTR1_MASKED_SPEC {
     type Ux = u32;

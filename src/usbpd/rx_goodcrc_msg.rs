@@ -13,7 +13,7 @@ impl From<crate::R<RX_GOODCRC_MSG_SPEC>> for R {
         R(reader)
     }
 }
-#[doc = "Field `HEADER` reader - "]
+#[doc = "Field `HEADER` reader - The INTR.RCV_GOODCRC_MSG_COMPLETE interrupt indicates the 2-Byte header for GoodCRC message is received and stored in this registers. GOODCRC_MSG_SOP_TYPE_DETECTED contains the SOP type for the GoodCRC MSG. At the start of every packet, INTR.RCV_GOODCRC_MSG_COMPLETE status is evaluated, if its reset, then only a new packet will be written else new packet will be dropped."]
 pub struct HEADER_R(crate::FieldReader<u16, u16>);
 impl HEADER_R {
     #[inline(always)]
@@ -29,13 +29,13 @@ impl core::ops::Deref for HEADER_R {
     }
 }
 impl R {
-    #[doc = "Bits 0:15"]
+    #[doc = "Bits 0:15 - The INTR.RCV_GOODCRC_MSG_COMPLETE interrupt indicates the 2-Byte header for GoodCRC message is received and stored in this registers. GOODCRC_MSG_SOP_TYPE_DETECTED contains the SOP type for the GoodCRC MSG. At the start of every packet, INTR.RCV_GOODCRC_MSG_COMPLETE status is evaluated, if its reset, then only a new packet will be written else new packet will be dropped."]
     #[inline(always)]
     pub fn header(&self) -> HEADER_R {
         HEADER_R::new((self.bits & 0xffff) as u16)
     }
 }
-#[doc = "\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [rx_goodcrc_msg](index.html) module"]
+#[doc = "The 2-Byte Header of the received GoodCRC Message\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [rx_goodcrc_msg](index.html) module"]
 pub struct RX_GOODCRC_MSG_SPEC;
 impl crate::RegisterSpec for RX_GOODCRC_MSG_SPEC {
     type Ux = u32;

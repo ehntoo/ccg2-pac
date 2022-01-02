@@ -34,7 +34,7 @@ impl From<crate::W<PERIOD_SPEC>> for W {
         W(writer)
     }
 }
-#[doc = "Field `PERIOD` reader - "]
+#[doc = "Field `PERIOD` reader - Period value: upper value of the counter. When the counter should count for n cycles, this field should be set to n-1."]
 pub struct PERIOD_R(crate::FieldReader<u16, u16>);
 impl PERIOD_R {
     #[inline(always)]
@@ -49,7 +49,7 @@ impl core::ops::Deref for PERIOD_R {
         &self.0
     }
 }
-#[doc = "Field `PERIOD` writer - "]
+#[doc = "Field `PERIOD` writer - Period value: upper value of the counter. When the counter should count for n cycles, this field should be set to n-1."]
 pub struct PERIOD_W<'a> {
     w: &'a mut W,
 }
@@ -62,14 +62,14 @@ impl<'a> PERIOD_W<'a> {
     }
 }
 impl R {
-    #[doc = "Bits 0:15"]
+    #[doc = "Bits 0:15 - Period value: upper value of the counter. When the counter should count for n cycles, this field should be set to n-1."]
     #[inline(always)]
     pub fn period(&self) -> PERIOD_R {
         PERIOD_R::new((self.bits & 0xffff) as u16)
     }
 }
 impl W {
-    #[doc = "Bits 0:15"]
+    #[doc = "Bits 0:15 - Period value: upper value of the counter. When the counter should count for n cycles, this field should be set to n-1."]
     #[inline(always)]
     pub fn period(&mut self) -> PERIOD_W {
         PERIOD_W { w: self }
@@ -81,7 +81,7 @@ impl W {
         self
     }
 }
-#[doc = "\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [period](index.html) module"]
+#[doc = "Counter period register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [period](index.html) module"]
 pub struct PERIOD_SPEC;
 impl crate::RegisterSpec for PERIOD_SPEC {
     type Ux = u32;

@@ -34,7 +34,7 @@ impl From<crate::W<CLK_DFT_SELECT_SPEC>> for W {
         W(writer)
     }
 }
-#[doc = "\n\nValue on reset: 0"]
+#[doc = "Select signal for DFT output #0\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u8)]
 pub enum DFT_SEL0_A {
@@ -65,7 +65,7 @@ impl From<DFT_SEL0_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `DFT_SEL0` reader - "]
+#[doc = "Field `DFT_SEL0` reader - Select signal for DFT output #0"]
 pub struct DFT_SEL0_R(crate::FieldReader<u8, DFT_SEL0_A>);
 impl DFT_SEL0_R {
     #[inline(always)]
@@ -147,7 +147,7 @@ impl core::ops::Deref for DFT_SEL0_R {
         &self.0
     }
 }
-#[doc = "Field `DFT_SEL0` writer - "]
+#[doc = "Field `DFT_SEL0` writer - Select signal for DFT output #0"]
 pub struct DFT_SEL0_W<'a> {
     w: &'a mut W,
 }
@@ -214,7 +214,7 @@ impl<'a> DFT_SEL0_W<'a> {
         self.w
     }
 }
-#[doc = "\n\nValue on reset: 0"]
+#[doc = "DFT Output Divide Down.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u8)]
 pub enum DFT_DIV0_A {
@@ -233,7 +233,7 @@ impl From<DFT_DIV0_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `DFT_DIV0` reader - "]
+#[doc = "Field `DFT_DIV0` reader - DFT Output Divide Down."]
 pub struct DFT_DIV0_R(crate::FieldReader<u8, DFT_DIV0_A>);
 impl DFT_DIV0_R {
     #[inline(always)]
@@ -279,7 +279,7 @@ impl core::ops::Deref for DFT_DIV0_R {
         &self.0
     }
 }
-#[doc = "Field `DFT_DIV0` writer - "]
+#[doc = "Field `DFT_DIV0` writer - DFT Output Divide Down."]
 pub struct DFT_DIV0_W<'a> {
     w: &'a mut W,
 }
@@ -316,7 +316,7 @@ impl<'a> DFT_DIV0_W<'a> {
         self.w
     }
 }
-#[doc = "\n\nValue on reset: 0"]
+#[doc = "Edge sensitivity for in-line divider on output #0 (only relevant when DIV0>0).\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum DFT_EDGE0_A {
     #[doc = "0: `0`"]
@@ -330,7 +330,7 @@ impl From<DFT_EDGE0_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `DFT_EDGE0` reader - "]
+#[doc = "Field `DFT_EDGE0` reader - Edge sensitivity for in-line divider on output #0 (only relevant when DIV0>0)."]
 pub struct DFT_EDGE0_R(crate::FieldReader<bool, DFT_EDGE0_A>);
 impl DFT_EDGE0_R {
     #[inline(always)]
@@ -363,7 +363,7 @@ impl core::ops::Deref for DFT_EDGE0_R {
         &self.0
     }
 }
-#[doc = "Field `DFT_EDGE0` writer - "]
+#[doc = "Field `DFT_EDGE0` writer - Edge sensitivity for in-line divider on output #0 (only relevant when DIV0>0)."]
 pub struct DFT_EDGE0_W<'a> {
     w: &'a mut W,
 }
@@ -400,7 +400,7 @@ impl<'a> DFT_EDGE0_W<'a> {
         self.w
     }
 }
-#[doc = "\n\nValue on reset: 0"]
+#[doc = "Select signal for DFT output #1\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u8)]
 pub enum DFT_SEL1_A {
@@ -431,7 +431,7 @@ impl From<DFT_SEL1_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `DFT_SEL1` reader - "]
+#[doc = "Field `DFT_SEL1` reader - Select signal for DFT output #1"]
 pub struct DFT_SEL1_R(crate::FieldReader<u8, DFT_SEL1_A>);
 impl DFT_SEL1_R {
     #[inline(always)]
@@ -513,7 +513,7 @@ impl core::ops::Deref for DFT_SEL1_R {
         &self.0
     }
 }
-#[doc = "Field `DFT_SEL1` writer - "]
+#[doc = "Field `DFT_SEL1` writer - Select signal for DFT output #1"]
 pub struct DFT_SEL1_W<'a> {
     w: &'a mut W,
 }
@@ -580,7 +580,7 @@ impl<'a> DFT_SEL1_W<'a> {
         self.w
     }
 }
-#[doc = "\n\nValue on reset: 0"]
+#[doc = "DFT Output Divide Down.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u8)]
 pub enum DFT_DIV1_A {
@@ -599,7 +599,7 @@ impl From<DFT_DIV1_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `DFT_DIV1` reader - "]
+#[doc = "Field `DFT_DIV1` reader - DFT Output Divide Down."]
 pub struct DFT_DIV1_R(crate::FieldReader<u8, DFT_DIV1_A>);
 impl DFT_DIV1_R {
     #[inline(always)]
@@ -645,7 +645,7 @@ impl core::ops::Deref for DFT_DIV1_R {
         &self.0
     }
 }
-#[doc = "Field `DFT_DIV1` writer - "]
+#[doc = "Field `DFT_DIV1` writer - DFT Output Divide Down."]
 pub struct DFT_DIV1_W<'a> {
     w: &'a mut W,
 }
@@ -682,7 +682,7 @@ impl<'a> DFT_DIV1_W<'a> {
         self.w
     }
 }
-#[doc = "\n\nValue on reset: 0"]
+#[doc = "Edge sensitivity for in-line divider on output #1 (only relevant when DIV1>0).\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum DFT_EDGE1_A {
     #[doc = "0: `0`"]
@@ -696,7 +696,7 @@ impl From<DFT_EDGE1_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `DFT_EDGE1` reader - "]
+#[doc = "Field `DFT_EDGE1` reader - Edge sensitivity for in-line divider on output #1 (only relevant when DIV1>0)."]
 pub struct DFT_EDGE1_R(crate::FieldReader<bool, DFT_EDGE1_A>);
 impl DFT_EDGE1_R {
     #[inline(always)]
@@ -729,7 +729,7 @@ impl core::ops::Deref for DFT_EDGE1_R {
         &self.0
     }
 }
-#[doc = "Field `DFT_EDGE1` writer - "]
+#[doc = "Field `DFT_EDGE1` writer - Edge sensitivity for in-line divider on output #1 (only relevant when DIV1>0)."]
 pub struct DFT_EDGE1_W<'a> {
     w: &'a mut W,
 }
@@ -767,64 +767,64 @@ impl<'a> DFT_EDGE1_W<'a> {
     }
 }
 impl R {
-    #[doc = "Bits 0:3"]
+    #[doc = "Bits 0:3 - Select signal for DFT output #0"]
     #[inline(always)]
     pub fn dft_sel0(&self) -> DFT_SEL0_R {
         DFT_SEL0_R::new((self.bits & 0x0f) as u8)
     }
-    #[doc = "Bits 4:5"]
+    #[doc = "Bits 4:5 - DFT Output Divide Down."]
     #[inline(always)]
     pub fn dft_div0(&self) -> DFT_DIV0_R {
         DFT_DIV0_R::new(((self.bits >> 4) & 0x03) as u8)
     }
-    #[doc = "Bit 6"]
+    #[doc = "Bit 6 - Edge sensitivity for in-line divider on output #0 (only relevant when DIV0>0)."]
     #[inline(always)]
     pub fn dft_edge0(&self) -> DFT_EDGE0_R {
         DFT_EDGE0_R::new(((self.bits >> 6) & 0x01) != 0)
     }
-    #[doc = "Bits 8:11"]
+    #[doc = "Bits 8:11 - Select signal for DFT output #1"]
     #[inline(always)]
     pub fn dft_sel1(&self) -> DFT_SEL1_R {
         DFT_SEL1_R::new(((self.bits >> 8) & 0x0f) as u8)
     }
-    #[doc = "Bits 12:13"]
+    #[doc = "Bits 12:13 - DFT Output Divide Down."]
     #[inline(always)]
     pub fn dft_div1(&self) -> DFT_DIV1_R {
         DFT_DIV1_R::new(((self.bits >> 12) & 0x03) as u8)
     }
-    #[doc = "Bit 14"]
+    #[doc = "Bit 14 - Edge sensitivity for in-line divider on output #1 (only relevant when DIV1>0)."]
     #[inline(always)]
     pub fn dft_edge1(&self) -> DFT_EDGE1_R {
         DFT_EDGE1_R::new(((self.bits >> 14) & 0x01) != 0)
     }
 }
 impl W {
-    #[doc = "Bits 0:3"]
+    #[doc = "Bits 0:3 - Select signal for DFT output #0"]
     #[inline(always)]
     pub fn dft_sel0(&mut self) -> DFT_SEL0_W {
         DFT_SEL0_W { w: self }
     }
-    #[doc = "Bits 4:5"]
+    #[doc = "Bits 4:5 - DFT Output Divide Down."]
     #[inline(always)]
     pub fn dft_div0(&mut self) -> DFT_DIV0_W {
         DFT_DIV0_W { w: self }
     }
-    #[doc = "Bit 6"]
+    #[doc = "Bit 6 - Edge sensitivity for in-line divider on output #0 (only relevant when DIV0>0)."]
     #[inline(always)]
     pub fn dft_edge0(&mut self) -> DFT_EDGE0_W {
         DFT_EDGE0_W { w: self }
     }
-    #[doc = "Bits 8:11"]
+    #[doc = "Bits 8:11 - Select signal for DFT output #1"]
     #[inline(always)]
     pub fn dft_sel1(&mut self) -> DFT_SEL1_W {
         DFT_SEL1_W { w: self }
     }
-    #[doc = "Bits 12:13"]
+    #[doc = "Bits 12:13 - DFT Output Divide Down."]
     #[inline(always)]
     pub fn dft_div1(&mut self) -> DFT_DIV1_W {
         DFT_DIV1_W { w: self }
     }
-    #[doc = "Bit 14"]
+    #[doc = "Bit 14 - Edge sensitivity for in-line divider on output #1 (only relevant when DIV1>0)."]
     #[inline(always)]
     pub fn dft_edge1(&mut self) -> DFT_EDGE1_W {
         DFT_EDGE1_W { w: self }
@@ -836,7 +836,7 @@ impl W {
         self
     }
 }
-#[doc = "\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [clk_dft_select](index.html) module"]
+#[doc = "Clock DFT Mode Selection Register Selects which clock signals to bring out to to DFT pins. Two signals can be selected to enable comparison of clocks. Clocks can be divided down to deal with slower equipment and I/Os. See TST_DFT_SELECT for details on bringing these pins out. Entire register is engineering only.\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [clk_dft_select](index.html) module"]
 pub struct CLK_DFT_SELECT_SPEC;
 impl crate::RegisterSpec for CLK_DFT_SELECT_SPEC {
     type Ux = u32;

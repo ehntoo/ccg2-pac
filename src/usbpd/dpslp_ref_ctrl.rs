@@ -34,7 +34,7 @@ impl From<crate::W<DPSLP_REF_CTRL_SPEC>> for W {
         W(writer)
     }
 }
-#[doc = "Field `IGEN_EN` reader - "]
+#[doc = "Field `IGEN_EN` reader - Setting this bit will enable the deepsleep current reference outputs."]
 pub struct IGEN_EN_R(crate::FieldReader<bool, bool>);
 impl IGEN_EN_R {
     #[inline(always)]
@@ -49,7 +49,7 @@ impl core::ops::Deref for IGEN_EN_R {
         &self.0
     }
 }
-#[doc = "Field `IGEN_EN` writer - "]
+#[doc = "Field `IGEN_EN` writer - Setting this bit will enable the deepsleep current reference outputs."]
 pub struct IGEN_EN_W<'a> {
     w: &'a mut W,
 }
@@ -71,7 +71,7 @@ impl<'a> IGEN_EN_W<'a> {
         self.w
     }
 }
-#[doc = "Field `DPSLP_ADFT_EN` reader - "]
+#[doc = "Field `DPSLP_ADFT_EN` reader - Setting this bit will enable the deepsleep reference generator ADFT mode."]
 pub struct DPSLP_ADFT_EN_R(crate::FieldReader<bool, bool>);
 impl DPSLP_ADFT_EN_R {
     #[inline(always)]
@@ -86,7 +86,7 @@ impl core::ops::Deref for DPSLP_ADFT_EN_R {
         &self.0
     }
 }
-#[doc = "Field `DPSLP_ADFT_EN` writer - "]
+#[doc = "Field `DPSLP_ADFT_EN` writer - Setting this bit will enable the deepsleep reference generator ADFT mode."]
 pub struct DPSLP_ADFT_EN_W<'a> {
     w: &'a mut W,
 }
@@ -108,7 +108,7 @@ impl<'a> DPSLP_ADFT_EN_W<'a> {
         self.w
     }
 }
-#[doc = "Field `ADFT_CTRL` reader - "]
+#[doc = "Field `ADFT_CTRL` reader - Controls the Deep Sleep reference ADFT mode 0: ganged 7 iref current sources 1: vrefdpslp voltage reference"]
 pub struct ADFT_CTRL_R(crate::FieldReader<bool, bool>);
 impl ADFT_CTRL_R {
     #[inline(always)]
@@ -123,7 +123,7 @@ impl core::ops::Deref for ADFT_CTRL_R {
         &self.0
     }
 }
-#[doc = "Field `ADFT_CTRL` writer - "]
+#[doc = "Field `ADFT_CTRL` writer - Controls the Deep Sleep reference ADFT mode 0: ganged 7 iref current sources 1: vrefdpslp voltage reference"]
 pub struct ADFT_CTRL_W<'a> {
     w: &'a mut W,
 }
@@ -145,7 +145,7 @@ impl<'a> ADFT_CTRL_W<'a> {
         self.w
     }
 }
-#[doc = "Field `PD_DPSLP` reader - "]
+#[doc = "Field `PD_DPSLP` reader - Block enable input 1 - All analog and DC paths cut off, outputs forced to known value This completely disables the CC Transceiver/Detect block. 0 - Normal functionality"]
 pub struct PD_DPSLP_R(crate::FieldReader<bool, bool>);
 impl PD_DPSLP_R {
     #[inline(always)]
@@ -160,7 +160,7 @@ impl core::ops::Deref for PD_DPSLP_R {
         &self.0
     }
 }
-#[doc = "Field `PD_DPSLP` writer - "]
+#[doc = "Field `PD_DPSLP` writer - Block enable input 1 - All analog and DC paths cut off, outputs forced to known value This completely disables the CC Transceiver/Detect block. 0 - Normal functionality"]
 pub struct PD_DPSLP_W<'a> {
     w: &'a mut W,
 }
@@ -183,44 +183,44 @@ impl<'a> PD_DPSLP_W<'a> {
     }
 }
 impl R {
-    #[doc = "Bit 0"]
+    #[doc = "Bit 0 - Setting this bit will enable the deepsleep current reference outputs."]
     #[inline(always)]
     pub fn igen_en(&self) -> IGEN_EN_R {
         IGEN_EN_R::new((self.bits & 0x01) != 0)
     }
-    #[doc = "Bit 1"]
+    #[doc = "Bit 1 - Setting this bit will enable the deepsleep reference generator ADFT mode."]
     #[inline(always)]
     pub fn dpslp_adft_en(&self) -> DPSLP_ADFT_EN_R {
         DPSLP_ADFT_EN_R::new(((self.bits >> 1) & 0x01) != 0)
     }
-    #[doc = "Bit 2"]
+    #[doc = "Bit 2 - Controls the Deep Sleep reference ADFT mode 0: ganged 7 iref current sources 1: vrefdpslp voltage reference"]
     #[inline(always)]
     pub fn adft_ctrl(&self) -> ADFT_CTRL_R {
         ADFT_CTRL_R::new(((self.bits >> 2) & 0x01) != 0)
     }
-    #[doc = "Bit 3"]
+    #[doc = "Bit 3 - Block enable input 1 - All analog and DC paths cut off, outputs forced to known value This completely disables the CC Transceiver/Detect block. 0 - Normal functionality"]
     #[inline(always)]
     pub fn pd_dpslp(&self) -> PD_DPSLP_R {
         PD_DPSLP_R::new(((self.bits >> 3) & 0x01) != 0)
     }
 }
 impl W {
-    #[doc = "Bit 0"]
+    #[doc = "Bit 0 - Setting this bit will enable the deepsleep current reference outputs."]
     #[inline(always)]
     pub fn igen_en(&mut self) -> IGEN_EN_W {
         IGEN_EN_W { w: self }
     }
-    #[doc = "Bit 1"]
+    #[doc = "Bit 1 - Setting this bit will enable the deepsleep reference generator ADFT mode."]
     #[inline(always)]
     pub fn dpslp_adft_en(&mut self) -> DPSLP_ADFT_EN_W {
         DPSLP_ADFT_EN_W { w: self }
     }
-    #[doc = "Bit 2"]
+    #[doc = "Bit 2 - Controls the Deep Sleep reference ADFT mode 0: ganged 7 iref current sources 1: vrefdpslp voltage reference"]
     #[inline(always)]
     pub fn adft_ctrl(&mut self) -> ADFT_CTRL_W {
         ADFT_CTRL_W { w: self }
     }
-    #[doc = "Bit 3"]
+    #[doc = "Bit 3 - Block enable input 1 - All analog and DC paths cut off, outputs forced to known value This completely disables the CC Transceiver/Detect block. 0 - Normal functionality"]
     #[inline(always)]
     pub fn pd_dpslp(&mut self) -> PD_DPSLP_W {
         PD_DPSLP_W { w: self }
@@ -232,7 +232,7 @@ impl W {
         self
     }
 }
-#[doc = "\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [dpslp_ref_ctrl](index.html) module"]
+#[doc = "S8USBPD DeepSleep-Reference Control Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [dpslp_ref_ctrl](index.html) module"]
 pub struct DPSLP_REF_CTRL_SPEC;
 impl crate::RegisterSpec for DPSLP_REF_CTRL_SPEC {
     type Ux = u32;

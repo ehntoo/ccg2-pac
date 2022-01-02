@@ -34,7 +34,7 @@ impl From<crate::W<PWR_PWRSYS_TRIM1_SPEC>> for W {
         W(writer)
     }
 }
-#[doc = "Field `DPSLP_REF_TRIM` reader - "]
+#[doc = "Field `DPSLP_REF_TRIM` reader - Trims the DeepSleep reference that is used by the DeepSleep regulator and DeepSleep power comparator."]
 pub struct DPSLP_REF_TRIM_R(crate::FieldReader<u8, u8>);
 impl DPSLP_REF_TRIM_R {
     #[inline(always)]
@@ -49,7 +49,7 @@ impl core::ops::Deref for DPSLP_REF_TRIM_R {
         &self.0
     }
 }
-#[doc = "Field `DPSLP_REF_TRIM` writer - "]
+#[doc = "Field `DPSLP_REF_TRIM` writer - Trims the DeepSleep reference that is used by the DeepSleep regulator and DeepSleep power comparator."]
 pub struct DPSLP_REF_TRIM_W<'a> {
     w: &'a mut W,
 }
@@ -61,7 +61,9 @@ impl<'a> DPSLP_REF_TRIM_W<'a> {
         self.w
     }
 }
-#[doc = "Field `SPARE_TRIM` reader - "]
+#[doc = "Field `SPARE_TRIM` reader - Active-Reference temperature compensation trim (repurposed from spare bits). Bits \\[7:6\\]
+- trim the Active-Reference IREF temperature coefficient (TC). 00: TC = 0 (unchanged) 01: TC = +80ppm/C 10: TC = -80ppm/C 11: TC = -150ppm/C Bits \\[5:4\\]
+- trim the Active-Reference VREF temperature coefficient (TC). 00: TC = 0 (unchanged) 01: TC = -50ppm/C 10: TC = -80ppm/C 11: TC = +150ppm/C"]
 pub struct SPARE_TRIM_R(crate::FieldReader<u8, u8>);
 impl SPARE_TRIM_R {
     #[inline(always)]
@@ -76,7 +78,9 @@ impl core::ops::Deref for SPARE_TRIM_R {
         &self.0
     }
 }
-#[doc = "Field `SPARE_TRIM` writer - "]
+#[doc = "Field `SPARE_TRIM` writer - Active-Reference temperature compensation trim (repurposed from spare bits). Bits \\[7:6\\]
+- trim the Active-Reference IREF temperature coefficient (TC). 00: TC = 0 (unchanged) 01: TC = +80ppm/C 10: TC = -80ppm/C 11: TC = -150ppm/C Bits \\[5:4\\]
+- trim the Active-Reference VREF temperature coefficient (TC). 00: TC = 0 (unchanged) 01: TC = -50ppm/C 10: TC = -80ppm/C 11: TC = +150ppm/C"]
 pub struct SPARE_TRIM_W<'a> {
     w: &'a mut W,
 }
@@ -89,24 +93,28 @@ impl<'a> SPARE_TRIM_W<'a> {
     }
 }
 impl R {
-    #[doc = "Bits 0:3"]
+    #[doc = "Bits 0:3 - Trims the DeepSleep reference that is used by the DeepSleep regulator and DeepSleep power comparator."]
     #[inline(always)]
     pub fn dpslp_ref_trim(&self) -> DPSLP_REF_TRIM_R {
         DPSLP_REF_TRIM_R::new((self.bits & 0x0f) as u8)
     }
-    #[doc = "Bits 4:7"]
+    #[doc = "Bits 4:7 - Active-Reference temperature compensation trim (repurposed from spare bits). Bits \\[7:6\\]
+- trim the Active-Reference IREF temperature coefficient (TC). 00: TC = 0 (unchanged) 01: TC = +80ppm/C 10: TC = -80ppm/C 11: TC = -150ppm/C Bits \\[5:4\\]
+- trim the Active-Reference VREF temperature coefficient (TC). 00: TC = 0 (unchanged) 01: TC = -50ppm/C 10: TC = -80ppm/C 11: TC = +150ppm/C"]
     #[inline(always)]
     pub fn spare_trim(&self) -> SPARE_TRIM_R {
         SPARE_TRIM_R::new(((self.bits >> 4) & 0x0f) as u8)
     }
 }
 impl W {
-    #[doc = "Bits 0:3"]
+    #[doc = "Bits 0:3 - Trims the DeepSleep reference that is used by the DeepSleep regulator and DeepSleep power comparator."]
     #[inline(always)]
     pub fn dpslp_ref_trim(&mut self) -> DPSLP_REF_TRIM_W {
         DPSLP_REF_TRIM_W { w: self }
     }
-    #[doc = "Bits 4:7"]
+    #[doc = "Bits 4:7 - Active-Reference temperature compensation trim (repurposed from spare bits). Bits \\[7:6\\]
+- trim the Active-Reference IREF temperature coefficient (TC). 00: TC = 0 (unchanged) 01: TC = +80ppm/C 10: TC = -80ppm/C 11: TC = -150ppm/C Bits \\[5:4\\]
+- trim the Active-Reference VREF temperature coefficient (TC). 00: TC = 0 (unchanged) 01: TC = -50ppm/C 10: TC = -80ppm/C 11: TC = +150ppm/C"]
     #[inline(always)]
     pub fn spare_trim(&mut self) -> SPARE_TRIM_W {
         SPARE_TRIM_W { w: self }
@@ -118,7 +126,7 @@ impl W {
         self
     }
 }
-#[doc = "\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [pwr_pwrsys_trim1](index.html) module"]
+#[doc = "Power System Trim Register Power System Trim Bits. Entire register is engineering only.\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [pwr_pwrsys_trim1](index.html) module"]
 pub struct PWR_PWRSYS_TRIM1_SPEC;
 impl crate::RegisterSpec for PWR_PWRSYS_TRIM1_SPEC {
     type Ux = u32;

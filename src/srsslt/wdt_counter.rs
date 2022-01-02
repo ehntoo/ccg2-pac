@@ -13,7 +13,7 @@ impl From<crate::R<WDT_COUNTER_SPEC>> for R {
         R(reader)
     }
 }
-#[doc = "Field `COUNTER` reader - "]
+#[doc = "Field `COUNTER` reader - Current value of WDT Counter"]
 pub struct COUNTER_R(crate::FieldReader<u16, u16>);
 impl COUNTER_R {
     #[inline(always)]
@@ -29,13 +29,13 @@ impl core::ops::Deref for COUNTER_R {
     }
 }
 impl R {
-    #[doc = "Bits 0:15"]
+    #[doc = "Bits 0:15 - Current value of WDT Counter"]
     #[inline(always)]
     pub fn counter(&self) -> COUNTER_R {
         COUNTER_R::new((self.bits & 0xffff) as u16)
     }
 }
-#[doc = "\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [wdt_counter](index.html) module"]
+#[doc = "Watchdog Counter Register Provides actual counter value for watchdog counter. Watchdog counter always counts up, is free-running and is clocked using clk_lf.\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [wdt_counter](index.html) module"]
 pub struct WDT_COUNTER_SPEC;
 impl crate::RegisterSpec for WDT_COUNTER_SPEC {
     type Ux = u32;

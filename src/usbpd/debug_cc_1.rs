@@ -34,7 +34,7 @@ impl From<crate::W<DEBUG_CC_1_SPEC>> for W {
         W(writer)
     }
 }
-#[doc = "Field `NUM_PREAMBLE_IGNORE` reader - "]
+#[doc = "Field `NUM_PREAMBLE_IGNORE` reader - Number of preamble bits to ignore at the beginning of the RX packet."]
 pub struct NUM_PREAMBLE_IGNORE_R(crate::FieldReader<u8, u8>);
 impl NUM_PREAMBLE_IGNORE_R {
     #[inline(always)]
@@ -49,7 +49,7 @@ impl core::ops::Deref for NUM_PREAMBLE_IGNORE_R {
         &self.0
     }
 }
-#[doc = "Field `NUM_PREAMBLE_IGNORE` writer - "]
+#[doc = "Field `NUM_PREAMBLE_IGNORE` writer - Number of preamble bits to ignore at the beginning of the RX packet."]
 pub struct NUM_PREAMBLE_IGNORE_W<'a> {
     w: &'a mut W,
 }
@@ -61,7 +61,7 @@ impl<'a> NUM_PREAMBLE_IGNORE_W<'a> {
         self.w
     }
 }
-#[doc = "\n\nValue on reset: 4"]
+#[doc = "Number of preamble bits to be used in the RX for averaging CDR frequency. Any time the value of these bits are changed, the values of NUM_TRANS_AVG will need to be updated.\n\nValue on reset: 4"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u8)]
 pub enum NUM_PREAMBLE_AVG_A {
@@ -88,7 +88,7 @@ impl From<NUM_PREAMBLE_AVG_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `NUM_PREAMBLE_AVG` reader - "]
+#[doc = "Field `NUM_PREAMBLE_AVG` reader - Number of preamble bits to be used in the RX for averaging CDR frequency. Any time the value of these bits are changed, the values of NUM_TRANS_AVG will need to be updated."]
 pub struct NUM_PREAMBLE_AVG_R(crate::FieldReader<u8, NUM_PREAMBLE_AVG_A>);
 impl NUM_PREAMBLE_AVG_R {
     #[inline(always)]
@@ -158,7 +158,7 @@ impl core::ops::Deref for NUM_PREAMBLE_AVG_R {
         &self.0
     }
 }
-#[doc = "Field `NUM_PREAMBLE_AVG` writer - "]
+#[doc = "Field `NUM_PREAMBLE_AVG` writer - Number of preamble bits to be used in the RX for averaging CDR frequency. Any time the value of these bits are changed, the values of NUM_TRANS_AVG will need to be updated."]
 pub struct NUM_PREAMBLE_AVG_W<'a> {
     w: &'a mut W,
 }
@@ -215,7 +215,7 @@ impl<'a> NUM_PREAMBLE_AVG_W<'a> {
         self.w
     }
 }
-#[doc = "Field `NUM_TRANS_AVG` reader - "]
+#[doc = "Field `NUM_TRANS_AVG` reader - Number of transitions required to complete averaging in the receiver. This register will need to be updated any time values of NUM_PREAMBLE_AVG is changed. The values programmed into this register comes from the following table: NUM_PREAMBLE_AVG = 000 : Use 0x19 NUM_PREAMBLE_AVG = 001 : Use 0x19 NUM_PREAMBLE_AVG = 010 : Use 0x7 NUM_PREAMBLE_AVG = 011 : Use 0xd NUM_PREAMBLE_AVG = 100 : Use 0x19 NUM_PREAMBLE_AVG = 101 : Use 0x31"]
 pub struct NUM_TRANS_AVG_R(crate::FieldReader<u8, u8>);
 impl NUM_TRANS_AVG_R {
     #[inline(always)]
@@ -230,7 +230,7 @@ impl core::ops::Deref for NUM_TRANS_AVG_R {
         &self.0
     }
 }
-#[doc = "Field `NUM_TRANS_AVG` writer - "]
+#[doc = "Field `NUM_TRANS_AVG` writer - Number of transitions required to complete averaging in the receiver. This register will need to be updated any time values of NUM_PREAMBLE_AVG is changed. The values programmed into this register comes from the following table: NUM_PREAMBLE_AVG = 000 : Use 0x19 NUM_PREAMBLE_AVG = 001 : Use 0x19 NUM_PREAMBLE_AVG = 010 : Use 0x7 NUM_PREAMBLE_AVG = 011 : Use 0xd NUM_PREAMBLE_AVG = 100 : Use 0x19 NUM_PREAMBLE_AVG = 101 : Use 0x31"]
 pub struct NUM_TRANS_AVG_W<'a> {
     w: &'a mut W,
 }
@@ -242,7 +242,7 @@ impl<'a> NUM_TRANS_AVG_W<'a> {
         self.w
     }
 }
-#[doc = "Field `RX_DISABLE_AUTO_ADJ` reader - "]
+#[doc = "Field `RX_DISABLE_AUTO_ADJ` reader - 0: Automatic bit rate calculation by HW 1: Disables the RX-CC automatic bit rate detection and the RX_UI_PRERIOD register is used for RX UI period."]
 pub struct RX_DISABLE_AUTO_ADJ_R(crate::FieldReader<bool, bool>);
 impl RX_DISABLE_AUTO_ADJ_R {
     #[inline(always)]
@@ -257,7 +257,7 @@ impl core::ops::Deref for RX_DISABLE_AUTO_ADJ_R {
         &self.0
     }
 }
-#[doc = "Field `RX_DISABLE_AUTO_ADJ` writer - "]
+#[doc = "Field `RX_DISABLE_AUTO_ADJ` writer - 0: Automatic bit rate calculation by HW 1: Disables the RX-CC automatic bit rate detection and the RX_UI_PRERIOD register is used for RX UI period."]
 pub struct RX_DISABLE_AUTO_ADJ_W<'a> {
     w: &'a mut W,
 }
@@ -279,7 +279,7 @@ impl<'a> RX_DISABLE_AUTO_ADJ_W<'a> {
         self.w
     }
 }
-#[doc = "Field `RX_UI_PERIOD` reader - "]
+#[doc = "Field `RX_UI_PERIOD` reader - When RX_DISABLE_AUTO_ADJ is set, this register value will define RX UI period."]
 pub struct RX_UI_PERIOD_R(crate::FieldReader<u8, u8>);
 impl RX_UI_PERIOD_R {
     #[inline(always)]
@@ -294,7 +294,7 @@ impl core::ops::Deref for RX_UI_PERIOD_R {
         &self.0
     }
 }
-#[doc = "Field `RX_UI_PERIOD` writer - "]
+#[doc = "Field `RX_UI_PERIOD` writer - When RX_DISABLE_AUTO_ADJ is set, this register value will define RX UI period."]
 pub struct RX_UI_PERIOD_W<'a> {
     w: &'a mut W,
 }
@@ -307,54 +307,54 @@ impl<'a> RX_UI_PERIOD_W<'a> {
     }
 }
 impl R {
-    #[doc = "Bits 0:1"]
+    #[doc = "Bits 0:1 - Number of preamble bits to ignore at the beginning of the RX packet."]
     #[inline(always)]
     pub fn num_preamble_ignore(&self) -> NUM_PREAMBLE_IGNORE_R {
         NUM_PREAMBLE_IGNORE_R::new((self.bits & 0x03) as u8)
     }
-    #[doc = "Bits 2:4"]
+    #[doc = "Bits 2:4 - Number of preamble bits to be used in the RX for averaging CDR frequency. Any time the value of these bits are changed, the values of NUM_TRANS_AVG will need to be updated."]
     #[inline(always)]
     pub fn num_preamble_avg(&self) -> NUM_PREAMBLE_AVG_R {
         NUM_PREAMBLE_AVG_R::new(((self.bits >> 2) & 0x07) as u8)
     }
-    #[doc = "Bits 8:13"]
+    #[doc = "Bits 8:13 - Number of transitions required to complete averaging in the receiver. This register will need to be updated any time values of NUM_PREAMBLE_AVG is changed. The values programmed into this register comes from the following table: NUM_PREAMBLE_AVG = 000 : Use 0x19 NUM_PREAMBLE_AVG = 001 : Use 0x19 NUM_PREAMBLE_AVG = 010 : Use 0x7 NUM_PREAMBLE_AVG = 011 : Use 0xd NUM_PREAMBLE_AVG = 100 : Use 0x19 NUM_PREAMBLE_AVG = 101 : Use 0x31"]
     #[inline(always)]
     pub fn num_trans_avg(&self) -> NUM_TRANS_AVG_R {
         NUM_TRANS_AVG_R::new(((self.bits >> 8) & 0x3f) as u8)
     }
-    #[doc = "Bit 14"]
+    #[doc = "Bit 14 - 0: Automatic bit rate calculation by HW 1: Disables the RX-CC automatic bit rate detection and the RX_UI_PRERIOD register is used for RX UI period."]
     #[inline(always)]
     pub fn rx_disable_auto_adj(&self) -> RX_DISABLE_AUTO_ADJ_R {
         RX_DISABLE_AUTO_ADJ_R::new(((self.bits >> 14) & 0x01) != 0)
     }
-    #[doc = "Bits 16:23"]
+    #[doc = "Bits 16:23 - When RX_DISABLE_AUTO_ADJ is set, this register value will define RX UI period."]
     #[inline(always)]
     pub fn rx_ui_period(&self) -> RX_UI_PERIOD_R {
         RX_UI_PERIOD_R::new(((self.bits >> 16) & 0xff) as u8)
     }
 }
 impl W {
-    #[doc = "Bits 0:1"]
+    #[doc = "Bits 0:1 - Number of preamble bits to ignore at the beginning of the RX packet."]
     #[inline(always)]
     pub fn num_preamble_ignore(&mut self) -> NUM_PREAMBLE_IGNORE_W {
         NUM_PREAMBLE_IGNORE_W { w: self }
     }
-    #[doc = "Bits 2:4"]
+    #[doc = "Bits 2:4 - Number of preamble bits to be used in the RX for averaging CDR frequency. Any time the value of these bits are changed, the values of NUM_TRANS_AVG will need to be updated."]
     #[inline(always)]
     pub fn num_preamble_avg(&mut self) -> NUM_PREAMBLE_AVG_W {
         NUM_PREAMBLE_AVG_W { w: self }
     }
-    #[doc = "Bits 8:13"]
+    #[doc = "Bits 8:13 - Number of transitions required to complete averaging in the receiver. This register will need to be updated any time values of NUM_PREAMBLE_AVG is changed. The values programmed into this register comes from the following table: NUM_PREAMBLE_AVG = 000 : Use 0x19 NUM_PREAMBLE_AVG = 001 : Use 0x19 NUM_PREAMBLE_AVG = 010 : Use 0x7 NUM_PREAMBLE_AVG = 011 : Use 0xd NUM_PREAMBLE_AVG = 100 : Use 0x19 NUM_PREAMBLE_AVG = 101 : Use 0x31"]
     #[inline(always)]
     pub fn num_trans_avg(&mut self) -> NUM_TRANS_AVG_W {
         NUM_TRANS_AVG_W { w: self }
     }
-    #[doc = "Bit 14"]
+    #[doc = "Bit 14 - 0: Automatic bit rate calculation by HW 1: Disables the RX-CC automatic bit rate detection and the RX_UI_PRERIOD register is used for RX UI period."]
     #[inline(always)]
     pub fn rx_disable_auto_adj(&mut self) -> RX_DISABLE_AUTO_ADJ_W {
         RX_DISABLE_AUTO_ADJ_W { w: self }
     }
-    #[doc = "Bits 16:23"]
+    #[doc = "Bits 16:23 - When RX_DISABLE_AUTO_ADJ is set, this register value will define RX UI period."]
     #[inline(always)]
     pub fn rx_ui_period(&mut self) -> RX_UI_PERIOD_W {
         RX_UI_PERIOD_W { w: self }
@@ -366,7 +366,7 @@ impl W {
         self
     }
 }
-#[doc = "\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [debug_cc_1](index.html) module"]
+#[doc = "C-Connector Debug control register 1\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [debug_cc_1](index.html) module"]
 pub struct DEBUG_CC_1_SPEC;
 impl crate::RegisterSpec for DEBUG_CC_1_SPEC {
     type Ux = u32;

@@ -34,7 +34,7 @@ impl From<crate::W<PWR_KEY_DELAY_SPEC>> for W {
         W(writer)
     }
 }
-#[doc = "Field `WAKEUP_HOLDOFF` reader - "]
+#[doc = "Field `WAKEUP_HOLDOFF` reader - Delay to wait for references to settle on wakeup from deepsleep. BOD is ignored and system does not resume until this delay expires. Note that the same delay on POR is hard-coded. The default assumes the output of the predivider is 48MHz + 3%. Firmware may scale this setting according to the fastest actual clock frequency that can occur when waking from DEEPSLEEP."]
 pub struct WAKEUP_HOLDOFF_R(crate::FieldReader<u16, u16>);
 impl WAKEUP_HOLDOFF_R {
     #[inline(always)]
@@ -49,7 +49,7 @@ impl core::ops::Deref for WAKEUP_HOLDOFF_R {
         &self.0
     }
 }
-#[doc = "Field `WAKEUP_HOLDOFF` writer - "]
+#[doc = "Field `WAKEUP_HOLDOFF` writer - Delay to wait for references to settle on wakeup from deepsleep. BOD is ignored and system does not resume until this delay expires. Note that the same delay on POR is hard-coded. The default assumes the output of the predivider is 48MHz + 3%. Firmware may scale this setting according to the fastest actual clock frequency that can occur when waking from DEEPSLEEP."]
 pub struct WAKEUP_HOLDOFF_W<'a> {
     w: &'a mut W,
 }
@@ -62,14 +62,14 @@ impl<'a> WAKEUP_HOLDOFF_W<'a> {
     }
 }
 impl R {
-    #[doc = "Bits 0:9"]
+    #[doc = "Bits 0:9 - Delay to wait for references to settle on wakeup from deepsleep. BOD is ignored and system does not resume until this delay expires. Note that the same delay on POR is hard-coded. The default assumes the output of the predivider is 48MHz + 3%. Firmware may scale this setting according to the fastest actual clock frequency that can occur when waking from DEEPSLEEP."]
     #[inline(always)]
     pub fn wakeup_holdoff(&self) -> WAKEUP_HOLDOFF_R {
         WAKEUP_HOLDOFF_R::new((self.bits & 0x03ff) as u16)
     }
 }
 impl W {
-    #[doc = "Bits 0:9"]
+    #[doc = "Bits 0:9 - Delay to wait for references to settle on wakeup from deepsleep. BOD is ignored and system does not resume until this delay expires. Note that the same delay on POR is hard-coded. The default assumes the output of the predivider is 48MHz + 3%. Firmware may scale this setting according to the fastest actual clock frequency that can occur when waking from DEEPSLEEP."]
     #[inline(always)]
     pub fn wakeup_holdoff(&mut self) -> WAKEUP_HOLDOFF_W {
         WAKEUP_HOLDOFF_W { w: self }
@@ -81,7 +81,7 @@ impl W {
         self
     }
 }
-#[doc = "\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [pwr_key_delay](index.html) module"]
+#[doc = "Power System Key&Delay Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [pwr_key_delay](index.html) module"]
 pub struct PWR_KEY_DELAY_SPEC;
 impl crate::RegisterSpec for PWR_KEY_DELAY_SPEC {
     type Ux = u32;

@@ -34,7 +34,7 @@ impl From<crate::W<DR_SPEC>> for W {
         W(writer)
     }
 }
-#[doc = "Field `DATA0` reader - "]
+#[doc = "Field `DATA0` reader - IO pad 0 output data."]
 pub struct DATA0_R(crate::FieldReader<bool, bool>);
 impl DATA0_R {
     #[inline(always)]
@@ -49,7 +49,7 @@ impl core::ops::Deref for DATA0_R {
         &self.0
     }
 }
-#[doc = "Field `DATA0` writer - "]
+#[doc = "Field `DATA0` writer - IO pad 0 output data."]
 pub struct DATA0_W<'a> {
     w: &'a mut W,
 }
@@ -71,7 +71,7 @@ impl<'a> DATA0_W<'a> {
         self.w
     }
 }
-#[doc = "Field `DATA1` reader - "]
+#[doc = "Field `DATA1` reader - IO pad 1 output data."]
 pub struct DATA1_R(crate::FieldReader<bool, bool>);
 impl DATA1_R {
     #[inline(always)]
@@ -86,7 +86,7 @@ impl core::ops::Deref for DATA1_R {
         &self.0
     }
 }
-#[doc = "Field `DATA1` writer - "]
+#[doc = "Field `DATA1` writer - IO pad 1 output data."]
 pub struct DATA1_W<'a> {
     w: &'a mut W,
 }
@@ -183,12 +183,12 @@ impl<'a> DATA3_W<'a> {
     }
 }
 impl R {
-    #[doc = "Bit 0"]
+    #[doc = "Bit 0 - IO pad 0 output data."]
     #[inline(always)]
     pub fn data0(&self) -> DATA0_R {
         DATA0_R::new((self.bits & 0x01) != 0)
     }
-    #[doc = "Bit 1"]
+    #[doc = "Bit 1 - IO pad 1 output data."]
     #[inline(always)]
     pub fn data1(&self) -> DATA1_R {
         DATA1_R::new(((self.bits >> 1) & 0x01) != 0)
@@ -205,12 +205,12 @@ impl R {
     }
 }
 impl W {
-    #[doc = "Bit 0"]
+    #[doc = "Bit 0 - IO pad 0 output data."]
     #[inline(always)]
     pub fn data0(&mut self) -> DATA0_W {
         DATA0_W { w: self }
     }
-    #[doc = "Bit 1"]
+    #[doc = "Bit 1 - IO pad 1 output data."]
     #[inline(always)]
     pub fn data1(&mut self) -> DATA1_W {
         DATA1_W { w: self }
@@ -232,7 +232,7 @@ impl W {
         self
     }
 }
-#[doc = "\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [dr](index.html) module"]
+#[doc = "Port output data register Used to read and write the output data for the IO pads in the port. A DR register write changes the output data to the written value. A DR register read reflects the output data (and not the current state of the input data for the IO pads). Using this DR register, Read-Modify-Write sequences are safely performed on a port with some IO pads configured as inputs.\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [dr](index.html) module"]
 pub struct DR_SPEC;
 impl crate::RegisterSpec for DR_SPEC {
     type Ux = u32;

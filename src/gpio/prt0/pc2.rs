@@ -34,7 +34,7 @@ impl From<crate::W<PC2_SPEC>> for W {
         W(writer)
     }
 }
-#[doc = "Field `INP_DIS0` reader - "]
+#[doc = "Field `INP_DIS0` reader - Disables the input buffer for IO pad 0 independent of the port control drive mode (PC.DM). This bit should be set when analog signals are present on the pin and PC.DM != 0 is required to use the output driver."]
 pub struct INP_DIS0_R(crate::FieldReader<bool, bool>);
 impl INP_DIS0_R {
     #[inline(always)]
@@ -49,7 +49,7 @@ impl core::ops::Deref for INP_DIS0_R {
         &self.0
     }
 }
-#[doc = "Field `INP_DIS0` writer - "]
+#[doc = "Field `INP_DIS0` writer - Disables the input buffer for IO pad 0 independent of the port control drive mode (PC.DM). This bit should be set when analog signals are present on the pin and PC.DM != 0 is required to use the output driver."]
 pub struct INP_DIS0_W<'a> {
     w: &'a mut W,
 }
@@ -71,7 +71,7 @@ impl<'a> INP_DIS0_W<'a> {
         self.w
     }
 }
-#[doc = "Field `INP_DIS1` reader - "]
+#[doc = "Field `INP_DIS1` reader - Disables the input buffer for IO pad 1."]
 pub struct INP_DIS1_R(crate::FieldReader<bool, bool>);
 impl INP_DIS1_R {
     #[inline(always)]
@@ -86,7 +86,7 @@ impl core::ops::Deref for INP_DIS1_R {
         &self.0
     }
 }
-#[doc = "Field `INP_DIS1` writer - "]
+#[doc = "Field `INP_DIS1` writer - Disables the input buffer for IO pad 1."]
 pub struct INP_DIS1_W<'a> {
     w: &'a mut W,
 }
@@ -109,24 +109,24 @@ impl<'a> INP_DIS1_W<'a> {
     }
 }
 impl R {
-    #[doc = "Bit 0"]
+    #[doc = "Bit 0 - Disables the input buffer for IO pad 0 independent of the port control drive mode (PC.DM). This bit should be set when analog signals are present on the pin and PC.DM != 0 is required to use the output driver."]
     #[inline(always)]
     pub fn inp_dis0(&self) -> INP_DIS0_R {
         INP_DIS0_R::new((self.bits & 0x01) != 0)
     }
-    #[doc = "Bit 1"]
+    #[doc = "Bit 1 - Disables the input buffer for IO pad 1."]
     #[inline(always)]
     pub fn inp_dis1(&self) -> INP_DIS1_R {
         INP_DIS1_R::new(((self.bits >> 1) & 0x01) != 0)
     }
 }
 impl W {
-    #[doc = "Bit 0"]
+    #[doc = "Bit 0 - Disables the input buffer for IO pad 0 independent of the port control drive mode (PC.DM). This bit should be set when analog signals are present on the pin and PC.DM != 0 is required to use the output driver."]
     #[inline(always)]
     pub fn inp_dis0(&mut self) -> INP_DIS0_W {
         INP_DIS0_W { w: self }
     }
-    #[doc = "Bit 1"]
+    #[doc = "Bit 1 - Disables the input buffer for IO pad 1."]
     #[inline(always)]
     pub fn inp_dis1(&mut self) -> INP_DIS1_W {
         INP_DIS1_W { w: self }
@@ -138,7 +138,7 @@ impl W {
         self
     }
 }
-#[doc = "\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [pc2](index.html) module"]
+#[doc = "Port configuration register 2 Configures the input disable for each pin.\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [pc2](index.html) module"]
 pub struct PC2_SPEC;
 impl crate::RegisterSpec for PC2_SPEC {
     type Ux = u32;

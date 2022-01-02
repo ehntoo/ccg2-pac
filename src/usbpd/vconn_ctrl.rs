@@ -34,7 +34,7 @@ impl From<crate::W<VCONN_CTRL_SPEC>> for W {
         W(writer)
     }
 }
-#[doc = "Field `PUMP_EN` reader - "]
+#[doc = "Field `PUMP_EN` reader - Negative Charge Pump enable signal 0 - Pump disabled: Ra termination is present on both VCONN1 and VCONN2 1 - Pump enabled: Ra termination is cutoff on VCONN1 only if the EN_COMP1 is set Ra termination is cutoff on VCONN2 only if the EN_COMP2 is set"]
 pub struct PUMP_EN_R(crate::FieldReader<bool, bool>);
 impl PUMP_EN_R {
     #[inline(always)]
@@ -49,7 +49,7 @@ impl core::ops::Deref for PUMP_EN_R {
         &self.0
     }
 }
-#[doc = "Field `PUMP_EN` writer - "]
+#[doc = "Field `PUMP_EN` writer - Negative Charge Pump enable signal 0 - Pump disabled: Ra termination is present on both VCONN1 and VCONN2 1 - Pump enabled: Ra termination is cutoff on VCONN1 only if the EN_COMP1 is set Ra termination is cutoff on VCONN2 only if the EN_COMP2 is set"]
 pub struct PUMP_EN_W<'a> {
     w: &'a mut W,
 }
@@ -71,7 +71,7 @@ impl<'a> PUMP_EN_W<'a> {
         self.w
     }
 }
-#[doc = "Field `EN_COMP1` reader - "]
+#[doc = "Field `EN_COMP1` reader - Enable VCONN1 comparator"]
 pub struct EN_COMP1_R(crate::FieldReader<bool, bool>);
 impl EN_COMP1_R {
     #[inline(always)]
@@ -86,7 +86,7 @@ impl core::ops::Deref for EN_COMP1_R {
         &self.0
     }
 }
-#[doc = "Field `EN_COMP1` writer - "]
+#[doc = "Field `EN_COMP1` writer - Enable VCONN1 comparator"]
 pub struct EN_COMP1_W<'a> {
     w: &'a mut W,
 }
@@ -108,7 +108,7 @@ impl<'a> EN_COMP1_W<'a> {
         self.w
     }
 }
-#[doc = "Field `EN_COMP2` reader - "]
+#[doc = "Field `EN_COMP2` reader - Enable VCONN2 comparator"]
 pub struct EN_COMP2_R(crate::FieldReader<bool, bool>);
 impl EN_COMP2_R {
     #[inline(always)]
@@ -123,7 +123,7 @@ impl core::ops::Deref for EN_COMP2_R {
         &self.0
     }
 }
-#[doc = "Field `EN_COMP2` writer - "]
+#[doc = "Field `EN_COMP2` writer - Enable VCONN2 comparator"]
 pub struct EN_COMP2_W<'a> {
     w: &'a mut W,
 }
@@ -145,7 +145,7 @@ impl<'a> EN_COMP2_W<'a> {
         self.w
     }
 }
-#[doc = "\n\nValue on reset: 0"]
+#[doc = "VCONN1 leaker control\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u8)]
 pub enum LEAKER_CONFIG1_A {
@@ -172,7 +172,7 @@ impl From<LEAKER_CONFIG1_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `LEAKER_CONFIG1` reader - "]
+#[doc = "Field `LEAKER_CONFIG1` reader - VCONN1 leaker control"]
 pub struct LEAKER_CONFIG1_R(crate::FieldReader<u8, LEAKER_CONFIG1_A>);
 impl LEAKER_CONFIG1_R {
     #[inline(always)]
@@ -242,7 +242,7 @@ impl core::ops::Deref for LEAKER_CONFIG1_R {
         &self.0
     }
 }
-#[doc = "Field `LEAKER_CONFIG1` writer - "]
+#[doc = "Field `LEAKER_CONFIG1` writer - VCONN1 leaker control"]
 pub struct LEAKER_CONFIG1_W<'a> {
     w: &'a mut W,
 }
@@ -299,7 +299,7 @@ impl<'a> LEAKER_CONFIG1_W<'a> {
         self.w
     }
 }
-#[doc = "\n\nValue on reset: 0"]
+#[doc = "VCONN2 leaker control\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u8)]
 pub enum LEAKER_CONFIG2_A {
@@ -326,7 +326,7 @@ impl From<LEAKER_CONFIG2_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `LEAKER_CONFIG2` reader - "]
+#[doc = "Field `LEAKER_CONFIG2` reader - VCONN2 leaker control"]
 pub struct LEAKER_CONFIG2_R(crate::FieldReader<u8, LEAKER_CONFIG2_A>);
 impl LEAKER_CONFIG2_R {
     #[inline(always)]
@@ -396,7 +396,7 @@ impl core::ops::Deref for LEAKER_CONFIG2_R {
         &self.0
     }
 }
-#[doc = "Field `LEAKER_CONFIG2` writer - "]
+#[doc = "Field `LEAKER_CONFIG2` writer - VCONN2 leaker control"]
 pub struct LEAKER_CONFIG2_W<'a> {
     w: &'a mut W,
 }
@@ -454,54 +454,54 @@ impl<'a> LEAKER_CONFIG2_W<'a> {
     }
 }
 impl R {
-    #[doc = "Bit 0"]
+    #[doc = "Bit 0 - Negative Charge Pump enable signal 0 - Pump disabled: Ra termination is present on both VCONN1 and VCONN2 1 - Pump enabled: Ra termination is cutoff on VCONN1 only if the EN_COMP1 is set Ra termination is cutoff on VCONN2 only if the EN_COMP2 is set"]
     #[inline(always)]
     pub fn pump_en(&self) -> PUMP_EN_R {
         PUMP_EN_R::new((self.bits & 0x01) != 0)
     }
-    #[doc = "Bit 1"]
+    #[doc = "Bit 1 - Enable VCONN1 comparator"]
     #[inline(always)]
     pub fn en_comp1(&self) -> EN_COMP1_R {
         EN_COMP1_R::new(((self.bits >> 1) & 0x01) != 0)
     }
-    #[doc = "Bit 2"]
+    #[doc = "Bit 2 - Enable VCONN2 comparator"]
     #[inline(always)]
     pub fn en_comp2(&self) -> EN_COMP2_R {
         EN_COMP2_R::new(((self.bits >> 2) & 0x01) != 0)
     }
-    #[doc = "Bits 3:5"]
+    #[doc = "Bits 3:5 - VCONN1 leaker control"]
     #[inline(always)]
     pub fn leaker_config1(&self) -> LEAKER_CONFIG1_R {
         LEAKER_CONFIG1_R::new(((self.bits >> 3) & 0x07) as u8)
     }
-    #[doc = "Bits 6:8"]
+    #[doc = "Bits 6:8 - VCONN2 leaker control"]
     #[inline(always)]
     pub fn leaker_config2(&self) -> LEAKER_CONFIG2_R {
         LEAKER_CONFIG2_R::new(((self.bits >> 6) & 0x07) as u8)
     }
 }
 impl W {
-    #[doc = "Bit 0"]
+    #[doc = "Bit 0 - Negative Charge Pump enable signal 0 - Pump disabled: Ra termination is present on both VCONN1 and VCONN2 1 - Pump enabled: Ra termination is cutoff on VCONN1 only if the EN_COMP1 is set Ra termination is cutoff on VCONN2 only if the EN_COMP2 is set"]
     #[inline(always)]
     pub fn pump_en(&mut self) -> PUMP_EN_W {
         PUMP_EN_W { w: self }
     }
-    #[doc = "Bit 1"]
+    #[doc = "Bit 1 - Enable VCONN1 comparator"]
     #[inline(always)]
     pub fn en_comp1(&mut self) -> EN_COMP1_W {
         EN_COMP1_W { w: self }
     }
-    #[doc = "Bit 2"]
+    #[doc = "Bit 2 - Enable VCONN2 comparator"]
     #[inline(always)]
     pub fn en_comp2(&mut self) -> EN_COMP2_W {
         EN_COMP2_W { w: self }
     }
-    #[doc = "Bits 3:5"]
+    #[doc = "Bits 3:5 - VCONN1 leaker control"]
     #[inline(always)]
     pub fn leaker_config1(&mut self) -> LEAKER_CONFIG1_W {
         LEAKER_CONFIG1_W { w: self }
     }
-    #[doc = "Bits 6:8"]
+    #[doc = "Bits 6:8 - VCONN2 leaker control"]
     #[inline(always)]
     pub fn leaker_config2(&mut self) -> LEAKER_CONFIG2_W {
         LEAKER_CONFIG2_W { w: self }
@@ -513,7 +513,7 @@ impl W {
         self
     }
 }
-#[doc = "\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [vconn_ctrl](index.html) module"]
+#[doc = "S8USBPD VCONN control Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [vconn_ctrl](index.html) module"]
 pub struct VCONN_CTRL_SPEC;
 impl crate::RegisterSpec for VCONN_CTRL_SPEC {
     type Ux = u32;

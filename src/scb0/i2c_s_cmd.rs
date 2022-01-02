@@ -34,7 +34,7 @@ impl From<crate::W<I2C_S_CMD_SPEC>> for W {
         W(writer)
     }
 }
-#[doc = "Field `S_ACK` reader - "]
+#[doc = "Field `S_ACK` reader - When '1', attempt to transmit an acknowledgement (ACK). When this action is performed, the hardware sets this field to '0'. In EZ mode, this field should be set to '0' (it is only to be used in non EZ mode)."]
 pub struct S_ACK_R(crate::FieldReader<bool, bool>);
 impl S_ACK_R {
     #[inline(always)]
@@ -49,7 +49,7 @@ impl core::ops::Deref for S_ACK_R {
         &self.0
     }
 }
-#[doc = "Field `S_ACK` writer - "]
+#[doc = "Field `S_ACK` writer - When '1', attempt to transmit an acknowledgement (ACK). When this action is performed, the hardware sets this field to '0'. In EZ mode, this field should be set to '0' (it is only to be used in non EZ mode)."]
 pub struct S_ACK_W<'a> {
     w: &'a mut W,
 }
@@ -71,7 +71,7 @@ impl<'a> S_ACK_W<'a> {
         self.w
     }
 }
-#[doc = "Field `S_NACK` reader - "]
+#[doc = "Field `S_NACK` reader - When '1', attempt to transmit a negative acknowledgement (NACK). When this action is performed, the hardware sets this field to '0'. In EZ mode, this field should be set to '0' (it is only to be used in non EZ mode). This command has a higher priority than I2C_S_CMD.S_ACK, I2C_CTRL.S_READY_ADDR_ACK or I2C_CTRL.S_READY_DATA_ACK."]
 pub struct S_NACK_R(crate::FieldReader<bool, bool>);
 impl S_NACK_R {
     #[inline(always)]
@@ -86,7 +86,7 @@ impl core::ops::Deref for S_NACK_R {
         &self.0
     }
 }
-#[doc = "Field `S_NACK` writer - "]
+#[doc = "Field `S_NACK` writer - When '1', attempt to transmit a negative acknowledgement (NACK). When this action is performed, the hardware sets this field to '0'. In EZ mode, this field should be set to '0' (it is only to be used in non EZ mode). This command has a higher priority than I2C_S_CMD.S_ACK, I2C_CTRL.S_READY_ADDR_ACK or I2C_CTRL.S_READY_DATA_ACK."]
 pub struct S_NACK_W<'a> {
     w: &'a mut W,
 }
@@ -109,24 +109,24 @@ impl<'a> S_NACK_W<'a> {
     }
 }
 impl R {
-    #[doc = "Bit 0"]
+    #[doc = "Bit 0 - When '1', attempt to transmit an acknowledgement (ACK). When this action is performed, the hardware sets this field to '0'. In EZ mode, this field should be set to '0' (it is only to be used in non EZ mode)."]
     #[inline(always)]
     pub fn s_ack(&self) -> S_ACK_R {
         S_ACK_R::new((self.bits & 0x01) != 0)
     }
-    #[doc = "Bit 1"]
+    #[doc = "Bit 1 - When '1', attempt to transmit a negative acknowledgement (NACK). When this action is performed, the hardware sets this field to '0'. In EZ mode, this field should be set to '0' (it is only to be used in non EZ mode). This command has a higher priority than I2C_S_CMD.S_ACK, I2C_CTRL.S_READY_ADDR_ACK or I2C_CTRL.S_READY_DATA_ACK."]
     #[inline(always)]
     pub fn s_nack(&self) -> S_NACK_R {
         S_NACK_R::new(((self.bits >> 1) & 0x01) != 0)
     }
 }
 impl W {
-    #[doc = "Bit 0"]
+    #[doc = "Bit 0 - When '1', attempt to transmit an acknowledgement (ACK). When this action is performed, the hardware sets this field to '0'. In EZ mode, this field should be set to '0' (it is only to be used in non EZ mode)."]
     #[inline(always)]
     pub fn s_ack(&mut self) -> S_ACK_W {
         S_ACK_W { w: self }
     }
-    #[doc = "Bit 1"]
+    #[doc = "Bit 1 - When '1', attempt to transmit a negative acknowledgement (NACK). When this action is performed, the hardware sets this field to '0'. In EZ mode, this field should be set to '0' (it is only to be used in non EZ mode). This command has a higher priority than I2C_S_CMD.S_ACK, I2C_CTRL.S_READY_ADDR_ACK or I2C_CTRL.S_READY_DATA_ACK."]
     #[inline(always)]
     pub fn s_nack(&mut self) -> S_NACK_W {
         S_NACK_W { w: self }
@@ -138,7 +138,7 @@ impl W {
         self
     }
 }
-#[doc = "\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [i2c_s_cmd](index.html) module"]
+#[doc = "I2C slave command register. The register fields are not retained. This is to ensure that they come up as '0' after coming out of DeepSleep system power mode.\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [i2c_s_cmd](index.html) module"]
 pub struct I2C_S_CMD_SPEC;
 impl crate::RegisterSpec for I2C_S_CMD_SPEC {
     type Ux = u32;

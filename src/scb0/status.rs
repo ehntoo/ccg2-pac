@@ -13,7 +13,7 @@ impl From<crate::R<STATUS_SPEC>> for R {
         R(reader)
     }
 }
-#[doc = "Field `EC_BUSY` reader - "]
+#[doc = "Field `EC_BUSY` reader - Inidicates whether the externally clocked logic is potentially accessing the EZ memory (this is only possible in EZ mode). This bit can be used by SW to determine whether it is safe to issue a SW access to the EZ memory (without bus wait states (a blocked SW access) or bus errors being generated). Note that the INTR_TX.BLOCKED and INTR_RX.BLOCKED interrupt causes are used to indicate whether a SW access was actually blocked by externally clocked logic."]
 pub struct EC_BUSY_R(crate::FieldReader<bool, bool>);
 impl EC_BUSY_R {
     #[inline(always)]
@@ -29,13 +29,13 @@ impl core::ops::Deref for EC_BUSY_R {
     }
 }
 impl R {
-    #[doc = "Bit 0"]
+    #[doc = "Bit 0 - Inidicates whether the externally clocked logic is potentially accessing the EZ memory (this is only possible in EZ mode). This bit can be used by SW to determine whether it is safe to issue a SW access to the EZ memory (without bus wait states (a blocked SW access) or bus errors being generated). Note that the INTR_TX.BLOCKED and INTR_RX.BLOCKED interrupt causes are used to indicate whether a SW access was actually blocked by externally clocked logic."]
     #[inline(always)]
     pub fn ec_busy(&self) -> EC_BUSY_R {
         EC_BUSY_R::new((self.bits & 0x01) != 0)
     }
 }
-#[doc = "\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [status](index.html) module"]
+#[doc = "Generic status register.\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [status](index.html) module"]
 pub struct STATUS_SPEC;
 impl crate::RegisterSpec for STATUS_SPEC {
     type Ux = u32;

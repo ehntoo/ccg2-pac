@@ -34,7 +34,7 @@ impl From<crate::W<COUNTER_SPEC>> for W {
         W(writer)
     }
 }
-#[doc = "Field `COUNTER` reader - "]
+#[doc = "Field `COUNTER` reader - 16-bit counter value. It is advised to not write to this field when the counter is running."]
 pub struct COUNTER_R(crate::FieldReader<u16, u16>);
 impl COUNTER_R {
     #[inline(always)]
@@ -49,7 +49,7 @@ impl core::ops::Deref for COUNTER_R {
         &self.0
     }
 }
-#[doc = "Field `COUNTER` writer - "]
+#[doc = "Field `COUNTER` writer - 16-bit counter value. It is advised to not write to this field when the counter is running."]
 pub struct COUNTER_W<'a> {
     w: &'a mut W,
 }
@@ -62,14 +62,14 @@ impl<'a> COUNTER_W<'a> {
     }
 }
 impl R {
-    #[doc = "Bits 0:15"]
+    #[doc = "Bits 0:15 - 16-bit counter value. It is advised to not write to this field when the counter is running."]
     #[inline(always)]
     pub fn counter(&self) -> COUNTER_R {
         COUNTER_R::new((self.bits & 0xffff) as u16)
     }
 }
 impl W {
-    #[doc = "Bits 0:15"]
+    #[doc = "Bits 0:15 - 16-bit counter value. It is advised to not write to this field when the counter is running."]
     #[inline(always)]
     pub fn counter(&mut self) -> COUNTER_W {
         COUNTER_W { w: self }
@@ -81,7 +81,7 @@ impl W {
         self
     }
 }
-#[doc = "\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [counter](index.html) module"]
+#[doc = "Counter count register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [counter](index.html) module"]
 pub struct COUNTER_SPEC;
 impl crate::RegisterSpec for COUNTER_SPEC {
     type Ux = u32;

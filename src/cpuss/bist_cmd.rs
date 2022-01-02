@@ -34,7 +34,7 @@ impl From<crate::W<BIST_CMD_SPEC>> for W {
         W(writer)
     }
 }
-#[doc = "Field `SRAM_GO` reader - "]
+#[doc = "Field `SRAM_GO` reader - 1': Start SRAM BIST. Hardware set this field to '0' when BIST is completed. SRAM BIST is functional up to 48 MHz. Note that this field is mutually exclusive with the \"SROM_GO\" field."]
 pub struct SRAM_GO_R(crate::FieldReader<bool, bool>);
 impl SRAM_GO_R {
     #[inline(always)]
@@ -49,7 +49,7 @@ impl core::ops::Deref for SRAM_GO_R {
         &self.0
     }
 }
-#[doc = "Field `SRAM_GO` writer - "]
+#[doc = "Field `SRAM_GO` writer - 1': Start SRAM BIST. Hardware set this field to '0' when BIST is completed. SRAM BIST is functional up to 48 MHz. Note that this field is mutually exclusive with the \"SROM_GO\" field."]
 pub struct SRAM_GO_W<'a> {
     w: &'a mut W,
 }
@@ -71,7 +71,7 @@ impl<'a> SRAM_GO_W<'a> {
         self.w
     }
 }
-#[doc = "Field `SROM_GO` reader - "]
+#[doc = "Field `SROM_GO` reader - 1': Start ROM BIST. Hardware set this field to '0' when BIST is completed. SROM BIST is functional up to 24 MHz."]
 pub struct SROM_GO_R(crate::FieldReader<bool, bool>);
 impl SROM_GO_R {
     #[inline(always)]
@@ -86,7 +86,7 @@ impl core::ops::Deref for SROM_GO_R {
         &self.0
     }
 }
-#[doc = "Field `SROM_GO` writer - "]
+#[doc = "Field `SROM_GO` writer - 1': Start ROM BIST. Hardware set this field to '0' when BIST is completed. SROM BIST is functional up to 24 MHz."]
 pub struct SROM_GO_W<'a> {
     w: &'a mut W,
 }
@@ -109,24 +109,24 @@ impl<'a> SROM_GO_W<'a> {
     }
 }
 impl R {
-    #[doc = "Bit 0"]
+    #[doc = "Bit 0 - 1': Start SRAM BIST. Hardware set this field to '0' when BIST is completed. SRAM BIST is functional up to 48 MHz. Note that this field is mutually exclusive with the \"SROM_GO\" field."]
     #[inline(always)]
     pub fn sram_go(&self) -> SRAM_GO_R {
         SRAM_GO_R::new((self.bits & 0x01) != 0)
     }
-    #[doc = "Bit 1"]
+    #[doc = "Bit 1 - 1': Start ROM BIST. Hardware set this field to '0' when BIST is completed. SROM BIST is functional up to 24 MHz."]
     #[inline(always)]
     pub fn srom_go(&self) -> SROM_GO_R {
         SROM_GO_R::new(((self.bits >> 1) & 0x01) != 0)
     }
 }
 impl W {
-    #[doc = "Bit 0"]
+    #[doc = "Bit 0 - 1': Start SRAM BIST. Hardware set this field to '0' when BIST is completed. SRAM BIST is functional up to 48 MHz. Note that this field is mutually exclusive with the \"SROM_GO\" field."]
     #[inline(always)]
     pub fn sram_go(&mut self) -> SRAM_GO_W {
         SRAM_GO_W { w: self }
     }
-    #[doc = "Bit 1"]
+    #[doc = "Bit 1 - 1': Start ROM BIST. Hardware set this field to '0' when BIST is completed. SROM BIST is functional up to 24 MHz."]
     #[inline(always)]
     pub fn srom_go(&mut self) -> SROM_GO_W {
         SROM_GO_W { w: self }
@@ -138,7 +138,7 @@ impl W {
         self
     }
 }
-#[doc = "\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [bist_cmd](index.html) module"]
+#[doc = "Bist command register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [bist_cmd](index.html) module"]
 pub struct BIST_CMD_SPEC;
 impl crate::RegisterSpec for BIST_CMD_SPEC {
     type Ux = u32;

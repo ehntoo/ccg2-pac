@@ -34,7 +34,7 @@ impl From<crate::W<PRIV_FLASH_SPEC>> for W {
         W(writer)
     }
 }
-#[doc = "Field `FLASH_PROT_LIMIT` reader - "]
+#[doc = "Field `FLASH_PROT_LIMIT` reader - Indicates the limit where the privileged area of flash starts in increments of 256 Bytes. \"0\": Entire flash is Privileged. \"1\": First 256 Bytes are User accessable. Any number larger than the size of the flash indicates that the entire flash is user mode accessible. Note that SuperVisory rows are always User accessable. If FLASH_PROT_LIMIT defines a non-empty privileged area, the boot ROM will assume that a system call table exists at the beginning of the Flash privileged area and use it for all SystemCalls made using SYSREQ."]
 pub struct FLASH_PROT_LIMIT_R(crate::FieldReader<u16, u16>);
 impl FLASH_PROT_LIMIT_R {
     #[inline(always)]
@@ -49,7 +49,7 @@ impl core::ops::Deref for FLASH_PROT_LIMIT_R {
         &self.0
     }
 }
-#[doc = "Field `FLASH_PROT_LIMIT` writer - "]
+#[doc = "Field `FLASH_PROT_LIMIT` writer - Indicates the limit where the privileged area of flash starts in increments of 256 Bytes. \"0\": Entire flash is Privileged. \"1\": First 256 Bytes are User accessable. Any number larger than the size of the flash indicates that the entire flash is user mode accessible. Note that SuperVisory rows are always User accessable. If FLASH_PROT_LIMIT defines a non-empty privileged area, the boot ROM will assume that a system call table exists at the beginning of the Flash privileged area and use it for all SystemCalls made using SYSREQ."]
 pub struct FLASH_PROT_LIMIT_W<'a> {
     w: &'a mut W,
 }
@@ -62,14 +62,14 @@ impl<'a> FLASH_PROT_LIMIT_W<'a> {
     }
 }
 impl R {
-    #[doc = "Bits 0:10"]
+    #[doc = "Bits 0:10 - Indicates the limit where the privileged area of flash starts in increments of 256 Bytes. \"0\": Entire flash is Privileged. \"1\": First 256 Bytes are User accessable. Any number larger than the size of the flash indicates that the entire flash is user mode accessible. Note that SuperVisory rows are always User accessable. If FLASH_PROT_LIMIT defines a non-empty privileged area, the boot ROM will assume that a system call table exists at the beginning of the Flash privileged area and use it for all SystemCalls made using SYSREQ."]
     #[inline(always)]
     pub fn flash_prot_limit(&self) -> FLASH_PROT_LIMIT_R {
         FLASH_PROT_LIMIT_R::new((self.bits & 0x07ff) as u16)
     }
 }
 impl W {
-    #[doc = "Bits 0:10"]
+    #[doc = "Bits 0:10 - Indicates the limit where the privileged area of flash starts in increments of 256 Bytes. \"0\": Entire flash is Privileged. \"1\": First 256 Bytes are User accessable. Any number larger than the size of the flash indicates that the entire flash is user mode accessible. Note that SuperVisory rows are always User accessable. If FLASH_PROT_LIMIT defines a non-empty privileged area, the boot ROM will assume that a system call table exists at the beginning of the Flash privileged area and use it for all SystemCalls made using SYSREQ."]
     #[inline(always)]
     pub fn flash_prot_limit(&mut self) -> FLASH_PROT_LIMIT_W {
         FLASH_PROT_LIMIT_W { w: self }
@@ -81,7 +81,7 @@ impl W {
         self
     }
 }
-#[doc = "\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [priv_flash](index.html) module"]
+#[doc = "ROM privilege register User mode accesses to a privileged address result in an+C48 AHB-Lite bus error. If the regular flash memory capacity is not a power of two, the regular flash memory region has an unpopulated/unaccounted memory are (at the end of the regular flash memory region). A user mode access to an unpopulated, privileged area (as indicated by the LIMIT field(s)) address results in an AHB-Lite bus error. A user mode access to a unpopulated area, without any access violations, behaves as follows: Reads return \"0\" and writes are ignore (RZWI).\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [priv_flash](index.html) module"]
 pub struct PRIV_FLASH_SPEC;
 impl crate::RegisterSpec for PRIV_FLASH_SPEC {
     type Ux = u32;

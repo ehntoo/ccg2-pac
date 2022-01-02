@@ -34,7 +34,7 @@ impl From<crate::W<ADC_SAR_CTRL_SPEC>> for W {
         W(writer)
     }
 }
-#[doc = "Field `SAR_EN` reader - "]
+#[doc = "Field `SAR_EN` reader - Setting this bit will enable the HW SAR logic. Once the SAR_EN is one, Hardware will update the SAR_OUT register after 8 cycles of clk_sar and clear this register."]
 pub struct SAR_EN_R(crate::FieldReader<bool, bool>);
 impl SAR_EN_R {
     #[inline(always)]
@@ -49,7 +49,7 @@ impl core::ops::Deref for SAR_EN_R {
         &self.0
     }
 }
-#[doc = "Field `SAR_EN` writer - "]
+#[doc = "Field `SAR_EN` writer - Setting this bit will enable the HW SAR logic. Once the SAR_EN is one, Hardware will update the SAR_OUT register after 8 cycles of clk_sar and clear this register."]
 pub struct SAR_EN_W<'a> {
     w: &'a mut W,
 }
@@ -71,7 +71,7 @@ impl<'a> SAR_EN_W<'a> {
         self.w
     }
 }
-#[doc = "Field `MID_VAL` reader - "]
+#[doc = "Field `MID_VAL` reader - ADC starting mid value"]
 pub struct MID_VAL_R(crate::FieldReader<u8, u8>);
 impl MID_VAL_R {
     #[inline(always)]
@@ -86,7 +86,7 @@ impl core::ops::Deref for MID_VAL_R {
         &self.0
     }
 }
-#[doc = "Field `MID_VAL` writer - "]
+#[doc = "Field `MID_VAL` writer - ADC starting mid value"]
 pub struct MID_VAL_W<'a> {
     w: &'a mut W,
 }
@@ -98,7 +98,7 @@ impl<'a> MID_VAL_W<'a> {
         self.w
     }
 }
-#[doc = "Field `SAR_OUT` reader - "]
+#[doc = "Field `SAR_OUT` reader - ADC output resistance value Stored 8-bit ADC value after the ID Pin voltage is sampled."]
 pub struct SAR_OUT_R(crate::FieldReader<u8, u8>);
 impl SAR_OUT_R {
     #[inline(always)]
@@ -113,7 +113,7 @@ impl core::ops::Deref for SAR_OUT_R {
         &self.0
     }
 }
-#[doc = "\n\nValue on reset: 0"]
+#[doc = "This register selects which edge of cmp_out pin of the s8usbpd_adc_top should be used to generate INT0.CMP_OUT_DET\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u8)]
 pub enum INTR_CMP_SEL_AW {
@@ -132,7 +132,7 @@ impl From<INTR_CMP_SEL_AW> for u8 {
         variant as _
     }
 }
-#[doc = "Field `INTR_CMP_SEL` writer - "]
+#[doc = "Field `INTR_CMP_SEL` writer - This register selects which edge of cmp_out pin of the s8usbpd_adc_top should be used to generate INT0.CMP_OUT_DET"]
 pub struct INTR_CMP_SEL_W<'a> {
     w: &'a mut W,
 }
@@ -170,34 +170,34 @@ impl<'a> INTR_CMP_SEL_W<'a> {
     }
 }
 impl R {
-    #[doc = "Bit 0"]
+    #[doc = "Bit 0 - Setting this bit will enable the HW SAR logic. Once the SAR_EN is one, Hardware will update the SAR_OUT register after 8 cycles of clk_sar and clear this register."]
     #[inline(always)]
     pub fn sar_en(&self) -> SAR_EN_R {
         SAR_EN_R::new((self.bits & 0x01) != 0)
     }
-    #[doc = "Bits 8:15"]
+    #[doc = "Bits 8:15 - ADC starting mid value"]
     #[inline(always)]
     pub fn mid_val(&self) -> MID_VAL_R {
         MID_VAL_R::new(((self.bits >> 8) & 0xff) as u8)
     }
-    #[doc = "Bits 16:23"]
+    #[doc = "Bits 16:23 - ADC output resistance value Stored 8-bit ADC value after the ID Pin voltage is sampled."]
     #[inline(always)]
     pub fn sar_out(&self) -> SAR_OUT_R {
         SAR_OUT_R::new(((self.bits >> 16) & 0xff) as u8)
     }
 }
 impl W {
-    #[doc = "Bit 0"]
+    #[doc = "Bit 0 - Setting this bit will enable the HW SAR logic. Once the SAR_EN is one, Hardware will update the SAR_OUT register after 8 cycles of clk_sar and clear this register."]
     #[inline(always)]
     pub fn sar_en(&mut self) -> SAR_EN_W {
         SAR_EN_W { w: self }
     }
-    #[doc = "Bits 8:15"]
+    #[doc = "Bits 8:15 - ADC starting mid value"]
     #[inline(always)]
     pub fn mid_val(&mut self) -> MID_VAL_W {
         MID_VAL_W { w: self }
     }
-    #[doc = "Bits 24:25"]
+    #[doc = "Bits 24:25 - This register selects which edge of cmp_out pin of the s8usbpd_adc_top should be used to generate INT0.CMP_OUT_DET"]
     #[inline(always)]
     pub fn intr_cmp_sel(&mut self) -> INTR_CMP_SEL_W {
         INTR_CMP_SEL_W { w: self }
@@ -209,7 +209,7 @@ impl W {
         self
     }
 }
-#[doc = "\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [adc_sar_ctrl](index.html) module"]
+#[doc = "ADC SAR Control Register General Purpose voltgae measurement, Temperature Sceining\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [adc_sar_ctrl](index.html) module"]
 pub struct ADC_SAR_CTRL_SPEC;
 impl crate::RegisterSpec for ADC_SAR_CTRL_SPEC {
     type Ux = u32;

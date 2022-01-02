@@ -34,7 +34,7 @@ impl From<crate::W<CLK_IMO_SELECT_SPEC>> for W {
         W(writer)
     }
 }
-#[doc = "\n\nValue on reset: 0"]
+#[doc = "Select operating frequency\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u8)]
 pub enum FREQ_A {
@@ -59,7 +59,7 @@ impl From<FREQ_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `FREQ` reader - "]
+#[doc = "Field `FREQ` reader - Select operating frequency"]
 pub struct FREQ_R(crate::FieldReader<u8, FREQ_A>);
 impl FREQ_R {
     #[inline(always)]
@@ -123,7 +123,7 @@ impl core::ops::Deref for FREQ_R {
         &self.0
     }
 }
-#[doc = "Field `FREQ` writer - "]
+#[doc = "Field `FREQ` writer - Select operating frequency"]
 pub struct FREQ_W<'a> {
     w: &'a mut W,
 }
@@ -176,14 +176,14 @@ impl<'a> FREQ_W<'a> {
     }
 }
 impl R {
-    #[doc = "Bits 0:2"]
+    #[doc = "Bits 0:2 - Select operating frequency"]
     #[inline(always)]
     pub fn freq(&self) -> FREQ_R {
         FREQ_R::new((self.bits & 0x07) as u8)
     }
 }
 impl W {
-    #[doc = "Bits 0:2"]
+    #[doc = "Bits 0:2 - Select operating frequency"]
     #[inline(always)]
     pub fn freq(&mut self) -> FREQ_W {
         FREQ_W { w: self }
@@ -195,7 +195,7 @@ impl W {
         self
     }
 }
-#[doc = "\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [clk_imo_select](index.html) module"]
+#[doc = "IMO Frequency Select Register Selects the operating frequency of the IMO\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [clk_imo_select](index.html) module"]
 pub struct CLK_IMO_SELECT_SPEC;
 impl crate::RegisterSpec for CLK_IMO_SELECT_SPEC {
     type Ux = u32;

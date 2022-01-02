@@ -34,7 +34,7 @@ impl From<crate::W<CLK_ILO_CONFIG_SPEC>> for W {
         W(writer)
     }
 }
-#[doc = "Field `ENABLE` reader - "]
+#[doc = "Field `ENABLE` reader - Master enable for ILO oscillator. This bit is hardware set whenever the WD_DISABLE_KEY is not set to the magic value."]
 pub struct ENABLE_R(crate::FieldReader<bool, bool>);
 impl ENABLE_R {
     #[inline(always)]
@@ -49,7 +49,7 @@ impl core::ops::Deref for ENABLE_R {
         &self.0
     }
 }
-#[doc = "Field `ENABLE` writer - "]
+#[doc = "Field `ENABLE` writer - Master enable for ILO oscillator. This bit is hardware set whenever the WD_DISABLE_KEY is not set to the magic value."]
 pub struct ENABLE_W<'a> {
     w: &'a mut W,
 }
@@ -72,14 +72,14 @@ impl<'a> ENABLE_W<'a> {
     }
 }
 impl R {
-    #[doc = "Bit 31"]
+    #[doc = "Bit 31 - Master enable for ILO oscillator. This bit is hardware set whenever the WD_DISABLE_KEY is not set to the magic value."]
     #[inline(always)]
     pub fn enable(&self) -> ENABLE_R {
         ENABLE_R::new(((self.bits >> 31) & 0x01) != 0)
     }
 }
 impl W {
-    #[doc = "Bit 31"]
+    #[doc = "Bit 31 - Master enable for ILO oscillator. This bit is hardware set whenever the WD_DISABLE_KEY is not set to the magic value."]
     #[inline(always)]
     pub fn enable(&mut self) -> ENABLE_W {
         ENABLE_W { w: self }
@@ -91,7 +91,7 @@ impl W {
         self
     }
 }
-#[doc = "\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [clk_ilo_config](index.html) module"]
+#[doc = "ILO Configuration Internal slow speed R/C oscillator (32kHz) configuration register. Note: writes to this register are ignored when WDT_DISABLE_KEY is not set to the magic value defined for it.\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [clk_ilo_config](index.html) module"]
 pub struct CLK_ILO_CONFIG_SPEC;
 impl crate::RegisterSpec for CLK_ILO_CONFIG_SPEC {
     type Ux = u32;

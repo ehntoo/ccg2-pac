@@ -34,7 +34,7 @@ impl From<crate::W<PTM_CTL_SPEC>> for W {
         W(writer)
     }
 }
-#[doc = "Field `PTM_EN` reader - "]
+#[doc = "Field `PTM_EN` reader - 0': SWD mode. '1': PTM mode. This bit is typically set to '1' through the SWD interface to switch to the PTM interface and it is typically set to '0' through the PTM interface to switch to the SWD interface. This bit replaces the m0s8tst IP's CTRL.PTM_MODE_EN MMIO register field, which is rendered ineffective when using CPUSSv2."]
 pub struct PTM_EN_R(crate::FieldReader<bool, bool>);
 impl PTM_EN_R {
     #[inline(always)]
@@ -49,7 +49,7 @@ impl core::ops::Deref for PTM_EN_R {
         &self.0
     }
 }
-#[doc = "Field `PTM_EN` writer - "]
+#[doc = "Field `PTM_EN` writer - 0': SWD mode. '1': PTM mode. This bit is typically set to '1' through the SWD interface to switch to the PTM interface and it is typically set to '0' through the PTM interface to switch to the SWD interface. This bit replaces the m0s8tst IP's CTRL.PTM_MODE_EN MMIO register field, which is rendered ineffective when using CPUSSv2."]
 pub struct PTM_EN_W<'a> {
     w: &'a mut W,
 }
@@ -72,14 +72,14 @@ impl<'a> PTM_EN_W<'a> {
     }
 }
 impl R {
-    #[doc = "Bit 0"]
+    #[doc = "Bit 0 - 0': SWD mode. '1': PTM mode. This bit is typically set to '1' through the SWD interface to switch to the PTM interface and it is typically set to '0' through the PTM interface to switch to the SWD interface. This bit replaces the m0s8tst IP's CTRL.PTM_MODE_EN MMIO register field, which is rendered ineffective when using CPUSSv2."]
     #[inline(always)]
     pub fn ptm_en(&self) -> PTM_EN_R {
         PTM_EN_R::new((self.bits & 0x01) != 0)
     }
 }
 impl W {
-    #[doc = "Bit 0"]
+    #[doc = "Bit 0 - 0': SWD mode. '1': PTM mode. This bit is typically set to '1' through the SWD interface to switch to the PTM interface and it is typically set to '0' through the PTM interface to switch to the SWD interface. This bit replaces the m0s8tst IP's CTRL.PTM_MODE_EN MMIO register field, which is rendered ineffective when using CPUSSv2."]
     #[inline(always)]
     pub fn ptm_en(&mut self) -> PTM_EN_W {
         PTM_EN_W { w: self }
@@ -91,7 +91,7 @@ impl W {
         self
     }
 }
-#[doc = "\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [ptm_ctl](index.html) module"]
+#[doc = "Parallel Test Mode Control Register This register determines the test interface (SWD or PTM) that connects the ATE to the device.\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [ptm_ctl](index.html) module"]
 pub struct PTM_CTL_SPEC;
 impl crate::RegisterSpec for PTM_CTL_SPEC {
     type Ux = u32;

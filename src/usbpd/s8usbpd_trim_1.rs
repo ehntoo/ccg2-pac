@@ -34,7 +34,7 @@ impl From<crate::W<S8USBPD_TRIM_1_SPEC>> for W {
         W(writer)
     }
 }
-#[doc = "Field `RP_CC1_TRIM` reader - "]
+#[doc = "Field `RP_CC1_TRIM` reader - Trim bits for CC1 Pull-up current source Firmware may need to read SFlash from location TBD and set this value for each Rp value (RP_MODE)"]
 pub struct RP_CC1_TRIM_R(crate::FieldReader<u8, u8>);
 impl RP_CC1_TRIM_R {
     #[inline(always)]
@@ -49,7 +49,7 @@ impl core::ops::Deref for RP_CC1_TRIM_R {
         &self.0
     }
 }
-#[doc = "Field `RP_CC1_TRIM` writer - "]
+#[doc = "Field `RP_CC1_TRIM` writer - Trim bits for CC1 Pull-up current source Firmware may need to read SFlash from location TBD and set this value for each Rp value (RP_MODE)"]
 pub struct RP_CC1_TRIM_W<'a> {
     w: &'a mut W,
 }
@@ -61,7 +61,7 @@ impl<'a> RP_CC1_TRIM_W<'a> {
         self.w
     }
 }
-#[doc = "Field `TC_I_TRIM_9P` reader - "]
+#[doc = "Field `TC_I_TRIM_9P` reader - DeepSleep 2.4uA current reference temperature coefficient trim bit"]
 pub struct TC_I_TRIM_9P_R(crate::FieldReader<u8, u8>);
 impl TC_I_TRIM_9P_R {
     #[inline(always)]
@@ -76,7 +76,7 @@ impl core::ops::Deref for TC_I_TRIM_9P_R {
         &self.0
     }
 }
-#[doc = "Field `TC_I_TRIM_9P` writer - "]
+#[doc = "Field `TC_I_TRIM_9P` writer - DeepSleep 2.4uA current reference temperature coefficient trim bit"]
 pub struct TC_I_TRIM_9P_W<'a> {
     w: &'a mut W,
 }
@@ -89,24 +89,24 @@ impl<'a> TC_I_TRIM_9P_W<'a> {
     }
 }
 impl R {
-    #[doc = "Bits 0:5"]
+    #[doc = "Bits 0:5 - Trim bits for CC1 Pull-up current source Firmware may need to read SFlash from location TBD and set this value for each Rp value (RP_MODE)"]
     #[inline(always)]
     pub fn rp_cc1_trim(&self) -> RP_CC1_TRIM_R {
         RP_CC1_TRIM_R::new((self.bits & 0x3f) as u8)
     }
-    #[doc = "Bits 6:7"]
+    #[doc = "Bits 6:7 - DeepSleep 2.4uA current reference temperature coefficient trim bit"]
     #[inline(always)]
     pub fn tc_i_trim_9p(&self) -> TC_I_TRIM_9P_R {
         TC_I_TRIM_9P_R::new(((self.bits >> 6) & 0x03) as u8)
     }
 }
 impl W {
-    #[doc = "Bits 0:5"]
+    #[doc = "Bits 0:5 - Trim bits for CC1 Pull-up current source Firmware may need to read SFlash from location TBD and set this value for each Rp value (RP_MODE)"]
     #[inline(always)]
     pub fn rp_cc1_trim(&mut self) -> RP_CC1_TRIM_W {
         RP_CC1_TRIM_W { w: self }
     }
-    #[doc = "Bits 6:7"]
+    #[doc = "Bits 6:7 - DeepSleep 2.4uA current reference temperature coefficient trim bit"]
     #[inline(always)]
     pub fn tc_i_trim_9p(&mut self) -> TC_I_TRIM_9P_W {
         TC_I_TRIM_9P_W { w: self }
@@ -118,7 +118,7 @@ impl W {
         self
     }
 }
-#[doc = "\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [s8usbpd_trim_1](index.html) module"]
+#[doc = "S8USBPD Trim Register1 . Production trims stored in flash\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [s8usbpd_trim_1](index.html) module"]
 pub struct S8USBPD_TRIM_1_SPEC;
 impl crate::RegisterSpec for S8USBPD_TRIM_1_SPEC {
     type Ux = u32;

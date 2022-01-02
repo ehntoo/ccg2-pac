@@ -34,7 +34,9 @@ impl From<crate::W<DR_INV_SPEC>> for W {
         W(writer)
     }
 }
-#[doc = "Field `DATA` reader - "]
+#[doc = "Field `DATA` reader - IO pad i: '0': Output state DR.DATA\\[i\\]
+not affected. '1': Output state DR.DATA\\[i\\]
+inverted ('0' => '1', '1' => '0')."]
 pub struct DATA_R(crate::FieldReader<u8, u8>);
 impl DATA_R {
     #[inline(always)]
@@ -49,7 +51,9 @@ impl core::ops::Deref for DATA_R {
         &self.0
     }
 }
-#[doc = "Field `DATA` writer - "]
+#[doc = "Field `DATA` writer - IO pad i: '0': Output state DR.DATA\\[i\\]
+not affected. '1': Output state DR.DATA\\[i\\]
+inverted ('0' => '1', '1' => '0')."]
 pub struct DATA_W<'a> {
     w: &'a mut W,
 }
@@ -62,14 +66,18 @@ impl<'a> DATA_W<'a> {
     }
 }
 impl R {
-    #[doc = "Bits 0:7"]
+    #[doc = "Bits 0:7 - IO pad i: '0': Output state DR.DATA\\[i\\]
+not affected. '1': Output state DR.DATA\\[i\\]
+inverted ('0' => '1', '1' => '0')."]
     #[inline(always)]
     pub fn data(&self) -> DATA_R {
         DATA_R::new((self.bits & 0xff) as u8)
     }
 }
 impl W {
-    #[doc = "Bits 0:7"]
+    #[doc = "Bits 0:7 - IO pad i: '0': Output state DR.DATA\\[i\\]
+not affected. '1': Output state DR.DATA\\[i\\]
+inverted ('0' => '1', '1' => '0')."]
     #[inline(always)]
     pub fn data(&mut self) -> DATA_W {
         DATA_W { w: self }
@@ -81,7 +89,7 @@ impl W {
         self
     }
 }
-#[doc = "\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [dr_inv](index.html) module"]
+#[doc = "Port output data invert register Used to invert output data of specific IO pads in the corresponding port, without affecting the output data of the other IO pads in the port. A DR_INV register read returns the same value as a DR register read.\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [dr_inv](index.html) module"]
 pub struct DR_INV_SPEC;
 impl crate::RegisterSpec for DR_INV_SPEC {
     type Ux = u32;

@@ -34,7 +34,7 @@ impl From<crate::W<BIST_STEP0_CTL_SPEC>> for W {
         W(writer)
     }
 }
-#[doc = "Field `OPCODE` reader - "]
+#[doc = "Field `OPCODE` reader - Specifies what sequence of SRAM BIST steps (R0, R1, W0, W1) is performed (not used for SROM BIST): \"0\": W0. Write SRAM with BIST_DATA.DATA. \"1\": W1. Write SRAM with ~BIST_DATA.DATA. \"2\": R0. Read SRAM and compare output to BIST_DATA.DATA. \"3\": R1. Read SRAM and compare output to ~BIST_DATA.DATA. \"4\": W0, R0. Write SRAM with BIST_DATA.DATA, followed by read SRAM and compare output to BIST_DATA.DATA (all to the same address). \"5\": R0, W1. \"6\": R1, W0. \"7\": R0, W1, R1. \"8\": R1, W0, R0. \"9\": R0, W1, W0. \"10\": R1, W0, W1. \"11\": R0, W1, W0, W1. \"12\": R1, W0, W1, W0. \"13\": R0, W1, R1, W0. \"14\": R1, W0, R0, W1. \"15\": R0, W1, R1, W0, R0, W1."]
 pub struct OPCODE_R(crate::FieldReader<u8, u8>);
 impl OPCODE_R {
     #[inline(always)]
@@ -49,7 +49,7 @@ impl core::ops::Deref for OPCODE_R {
         &self.0
     }
 }
-#[doc = "Field `OPCODE` writer - "]
+#[doc = "Field `OPCODE` writer - Specifies what sequence of SRAM BIST steps (R0, R1, W0, W1) is performed (not used for SROM BIST): \"0\": W0. Write SRAM with BIST_DATA.DATA. \"1\": W1. Write SRAM with ~BIST_DATA.DATA. \"2\": R0. Read SRAM and compare output to BIST_DATA.DATA. \"3\": R1. Read SRAM and compare output to ~BIST_DATA.DATA. \"4\": W0, R0. Write SRAM with BIST_DATA.DATA, followed by read SRAM and compare output to BIST_DATA.DATA (all to the same address). \"5\": R0, W1. \"6\": R1, W0. \"7\": R0, W1, R1. \"8\": R1, W0, R0. \"9\": R0, W1, W0. \"10\": R1, W0, W1. \"11\": R0, W1, W0, W1. \"12\": R1, W0, W1, W0. \"13\": R0, W1, R1, W0. \"14\": R1, W0, R0, W1. \"15\": R0, W1, R1, W0, R0, W1."]
 pub struct OPCODE_W<'a> {
     w: &'a mut W,
 }
@@ -61,7 +61,7 @@ impl<'a> OPCODE_W<'a> {
         self.w
     }
 }
-#[doc = "Field `UP` reader - "]
+#[doc = "Field `UP` reader - Specifies direction in which SRAM BIST steps through addresses (not used for SROM BIST): ''0': BIST steps through the SRAM from the maximum row and column addresses (as specified by a design time configurtion parameter when ADDR_START_ENABLED is '0' and as specified by BIST_ADDR_START when ADDR_START_ENABLED is '1') to the minimum row and column addresses. '1': BIST steps through the SRAM from the minimum row and column addresses (\"0\" when ADDR_START_ENABLED is '0' and as specified by BIST_ADDR_START when ADDR_START_ENABLED is '1') to the maximum row and column addresses."]
 pub struct UP_R(crate::FieldReader<bool, bool>);
 impl UP_R {
     #[inline(always)]
@@ -76,7 +76,7 @@ impl core::ops::Deref for UP_R {
         &self.0
     }
 }
-#[doc = "Field `UP` writer - "]
+#[doc = "Field `UP` writer - Specifies direction in which SRAM BIST steps through addresses (not used for SROM BIST): ''0': BIST steps through the SRAM from the maximum row and column addresses (as specified by a design time configurtion parameter when ADDR_START_ENABLED is '0' and as specified by BIST_ADDR_START when ADDR_START_ENABLED is '1') to the minimum row and column addresses. '1': BIST steps through the SRAM from the minimum row and column addresses (\"0\" when ADDR_START_ENABLED is '0' and as specified by BIST_ADDR_START when ADDR_START_ENABLED is '1') to the maximum row and column addresses."]
 pub struct UP_W<'a> {
     w: &'a mut W,
 }
@@ -99,24 +99,24 @@ impl<'a> UP_W<'a> {
     }
 }
 impl R {
-    #[doc = "Bits 0:3"]
+    #[doc = "Bits 0:3 - Specifies what sequence of SRAM BIST steps (R0, R1, W0, W1) is performed (not used for SROM BIST): \"0\": W0. Write SRAM with BIST_DATA.DATA. \"1\": W1. Write SRAM with ~BIST_DATA.DATA. \"2\": R0. Read SRAM and compare output to BIST_DATA.DATA. \"3\": R1. Read SRAM and compare output to ~BIST_DATA.DATA. \"4\": W0, R0. Write SRAM with BIST_DATA.DATA, followed by read SRAM and compare output to BIST_DATA.DATA (all to the same address). \"5\": R0, W1. \"6\": R1, W0. \"7\": R0, W1, R1. \"8\": R1, W0, R0. \"9\": R0, W1, W0. \"10\": R1, W0, W1. \"11\": R0, W1, W0, W1. \"12\": R1, W0, W1, W0. \"13\": R0, W1, R1, W0. \"14\": R1, W0, R0, W1. \"15\": R0, W1, R1, W0, R0, W1."]
     #[inline(always)]
     pub fn opcode(&self) -> OPCODE_R {
         OPCODE_R::new((self.bits & 0x0f) as u8)
     }
-    #[doc = "Bit 4"]
+    #[doc = "Bit 4 - Specifies direction in which SRAM BIST steps through addresses (not used for SROM BIST): ''0': BIST steps through the SRAM from the maximum row and column addresses (as specified by a design time configurtion parameter when ADDR_START_ENABLED is '0' and as specified by BIST_ADDR_START when ADDR_START_ENABLED is '1') to the minimum row and column addresses. '1': BIST steps through the SRAM from the minimum row and column addresses (\"0\" when ADDR_START_ENABLED is '0' and as specified by BIST_ADDR_START when ADDR_START_ENABLED is '1') to the maximum row and column addresses."]
     #[inline(always)]
     pub fn up(&self) -> UP_R {
         UP_R::new(((self.bits >> 4) & 0x01) != 0)
     }
 }
 impl W {
-    #[doc = "Bits 0:3"]
+    #[doc = "Bits 0:3 - Specifies what sequence of SRAM BIST steps (R0, R1, W0, W1) is performed (not used for SROM BIST): \"0\": W0. Write SRAM with BIST_DATA.DATA. \"1\": W1. Write SRAM with ~BIST_DATA.DATA. \"2\": R0. Read SRAM and compare output to BIST_DATA.DATA. \"3\": R1. Read SRAM and compare output to ~BIST_DATA.DATA. \"4\": W0, R0. Write SRAM with BIST_DATA.DATA, followed by read SRAM and compare output to BIST_DATA.DATA (all to the same address). \"5\": R0, W1. \"6\": R1, W0. \"7\": R0, W1, R1. \"8\": R1, W0, R0. \"9\": R0, W1, W0. \"10\": R1, W0, W1. \"11\": R0, W1, W0, W1. \"12\": R1, W0, W1, W0. \"13\": R0, W1, R1, W0. \"14\": R1, W0, R0, W1. \"15\": R0, W1, R1, W0, R0, W1."]
     #[inline(always)]
     pub fn opcode(&mut self) -> OPCODE_W {
         OPCODE_W { w: self }
     }
-    #[doc = "Bit 4"]
+    #[doc = "Bit 4 - Specifies direction in which SRAM BIST steps through addresses (not used for SROM BIST): ''0': BIST steps through the SRAM from the maximum row and column addresses (as specified by a design time configurtion parameter when ADDR_START_ENABLED is '0' and as specified by BIST_ADDR_START when ADDR_START_ENABLED is '1') to the minimum row and column addresses. '1': BIST steps through the SRAM from the minimum row and column addresses (\"0\" when ADDR_START_ENABLED is '0' and as specified by BIST_ADDR_START when ADDR_START_ENABLED is '1') to the maximum row and column addresses."]
     #[inline(always)]
     pub fn up(&mut self) -> UP_W {
         UP_W { w: self }
@@ -128,7 +128,7 @@ impl W {
         self
     }
 }
-#[doc = "\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [bist_step0_ctl](index.html) module"]
+#[doc = "BIST step 0 control register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [bist_step0_ctl](index.html) module"]
 pub struct BIST_STEP0_CTL_SPEC;
 impl crate::RegisterSpec for BIST_STEP0_CTL_SPEC {
     type Ux = u32;

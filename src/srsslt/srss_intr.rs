@@ -34,7 +34,7 @@ impl From<crate::W<SRSS_INTR_SPEC>> for W {
         W(writer)
     }
 }
-#[doc = "Field `WDT_MATCH` reader - "]
+#[doc = "Field `WDT_MATCH` reader - WDT Interrupt Request. This bit is set each time WDT_COUNTR==WDT_MATCH. Clearing this bit also feeds the watch dog. Missing 2 interrupts in a row will generate brown-out reset. Due to internal synchronization, it takes 2 SYSCLK cycles to update after a W1C."]
 pub struct WDT_MATCH_R(crate::FieldReader<bool, bool>);
 impl WDT_MATCH_R {
     #[inline(always)]
@@ -49,7 +49,7 @@ impl core::ops::Deref for WDT_MATCH_R {
         &self.0
     }
 }
-#[doc = "Field `WDT_MATCH` writer - "]
+#[doc = "Field `WDT_MATCH` writer - WDT Interrupt Request. This bit is set each time WDT_COUNTR==WDT_MATCH. Clearing this bit also feeds the watch dog. Missing 2 interrupts in a row will generate brown-out reset. Due to internal synchronization, it takes 2 SYSCLK cycles to update after a W1C."]
 pub struct WDT_MATCH_W<'a> {
     w: &'a mut W,
 }
@@ -71,7 +71,7 @@ impl<'a> WDT_MATCH_W<'a> {
         self.w
     }
 }
-#[doc = "Field `TEMP_HIGH` reader - "]
+#[doc = "Field `TEMP_HIGH` reader - Regulator over-temp interrupt. This interrupt can occur when a short circuit exists on the vccd pin or when extreme loads are applied on IO-cells causing the die to overheat. Firmware is encourage to shutdown all IO cells and then go to DeepSleep mode when this interrupt occurs if protection against such conditions is desired."]
 pub struct TEMP_HIGH_R(crate::FieldReader<bool, bool>);
 impl TEMP_HIGH_R {
     #[inline(always)]
@@ -86,7 +86,7 @@ impl core::ops::Deref for TEMP_HIGH_R {
         &self.0
     }
 }
-#[doc = "Field `TEMP_HIGH` writer - "]
+#[doc = "Field `TEMP_HIGH` writer - Regulator over-temp interrupt. This interrupt can occur when a short circuit exists on the vccd pin or when extreme loads are applied on IO-cells causing the die to overheat. Firmware is encourage to shutdown all IO cells and then go to DeepSleep mode when this interrupt occurs if protection against such conditions is desired."]
 pub struct TEMP_HIGH_W<'a> {
     w: &'a mut W,
 }
@@ -109,24 +109,24 @@ impl<'a> TEMP_HIGH_W<'a> {
     }
 }
 impl R {
-    #[doc = "Bit 0"]
+    #[doc = "Bit 0 - WDT Interrupt Request. This bit is set each time WDT_COUNTR==WDT_MATCH. Clearing this bit also feeds the watch dog. Missing 2 interrupts in a row will generate brown-out reset. Due to internal synchronization, it takes 2 SYSCLK cycles to update after a W1C."]
     #[inline(always)]
     pub fn wdt_match(&self) -> WDT_MATCH_R {
         WDT_MATCH_R::new((self.bits & 0x01) != 0)
     }
-    #[doc = "Bit 1"]
+    #[doc = "Bit 1 - Regulator over-temp interrupt. This interrupt can occur when a short circuit exists on the vccd pin or when extreme loads are applied on IO-cells causing the die to overheat. Firmware is encourage to shutdown all IO cells and then go to DeepSleep mode when this interrupt occurs if protection against such conditions is desired."]
     #[inline(always)]
     pub fn temp_high(&self) -> TEMP_HIGH_R {
         TEMP_HIGH_R::new(((self.bits >> 1) & 0x01) != 0)
     }
 }
 impl W {
-    #[doc = "Bit 0"]
+    #[doc = "Bit 0 - WDT Interrupt Request. This bit is set each time WDT_COUNTR==WDT_MATCH. Clearing this bit also feeds the watch dog. Missing 2 interrupts in a row will generate brown-out reset. Due to internal synchronization, it takes 2 SYSCLK cycles to update after a W1C."]
     #[inline(always)]
     pub fn wdt_match(&mut self) -> WDT_MATCH_W {
         WDT_MATCH_W { w: self }
     }
-    #[doc = "Bit 1"]
+    #[doc = "Bit 1 - Regulator over-temp interrupt. This interrupt can occur when a short circuit exists on the vccd pin or when extreme loads are applied on IO-cells causing the die to overheat. Firmware is encourage to shutdown all IO cells and then go to DeepSleep mode when this interrupt occurs if protection against such conditions is desired."]
     #[inline(always)]
     pub fn temp_high(&mut self) -> TEMP_HIGH_W {
         TEMP_HIGH_W { w: self }
@@ -138,7 +138,7 @@ impl W {
         self
     }
 }
-#[doc = "\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [srss_intr](index.html) module"]
+#[doc = "SRSS Interrupt Register The intent is that this register is cleared for every WDT interrupt under all circumstances, including when the system is in DeepSleep.\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [srss_intr](index.html) module"]
 pub struct SRSS_INTR_SPEC;
 impl crate::RegisterSpec for SRSS_INTR_SPEC {
     type Ux = u32;

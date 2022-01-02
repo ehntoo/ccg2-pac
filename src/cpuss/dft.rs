@@ -34,7 +34,7 @@ impl From<crate::W<DFT_SPEC>> for W {
         W(writer)
     }
 }
-#[doc = "Field `FLASH_PD` reader - "]
+#[doc = "Field `FLASH_PD` reader - Forcibly powers down Flash macro(s) when set and TEST_MODE is active."]
 pub struct FLASH_PD_R(crate::FieldReader<bool, bool>);
 impl FLASH_PD_R {
     #[inline(always)]
@@ -49,7 +49,7 @@ impl core::ops::Deref for FLASH_PD_R {
         &self.0
     }
 }
-#[doc = "Field `FLASH_PD` writer - "]
+#[doc = "Field `FLASH_PD` writer - Forcibly powers down Flash macro(s) when set and TEST_MODE is active."]
 pub struct FLASH_PD_W<'a> {
     w: &'a mut W,
 }
@@ -71,7 +71,7 @@ impl<'a> FLASH_PD_W<'a> {
         self.w
     }
 }
-#[doc = "Field `ROM_PD` reader - "]
+#[doc = "Field `ROM_PD` reader - Forcibly powers down system ROM macro(s) when set and TEST_MODE is active."]
 pub struct ROM_PD_R(crate::FieldReader<bool, bool>);
 impl ROM_PD_R {
     #[inline(always)]
@@ -86,7 +86,7 @@ impl core::ops::Deref for ROM_PD_R {
         &self.0
     }
 }
-#[doc = "Field `ROM_PD` writer - "]
+#[doc = "Field `ROM_PD` writer - Forcibly powers down system ROM macro(s) when set and TEST_MODE is active."]
 pub struct ROM_PD_W<'a> {
     w: &'a mut W,
 }
@@ -108,7 +108,7 @@ impl<'a> ROM_PD_W<'a> {
         self.w
     }
 }
-#[doc = "Field `RAM_PD` reader - "]
+#[doc = "Field `RAM_PD` reader - Forcibly powers down system SRAM macro(s) periphery logic when set and TEST_MODE is active. Memory array is connected to Vcchib and cannot be powered down."]
 pub struct RAM_PD_R(crate::FieldReader<bool, bool>);
 impl RAM_PD_R {
     #[inline(always)]
@@ -123,7 +123,7 @@ impl core::ops::Deref for RAM_PD_R {
         &self.0
     }
 }
-#[doc = "Field `RAM_PD` writer - "]
+#[doc = "Field `RAM_PD` writer - Forcibly powers down system SRAM macro(s) periphery logic when set and TEST_MODE is active. Memory array is connected to Vcchib and cannot be powered down."]
 pub struct RAM_PD_W<'a> {
     w: &'a mut W,
 }
@@ -145,7 +145,7 @@ impl<'a> RAM_PD_W<'a> {
         self.w
     }
 }
-#[doc = "Field `DMAC_RAM_PD` reader - "]
+#[doc = "Field `DMAC_RAM_PD` reader - Forcibly powers down DW/DMA controller SRAM macro(s) (memory array and pheriphery) when set and TEST_MODE is active."]
 pub struct DMAC_RAM_PD_R(crate::FieldReader<bool, bool>);
 impl DMAC_RAM_PD_R {
     #[inline(always)]
@@ -160,7 +160,7 @@ impl core::ops::Deref for DMAC_RAM_PD_R {
         &self.0
     }
 }
-#[doc = "Field `DMAC_RAM_PD` writer - "]
+#[doc = "Field `DMAC_RAM_PD` writer - Forcibly powers down DW/DMA controller SRAM macro(s) (memory array and pheriphery) when set and TEST_MODE is active."]
 pub struct DMAC_RAM_PD_W<'a> {
     w: &'a mut W,
 }
@@ -183,44 +183,44 @@ impl<'a> DMAC_RAM_PD_W<'a> {
     }
 }
 impl R {
-    #[doc = "Bit 0"]
+    #[doc = "Bit 0 - Forcibly powers down Flash macro(s) when set and TEST_MODE is active."]
     #[inline(always)]
     pub fn flash_pd(&self) -> FLASH_PD_R {
         FLASH_PD_R::new((self.bits & 0x01) != 0)
     }
-    #[doc = "Bit 1"]
+    #[doc = "Bit 1 - Forcibly powers down system ROM macro(s) when set and TEST_MODE is active."]
     #[inline(always)]
     pub fn rom_pd(&self) -> ROM_PD_R {
         ROM_PD_R::new(((self.bits >> 1) & 0x01) != 0)
     }
-    #[doc = "Bit 2"]
+    #[doc = "Bit 2 - Forcibly powers down system SRAM macro(s) periphery logic when set and TEST_MODE is active. Memory array is connected to Vcchib and cannot be powered down."]
     #[inline(always)]
     pub fn ram_pd(&self) -> RAM_PD_R {
         RAM_PD_R::new(((self.bits >> 2) & 0x01) != 0)
     }
-    #[doc = "Bit 3"]
+    #[doc = "Bit 3 - Forcibly powers down DW/DMA controller SRAM macro(s) (memory array and pheriphery) when set and TEST_MODE is active."]
     #[inline(always)]
     pub fn dmac_ram_pd(&self) -> DMAC_RAM_PD_R {
         DMAC_RAM_PD_R::new(((self.bits >> 3) & 0x01) != 0)
     }
 }
 impl W {
-    #[doc = "Bit 0"]
+    #[doc = "Bit 0 - Forcibly powers down Flash macro(s) when set and TEST_MODE is active."]
     #[inline(always)]
     pub fn flash_pd(&mut self) -> FLASH_PD_W {
         FLASH_PD_W { w: self }
     }
-    #[doc = "Bit 1"]
+    #[doc = "Bit 1 - Forcibly powers down system ROM macro(s) when set and TEST_MODE is active."]
     #[inline(always)]
     pub fn rom_pd(&mut self) -> ROM_PD_W {
         ROM_PD_W { w: self }
     }
-    #[doc = "Bit 2"]
+    #[doc = "Bit 2 - Forcibly powers down system SRAM macro(s) periphery logic when set and TEST_MODE is active. Memory array is connected to Vcchib and cannot be powered down."]
     #[inline(always)]
     pub fn ram_pd(&mut self) -> RAM_PD_W {
         RAM_PD_W { w: self }
     }
-    #[doc = "Bit 3"]
+    #[doc = "Bit 3 - Forcibly powers down DW/DMA controller SRAM macro(s) (memory array and pheriphery) when set and TEST_MODE is active."]
     #[inline(always)]
     pub fn dmac_ram_pd(&mut self) -> DMAC_RAM_PD_W {
         DMAC_RAM_PD_W { w: self }
@@ -232,7 +232,7 @@ impl W {
         self
     }
 }
-#[doc = "\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [dft](index.html) module"]
+#[doc = "DFT Select Register Controls power switches of FLASH, ROM, SRAM macro(s) in CPUMEMSS. Note that for StreetFighther this functionality is NOT available due to an omission during IP development.\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [dft](index.html) module"]
 pub struct DFT_SPEC;
 impl crate::RegisterSpec for DFT_SPEC {
     type Ux = u32;

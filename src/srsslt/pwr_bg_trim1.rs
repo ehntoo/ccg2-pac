@@ -34,7 +34,8 @@ impl From<crate::W<PWR_BG_TRIM1_SPEC>> for W {
         W(writer)
     }
 }
-#[doc = "Field `REF_VTRIM` reader - "]
+#[doc = "Field `REF_VTRIM` reader - Trims the bandgap reference voltage output. Used to trim the VBG to the voltage where its temperature curvature is minimal. Bit \\[5\\]
+is unused within the bandgap block."]
 pub struct REF_VTRIM_R(crate::FieldReader<u8, u8>);
 impl REF_VTRIM_R {
     #[inline(always)]
@@ -49,7 +50,8 @@ impl core::ops::Deref for REF_VTRIM_R {
         &self.0
     }
 }
-#[doc = "Field `REF_VTRIM` writer - "]
+#[doc = "Field `REF_VTRIM` writer - Trims the bandgap reference voltage output. Used to trim the VBG to the voltage where its temperature curvature is minimal. Bit \\[5\\]
+is unused within the bandgap block."]
 pub struct REF_VTRIM_W<'a> {
     w: &'a mut W,
 }
@@ -62,14 +64,16 @@ impl<'a> REF_VTRIM_W<'a> {
     }
 }
 impl R {
-    #[doc = "Bits 0:5"]
+    #[doc = "Bits 0:5 - Trims the bandgap reference voltage output. Used to trim the VBG to the voltage where its temperature curvature is minimal. Bit \\[5\\]
+is unused within the bandgap block."]
     #[inline(always)]
     pub fn ref_vtrim(&self) -> REF_VTRIM_R {
         REF_VTRIM_R::new((self.bits & 0x3f) as u8)
     }
 }
 impl W {
-    #[doc = "Bits 0:5"]
+    #[doc = "Bits 0:5 - Trims the bandgap reference voltage output. Used to trim the VBG to the voltage where its temperature curvature is minimal. Bit \\[5\\]
+is unused within the bandgap block."]
     #[inline(always)]
     pub fn ref_vtrim(&mut self) -> REF_VTRIM_W {
         REF_VTRIM_W { w: self }
@@ -81,7 +85,7 @@ impl W {
         self
     }
 }
-#[doc = "\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [pwr_bg_trim1](index.html) module"]
+#[doc = "Bandgap Trim Register Trim bits for Reference System. Entire register is engineering only.\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [pwr_bg_trim1](index.html) module"]
 pub struct PWR_BG_TRIM1_SPEC;
 impl crate::RegisterSpec for PWR_BG_TRIM1_SPEC {
     type Ux = u32;

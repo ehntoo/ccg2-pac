@@ -34,7 +34,12 @@ impl From<crate::W<FLASH_CTL_SPEC>> for W {
         W(writer)
     }
 }
-#[doc = "Field `FLASH_WS` reader - "]
+#[doc = "Field `FLASH_WS` reader - Amount of ROM wait states: \"0\": 0 wait states (fast flash: \\[0, 24\\]
+MHz system frequency, slow flash: \\[0, 16\\]
+MHz system frequency) \"1\": 1 wait state (fast flash: \\[24, 48\\]
+MHz system frequency, slow flash: \\[16, 32\\]
+MHz system frequency) \"2\": 2 wait states (slow flash: \\[32, 48\\]
+MHz system frequency) \"3\": undefined"]
 pub struct FLASH_WS_R(crate::FieldReader<u8, u8>);
 impl FLASH_WS_R {
     #[inline(always)]
@@ -49,7 +54,12 @@ impl core::ops::Deref for FLASH_WS_R {
         &self.0
     }
 }
-#[doc = "Field `FLASH_WS` writer - "]
+#[doc = "Field `FLASH_WS` writer - Amount of ROM wait states: \"0\": 0 wait states (fast flash: \\[0, 24\\]
+MHz system frequency, slow flash: \\[0, 16\\]
+MHz system frequency) \"1\": 1 wait state (fast flash: \\[24, 48\\]
+MHz system frequency, slow flash: \\[16, 32\\]
+MHz system frequency) \"2\": 2 wait states (slow flash: \\[32, 48\\]
+MHz system frequency) \"3\": undefined"]
 pub struct FLASH_WS_W<'a> {
     w: &'a mut W,
 }
@@ -61,7 +71,7 @@ impl<'a> FLASH_WS_W<'a> {
         self.w
     }
 }
-#[doc = "Field `PREF_EN` reader - "]
+#[doc = "Field `PREF_EN` reader - Prefetch enable: '0': disabled. This is a desirable seeting when FLASH_WS is \"0\" or when predictable execution behavior is required. '1': enabled."]
 pub struct PREF_EN_R(crate::FieldReader<bool, bool>);
 impl PREF_EN_R {
     #[inline(always)]
@@ -76,7 +86,7 @@ impl core::ops::Deref for PREF_EN_R {
         &self.0
     }
 }
-#[doc = "Field `PREF_EN` writer - "]
+#[doc = "Field `PREF_EN` writer - Prefetch enable: '0': disabled. This is a desirable seeting when FLASH_WS is \"0\" or when predictable execution behavior is required. '1': enabled."]
 pub struct PREF_EN_W<'a> {
     w: &'a mut W,
 }
@@ -98,7 +108,7 @@ impl<'a> PREF_EN_W<'a> {
         self.w
     }
 }
-#[doc = "Field `FLASH_INVALIDATE` reader - "]
+#[doc = "Field `FLASH_INVALIDATE` reader - 1': Invalidates the content of the flash controller's buffers."]
 pub struct FLASH_INVALIDATE_R(crate::FieldReader<bool, bool>);
 impl FLASH_INVALIDATE_R {
     #[inline(always)]
@@ -113,7 +123,7 @@ impl core::ops::Deref for FLASH_INVALIDATE_R {
         &self.0
     }
 }
-#[doc = "Field `FLASH_INVALIDATE` writer - "]
+#[doc = "Field `FLASH_INVALIDATE` writer - 1': Invalidates the content of the flash controller's buffers."]
 pub struct FLASH_INVALIDATE_W<'a> {
     w: &'a mut W,
 }
@@ -136,34 +146,44 @@ impl<'a> FLASH_INVALIDATE_W<'a> {
     }
 }
 impl R {
-    #[doc = "Bits 0:1"]
+    #[doc = "Bits 0:1 - Amount of ROM wait states: \"0\": 0 wait states (fast flash: \\[0, 24\\]
+MHz system frequency, slow flash: \\[0, 16\\]
+MHz system frequency) \"1\": 1 wait state (fast flash: \\[24, 48\\]
+MHz system frequency, slow flash: \\[16, 32\\]
+MHz system frequency) \"2\": 2 wait states (slow flash: \\[32, 48\\]
+MHz system frequency) \"3\": undefined"]
     #[inline(always)]
     pub fn flash_ws(&self) -> FLASH_WS_R {
         FLASH_WS_R::new((self.bits & 0x03) as u8)
     }
-    #[doc = "Bit 4"]
+    #[doc = "Bit 4 - Prefetch enable: '0': disabled. This is a desirable seeting when FLASH_WS is \"0\" or when predictable execution behavior is required. '1': enabled."]
     #[inline(always)]
     pub fn pref_en(&self) -> PREF_EN_R {
         PREF_EN_R::new(((self.bits >> 4) & 0x01) != 0)
     }
-    #[doc = "Bit 8"]
+    #[doc = "Bit 8 - 1': Invalidates the content of the flash controller's buffers."]
     #[inline(always)]
     pub fn flash_invalidate(&self) -> FLASH_INVALIDATE_R {
         FLASH_INVALIDATE_R::new(((self.bits >> 8) & 0x01) != 0)
     }
 }
 impl W {
-    #[doc = "Bits 0:1"]
+    #[doc = "Bits 0:1 - Amount of ROM wait states: \"0\": 0 wait states (fast flash: \\[0, 24\\]
+MHz system frequency, slow flash: \\[0, 16\\]
+MHz system frequency) \"1\": 1 wait state (fast flash: \\[24, 48\\]
+MHz system frequency, slow flash: \\[16, 32\\]
+MHz system frequency) \"2\": 2 wait states (slow flash: \\[32, 48\\]
+MHz system frequency) \"3\": undefined"]
     #[inline(always)]
     pub fn flash_ws(&mut self) -> FLASH_WS_W {
         FLASH_WS_W { w: self }
     }
-    #[doc = "Bit 4"]
+    #[doc = "Bit 4 - Prefetch enable: '0': disabled. This is a desirable seeting when FLASH_WS is \"0\" or when predictable execution behavior is required. '1': enabled."]
     #[inline(always)]
     pub fn pref_en(&mut self) -> PREF_EN_W {
         PREF_EN_W { w: self }
     }
-    #[doc = "Bit 8"]
+    #[doc = "Bit 8 - 1': Invalidates the content of the flash controller's buffers."]
     #[inline(always)]
     pub fn flash_invalidate(&mut self) -> FLASH_INVALIDATE_W {
         FLASH_INVALIDATE_W { w: self }
@@ -175,7 +195,7 @@ impl W {
         self
     }
 }
-#[doc = "\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [flash_ctl](index.html) module"]
+#[doc = "FLASH control register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [flash_ctl](index.html) module"]
 pub struct FLASH_CTL_SPEC;
 impl crate::RegisterSpec for FLASH_CTL_SPEC {
     type Ux = u32;

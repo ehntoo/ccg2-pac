@@ -34,7 +34,7 @@ impl From<crate::W<RX_CC_SPEC>> for W {
         W(writer)
     }
 }
-#[doc = "Field `RX_CNT_MAX` reader - "]
+#[doc = "Field `RX_CNT_MAX` reader - This value is internally multiplied by 4. The 4X value when multiplied by the period of CLK_RX defines the maximum clock period. This value is used to cause the RX state machine to return to idle state if no transitions are detected. The default value of 0x80 is based on CLK_RX=24 Mhz For 12 Mhz CLK_RX operations, set the value to 0x40"]
 pub struct RX_CNT_MAX_R(crate::FieldReader<u8, u8>);
 impl RX_CNT_MAX_R {
     #[inline(always)]
@@ -49,7 +49,7 @@ impl core::ops::Deref for RX_CNT_MAX_R {
         &self.0
     }
 }
-#[doc = "Field `RX_CNT_MAX` writer - "]
+#[doc = "Field `RX_CNT_MAX` writer - This value is internally multiplied by 4. The 4X value when multiplied by the period of CLK_RX defines the maximum clock period. This value is used to cause the RX state machine to return to idle state if no transitions are detected. The default value of 0x80 is based on CLK_RX=24 Mhz For 12 Mhz CLK_RX operations, set the value to 0x40"]
 pub struct RX_CNT_MAX_W<'a> {
     w: &'a mut W,
 }
@@ -61,7 +61,7 @@ impl<'a> RX_CNT_MAX_W<'a> {
         self.w
     }
 }
-#[doc = "Field `RX_UI_BOUNDARY_DELTA` reader - "]
+#[doc = "Field `RX_UI_BOUNDARY_DELTA` reader - This value helps to define the 71% value of the UI. The Hardware automatically calculates the 75% location. The value of this register determines the number of RX_CLK between 71% & 75% location. The default value of 0x5 is based on RX_CLK running at 24 Mhz. For 12 Mhz CLK_RX operations, set the value to 0x3"]
 pub struct RX_UI_BOUNDARY_DELTA_R(crate::FieldReader<u8, u8>);
 impl RX_UI_BOUNDARY_DELTA_R {
     #[inline(always)]
@@ -76,7 +76,7 @@ impl core::ops::Deref for RX_UI_BOUNDARY_DELTA_R {
         &self.0
     }
 }
-#[doc = "Field `RX_UI_BOUNDARY_DELTA` writer - "]
+#[doc = "Field `RX_UI_BOUNDARY_DELTA` writer - This value helps to define the 71% value of the UI. The Hardware automatically calculates the 75% location. The value of this register determines the number of RX_CLK between 71% & 75% location. The default value of 0x5 is based on RX_CLK running at 24 Mhz. For 12 Mhz CLK_RX operations, set the value to 0x3"]
 pub struct RX_UI_BOUNDARY_DELTA_W<'a> {
     w: &'a mut W,
 }
@@ -88,7 +88,7 @@ impl<'a> RX_UI_BOUNDARY_DELTA_W<'a> {
         self.w
     }
 }
-#[doc = "Field `RX_UI_TRANS_TO_ZERO` reader - "]
+#[doc = "Field `RX_UI_TRANS_TO_ZERO` reader - This value should be set to half of shortest pulse width on RX line. This will help detection of clock boundary after frequency calculation is complete during preamble."]
 pub struct RX_UI_TRANS_TO_ZERO_R(crate::FieldReader<u8, u8>);
 impl RX_UI_TRANS_TO_ZERO_R {
     #[inline(always)]
@@ -103,7 +103,7 @@ impl core::ops::Deref for RX_UI_TRANS_TO_ZERO_R {
         &self.0
     }
 }
-#[doc = "Field `RX_UI_TRANS_TO_ZERO` writer - "]
+#[doc = "Field `RX_UI_TRANS_TO_ZERO` writer - This value should be set to half of shortest pulse width on RX line. This will help detection of clock boundary after frequency calculation is complete during preamble."]
 pub struct RX_UI_TRANS_TO_ZERO_W<'a> {
     w: &'a mut W,
 }
@@ -115,7 +115,7 @@ impl<'a> RX_UI_TRANS_TO_ZERO_W<'a> {
         self.w
     }
 }
-#[doc = "Field `RX_VALID_NOISE_QUAL_ENABLE` reader - "]
+#[doc = "Field `RX_VALID_NOISE_QUAL_ENABLE` reader - Setting this bit will qualify cc_rx_valid with noise detection logic."]
 pub struct RX_VALID_NOISE_QUAL_ENABLE_R(crate::FieldReader<bool, bool>);
 impl RX_VALID_NOISE_QUAL_ENABLE_R {
     #[inline(always)]
@@ -130,7 +130,7 @@ impl core::ops::Deref for RX_VALID_NOISE_QUAL_ENABLE_R {
         &self.0
     }
 }
-#[doc = "Field `RX_VALID_NOISE_QUAL_ENABLE` writer - "]
+#[doc = "Field `RX_VALID_NOISE_QUAL_ENABLE` writer - Setting this bit will qualify cc_rx_valid with noise detection logic."]
 pub struct RX_VALID_NOISE_QUAL_ENABLE_W<'a> {
     w: &'a mut W,
 }
@@ -152,7 +152,7 @@ impl<'a> RX_VALID_NOISE_QUAL_ENABLE_W<'a> {
         self.w
     }
 }
-#[doc = "Field `VCMP_UP_COMP_ENABLE` reader - "]
+#[doc = "Field `VCMP_UP_COMP_ENABLE` reader - Enables noise check on vcmp_up comparator."]
 pub struct VCMP_UP_COMP_ENABLE_R(crate::FieldReader<bool, bool>);
 impl VCMP_UP_COMP_ENABLE_R {
     #[inline(always)]
@@ -167,7 +167,7 @@ impl core::ops::Deref for VCMP_UP_COMP_ENABLE_R {
         &self.0
     }
 }
-#[doc = "Field `VCMP_UP_COMP_ENABLE` writer - "]
+#[doc = "Field `VCMP_UP_COMP_ENABLE` writer - Enables noise check on vcmp_up comparator."]
 pub struct VCMP_UP_COMP_ENABLE_W<'a> {
     w: &'a mut W,
 }
@@ -189,7 +189,7 @@ impl<'a> VCMP_UP_COMP_ENABLE_W<'a> {
         self.w
     }
 }
-#[doc = "Field `VCMP_LA_COMP_ENABLE` reader - "]
+#[doc = "Field `VCMP_LA_COMP_ENABLE` reader - Enables noise check on vcmp_la comparator."]
 pub struct VCMP_LA_COMP_ENABLE_R(crate::FieldReader<bool, bool>);
 impl VCMP_LA_COMP_ENABLE_R {
     #[inline(always)]
@@ -204,7 +204,7 @@ impl core::ops::Deref for VCMP_LA_COMP_ENABLE_R {
         &self.0
     }
 }
-#[doc = "Field `VCMP_LA_COMP_ENABLE` writer - "]
+#[doc = "Field `VCMP_LA_COMP_ENABLE` writer - Enables noise check on vcmp_la comparator."]
 pub struct VCMP_LA_COMP_ENABLE_W<'a> {
     w: &'a mut W,
 }
@@ -226,7 +226,7 @@ impl<'a> VCMP_LA_COMP_ENABLE_W<'a> {
         self.w
     }
 }
-#[doc = "Field `RX_NOISE_CHECK_ENABLE` reader - "]
+#[doc = "Field `RX_NOISE_CHECK_ENABLE` reader - Enables noise check on rx line."]
 pub struct RX_NOISE_CHECK_ENABLE_R(crate::FieldReader<bool, bool>);
 impl RX_NOISE_CHECK_ENABLE_R {
     #[inline(always)]
@@ -241,7 +241,7 @@ impl core::ops::Deref for RX_NOISE_CHECK_ENABLE_R {
         &self.0
     }
 }
-#[doc = "Field `RX_NOISE_CHECK_ENABLE` writer - "]
+#[doc = "Field `RX_NOISE_CHECK_ENABLE` writer - Enables noise check on rx line."]
 pub struct RX_NOISE_CHECK_ENABLE_W<'a> {
     w: &'a mut W,
 }
@@ -263,7 +263,7 @@ impl<'a> RX_NOISE_CHECK_ENABLE_W<'a> {
         self.w
     }
 }
-#[doc = "\n\nValue on reset: 0"]
+#[doc = "Defines number of noise edges that causes noise detection.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u8)]
 pub enum NOISE_EDGE_COUNT_A {
@@ -282,7 +282,7 @@ impl From<NOISE_EDGE_COUNT_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `NOISE_EDGE_COUNT` reader - "]
+#[doc = "Field `NOISE_EDGE_COUNT` reader - Defines number of noise edges that causes noise detection."]
 pub struct NOISE_EDGE_COUNT_R(crate::FieldReader<u8, NOISE_EDGE_COUNT_A>);
 impl NOISE_EDGE_COUNT_R {
     #[inline(always)]
@@ -328,7 +328,7 @@ impl core::ops::Deref for NOISE_EDGE_COUNT_R {
         &self.0
     }
 }
-#[doc = "Field `NOISE_EDGE_COUNT` writer - "]
+#[doc = "Field `NOISE_EDGE_COUNT` writer - Defines number of noise edges that causes noise detection."]
 pub struct NOISE_EDGE_COUNT_W<'a> {
     w: &'a mut W,
 }
@@ -366,84 +366,84 @@ impl<'a> NOISE_EDGE_COUNT_W<'a> {
     }
 }
 impl R {
-    #[doc = "Bits 0:7"]
+    #[doc = "Bits 0:7 - This value is internally multiplied by 4. The 4X value when multiplied by the period of CLK_RX defines the maximum clock period. This value is used to cause the RX state machine to return to idle state if no transitions are detected. The default value of 0x80 is based on CLK_RX=24 Mhz For 12 Mhz CLK_RX operations, set the value to 0x40"]
     #[inline(always)]
     pub fn rx_cnt_max(&self) -> RX_CNT_MAX_R {
         RX_CNT_MAX_R::new((self.bits & 0xff) as u8)
     }
-    #[doc = "Bits 8:13"]
+    #[doc = "Bits 8:13 - This value helps to define the 71% value of the UI. The Hardware automatically calculates the 75% location. The value of this register determines the number of RX_CLK between 71% & 75% location. The default value of 0x5 is based on RX_CLK running at 24 Mhz. For 12 Mhz CLK_RX operations, set the value to 0x3"]
     #[inline(always)]
     pub fn rx_ui_boundary_delta(&self) -> RX_UI_BOUNDARY_DELTA_R {
         RX_UI_BOUNDARY_DELTA_R::new(((self.bits >> 8) & 0x3f) as u8)
     }
-    #[doc = "Bits 14:19"]
+    #[doc = "Bits 14:19 - This value should be set to half of shortest pulse width on RX line. This will help detection of clock boundary after frequency calculation is complete during preamble."]
     #[inline(always)]
     pub fn rx_ui_trans_to_zero(&self) -> RX_UI_TRANS_TO_ZERO_R {
         RX_UI_TRANS_TO_ZERO_R::new(((self.bits >> 14) & 0x3f) as u8)
     }
-    #[doc = "Bit 20"]
+    #[doc = "Bit 20 - Setting this bit will qualify cc_rx_valid with noise detection logic."]
     #[inline(always)]
     pub fn rx_valid_noise_qual_enable(&self) -> RX_VALID_NOISE_QUAL_ENABLE_R {
         RX_VALID_NOISE_QUAL_ENABLE_R::new(((self.bits >> 20) & 0x01) != 0)
     }
-    #[doc = "Bit 21"]
+    #[doc = "Bit 21 - Enables noise check on vcmp_up comparator."]
     #[inline(always)]
     pub fn vcmp_up_comp_enable(&self) -> VCMP_UP_COMP_ENABLE_R {
         VCMP_UP_COMP_ENABLE_R::new(((self.bits >> 21) & 0x01) != 0)
     }
-    #[doc = "Bit 22"]
+    #[doc = "Bit 22 - Enables noise check on vcmp_la comparator."]
     #[inline(always)]
     pub fn vcmp_la_comp_enable(&self) -> VCMP_LA_COMP_ENABLE_R {
         VCMP_LA_COMP_ENABLE_R::new(((self.bits >> 22) & 0x01) != 0)
     }
-    #[doc = "Bit 23"]
+    #[doc = "Bit 23 - Enables noise check on rx line."]
     #[inline(always)]
     pub fn rx_noise_check_enable(&self) -> RX_NOISE_CHECK_ENABLE_R {
         RX_NOISE_CHECK_ENABLE_R::new(((self.bits >> 23) & 0x01) != 0)
     }
-    #[doc = "Bits 24:25"]
+    #[doc = "Bits 24:25 - Defines number of noise edges that causes noise detection."]
     #[inline(always)]
     pub fn noise_edge_count(&self) -> NOISE_EDGE_COUNT_R {
         NOISE_EDGE_COUNT_R::new(((self.bits >> 24) & 0x03) as u8)
     }
 }
 impl W {
-    #[doc = "Bits 0:7"]
+    #[doc = "Bits 0:7 - This value is internally multiplied by 4. The 4X value when multiplied by the period of CLK_RX defines the maximum clock period. This value is used to cause the RX state machine to return to idle state if no transitions are detected. The default value of 0x80 is based on CLK_RX=24 Mhz For 12 Mhz CLK_RX operations, set the value to 0x40"]
     #[inline(always)]
     pub fn rx_cnt_max(&mut self) -> RX_CNT_MAX_W {
         RX_CNT_MAX_W { w: self }
     }
-    #[doc = "Bits 8:13"]
+    #[doc = "Bits 8:13 - This value helps to define the 71% value of the UI. The Hardware automatically calculates the 75% location. The value of this register determines the number of RX_CLK between 71% & 75% location. The default value of 0x5 is based on RX_CLK running at 24 Mhz. For 12 Mhz CLK_RX operations, set the value to 0x3"]
     #[inline(always)]
     pub fn rx_ui_boundary_delta(&mut self) -> RX_UI_BOUNDARY_DELTA_W {
         RX_UI_BOUNDARY_DELTA_W { w: self }
     }
-    #[doc = "Bits 14:19"]
+    #[doc = "Bits 14:19 - This value should be set to half of shortest pulse width on RX line. This will help detection of clock boundary after frequency calculation is complete during preamble."]
     #[inline(always)]
     pub fn rx_ui_trans_to_zero(&mut self) -> RX_UI_TRANS_TO_ZERO_W {
         RX_UI_TRANS_TO_ZERO_W { w: self }
     }
-    #[doc = "Bit 20"]
+    #[doc = "Bit 20 - Setting this bit will qualify cc_rx_valid with noise detection logic."]
     #[inline(always)]
     pub fn rx_valid_noise_qual_enable(&mut self) -> RX_VALID_NOISE_QUAL_ENABLE_W {
         RX_VALID_NOISE_QUAL_ENABLE_W { w: self }
     }
-    #[doc = "Bit 21"]
+    #[doc = "Bit 21 - Enables noise check on vcmp_up comparator."]
     #[inline(always)]
     pub fn vcmp_up_comp_enable(&mut self) -> VCMP_UP_COMP_ENABLE_W {
         VCMP_UP_COMP_ENABLE_W { w: self }
     }
-    #[doc = "Bit 22"]
+    #[doc = "Bit 22 - Enables noise check on vcmp_la comparator."]
     #[inline(always)]
     pub fn vcmp_la_comp_enable(&mut self) -> VCMP_LA_COMP_ENABLE_W {
         VCMP_LA_COMP_ENABLE_W { w: self }
     }
-    #[doc = "Bit 23"]
+    #[doc = "Bit 23 - Enables noise check on rx line."]
     #[inline(always)]
     pub fn rx_noise_check_enable(&mut self) -> RX_NOISE_CHECK_ENABLE_W {
         RX_NOISE_CHECK_ENABLE_W { w: self }
     }
-    #[doc = "Bits 24:25"]
+    #[doc = "Bits 24:25 - Defines number of noise edges that causes noise detection."]
     #[inline(always)]
     pub fn noise_edge_count(&mut self) -> NOISE_EDGE_COUNT_W {
         NOISE_EDGE_COUNT_W { w: self }
@@ -455,7 +455,7 @@ impl W {
         self
     }
 }
-#[doc = "\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [rx_cc](index.html) module"]
+#[doc = "The Receive C-Connect registers\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [rx_cc](index.html) module"]
 pub struct RX_CC_SPEC;
 impl crate::RegisterSpec for RX_CC_SPEC {
     type Ux = u32;

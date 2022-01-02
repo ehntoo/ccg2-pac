@@ -34,7 +34,7 @@ impl From<crate::W<INTR_RX_MASK_SPEC>> for W {
         W(writer)
     }
 }
-#[doc = "Field `TRIGGER` reader - "]
+#[doc = "Field `TRIGGER` reader - Mask bit for corresponding bit in interrupt request register."]
 pub struct TRIGGER_R(crate::FieldReader<bool, bool>);
 impl TRIGGER_R {
     #[inline(always)]
@@ -49,7 +49,7 @@ impl core::ops::Deref for TRIGGER_R {
         &self.0
     }
 }
-#[doc = "Field `TRIGGER` writer - "]
+#[doc = "Field `TRIGGER` writer - Mask bit for corresponding bit in interrupt request register."]
 pub struct TRIGGER_W<'a> {
     w: &'a mut W,
 }
@@ -71,7 +71,7 @@ impl<'a> TRIGGER_W<'a> {
         self.w
     }
 }
-#[doc = "Field `NOT_EMPTY` reader - "]
+#[doc = "Field `NOT_EMPTY` reader - Mask bit for corresponding bit in interrupt request register."]
 pub struct NOT_EMPTY_R(crate::FieldReader<bool, bool>);
 impl NOT_EMPTY_R {
     #[inline(always)]
@@ -86,7 +86,7 @@ impl core::ops::Deref for NOT_EMPTY_R {
         &self.0
     }
 }
-#[doc = "Field `NOT_EMPTY` writer - "]
+#[doc = "Field `NOT_EMPTY` writer - Mask bit for corresponding bit in interrupt request register."]
 pub struct NOT_EMPTY_W<'a> {
     w: &'a mut W,
 }
@@ -108,7 +108,7 @@ impl<'a> NOT_EMPTY_W<'a> {
         self.w
     }
 }
-#[doc = "Field `FULL` reader - "]
+#[doc = "Field `FULL` reader - Mask bit for corresponding bit in interrupt request register."]
 pub struct FULL_R(crate::FieldReader<bool, bool>);
 impl FULL_R {
     #[inline(always)]
@@ -123,7 +123,7 @@ impl core::ops::Deref for FULL_R {
         &self.0
     }
 }
-#[doc = "Field `FULL` writer - "]
+#[doc = "Field `FULL` writer - Mask bit for corresponding bit in interrupt request register."]
 pub struct FULL_W<'a> {
     w: &'a mut W,
 }
@@ -145,7 +145,7 @@ impl<'a> FULL_W<'a> {
         self.w
     }
 }
-#[doc = "Field `OVERFLOW` reader - "]
+#[doc = "Field `OVERFLOW` reader - Mask bit for corresponding bit in interrupt request register."]
 pub struct OVERFLOW_R(crate::FieldReader<bool, bool>);
 impl OVERFLOW_R {
     #[inline(always)]
@@ -160,7 +160,7 @@ impl core::ops::Deref for OVERFLOW_R {
         &self.0
     }
 }
-#[doc = "Field `OVERFLOW` writer - "]
+#[doc = "Field `OVERFLOW` writer - Mask bit for corresponding bit in interrupt request register."]
 pub struct OVERFLOW_W<'a> {
     w: &'a mut W,
 }
@@ -182,7 +182,7 @@ impl<'a> OVERFLOW_W<'a> {
         self.w
     }
 }
-#[doc = "Field `UNDERFLOW` reader - "]
+#[doc = "Field `UNDERFLOW` reader - Mask bit for corresponding bit in interrupt request register."]
 pub struct UNDERFLOW_R(crate::FieldReader<bool, bool>);
 impl UNDERFLOW_R {
     #[inline(always)]
@@ -197,7 +197,7 @@ impl core::ops::Deref for UNDERFLOW_R {
         &self.0
     }
 }
-#[doc = "Field `UNDERFLOW` writer - "]
+#[doc = "Field `UNDERFLOW` writer - Mask bit for corresponding bit in interrupt request register."]
 pub struct UNDERFLOW_W<'a> {
     w: &'a mut W,
 }
@@ -219,7 +219,7 @@ impl<'a> UNDERFLOW_W<'a> {
         self.w
     }
 }
-#[doc = "Field `BLOCKED` reader - "]
+#[doc = "Field `BLOCKED` reader - Mask bit for corresponding bit in interrupt request register."]
 pub struct BLOCKED_R(crate::FieldReader<bool, bool>);
 impl BLOCKED_R {
     #[inline(always)]
@@ -234,7 +234,7 @@ impl core::ops::Deref for BLOCKED_R {
         &self.0
     }
 }
-#[doc = "Field `BLOCKED` writer - "]
+#[doc = "Field `BLOCKED` writer - Mask bit for corresponding bit in interrupt request register."]
 pub struct BLOCKED_W<'a> {
     w: &'a mut W,
 }
@@ -256,7 +256,7 @@ impl<'a> BLOCKED_W<'a> {
         self.w
     }
 }
-#[doc = "Field `FRAME_ERROR` reader - "]
+#[doc = "Field `FRAME_ERROR` reader - Mask bit for corresponding bit in interrupt request register."]
 pub struct FRAME_ERROR_R(crate::FieldReader<bool, bool>);
 impl FRAME_ERROR_R {
     #[inline(always)]
@@ -271,7 +271,7 @@ impl core::ops::Deref for FRAME_ERROR_R {
         &self.0
     }
 }
-#[doc = "Field `FRAME_ERROR` writer - "]
+#[doc = "Field `FRAME_ERROR` writer - Mask bit for corresponding bit in interrupt request register."]
 pub struct FRAME_ERROR_W<'a> {
     w: &'a mut W,
 }
@@ -293,7 +293,7 @@ impl<'a> FRAME_ERROR_W<'a> {
         self.w
     }
 }
-#[doc = "Field `PARITY_ERROR` reader - "]
+#[doc = "Field `PARITY_ERROR` reader - Mask bit for corresponding bit in interrupt request register."]
 pub struct PARITY_ERROR_R(crate::FieldReader<bool, bool>);
 impl PARITY_ERROR_R {
     #[inline(always)]
@@ -308,7 +308,7 @@ impl core::ops::Deref for PARITY_ERROR_R {
         &self.0
     }
 }
-#[doc = "Field `PARITY_ERROR` writer - "]
+#[doc = "Field `PARITY_ERROR` writer - Mask bit for corresponding bit in interrupt request register."]
 pub struct PARITY_ERROR_W<'a> {
     w: &'a mut W,
 }
@@ -330,7 +330,7 @@ impl<'a> PARITY_ERROR_W<'a> {
         self.w
     }
 }
-#[doc = "Field `BAUD_DETECT` reader - "]
+#[doc = "Field `BAUD_DETECT` reader - Mask bit for corresponding bit in interrupt request register."]
 pub struct BAUD_DETECT_R(crate::FieldReader<bool, bool>);
 impl BAUD_DETECT_R {
     #[inline(always)]
@@ -345,7 +345,7 @@ impl core::ops::Deref for BAUD_DETECT_R {
         &self.0
     }
 }
-#[doc = "Field `BAUD_DETECT` writer - "]
+#[doc = "Field `BAUD_DETECT` writer - Mask bit for corresponding bit in interrupt request register."]
 pub struct BAUD_DETECT_W<'a> {
     w: &'a mut W,
 }
@@ -367,7 +367,7 @@ impl<'a> BAUD_DETECT_W<'a> {
         self.w
     }
 }
-#[doc = "Field `BREAK_DETECT` reader - "]
+#[doc = "Field `BREAK_DETECT` reader - Mask bit for corresponding bit in interrupt request register."]
 pub struct BREAK_DETECT_R(crate::FieldReader<bool, bool>);
 impl BREAK_DETECT_R {
     #[inline(always)]
@@ -382,7 +382,7 @@ impl core::ops::Deref for BREAK_DETECT_R {
         &self.0
     }
 }
-#[doc = "Field `BREAK_DETECT` writer - "]
+#[doc = "Field `BREAK_DETECT` writer - Mask bit for corresponding bit in interrupt request register."]
 pub struct BREAK_DETECT_W<'a> {
     w: &'a mut W,
 }
@@ -405,104 +405,104 @@ impl<'a> BREAK_DETECT_W<'a> {
     }
 }
 impl R {
-    #[doc = "Bit 0"]
+    #[doc = "Bit 0 - Mask bit for corresponding bit in interrupt request register."]
     #[inline(always)]
     pub fn trigger(&self) -> TRIGGER_R {
         TRIGGER_R::new((self.bits & 0x01) != 0)
     }
-    #[doc = "Bit 2"]
+    #[doc = "Bit 2 - Mask bit for corresponding bit in interrupt request register."]
     #[inline(always)]
     pub fn not_empty(&self) -> NOT_EMPTY_R {
         NOT_EMPTY_R::new(((self.bits >> 2) & 0x01) != 0)
     }
-    #[doc = "Bit 3"]
+    #[doc = "Bit 3 - Mask bit for corresponding bit in interrupt request register."]
     #[inline(always)]
     pub fn full(&self) -> FULL_R {
         FULL_R::new(((self.bits >> 3) & 0x01) != 0)
     }
-    #[doc = "Bit 5"]
+    #[doc = "Bit 5 - Mask bit for corresponding bit in interrupt request register."]
     #[inline(always)]
     pub fn overflow(&self) -> OVERFLOW_R {
         OVERFLOW_R::new(((self.bits >> 5) & 0x01) != 0)
     }
-    #[doc = "Bit 6"]
+    #[doc = "Bit 6 - Mask bit for corresponding bit in interrupt request register."]
     #[inline(always)]
     pub fn underflow(&self) -> UNDERFLOW_R {
         UNDERFLOW_R::new(((self.bits >> 6) & 0x01) != 0)
     }
-    #[doc = "Bit 7"]
+    #[doc = "Bit 7 - Mask bit for corresponding bit in interrupt request register."]
     #[inline(always)]
     pub fn blocked(&self) -> BLOCKED_R {
         BLOCKED_R::new(((self.bits >> 7) & 0x01) != 0)
     }
-    #[doc = "Bit 8"]
+    #[doc = "Bit 8 - Mask bit for corresponding bit in interrupt request register."]
     #[inline(always)]
     pub fn frame_error(&self) -> FRAME_ERROR_R {
         FRAME_ERROR_R::new(((self.bits >> 8) & 0x01) != 0)
     }
-    #[doc = "Bit 9"]
+    #[doc = "Bit 9 - Mask bit for corresponding bit in interrupt request register."]
     #[inline(always)]
     pub fn parity_error(&self) -> PARITY_ERROR_R {
         PARITY_ERROR_R::new(((self.bits >> 9) & 0x01) != 0)
     }
-    #[doc = "Bit 10"]
+    #[doc = "Bit 10 - Mask bit for corresponding bit in interrupt request register."]
     #[inline(always)]
     pub fn baud_detect(&self) -> BAUD_DETECT_R {
         BAUD_DETECT_R::new(((self.bits >> 10) & 0x01) != 0)
     }
-    #[doc = "Bit 11"]
+    #[doc = "Bit 11 - Mask bit for corresponding bit in interrupt request register."]
     #[inline(always)]
     pub fn break_detect(&self) -> BREAK_DETECT_R {
         BREAK_DETECT_R::new(((self.bits >> 11) & 0x01) != 0)
     }
 }
 impl W {
-    #[doc = "Bit 0"]
+    #[doc = "Bit 0 - Mask bit for corresponding bit in interrupt request register."]
     #[inline(always)]
     pub fn trigger(&mut self) -> TRIGGER_W {
         TRIGGER_W { w: self }
     }
-    #[doc = "Bit 2"]
+    #[doc = "Bit 2 - Mask bit for corresponding bit in interrupt request register."]
     #[inline(always)]
     pub fn not_empty(&mut self) -> NOT_EMPTY_W {
         NOT_EMPTY_W { w: self }
     }
-    #[doc = "Bit 3"]
+    #[doc = "Bit 3 - Mask bit for corresponding bit in interrupt request register."]
     #[inline(always)]
     pub fn full(&mut self) -> FULL_W {
         FULL_W { w: self }
     }
-    #[doc = "Bit 5"]
+    #[doc = "Bit 5 - Mask bit for corresponding bit in interrupt request register."]
     #[inline(always)]
     pub fn overflow(&mut self) -> OVERFLOW_W {
         OVERFLOW_W { w: self }
     }
-    #[doc = "Bit 6"]
+    #[doc = "Bit 6 - Mask bit for corresponding bit in interrupt request register."]
     #[inline(always)]
     pub fn underflow(&mut self) -> UNDERFLOW_W {
         UNDERFLOW_W { w: self }
     }
-    #[doc = "Bit 7"]
+    #[doc = "Bit 7 - Mask bit for corresponding bit in interrupt request register."]
     #[inline(always)]
     pub fn blocked(&mut self) -> BLOCKED_W {
         BLOCKED_W { w: self }
     }
-    #[doc = "Bit 8"]
+    #[doc = "Bit 8 - Mask bit for corresponding bit in interrupt request register."]
     #[inline(always)]
     pub fn frame_error(&mut self) -> FRAME_ERROR_W {
         FRAME_ERROR_W { w: self }
     }
-    #[doc = "Bit 9"]
+    #[doc = "Bit 9 - Mask bit for corresponding bit in interrupt request register."]
     #[inline(always)]
     pub fn parity_error(&mut self) -> PARITY_ERROR_W {
         PARITY_ERROR_W { w: self }
     }
-    #[doc = "Bit 10"]
+    #[doc = "Bit 10 - Mask bit for corresponding bit in interrupt request register."]
     #[inline(always)]
     pub fn baud_detect(&mut self) -> BAUD_DETECT_W {
         BAUD_DETECT_W { w: self }
     }
-    #[doc = "Bit 11"]
+    #[doc = "Bit 11 - Mask bit for corresponding bit in interrupt request register."]
     #[inline(always)]
     pub fn break_detect(&mut self) -> BREAK_DETECT_W {
         BREAK_DETECT_W { w: self }
@@ -514,7 +514,7 @@ impl W {
         self
     }
 }
-#[doc = "\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [intr_rx_mask](index.html) module"]
+#[doc = "Receiver interrupt mask register.\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [intr_rx_mask](index.html) module"]
 pub struct INTR_RX_MASK_SPEC;
 impl crate::RegisterSpec for INTR_RX_MASK_SPEC {
     type Ux = u32;

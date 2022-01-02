@@ -34,7 +34,7 @@ impl From<crate::W<DEBUG_CTRL_SPEC>> for W {
         W(writer)
     }
 }
-#[doc = "Field `RESET_RX` reader - "]
+#[doc = "Field `RESET_RX` reader - This register are for debugging purposes. 0: Receive path is not at reset. 1: Reset the logic on the receive path except the Hard-IP. FW should check STATUS.RX_BUSY to make sure it is zero before setting this bit."]
 pub struct RESET_RX_R(crate::FieldReader<bool, bool>);
 impl RESET_RX_R {
     #[inline(always)]
@@ -49,7 +49,7 @@ impl core::ops::Deref for RESET_RX_R {
         &self.0
     }
 }
-#[doc = "Field `RESET_RX` writer - "]
+#[doc = "Field `RESET_RX` writer - This register are for debugging purposes. 0: Receive path is not at reset. 1: Reset the logic on the receive path except the Hard-IP. FW should check STATUS.RX_BUSY to make sure it is zero before setting this bit."]
 pub struct RESET_RX_W<'a> {
     w: &'a mut W,
 }
@@ -71,7 +71,7 @@ impl<'a> RESET_RX_W<'a> {
         self.w
     }
 }
-#[doc = "\n\nValue on reset: 0"]
+#[doc = "Message Cal State\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u8)]
 pub enum RX_MSG_CAL_STATE_A {
@@ -96,7 +96,7 @@ impl From<RX_MSG_CAL_STATE_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `RX_MSG_CAL_STATE` reader - "]
+#[doc = "Field `RX_MSG_CAL_STATE` reader - Message Cal State"]
 pub struct RX_MSG_CAL_STATE_R(crate::FieldReader<u8, RX_MSG_CAL_STATE_A>);
 impl RX_MSG_CAL_STATE_R {
     #[inline(always)]
@@ -160,7 +160,7 @@ impl core::ops::Deref for RX_MSG_CAL_STATE_R {
         &self.0
     }
 }
-#[doc = "Field `RESET_TX` reader - "]
+#[doc = "Field `RESET_TX` reader - This register are for debugging purposes 0: Transmit path is not at reset. 1: Reset the logic on the transmit path except the Hard-IP. FW should check STATUS.TX_BUSY to make sure it is zero before setting this bit."]
 pub struct RESET_TX_R(crate::FieldReader<bool, bool>);
 impl RESET_TX_R {
     #[inline(always)]
@@ -175,7 +175,7 @@ impl core::ops::Deref for RESET_TX_R {
         &self.0
     }
 }
-#[doc = "Field `RESET_TX` writer - "]
+#[doc = "Field `RESET_TX` writer - This register are for debugging purposes 0: Transmit path is not at reset. 1: Reset the logic on the transmit path except the Hard-IP. FW should check STATUS.TX_BUSY to make sure it is zero before setting this bit."]
 pub struct RESET_TX_W<'a> {
     w: &'a mut W,
 }
@@ -197,7 +197,7 @@ impl<'a> RESET_TX_W<'a> {
         self.w
     }
 }
-#[doc = "\n\nValue on reset: 0"]
+#[doc = "Transmit state machine\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u8)]
 pub enum TX_MSG_STATE_A {
@@ -226,7 +226,7 @@ impl From<TX_MSG_STATE_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `TX_MSG_STATE` reader - "]
+#[doc = "Field `TX_MSG_STATE` reader - Transmit state machine"]
 pub struct TX_MSG_STATE_R(crate::FieldReader<u8, TX_MSG_STATE_A>);
 impl TX_MSG_STATE_R {
     #[inline(always)]
@@ -302,7 +302,7 @@ impl core::ops::Deref for TX_MSG_STATE_R {
         &self.0
     }
 }
-#[doc = "\n\nValue on reset: 0"]
+#[doc = "TX SRC Select state machine\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u8)]
 pub enum TX_SRC_SEL_STATE_A {
@@ -325,7 +325,7 @@ impl From<TX_SRC_SEL_STATE_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `TX_SRC_SEL_STATE` reader - "]
+#[doc = "Field `TX_SRC_SEL_STATE` reader - TX SRC Select state machine"]
 pub struct TX_SRC_SEL_STATE_R(crate::FieldReader<u8, TX_SRC_SEL_STATE_A>);
 impl TX_SRC_SEL_STATE_R {
     #[inline(always)]
@@ -383,7 +383,7 @@ impl core::ops::Deref for TX_SRC_SEL_STATE_R {
         &self.0
     }
 }
-#[doc = "Field `TX_PREAMBLE_CNT` reader - "]
+#[doc = "Field `TX_PREAMBLE_CNT` reader - Number of TX preambles+1 (bit transitions)"]
 pub struct TX_PREAMBLE_CNT_R(crate::FieldReader<u8, u8>);
 impl TX_PREAMBLE_CNT_R {
     #[inline(always)]
@@ -398,7 +398,7 @@ impl core::ops::Deref for TX_PREAMBLE_CNT_R {
         &self.0
     }
 }
-#[doc = "Field `TX_PREAMBLE_CNT` writer - "]
+#[doc = "Field `TX_PREAMBLE_CNT` writer - Number of TX preambles+1 (bit transitions)"]
 pub struct TX_PREAMBLE_CNT_W<'a> {
     w: &'a mut W,
 }
@@ -410,7 +410,7 @@ impl<'a> TX_PREAMBLE_CNT_W<'a> {
         self.w
     }
 }
-#[doc = "Field `EOP_VALUE` reader - "]
+#[doc = "Field `EOP_VALUE` reader - EOP value for Both RX and TX"]
 pub struct EOP_VALUE_R(crate::FieldReader<u8, u8>);
 impl EOP_VALUE_R {
     #[inline(always)]
@@ -425,7 +425,7 @@ impl core::ops::Deref for EOP_VALUE_R {
         &self.0
     }
 }
-#[doc = "Field `EOP_VALUE` writer - "]
+#[doc = "Field `EOP_VALUE` writer - EOP value for Both RX and TX"]
 pub struct EOP_VALUE_W<'a> {
     w: &'a mut W,
 }
@@ -437,7 +437,7 @@ impl<'a> EOP_VALUE_W<'a> {
         self.w
     }
 }
-#[doc = "Field `QUALIFY_RX_VALID_WITH_NOISE` reader - "]
+#[doc = "Field `QUALIFY_RX_VALID_WITH_NOISE` reader - This bit is used to qualify the cc_rx_valid signal from cc module with the noise_detected for collision logic. 0: Don't qualify cc_rx_valid with noise_detected 1: Qualify cc_rx_valid with noise_detected"]
 pub struct QUALIFY_RX_VALID_WITH_NOISE_R(crate::FieldReader<bool, bool>);
 impl QUALIFY_RX_VALID_WITH_NOISE_R {
     #[inline(always)]
@@ -452,7 +452,7 @@ impl core::ops::Deref for QUALIFY_RX_VALID_WITH_NOISE_R {
         &self.0
     }
 }
-#[doc = "Field `QUALIFY_RX_VALID_WITH_NOISE` writer - "]
+#[doc = "Field `QUALIFY_RX_VALID_WITH_NOISE` writer - This bit is used to qualify the cc_rx_valid signal from cc module with the noise_detected for collision logic. 0: Don't qualify cc_rx_valid with noise_detected 1: Qualify cc_rx_valid with noise_detected"]
 pub struct QUALIFY_RX_VALID_WITH_NOISE_W<'a> {
     w: &'a mut W,
 }
@@ -475,69 +475,69 @@ impl<'a> QUALIFY_RX_VALID_WITH_NOISE_W<'a> {
     }
 }
 impl R {
-    #[doc = "Bit 0"]
+    #[doc = "Bit 0 - This register are for debugging purposes. 0: Receive path is not at reset. 1: Reset the logic on the receive path except the Hard-IP. FW should check STATUS.RX_BUSY to make sure it is zero before setting this bit."]
     #[inline(always)]
     pub fn reset_rx(&self) -> RESET_RX_R {
         RESET_RX_R::new((self.bits & 0x01) != 0)
     }
-    #[doc = "Bits 1:3"]
+    #[doc = "Bits 1:3 - Message Cal State"]
     #[inline(always)]
     pub fn rx_msg_cal_state(&self) -> RX_MSG_CAL_STATE_R {
         RX_MSG_CAL_STATE_R::new(((self.bits >> 1) & 0x07) as u8)
     }
-    #[doc = "Bit 8"]
+    #[doc = "Bit 8 - This register are for debugging purposes 0: Transmit path is not at reset. 1: Reset the logic on the transmit path except the Hard-IP. FW should check STATUS.TX_BUSY to make sure it is zero before setting this bit."]
     #[inline(always)]
     pub fn reset_tx(&self) -> RESET_TX_R {
         RESET_TX_R::new(((self.bits >> 8) & 0x01) != 0)
     }
-    #[doc = "Bits 9:12"]
+    #[doc = "Bits 9:12 - Transmit state machine"]
     #[inline(always)]
     pub fn tx_msg_state(&self) -> TX_MSG_STATE_R {
         TX_MSG_STATE_R::new(((self.bits >> 9) & 0x0f) as u8)
     }
-    #[doc = "Bits 13:15"]
+    #[doc = "Bits 13:15 - TX SRC Select state machine"]
     #[inline(always)]
     pub fn tx_src_sel_state(&self) -> TX_SRC_SEL_STATE_R {
         TX_SRC_SEL_STATE_R::new(((self.bits >> 13) & 0x07) as u8)
     }
-    #[doc = "Bits 16:21"]
+    #[doc = "Bits 16:21 - Number of TX preambles+1 (bit transitions)"]
     #[inline(always)]
     pub fn tx_preamble_cnt(&self) -> TX_PREAMBLE_CNT_R {
         TX_PREAMBLE_CNT_R::new(((self.bits >> 16) & 0x3f) as u8)
     }
-    #[doc = "Bits 22:26"]
+    #[doc = "Bits 22:26 - EOP value for Both RX and TX"]
     #[inline(always)]
     pub fn eop_value(&self) -> EOP_VALUE_R {
         EOP_VALUE_R::new(((self.bits >> 22) & 0x1f) as u8)
     }
-    #[doc = "Bit 27"]
+    #[doc = "Bit 27 - This bit is used to qualify the cc_rx_valid signal from cc module with the noise_detected for collision logic. 0: Don't qualify cc_rx_valid with noise_detected 1: Qualify cc_rx_valid with noise_detected"]
     #[inline(always)]
     pub fn qualify_rx_valid_with_noise(&self) -> QUALIFY_RX_VALID_WITH_NOISE_R {
         QUALIFY_RX_VALID_WITH_NOISE_R::new(((self.bits >> 27) & 0x01) != 0)
     }
 }
 impl W {
-    #[doc = "Bit 0"]
+    #[doc = "Bit 0 - This register are for debugging purposes. 0: Receive path is not at reset. 1: Reset the logic on the receive path except the Hard-IP. FW should check STATUS.RX_BUSY to make sure it is zero before setting this bit."]
     #[inline(always)]
     pub fn reset_rx(&mut self) -> RESET_RX_W {
         RESET_RX_W { w: self }
     }
-    #[doc = "Bit 8"]
+    #[doc = "Bit 8 - This register are for debugging purposes 0: Transmit path is not at reset. 1: Reset the logic on the transmit path except the Hard-IP. FW should check STATUS.TX_BUSY to make sure it is zero before setting this bit."]
     #[inline(always)]
     pub fn reset_tx(&mut self) -> RESET_TX_W {
         RESET_TX_W { w: self }
     }
-    #[doc = "Bits 16:21"]
+    #[doc = "Bits 16:21 - Number of TX preambles+1 (bit transitions)"]
     #[inline(always)]
     pub fn tx_preamble_cnt(&mut self) -> TX_PREAMBLE_CNT_W {
         TX_PREAMBLE_CNT_W { w: self }
     }
-    #[doc = "Bits 22:26"]
+    #[doc = "Bits 22:26 - EOP value for Both RX and TX"]
     #[inline(always)]
     pub fn eop_value(&mut self) -> EOP_VALUE_W {
         EOP_VALUE_W { w: self }
     }
-    #[doc = "Bit 27"]
+    #[doc = "Bit 27 - This bit is used to qualify the cc_rx_valid signal from cc module with the noise_detected for collision logic. 0: Don't qualify cc_rx_valid with noise_detected 1: Qualify cc_rx_valid with noise_detected"]
     #[inline(always)]
     pub fn qualify_rx_valid_with_noise(&mut self) -> QUALIFY_RX_VALID_WITH_NOISE_W {
         QUALIFY_RX_VALID_WITH_NOISE_W { w: self }
@@ -549,7 +549,7 @@ impl W {
         self
     }
 }
-#[doc = "\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [debug_ctrl](index.html) module"]
+#[doc = "Debug Control Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [debug_ctrl](index.html) module"]
 pub struct DEBUG_CTRL_SPEC;
 impl crate::RegisterSpec for DEBUG_CTRL_SPEC {
     type Ux = u32;

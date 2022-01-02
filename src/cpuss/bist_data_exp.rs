@@ -13,7 +13,7 @@ impl From<crate::R<BIST_DATA_EXP_SPEC>> for R {
         R(reader)
     }
 }
-#[doc = "Field `DATA` reader - "]
+#[doc = "Field `DATA` reader - For SRAM BIST. This field is the expected data from SRAM. This value is BIST_DATA.DATA for a R0 substep and ~BIST_DATA.DATA for a R1 substep."]
 pub struct DATA_R(crate::FieldReader<u32, u32>);
 impl DATA_R {
     #[inline(always)]
@@ -29,13 +29,13 @@ impl core::ops::Deref for DATA_R {
     }
 }
 impl R {
-    #[doc = "Bits 0:31"]
+    #[doc = "Bits 0:31 - For SRAM BIST. This field is the expected data from SRAM. This value is BIST_DATA.DATA for a R0 substep and ~BIST_DATA.DATA for a R1 substep."]
     #[inline(always)]
     pub fn data(&self) -> DATA_R {
         DATA_R::new((self.bits & 0xffff_ffff) as u32)
     }
 }
-#[doc = "\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [bist_data_exp](index.html) module"]
+#[doc = "BIST data actual register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [bist_data_exp](index.html) module"]
 pub struct BIST_DATA_EXP_SPEC;
 impl crate::RegisterSpec for BIST_DATA_EXP_SPEC {
     type Ux = u32;

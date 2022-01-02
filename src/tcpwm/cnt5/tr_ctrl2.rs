@@ -34,7 +34,7 @@ impl From<crate::W<TR_CTRL2_SPEC>> for W {
         W(writer)
     }
 }
-#[doc = "\n\nValue on reset: 3"]
+#[doc = "Determines the effect of a compare match event (COUNTER equals CC register) on the \"line_out\" output signals. Note that INVERT is especially useful for center aligned pulse width modulation. To generate a duty cycle of 0%, the counter CC register should be set to \"0\". For a 100% duty cycle, the counter CC register should be set to larger than the counter PERIOD register.\n\nValue on reset: 3"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u8)]
 pub enum CC_MATCH_MODE_A {
@@ -53,7 +53,7 @@ impl From<CC_MATCH_MODE_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `CC_MATCH_MODE` reader - "]
+#[doc = "Field `CC_MATCH_MODE` reader - Determines the effect of a compare match event (COUNTER equals CC register) on the \"line_out\" output signals. Note that INVERT is especially useful for center aligned pulse width modulation. To generate a duty cycle of 0%, the counter CC register should be set to \"0\". For a 100% duty cycle, the counter CC register should be set to larger than the counter PERIOD register."]
 pub struct CC_MATCH_MODE_R(crate::FieldReader<u8, CC_MATCH_MODE_A>);
 impl CC_MATCH_MODE_R {
     #[inline(always)]
@@ -99,7 +99,7 @@ impl core::ops::Deref for CC_MATCH_MODE_R {
         &self.0
     }
 }
-#[doc = "Field `CC_MATCH_MODE` writer - "]
+#[doc = "Field `CC_MATCH_MODE` writer - Determines the effect of a compare match event (COUNTER equals CC register) on the \"line_out\" output signals. Note that INVERT is especially useful for center aligned pulse width modulation. To generate a duty cycle of 0%, the counter CC register should be set to \"0\". For a 100% duty cycle, the counter CC register should be set to larger than the counter PERIOD register."]
 pub struct CC_MATCH_MODE_W<'a> {
     w: &'a mut W,
 }
@@ -136,7 +136,7 @@ impl<'a> CC_MATCH_MODE_W<'a> {
         self.w
     }
 }
-#[doc = "\n\nValue on reset: 3"]
+#[doc = "Determines the effect of a counter overflow event (COUNTER reaches PERIOD) on the \"line_out\" output signals.\n\nValue on reset: 3"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u8)]
 pub enum OVERFLOW_MODE_A {
@@ -155,7 +155,7 @@ impl From<OVERFLOW_MODE_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `OVERFLOW_MODE` reader - "]
+#[doc = "Field `OVERFLOW_MODE` reader - Determines the effect of a counter overflow event (COUNTER reaches PERIOD) on the \"line_out\" output signals."]
 pub struct OVERFLOW_MODE_R(crate::FieldReader<u8, OVERFLOW_MODE_A>);
 impl OVERFLOW_MODE_R {
     #[inline(always)]
@@ -201,7 +201,7 @@ impl core::ops::Deref for OVERFLOW_MODE_R {
         &self.0
     }
 }
-#[doc = "Field `OVERFLOW_MODE` writer - "]
+#[doc = "Field `OVERFLOW_MODE` writer - Determines the effect of a counter overflow event (COUNTER reaches PERIOD) on the \"line_out\" output signals."]
 pub struct OVERFLOW_MODE_W<'a> {
     w: &'a mut W,
 }
@@ -238,7 +238,7 @@ impl<'a> OVERFLOW_MODE_W<'a> {
         self.w
     }
 }
-#[doc = "\n\nValue on reset: 3"]
+#[doc = "Determines the effect of a counter underflow event (COUNTER reaches \"0\") on the \"line_out\" output signals.\n\nValue on reset: 3"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u8)]
 pub enum UNDERFLOW_MODE_A {
@@ -257,7 +257,7 @@ impl From<UNDERFLOW_MODE_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `UNDERFLOW_MODE` reader - "]
+#[doc = "Field `UNDERFLOW_MODE` reader - Determines the effect of a counter underflow event (COUNTER reaches \"0\") on the \"line_out\" output signals."]
 pub struct UNDERFLOW_MODE_R(crate::FieldReader<u8, UNDERFLOW_MODE_A>);
 impl UNDERFLOW_MODE_R {
     #[inline(always)]
@@ -303,7 +303,7 @@ impl core::ops::Deref for UNDERFLOW_MODE_R {
         &self.0
     }
 }
-#[doc = "Field `UNDERFLOW_MODE` writer - "]
+#[doc = "Field `UNDERFLOW_MODE` writer - Determines the effect of a counter underflow event (COUNTER reaches \"0\") on the \"line_out\" output signals."]
 pub struct UNDERFLOW_MODE_W<'a> {
     w: &'a mut W,
 }
@@ -341,34 +341,34 @@ impl<'a> UNDERFLOW_MODE_W<'a> {
     }
 }
 impl R {
-    #[doc = "Bits 0:1"]
+    #[doc = "Bits 0:1 - Determines the effect of a compare match event (COUNTER equals CC register) on the \"line_out\" output signals. Note that INVERT is especially useful for center aligned pulse width modulation. To generate a duty cycle of 0%, the counter CC register should be set to \"0\". For a 100% duty cycle, the counter CC register should be set to larger than the counter PERIOD register."]
     #[inline(always)]
     pub fn cc_match_mode(&self) -> CC_MATCH_MODE_R {
         CC_MATCH_MODE_R::new((self.bits & 0x03) as u8)
     }
-    #[doc = "Bits 2:3"]
+    #[doc = "Bits 2:3 - Determines the effect of a counter overflow event (COUNTER reaches PERIOD) on the \"line_out\" output signals."]
     #[inline(always)]
     pub fn overflow_mode(&self) -> OVERFLOW_MODE_R {
         OVERFLOW_MODE_R::new(((self.bits >> 2) & 0x03) as u8)
     }
-    #[doc = "Bits 4:5"]
+    #[doc = "Bits 4:5 - Determines the effect of a counter underflow event (COUNTER reaches \"0\") on the \"line_out\" output signals."]
     #[inline(always)]
     pub fn underflow_mode(&self) -> UNDERFLOW_MODE_R {
         UNDERFLOW_MODE_R::new(((self.bits >> 4) & 0x03) as u8)
     }
 }
 impl W {
-    #[doc = "Bits 0:1"]
+    #[doc = "Bits 0:1 - Determines the effect of a compare match event (COUNTER equals CC register) on the \"line_out\" output signals. Note that INVERT is especially useful for center aligned pulse width modulation. To generate a duty cycle of 0%, the counter CC register should be set to \"0\". For a 100% duty cycle, the counter CC register should be set to larger than the counter PERIOD register."]
     #[inline(always)]
     pub fn cc_match_mode(&mut self) -> CC_MATCH_MODE_W {
         CC_MATCH_MODE_W { w: self }
     }
-    #[doc = "Bits 2:3"]
+    #[doc = "Bits 2:3 - Determines the effect of a counter overflow event (COUNTER reaches PERIOD) on the \"line_out\" output signals."]
     #[inline(always)]
     pub fn overflow_mode(&mut self) -> OVERFLOW_MODE_W {
         OVERFLOW_MODE_W { w: self }
     }
-    #[doc = "Bits 4:5"]
+    #[doc = "Bits 4:5 - Determines the effect of a counter underflow event (COUNTER reaches \"0\") on the \"line_out\" output signals."]
     #[inline(always)]
     pub fn underflow_mode(&mut self) -> UNDERFLOW_MODE_W {
         UNDERFLOW_MODE_W { w: self }
@@ -380,7 +380,7 @@ impl W {
         self
     }
 }
-#[doc = "\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [tr_ctrl2](index.html) module"]
+#[doc = "Counter trigger control register 2 Used to control counter \"line_out\", \"dt_line_out\" and \"dt_line_compl_out\" output signals.\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [tr_ctrl2](index.html) module"]
 pub struct TR_CTRL2_SPEC;
 impl crate::RegisterSpec for TR_CTRL2_SPEC {
     type Ux = u32;

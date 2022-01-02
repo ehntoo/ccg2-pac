@@ -34,7 +34,7 @@ impl From<crate::W<PWR_BG_TRIM2_SPEC>> for W {
         W(writer)
     }
 }
-#[doc = "Field `REF_ITRIM` reader - "]
+#[doc = "Field `REF_ITRIM` reader - Trims the bandgap reference current output. Used to trim the IBG to the voltage where its temperature curvature is minimal."]
 pub struct REF_ITRIM_R(crate::FieldReader<u8, u8>);
 impl REF_ITRIM_R {
     #[inline(always)]
@@ -49,7 +49,7 @@ impl core::ops::Deref for REF_ITRIM_R {
         &self.0
     }
 }
-#[doc = "Field `REF_ITRIM` writer - "]
+#[doc = "Field `REF_ITRIM` writer - Trims the bandgap reference current output. Used to trim the IBG to the voltage where its temperature curvature is minimal."]
 pub struct REF_ITRIM_W<'a> {
     w: &'a mut W,
 }
@@ -62,14 +62,14 @@ impl<'a> REF_ITRIM_W<'a> {
     }
 }
 impl R {
-    #[doc = "Bits 0:5"]
+    #[doc = "Bits 0:5 - Trims the bandgap reference current output. Used to trim the IBG to the voltage where its temperature curvature is minimal."]
     #[inline(always)]
     pub fn ref_itrim(&self) -> REF_ITRIM_R {
         REF_ITRIM_R::new((self.bits & 0x3f) as u8)
     }
 }
 impl W {
-    #[doc = "Bits 0:5"]
+    #[doc = "Bits 0:5 - Trims the bandgap reference current output. Used to trim the IBG to the voltage where its temperature curvature is minimal."]
     #[inline(always)]
     pub fn ref_itrim(&mut self) -> REF_ITRIM_W {
         REF_ITRIM_W { w: self }
@@ -81,7 +81,7 @@ impl W {
         self
     }
 }
-#[doc = "\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [pwr_bg_trim2](index.html) module"]
+#[doc = "Bandgap Trim Register Trim bits for Reference System. Entire register is engineering only.\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [pwr_bg_trim2](index.html) module"]
 pub struct PWR_BG_TRIM2_SPEC;
 impl crate::RegisterSpec for PWR_BG_TRIM2_SPEC {
     type Ux = u32;

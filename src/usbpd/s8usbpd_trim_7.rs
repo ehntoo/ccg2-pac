@@ -34,7 +34,7 @@ impl From<crate::W<S8USBPD_TRIM_7_SPEC>> for W {
         W(writer)
     }
 }
-#[doc = "Field `I_TRIM` reader - "]
+#[doc = "Field `I_TRIM` reader - DeepSleep 2.4uA current reference trim bit. Refer to s8usbpd BROS for bit settings."]
 pub struct I_TRIM_R(crate::FieldReader<u8, u8>);
 impl I_TRIM_R {
     #[inline(always)]
@@ -49,7 +49,7 @@ impl core::ops::Deref for I_TRIM_R {
         &self.0
     }
 }
-#[doc = "Field `I_TRIM` writer - "]
+#[doc = "Field `I_TRIM` writer - DeepSleep 2.4uA current reference trim bit. Refer to s8usbpd BROS for bit settings."]
 pub struct I_TRIM_W<'a> {
     w: &'a mut W,
 }
@@ -62,14 +62,14 @@ impl<'a> I_TRIM_W<'a> {
     }
 }
 impl R {
-    #[doc = "Bits 0:7"]
+    #[doc = "Bits 0:7 - DeepSleep 2.4uA current reference trim bit. Refer to s8usbpd BROS for bit settings."]
     #[inline(always)]
     pub fn i_trim(&self) -> I_TRIM_R {
         I_TRIM_R::new((self.bits & 0xff) as u8)
     }
 }
 impl W {
-    #[doc = "Bits 0:7"]
+    #[doc = "Bits 0:7 - DeepSleep 2.4uA current reference trim bit. Refer to s8usbpd BROS for bit settings."]
     #[inline(always)]
     pub fn i_trim(&mut self) -> I_TRIM_W {
         I_TRIM_W { w: self }
@@ -81,7 +81,7 @@ impl W {
         self
     }
 }
-#[doc = "\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [s8usbpd_trim_7](index.html) module"]
+#[doc = "S8USBPD C-connector Trim Register7. Production trims stored in flash\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [s8usbpd_trim_7](index.html) module"]
 pub struct S8USBPD_TRIM_7_SPEC;
 impl crate::RegisterSpec for S8USBPD_TRIM_7_SPEC {
     type Ux = u32;

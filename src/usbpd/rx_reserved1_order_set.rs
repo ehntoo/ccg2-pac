@@ -34,7 +34,10 @@ impl From<crate::W<RX_RESERVED1_ORDER_SET_SPEC>> for W {
         W(writer)
     }
 }
-#[doc = "Field `RX_RESERVED1_OS` reader - "]
+#[doc = "Field `RX_RESERVED1_OS` reader - Receive Reserved1 order set This Register Can also be used for SOP' and SOP\"\" \\[15:0\\]
+Can also be used for Transmiting GoddCRC Message to SOP' \\[31:16\\]
+Can also be used for Transmiting GoddCRC Message to SOP\" This register constains the Transmit GoodCRC Message Header except the MessageID which Is handled by Hardware. \\[11:9\\]
+Message ID (This is handled by HardWare)"]
 pub struct RX_RESERVED1_OS_R(crate::FieldReader<u32, u32>);
 impl RX_RESERVED1_OS_R {
     #[inline(always)]
@@ -49,7 +52,10 @@ impl core::ops::Deref for RX_RESERVED1_OS_R {
         &self.0
     }
 }
-#[doc = "Field `RX_RESERVED1_OS` writer - "]
+#[doc = "Field `RX_RESERVED1_OS` writer - Receive Reserved1 order set This Register Can also be used for SOP' and SOP\"\" \\[15:0\\]
+Can also be used for Transmiting GoddCRC Message to SOP' \\[31:16\\]
+Can also be used for Transmiting GoddCRC Message to SOP\" This register constains the Transmit GoodCRC Message Header except the MessageID which Is handled by Hardware. \\[11:9\\]
+Message ID (This is handled by HardWare)"]
 pub struct RX_RESERVED1_OS_W<'a> {
     w: &'a mut W,
 }
@@ -62,14 +68,20 @@ impl<'a> RX_RESERVED1_OS_W<'a> {
     }
 }
 impl R {
-    #[doc = "Bits 0:31"]
+    #[doc = "Bits 0:31 - Receive Reserved1 order set This Register Can also be used for SOP' and SOP\"\" \\[15:0\\]
+Can also be used for Transmiting GoddCRC Message to SOP' \\[31:16\\]
+Can also be used for Transmiting GoddCRC Message to SOP\" This register constains the Transmit GoodCRC Message Header except the MessageID which Is handled by Hardware. \\[11:9\\]
+Message ID (This is handled by HardWare)"]
     #[inline(always)]
     pub fn rx_reserved1_os(&self) -> RX_RESERVED1_OS_R {
         RX_RESERVED1_OS_R::new((self.bits & 0xffff_ffff) as u32)
     }
 }
 impl W {
-    #[doc = "Bits 0:31"]
+    #[doc = "Bits 0:31 - Receive Reserved1 order set This Register Can also be used for SOP' and SOP\"\" \\[15:0\\]
+Can also be used for Transmiting GoddCRC Message to SOP' \\[31:16\\]
+Can also be used for Transmiting GoddCRC Message to SOP\" This register constains the Transmit GoodCRC Message Header except the MessageID which Is handled by Hardware. \\[11:9\\]
+Message ID (This is handled by HardWare)"]
     #[inline(always)]
     pub fn rx_reserved1_os(&mut self) -> RX_RESERVED1_OS_W {
         RX_RESERVED1_OS_W { w: self }
@@ -81,7 +93,7 @@ impl W {
         self
     }
 }
-#[doc = "\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [rx_reserved1_order_set](index.html) module"]
+#[doc = "Receive Reserved1 order set\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [rx_reserved1_order_set](index.html) module"]
 pub struct RX_RESERVED1_ORDER_SET_SPEC;
 impl crate::RegisterSpec for RX_RESERVED1_ORDER_SET_SPEC {
     type Ux = u32;

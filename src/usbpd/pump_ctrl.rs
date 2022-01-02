@@ -34,7 +34,7 @@ impl From<crate::W<PUMP_CTRL_SPEC>> for W {
         W(writer)
     }
 }
-#[doc = "Field `ADFT` reader - "]
+#[doc = "Field `ADFT` reader - ADFT control"]
 pub struct ADFT_R(crate::FieldReader<u8, u8>);
 impl ADFT_R {
     #[inline(always)]
@@ -49,7 +49,7 @@ impl core::ops::Deref for ADFT_R {
         &self.0
     }
 }
-#[doc = "Field `ADFT` writer - "]
+#[doc = "Field `ADFT` writer - ADFT control"]
 pub struct ADFT_W<'a> {
     w: &'a mut W,
 }
@@ -61,7 +61,7 @@ impl<'a> ADFT_W<'a> {
         self.w
     }
 }
-#[doc = "Field `BYPASS_LV` reader - "]
+#[doc = "Field `BYPASS_LV` reader - Bypasses the pumped output. Pump output is connected to VDDD. 0: Charge pump output 1: Pump output shorted to VDDD"]
 pub struct BYPASS_LV_R(crate::FieldReader<bool, bool>);
 impl BYPASS_LV_R {
     #[inline(always)]
@@ -76,7 +76,7 @@ impl core::ops::Deref for BYPASS_LV_R {
         &self.0
     }
 }
-#[doc = "Field `BYPASS_LV` writer - "]
+#[doc = "Field `BYPASS_LV` writer - Bypasses the pumped output. Pump output is connected to VDDD. 0: Charge pump output 1: Pump output shorted to VDDD"]
 pub struct BYPASS_LV_W<'a> {
     w: &'a mut W,
 }
@@ -98,7 +98,7 @@ impl<'a> BYPASS_LV_W<'a> {
         self.w
     }
 }
-#[doc = "Field `CLK_SEL` reader - "]
+#[doc = "Field `CLK_SEL` reader - External clock select 0: Internal oscillator used for charge pump 1: External clock used for charge pump"]
 pub struct CLK_SEL_R(crate::FieldReader<bool, bool>);
 impl CLK_SEL_R {
     #[inline(always)]
@@ -113,7 +113,7 @@ impl core::ops::Deref for CLK_SEL_R {
         &self.0
     }
 }
-#[doc = "Field `CLK_SEL` writer - "]
+#[doc = "Field `CLK_SEL` writer - External clock select 0: Internal oscillator used for charge pump 1: External clock used for charge pump"]
 pub struct CLK_SEL_W<'a> {
     w: &'a mut W,
 }
@@ -135,7 +135,7 @@ impl<'a> CLK_SEL_W<'a> {
         self.w
     }
 }
-#[doc = "Field `PD_PUMP` reader - "]
+#[doc = "Field `PD_PUMP` reader - Pump powerdown signal 0: Pump enabled 1: Pump disabled, all current paths cutoff"]
 pub struct PD_PUMP_R(crate::FieldReader<bool, bool>);
 impl PD_PUMP_R {
     #[inline(always)]
@@ -150,7 +150,7 @@ impl core::ops::Deref for PD_PUMP_R {
         &self.0
     }
 }
-#[doc = "Field `PD_PUMP` writer - "]
+#[doc = "Field `PD_PUMP` writer - Pump powerdown signal 0: Pump enabled 1: Pump disabled, all current paths cutoff"]
 pub struct PD_PUMP_W<'a> {
     w: &'a mut W,
 }
@@ -173,44 +173,44 @@ impl<'a> PD_PUMP_W<'a> {
     }
 }
 impl R {
-    #[doc = "Bits 0:1"]
+    #[doc = "Bits 0:1 - ADFT control"]
     #[inline(always)]
     pub fn adft(&self) -> ADFT_R {
         ADFT_R::new((self.bits & 0x03) as u8)
     }
-    #[doc = "Bit 2"]
+    #[doc = "Bit 2 - Bypasses the pumped output. Pump output is connected to VDDD. 0: Charge pump output 1: Pump output shorted to VDDD"]
     #[inline(always)]
     pub fn bypass_lv(&self) -> BYPASS_LV_R {
         BYPASS_LV_R::new(((self.bits >> 2) & 0x01) != 0)
     }
-    #[doc = "Bit 3"]
+    #[doc = "Bit 3 - External clock select 0: Internal oscillator used for charge pump 1: External clock used for charge pump"]
     #[inline(always)]
     pub fn clk_sel(&self) -> CLK_SEL_R {
         CLK_SEL_R::new(((self.bits >> 3) & 0x01) != 0)
     }
-    #[doc = "Bit 4"]
+    #[doc = "Bit 4 - Pump powerdown signal 0: Pump enabled 1: Pump disabled, all current paths cutoff"]
     #[inline(always)]
     pub fn pd_pump(&self) -> PD_PUMP_R {
         PD_PUMP_R::new(((self.bits >> 4) & 0x01) != 0)
     }
 }
 impl W {
-    #[doc = "Bits 0:1"]
+    #[doc = "Bits 0:1 - ADFT control"]
     #[inline(always)]
     pub fn adft(&mut self) -> ADFT_W {
         ADFT_W { w: self }
     }
-    #[doc = "Bit 2"]
+    #[doc = "Bit 2 - Bypasses the pumped output. Pump output is connected to VDDD. 0: Charge pump output 1: Pump output shorted to VDDD"]
     #[inline(always)]
     pub fn bypass_lv(&mut self) -> BYPASS_LV_W {
         BYPASS_LV_W { w: self }
     }
-    #[doc = "Bit 3"]
+    #[doc = "Bit 3 - External clock select 0: Internal oscillator used for charge pump 1: External clock used for charge pump"]
     #[inline(always)]
     pub fn clk_sel(&mut self) -> CLK_SEL_W {
         CLK_SEL_W { w: self }
     }
-    #[doc = "Bit 4"]
+    #[doc = "Bit 4 - Pump powerdown signal 0: Pump enabled 1: Pump disabled, all current paths cutoff"]
     #[inline(always)]
     pub fn pd_pump(&mut self) -> PD_PUMP_W {
         PD_PUMP_W { w: self }
@@ -222,7 +222,7 @@ impl W {
         self
     }
 }
-#[doc = "\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [pump_ctrl](index.html) module"]
+#[doc = "S8USBPD PUMP control Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [pump_ctrl](index.html) module"]
 pub struct PUMP_CTRL_SPEC;
 impl crate::RegisterSpec for PUMP_CTRL_SPEC {
     type Ux = u32;

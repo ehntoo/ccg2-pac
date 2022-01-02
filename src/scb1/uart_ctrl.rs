@@ -34,7 +34,7 @@ impl From<crate::W<UART_CTRL_SPEC>> for W {
         W(writer)
     }
 }
-#[doc = "Field `LOOPBACK` reader - "]
+#[doc = "Field `LOOPBACK` reader - Local loopback control (does NOT affect the information on the pins). When '0', the transmitter TX line \"uart_tx_out\" is connected to the TX pin and the receiver RX line \"uart_rx_in\" is connected to the RX pin. When '1', the transmitter TX line \"uart_tx_out\" is connected to the receiver RX line \"uart_rx_in\". A similar connections scheme is followed for \"uart_rts_out\" and \"uart_cts_in\". This allows a SCB UART transmitter to communicate with its receiver counterpart."]
 pub struct LOOPBACK_R(crate::FieldReader<bool, bool>);
 impl LOOPBACK_R {
     #[inline(always)]
@@ -49,7 +49,7 @@ impl core::ops::Deref for LOOPBACK_R {
         &self.0
     }
 }
-#[doc = "Field `LOOPBACK` writer - "]
+#[doc = "Field `LOOPBACK` writer - Local loopback control (does NOT affect the information on the pins). When '0', the transmitter TX line \"uart_tx_out\" is connected to the TX pin and the receiver RX line \"uart_rx_in\" is connected to the RX pin. When '1', the transmitter TX line \"uart_tx_out\" is connected to the receiver RX line \"uart_rx_in\". A similar connections scheme is followed for \"uart_rts_out\" and \"uart_cts_in\". This allows a SCB UART transmitter to communicate with its receiver counterpart."]
 pub struct LOOPBACK_W<'a> {
     w: &'a mut W,
 }
@@ -71,7 +71,7 @@ impl<'a> LOOPBACK_W<'a> {
         self.w
     }
 }
-#[doc = "\n\nValue on reset: 3"]
+#[doc = "Submode of UART operation (3: Reserved)\n\nValue on reset: 3"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u8)]
 pub enum MODE_A {
@@ -88,7 +88,7 @@ impl From<MODE_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `MODE` reader - "]
+#[doc = "Field `MODE` reader - Submode of UART operation (3: Reserved)"]
 pub struct MODE_R(crate::FieldReader<u8, MODE_A>);
 impl MODE_R {
     #[inline(always)]
@@ -128,7 +128,7 @@ impl core::ops::Deref for MODE_R {
         &self.0
     }
 }
-#[doc = "Field `MODE` writer - "]
+#[doc = "Field `MODE` writer - Submode of UART operation (3: Reserved)"]
 pub struct MODE_W<'a> {
     w: &'a mut W,
 }
@@ -161,24 +161,24 @@ impl<'a> MODE_W<'a> {
     }
 }
 impl R {
-    #[doc = "Bit 16"]
+    #[doc = "Bit 16 - Local loopback control (does NOT affect the information on the pins). When '0', the transmitter TX line \"uart_tx_out\" is connected to the TX pin and the receiver RX line \"uart_rx_in\" is connected to the RX pin. When '1', the transmitter TX line \"uart_tx_out\" is connected to the receiver RX line \"uart_rx_in\". A similar connections scheme is followed for \"uart_rts_out\" and \"uart_cts_in\". This allows a SCB UART transmitter to communicate with its receiver counterpart."]
     #[inline(always)]
     pub fn loopback(&self) -> LOOPBACK_R {
         LOOPBACK_R::new(((self.bits >> 16) & 0x01) != 0)
     }
-    #[doc = "Bits 24:25"]
+    #[doc = "Bits 24:25 - Submode of UART operation (3: Reserved)"]
     #[inline(always)]
     pub fn mode(&self) -> MODE_R {
         MODE_R::new(((self.bits >> 24) & 0x03) as u8)
     }
 }
 impl W {
-    #[doc = "Bit 16"]
+    #[doc = "Bit 16 - Local loopback control (does NOT affect the information on the pins). When '0', the transmitter TX line \"uart_tx_out\" is connected to the TX pin and the receiver RX line \"uart_rx_in\" is connected to the RX pin. When '1', the transmitter TX line \"uart_tx_out\" is connected to the receiver RX line \"uart_rx_in\". A similar connections scheme is followed for \"uart_rts_out\" and \"uart_cts_in\". This allows a SCB UART transmitter to communicate with its receiver counterpart."]
     #[inline(always)]
     pub fn loopback(&mut self) -> LOOPBACK_W {
         LOOPBACK_W { w: self }
     }
-    #[doc = "Bits 24:25"]
+    #[doc = "Bits 24:25 - Submode of UART operation (3: Reserved)"]
     #[inline(always)]
     pub fn mode(&mut self) -> MODE_W {
         MODE_W { w: self }
@@ -190,7 +190,7 @@ impl W {
         self
     }
 }
-#[doc = "\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [uart_ctrl](index.html) module"]
+#[doc = "UART control register.\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [uart_ctrl](index.html) module"]
 pub struct UART_CTRL_SPEC;
 impl crate::RegisterSpec for UART_CTRL_SPEC {
     type Ux = u32;

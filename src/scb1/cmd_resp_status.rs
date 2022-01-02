@@ -13,7 +13,7 @@ impl From<crate::R<CMD_RESP_STATUS_SPEC>> for R {
         R(reader)
     }
 }
-#[doc = "Field `CURR_RD_ADDR` reader - "]
+#[doc = "Field `CURR_RD_ADDR` reader - I2C/SPI read current address for CMD_RESP mode. HW increments the field after a read access to the memory buffer. However, when the last memory buffer address is reached, the address is NOT incremented (but remains at the maximim memory buffer address). The field is used to determine how many bytes have been read (# bytes = CURR_RD_ADDR - CMD_RESP_CTRL.BASE_RD_ADDR). This field is reliable during when there is no bus transfer. This field is potentially unreliable when there is a bus transfer bus transfer: when CMD_RESP_EC_BUSY is '0', the field is reliable."]
 pub struct CURR_RD_ADDR_R(crate::FieldReader<u8, u8>);
 impl CURR_RD_ADDR_R {
     #[inline(always)]
@@ -28,7 +28,7 @@ impl core::ops::Deref for CURR_RD_ADDR_R {
         &self.0
     }
 }
-#[doc = "Field `CURR_WR_ADDR` reader - "]
+#[doc = "Field `CURR_WR_ADDR` reader - I2C/SPI write current address for CMD_RESP mode. HW increments the field after a read access to the memory buffer. However, when the last memory buffer address is reached, the address is NOT incremented (but remains at the maximim memory buffer address). The field is used to determine how many bytes have been written (# bytes = CURR_WR_ADDR - CMD_RESP_CTRL.BASE_WR_ADDR). This field is reliable during when there is no bus transfer. This field is potentially unreliable when there is a bus transfer bus transfer: when CMD_RESP_EC_BUSY is '0', the field is reliable."]
 pub struct CURR_WR_ADDR_R(crate::FieldReader<u8, u8>);
 impl CURR_WR_ADDR_R {
     #[inline(always)]
@@ -43,7 +43,7 @@ impl core::ops::Deref for CURR_WR_ADDR_R {
         &self.0
     }
 }
-#[doc = "Field `CMD_RESP_EC_BUS_BUSY` reader - "]
+#[doc = "Field `CMD_RESP_EC_BUS_BUSY` reader - Indicates whether there is an ongoing bus transfer to the IP. '0': no ongoing bus transfer. '1': ongoing bus transferr. For SPI, the field is '1' when the slave is selected. For I2C, the field is set to '1' at a I2C START/RESTART. In case of an address match, the field is set to '0' on a I2C STOP. In case of NO address match, the field is set to '0' after the failing address match."]
 pub struct CMD_RESP_EC_BUS_BUSY_R(crate::FieldReader<bool, bool>);
 impl CMD_RESP_EC_BUS_BUSY_R {
     #[inline(always)]
@@ -58,7 +58,7 @@ impl core::ops::Deref for CMD_RESP_EC_BUS_BUSY_R {
         &self.0
     }
 }
-#[doc = "Field `CMD_RESP_EC_BUSY` reader - "]
+#[doc = "Field `CMD_RESP_EC_BUSY` reader - Indicates whether the CURR_RD_ADDR and CURR_WR_ADDR fields in this register are reliable (CMD_RESP_EC_BUSY is '0') or not reliable (CMD_RESP_EC_BUSY is '1'). Note: - When there is no bus transfer, CMD_RESP_EC_BUSY is '0'. - When there is a bus transfer, CMD_RESP_EC_BUSY is '0', when the CURR_RD_ADDR and CURR_WR_ADDR are not updated by the HW. - When there is a bus transfer, CMD_RESP_EC_BUSY is '1', when the CURR_RD_ADDR or CURR_WR_ADDR are updated by the HW. Note that this update lasts a single serial interface clock cycle."]
 pub struct CMD_RESP_EC_BUSY_R(crate::FieldReader<bool, bool>);
 impl CMD_RESP_EC_BUSY_R {
     #[inline(always)]
@@ -74,28 +74,28 @@ impl core::ops::Deref for CMD_RESP_EC_BUSY_R {
     }
 }
 impl R {
-    #[doc = "Bits 0:4"]
+    #[doc = "Bits 0:4 - I2C/SPI read current address for CMD_RESP mode. HW increments the field after a read access to the memory buffer. However, when the last memory buffer address is reached, the address is NOT incremented (but remains at the maximim memory buffer address). The field is used to determine how many bytes have been read (# bytes = CURR_RD_ADDR - CMD_RESP_CTRL.BASE_RD_ADDR). This field is reliable during when there is no bus transfer. This field is potentially unreliable when there is a bus transfer bus transfer: when CMD_RESP_EC_BUSY is '0', the field is reliable."]
     #[inline(always)]
     pub fn curr_rd_addr(&self) -> CURR_RD_ADDR_R {
         CURR_RD_ADDR_R::new((self.bits & 0x1f) as u8)
     }
-    #[doc = "Bits 16:20"]
+    #[doc = "Bits 16:20 - I2C/SPI write current address for CMD_RESP mode. HW increments the field after a read access to the memory buffer. However, when the last memory buffer address is reached, the address is NOT incremented (but remains at the maximim memory buffer address). The field is used to determine how many bytes have been written (# bytes = CURR_WR_ADDR - CMD_RESP_CTRL.BASE_WR_ADDR). This field is reliable during when there is no bus transfer. This field is potentially unreliable when there is a bus transfer bus transfer: when CMD_RESP_EC_BUSY is '0', the field is reliable."]
     #[inline(always)]
     pub fn curr_wr_addr(&self) -> CURR_WR_ADDR_R {
         CURR_WR_ADDR_R::new(((self.bits >> 16) & 0x1f) as u8)
     }
-    #[doc = "Bit 30"]
+    #[doc = "Bit 30 - Indicates whether there is an ongoing bus transfer to the IP. '0': no ongoing bus transfer. '1': ongoing bus transferr. For SPI, the field is '1' when the slave is selected. For I2C, the field is set to '1' at a I2C START/RESTART. In case of an address match, the field is set to '0' on a I2C STOP. In case of NO address match, the field is set to '0' after the failing address match."]
     #[inline(always)]
     pub fn cmd_resp_ec_bus_busy(&self) -> CMD_RESP_EC_BUS_BUSY_R {
         CMD_RESP_EC_BUS_BUSY_R::new(((self.bits >> 30) & 0x01) != 0)
     }
-    #[doc = "Bit 31"]
+    #[doc = "Bit 31 - Indicates whether the CURR_RD_ADDR and CURR_WR_ADDR fields in this register are reliable (CMD_RESP_EC_BUSY is '0') or not reliable (CMD_RESP_EC_BUSY is '1'). Note: - When there is no bus transfer, CMD_RESP_EC_BUSY is '0'. - When there is a bus transfer, CMD_RESP_EC_BUSY is '0', when the CURR_RD_ADDR and CURR_WR_ADDR are not updated by the HW. - When there is a bus transfer, CMD_RESP_EC_BUSY is '1', when the CURR_RD_ADDR or CURR_WR_ADDR are updated by the HW. Note that this update lasts a single serial interface clock cycle."]
     #[inline(always)]
     pub fn cmd_resp_ec_busy(&self) -> CMD_RESP_EC_BUSY_R {
         CMD_RESP_EC_BUSY_R::new(((self.bits >> 31) & 0x01) != 0)
     }
 }
-#[doc = "\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [cmd_resp_status](index.html) module"]
+#[doc = "Command/response status register. The register fields reflect register states without a default/reset value (CURR_RD_ADDR and CURR_WR_ADDR) or reflect an external bus state. Therefore, these registers are undefined after the IP is enabled.\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [cmd_resp_status](index.html) module"]
 pub struct CMD_RESP_STATUS_SPEC;
 impl crate::RegisterSpec for CMD_RESP_STATUS_SPEC {
     type Ux = u32;

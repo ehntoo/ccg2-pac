@@ -34,7 +34,7 @@ impl From<crate::W<SRSS_INTR_SET_SPEC>> for W {
         W(writer)
     }
 }
-#[doc = "Field `TEMP_HIGH` reader - "]
+#[doc = "Field `TEMP_HIGH` reader - Writing 1 to this bit internally sets the overtemp interrupt. This can be observed by reading SRSS_INTR.TEMP_HIGH. This bit always reads back as zero."]
 pub struct TEMP_HIGH_R(crate::FieldReader<bool, bool>);
 impl TEMP_HIGH_R {
     #[inline(always)]
@@ -49,7 +49,7 @@ impl core::ops::Deref for TEMP_HIGH_R {
         &self.0
     }
 }
-#[doc = "Field `TEMP_HIGH` writer - "]
+#[doc = "Field `TEMP_HIGH` writer - Writing 1 to this bit internally sets the overtemp interrupt. This can be observed by reading SRSS_INTR.TEMP_HIGH. This bit always reads back as zero."]
 pub struct TEMP_HIGH_W<'a> {
     w: &'a mut W,
 }
@@ -72,14 +72,14 @@ impl<'a> TEMP_HIGH_W<'a> {
     }
 }
 impl R {
-    #[doc = "Bit 1"]
+    #[doc = "Bit 1 - Writing 1 to this bit internally sets the overtemp interrupt. This can be observed by reading SRSS_INTR.TEMP_HIGH. This bit always reads back as zero."]
     #[inline(always)]
     pub fn temp_high(&self) -> TEMP_HIGH_R {
         TEMP_HIGH_R::new(((self.bits >> 1) & 0x01) != 0)
     }
 }
 impl W {
-    #[doc = "Bit 1"]
+    #[doc = "Bit 1 - Writing 1 to this bit internally sets the overtemp interrupt. This can be observed by reading SRSS_INTR.TEMP_HIGH. This bit always reads back as zero."]
     #[inline(always)]
     pub fn temp_high(&mut self) -> TEMP_HIGH_W {
         TEMP_HIGH_W { w: self }
@@ -91,7 +91,7 @@ impl W {
         self
     }
 }
-#[doc = "\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [srss_intr_set](index.html) module"]
+#[doc = "SRSS Interrupt Set Register Can be used to set interrupts for firmware testing. Note that SET functionality is not available for WDT.\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [srss_intr_set](index.html) module"]
 pub struct SRSS_INTR_SET_SPEC;
 impl crate::RegisterSpec for SRSS_INTR_SET_SPEC {
     type Ux = u32;

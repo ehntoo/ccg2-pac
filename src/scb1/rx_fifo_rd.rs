@@ -13,7 +13,8 @@ impl From<crate::R<RX_FIFO_RD_SPEC>> for R {
         R(reader)
     }
 }
-#[doc = "Field `DATA` reader - "]
+#[doc = "Field `DATA` reader - Data read from the receiver FIFO. Reading a data frame will remove the data frame from the FIFO; i.e. behavior is similar to that of a POP operation. Note that when CTRL.BYTE_MODE is '1', only DATA\\[7:0\\]
+are used. This register has a side effect when read by software: a data frame is removed from the FIFO. This may be undesirable during debug; i.e. a read during debug should NOT have a side effect. To this end, the IP uses the AHB-Lite \"hmaster\\[0\\]\" input signal. When this signal is '1' in the address cycle of a bus transfer, a read transfer will not have a side effect. As a result, a read from this register will not remove a data frame from the FIFO. As a result, a read from this register behaves as a read from the SCB_RX_FIFO_RD_SILENT register. A read from an empty RX FIFO sets INTR_RX.UNDERFLOW to '1'."]
 pub struct DATA_R(crate::FieldReader<u16, u16>);
 impl DATA_R {
     #[inline(always)]
@@ -29,13 +30,14 @@ impl core::ops::Deref for DATA_R {
     }
 }
 impl R {
-    #[doc = "Bits 0:15"]
+    #[doc = "Bits 0:15 - Data read from the receiver FIFO. Reading a data frame will remove the data frame from the FIFO; i.e. behavior is similar to that of a POP operation. Note that when CTRL.BYTE_MODE is '1', only DATA\\[7:0\\]
+are used. This register has a side effect when read by software: a data frame is removed from the FIFO. This may be undesirable during debug; i.e. a read during debug should NOT have a side effect. To this end, the IP uses the AHB-Lite \"hmaster\\[0\\]\" input signal. When this signal is '1' in the address cycle of a bus transfer, a read transfer will not have a side effect. As a result, a read from this register will not remove a data frame from the FIFO. As a result, a read from this register behaves as a read from the SCB_RX_FIFO_RD_SILENT register. A read from an empty RX FIFO sets INTR_RX.UNDERFLOW to '1'."]
     #[inline(always)]
     pub fn data(&self) -> DATA_R {
         DATA_R::new((self.bits & 0xffff) as u16)
     }
 }
-#[doc = "\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [rx_fifo_rd](index.html) module"]
+#[doc = "Receiver FIFO read register. When the IP is disabled (CTRL.ENABLED is '0') or when the RX FIFO is empty, a read from this register returns 0xffff:ffff. This register should only be used in FIFO mode (and not in EZ or CMD_RESP modes). This register is \"read only\"; a write to this register is ignored.\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [rx_fifo_rd](index.html) module"]
 pub struct RX_FIFO_RD_SPEC;
 impl crate::RegisterSpec for RX_FIFO_RD_SPEC {
     type Ux = u32;

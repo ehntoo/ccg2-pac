@@ -34,7 +34,7 @@ impl From<crate::W<BIST_CTL_SPEC>> for W {
         W(writer)
     }
 }
-#[doc = "\n\nValue on reset: 0"]
+#[doc = "Hot-one mask for the SRAMs for which the BIST is performed.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u8)]
 pub enum SRAMS_ENABLED_A {
@@ -57,7 +57,7 @@ impl From<SRAMS_ENABLED_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `SRAMS_ENABLED` reader - "]
+#[doc = "Field `SRAMS_ENABLED` reader - Hot-one mask for the SRAMs for which the BIST is performed."]
 pub struct SRAMS_ENABLED_R(crate::FieldReader<u8, SRAMS_ENABLED_A>);
 impl SRAMS_ENABLED_R {
     #[inline(always)]
@@ -115,7 +115,7 @@ impl core::ops::Deref for SRAMS_ENABLED_R {
         &self.0
     }
 }
-#[doc = "Field `SRAMS_ENABLED` writer - "]
+#[doc = "Field `SRAMS_ENABLED` writer - Hot-one mask for the SRAMs for which the BIST is performed."]
 pub struct SRAMS_ENABLED_W<'a> {
     w: &'a mut W,
 }
@@ -162,7 +162,7 @@ impl<'a> SRAMS_ENABLED_W<'a> {
         self.w
     }
 }
-#[doc = "Field `ROW_FIRST` reader - "]
+#[doc = "Field `ROW_FIRST` reader - Specifies how the SRAM BIST addresses are generated (should be set to '0' for SROM BIST): '0': Column address is incremented/decremented till it reaches its maximum/minimum value. Once it reach its maximum/minimum value, it is set to its mimimum/maximum value and only then is the row address incremented/decremented. '1': Row address is incremented/decremented till it reaches its maximum/minimum value. Once it reach its maximum/minimum value, it is set to its mimimum/maximum value and only then is the column address incremented/decremented."]
 pub struct ROW_FIRST_R(crate::FieldReader<bool, bool>);
 impl ROW_FIRST_R {
     #[inline(always)]
@@ -177,7 +177,7 @@ impl core::ops::Deref for ROW_FIRST_R {
         &self.0
     }
 }
-#[doc = "Field `ROW_FIRST` writer - "]
+#[doc = "Field `ROW_FIRST` writer - Specifies how the SRAM BIST addresses are generated (should be set to '0' for SROM BIST): '0': Column address is incremented/decremented till it reaches its maximum/minimum value. Once it reach its maximum/minimum value, it is set to its mimimum/maximum value and only then is the row address incremented/decremented. '1': Row address is incremented/decremented till it reaches its maximum/minimum value. Once it reach its maximum/minimum value, it is set to its mimimum/maximum value and only then is the column address incremented/decremented."]
 pub struct ROW_FIRST_W<'a> {
     w: &'a mut W,
 }
@@ -200,24 +200,24 @@ impl<'a> ROW_FIRST_W<'a> {
     }
 }
 impl R {
-    #[doc = "Bits 0:5"]
+    #[doc = "Bits 0:5 - Hot-one mask for the SRAMs for which the BIST is performed."]
     #[inline(always)]
     pub fn srams_enabled(&self) -> SRAMS_ENABLED_R {
         SRAMS_ENABLED_R::new((self.bits & 0x3f) as u8)
     }
-    #[doc = "Bit 20"]
+    #[doc = "Bit 20 - Specifies how the SRAM BIST addresses are generated (should be set to '0' for SROM BIST): '0': Column address is incremented/decremented till it reaches its maximum/minimum value. Once it reach its maximum/minimum value, it is set to its mimimum/maximum value and only then is the row address incremented/decremented. '1': Row address is incremented/decremented till it reaches its maximum/minimum value. Once it reach its maximum/minimum value, it is set to its mimimum/maximum value and only then is the column address incremented/decremented."]
     #[inline(always)]
     pub fn row_first(&self) -> ROW_FIRST_R {
         ROW_FIRST_R::new(((self.bits >> 20) & 0x01) != 0)
     }
 }
 impl W {
-    #[doc = "Bits 0:5"]
+    #[doc = "Bits 0:5 - Hot-one mask for the SRAMs for which the BIST is performed."]
     #[inline(always)]
     pub fn srams_enabled(&mut self) -> SRAMS_ENABLED_W {
         SRAMS_ENABLED_W { w: self }
     }
-    #[doc = "Bit 20"]
+    #[doc = "Bit 20 - Specifies how the SRAM BIST addresses are generated (should be set to '0' for SROM BIST): '0': Column address is incremented/decremented till it reaches its maximum/minimum value. Once it reach its maximum/minimum value, it is set to its mimimum/maximum value and only then is the row address incremented/decremented. '1': Row address is incremented/decremented till it reaches its maximum/minimum value. Once it reach its maximum/minimum value, it is set to its mimimum/maximum value and only then is the column address incremented/decremented."]
     #[inline(always)]
     pub fn row_first(&mut self) -> ROW_FIRST_W {
         ROW_FIRST_W { w: self }
@@ -229,7 +229,7 @@ impl W {
         self
     }
 }
-#[doc = "\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [bist_ctl](index.html) module"]
+#[doc = "BIST control register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [bist_ctl](index.html) module"]
 pub struct BIST_CTL_SPEC;
 impl crate::RegisterSpec for BIST_CTL_SPEC {
     type Ux = u32;

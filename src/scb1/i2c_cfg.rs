@@ -34,7 +34,7 @@ impl From<crate::W<I2C_CFG_SPEC>> for W {
         W(writer)
     }
 }
-#[doc = "Field `SDA_IN_FILT_TRIM` reader - "]
+#[doc = "Field `SDA_IN_FILT_TRIM` reader - Trim bits for \"i2c_sda_in\" 50 ns filter. See s8i2cs BROS (001-59539) for more details on the trim bit values."]
 pub struct SDA_IN_FILT_TRIM_R(crate::FieldReader<u8, u8>);
 impl SDA_IN_FILT_TRIM_R {
     #[inline(always)]
@@ -49,7 +49,7 @@ impl core::ops::Deref for SDA_IN_FILT_TRIM_R {
         &self.0
     }
 }
-#[doc = "Field `SDA_IN_FILT_TRIM` writer - "]
+#[doc = "Field `SDA_IN_FILT_TRIM` writer - Trim bits for \"i2c_sda_in\" 50 ns filter. See s8i2cs BROS (001-59539) for more details on the trim bit values."]
 pub struct SDA_IN_FILT_TRIM_W<'a> {
     w: &'a mut W,
 }
@@ -61,7 +61,7 @@ impl<'a> SDA_IN_FILT_TRIM_W<'a> {
         self.w
     }
 }
-#[doc = "Field `SDA_IN_FILT_SEL` reader - "]
+#[doc = "Field `SDA_IN_FILT_SEL` reader - Selection of \"i2c_sda_in\" filter delay: '0': 0 ns. '1: 50 ns (filter enabled)."]
 pub struct SDA_IN_FILT_SEL_R(crate::FieldReader<bool, bool>);
 impl SDA_IN_FILT_SEL_R {
     #[inline(always)]
@@ -76,7 +76,7 @@ impl core::ops::Deref for SDA_IN_FILT_SEL_R {
         &self.0
     }
 }
-#[doc = "Field `SDA_IN_FILT_SEL` writer - "]
+#[doc = "Field `SDA_IN_FILT_SEL` writer - Selection of \"i2c_sda_in\" filter delay: '0': 0 ns. '1: 50 ns (filter enabled)."]
 pub struct SDA_IN_FILT_SEL_W<'a> {
     w: &'a mut W,
 }
@@ -98,7 +98,7 @@ impl<'a> SDA_IN_FILT_SEL_W<'a> {
         self.w
     }
 }
-#[doc = "Field `SCL_IN_FILT_TRIM` reader - "]
+#[doc = "Field `SCL_IN_FILT_TRIM` reader - Trim bits for \"i2c_scl_in\" 50 ns filter. See s8i2cs BROS (001-59539) for more details on the trim bit values."]
 pub struct SCL_IN_FILT_TRIM_R(crate::FieldReader<u8, u8>);
 impl SCL_IN_FILT_TRIM_R {
     #[inline(always)]
@@ -113,7 +113,7 @@ impl core::ops::Deref for SCL_IN_FILT_TRIM_R {
         &self.0
     }
 }
-#[doc = "Field `SCL_IN_FILT_TRIM` writer - "]
+#[doc = "Field `SCL_IN_FILT_TRIM` writer - Trim bits for \"i2c_scl_in\" 50 ns filter. See s8i2cs BROS (001-59539) for more details on the trim bit values."]
 pub struct SCL_IN_FILT_TRIM_W<'a> {
     w: &'a mut W,
 }
@@ -125,7 +125,7 @@ impl<'a> SCL_IN_FILT_TRIM_W<'a> {
         self.w
     }
 }
-#[doc = "Field `SCL_IN_FILT_SEL` reader - "]
+#[doc = "Field `SCL_IN_FILT_SEL` reader - Selection of \"i2c_scl_in\" filter delay: '0': 0 ns. '1: 50 ns (filter enabled)."]
 pub struct SCL_IN_FILT_SEL_R(crate::FieldReader<bool, bool>);
 impl SCL_IN_FILT_SEL_R {
     #[inline(always)]
@@ -140,7 +140,7 @@ impl core::ops::Deref for SCL_IN_FILT_SEL_R {
         &self.0
     }
 }
-#[doc = "Field `SCL_IN_FILT_SEL` writer - "]
+#[doc = "Field `SCL_IN_FILT_SEL` writer - Selection of \"i2c_scl_in\" filter delay: '0': 0 ns. '1: 50 ns (filter enabled)."]
 pub struct SCL_IN_FILT_SEL_W<'a> {
     w: &'a mut W,
 }
@@ -162,7 +162,7 @@ impl<'a> SCL_IN_FILT_SEL_W<'a> {
         self.w
     }
 }
-#[doc = "Field `SDA_OUT_FILT0_TRIM` reader - "]
+#[doc = "Field `SDA_OUT_FILT0_TRIM` reader - Trim bits for \"i2c_sda_out\" 50 ns filter 0. See s8i2cs BROS (001-59539) for more details on the trim bit values."]
 pub struct SDA_OUT_FILT0_TRIM_R(crate::FieldReader<u8, u8>);
 impl SDA_OUT_FILT0_TRIM_R {
     #[inline(always)]
@@ -177,7 +177,7 @@ impl core::ops::Deref for SDA_OUT_FILT0_TRIM_R {
         &self.0
     }
 }
-#[doc = "Field `SDA_OUT_FILT0_TRIM` writer - "]
+#[doc = "Field `SDA_OUT_FILT0_TRIM` writer - Trim bits for \"i2c_sda_out\" 50 ns filter 0. See s8i2cs BROS (001-59539) for more details on the trim bit values."]
 pub struct SDA_OUT_FILT0_TRIM_W<'a> {
     w: &'a mut W,
 }
@@ -189,7 +189,7 @@ impl<'a> SDA_OUT_FILT0_TRIM_W<'a> {
         self.w
     }
 }
-#[doc = "Field `SDA_OUT_FILT1_TRIM` reader - "]
+#[doc = "Field `SDA_OUT_FILT1_TRIM` reader - Trim bits for \"i2c_sda_out\" 50 ns filter 1. See s8i2cs BROS (001-59539) for more details on the trim bit values."]
 pub struct SDA_OUT_FILT1_TRIM_R(crate::FieldReader<u8, u8>);
 impl SDA_OUT_FILT1_TRIM_R {
     #[inline(always)]
@@ -204,7 +204,7 @@ impl core::ops::Deref for SDA_OUT_FILT1_TRIM_R {
         &self.0
     }
 }
-#[doc = "Field `SDA_OUT_FILT1_TRIM` writer - "]
+#[doc = "Field `SDA_OUT_FILT1_TRIM` writer - Trim bits for \"i2c_sda_out\" 50 ns filter 1. See s8i2cs BROS (001-59539) for more details on the trim bit values."]
 pub struct SDA_OUT_FILT1_TRIM_W<'a> {
     w: &'a mut W,
 }
@@ -216,7 +216,7 @@ impl<'a> SDA_OUT_FILT1_TRIM_W<'a> {
         self.w
     }
 }
-#[doc = "Field `SDA_OUT_FILT2_TRIM` reader - "]
+#[doc = "Field `SDA_OUT_FILT2_TRIM` reader - Trim bits for \"i2c_sda_out\" 50 ns filter 2. See s8i2cs BROS (001-59539) for more details on the trim bit values."]
 pub struct SDA_OUT_FILT2_TRIM_R(crate::FieldReader<u8, u8>);
 impl SDA_OUT_FILT2_TRIM_R {
     #[inline(always)]
@@ -231,7 +231,7 @@ impl core::ops::Deref for SDA_OUT_FILT2_TRIM_R {
         &self.0
     }
 }
-#[doc = "Field `SDA_OUT_FILT2_TRIM` writer - "]
+#[doc = "Field `SDA_OUT_FILT2_TRIM` writer - Trim bits for \"i2c_sda_out\" 50 ns filter 2. See s8i2cs BROS (001-59539) for more details on the trim bit values."]
 pub struct SDA_OUT_FILT2_TRIM_W<'a> {
     w: &'a mut W,
 }
@@ -243,7 +243,7 @@ impl<'a> SDA_OUT_FILT2_TRIM_W<'a> {
         self.w
     }
 }
-#[doc = "Field `SDA_OUT_FILT_SEL` reader - "]
+#[doc = "Field `SDA_OUT_FILT_SEL` reader - Selection of cumulative \"i2c_sda_out\" filter delay: \"0\": 0 ns. \"1\": 50 ns (filter 0 enabled). \"2\": 100 ns (filters 0 and 1 enabled). \"3\": 150 ns (filters 0, 1 and 2 enabled)."]
 pub struct SDA_OUT_FILT_SEL_R(crate::FieldReader<u8, u8>);
 impl SDA_OUT_FILT_SEL_R {
     #[inline(always)]
@@ -258,7 +258,7 @@ impl core::ops::Deref for SDA_OUT_FILT_SEL_R {
         &self.0
     }
 }
-#[doc = "Field `SDA_OUT_FILT_SEL` writer - "]
+#[doc = "Field `SDA_OUT_FILT_SEL` writer - Selection of cumulative \"i2c_sda_out\" filter delay: \"0\": 0 ns. \"1\": 50 ns (filter 0 enabled). \"2\": 100 ns (filters 0 and 1 enabled). \"3\": 150 ns (filters 0, 1 and 2 enabled)."]
 pub struct SDA_OUT_FILT_SEL_W<'a> {
     w: &'a mut W,
 }
@@ -271,84 +271,84 @@ impl<'a> SDA_OUT_FILT_SEL_W<'a> {
     }
 }
 impl R {
-    #[doc = "Bits 0:1"]
+    #[doc = "Bits 0:1 - Trim bits for \"i2c_sda_in\" 50 ns filter. See s8i2cs BROS (001-59539) for more details on the trim bit values."]
     #[inline(always)]
     pub fn sda_in_filt_trim(&self) -> SDA_IN_FILT_TRIM_R {
         SDA_IN_FILT_TRIM_R::new((self.bits & 0x03) as u8)
     }
-    #[doc = "Bit 4"]
+    #[doc = "Bit 4 - Selection of \"i2c_sda_in\" filter delay: '0': 0 ns. '1: 50 ns (filter enabled)."]
     #[inline(always)]
     pub fn sda_in_filt_sel(&self) -> SDA_IN_FILT_SEL_R {
         SDA_IN_FILT_SEL_R::new(((self.bits >> 4) & 0x01) != 0)
     }
-    #[doc = "Bits 8:9"]
+    #[doc = "Bits 8:9 - Trim bits for \"i2c_scl_in\" 50 ns filter. See s8i2cs BROS (001-59539) for more details on the trim bit values."]
     #[inline(always)]
     pub fn scl_in_filt_trim(&self) -> SCL_IN_FILT_TRIM_R {
         SCL_IN_FILT_TRIM_R::new(((self.bits >> 8) & 0x03) as u8)
     }
-    #[doc = "Bit 12"]
+    #[doc = "Bit 12 - Selection of \"i2c_scl_in\" filter delay: '0': 0 ns. '1: 50 ns (filter enabled)."]
     #[inline(always)]
     pub fn scl_in_filt_sel(&self) -> SCL_IN_FILT_SEL_R {
         SCL_IN_FILT_SEL_R::new(((self.bits >> 12) & 0x01) != 0)
     }
-    #[doc = "Bits 16:17"]
+    #[doc = "Bits 16:17 - Trim bits for \"i2c_sda_out\" 50 ns filter 0. See s8i2cs BROS (001-59539) for more details on the trim bit values."]
     #[inline(always)]
     pub fn sda_out_filt0_trim(&self) -> SDA_OUT_FILT0_TRIM_R {
         SDA_OUT_FILT0_TRIM_R::new(((self.bits >> 16) & 0x03) as u8)
     }
-    #[doc = "Bits 18:19"]
+    #[doc = "Bits 18:19 - Trim bits for \"i2c_sda_out\" 50 ns filter 1. See s8i2cs BROS (001-59539) for more details on the trim bit values."]
     #[inline(always)]
     pub fn sda_out_filt1_trim(&self) -> SDA_OUT_FILT1_TRIM_R {
         SDA_OUT_FILT1_TRIM_R::new(((self.bits >> 18) & 0x03) as u8)
     }
-    #[doc = "Bits 20:21"]
+    #[doc = "Bits 20:21 - Trim bits for \"i2c_sda_out\" 50 ns filter 2. See s8i2cs BROS (001-59539) for more details on the trim bit values."]
     #[inline(always)]
     pub fn sda_out_filt2_trim(&self) -> SDA_OUT_FILT2_TRIM_R {
         SDA_OUT_FILT2_TRIM_R::new(((self.bits >> 20) & 0x03) as u8)
     }
-    #[doc = "Bits 28:29"]
+    #[doc = "Bits 28:29 - Selection of cumulative \"i2c_sda_out\" filter delay: \"0\": 0 ns. \"1\": 50 ns (filter 0 enabled). \"2\": 100 ns (filters 0 and 1 enabled). \"3\": 150 ns (filters 0, 1 and 2 enabled)."]
     #[inline(always)]
     pub fn sda_out_filt_sel(&self) -> SDA_OUT_FILT_SEL_R {
         SDA_OUT_FILT_SEL_R::new(((self.bits >> 28) & 0x03) as u8)
     }
 }
 impl W {
-    #[doc = "Bits 0:1"]
+    #[doc = "Bits 0:1 - Trim bits for \"i2c_sda_in\" 50 ns filter. See s8i2cs BROS (001-59539) for more details on the trim bit values."]
     #[inline(always)]
     pub fn sda_in_filt_trim(&mut self) -> SDA_IN_FILT_TRIM_W {
         SDA_IN_FILT_TRIM_W { w: self }
     }
-    #[doc = "Bit 4"]
+    #[doc = "Bit 4 - Selection of \"i2c_sda_in\" filter delay: '0': 0 ns. '1: 50 ns (filter enabled)."]
     #[inline(always)]
     pub fn sda_in_filt_sel(&mut self) -> SDA_IN_FILT_SEL_W {
         SDA_IN_FILT_SEL_W { w: self }
     }
-    #[doc = "Bits 8:9"]
+    #[doc = "Bits 8:9 - Trim bits for \"i2c_scl_in\" 50 ns filter. See s8i2cs BROS (001-59539) for more details on the trim bit values."]
     #[inline(always)]
     pub fn scl_in_filt_trim(&mut self) -> SCL_IN_FILT_TRIM_W {
         SCL_IN_FILT_TRIM_W { w: self }
     }
-    #[doc = "Bit 12"]
+    #[doc = "Bit 12 - Selection of \"i2c_scl_in\" filter delay: '0': 0 ns. '1: 50 ns (filter enabled)."]
     #[inline(always)]
     pub fn scl_in_filt_sel(&mut self) -> SCL_IN_FILT_SEL_W {
         SCL_IN_FILT_SEL_W { w: self }
     }
-    #[doc = "Bits 16:17"]
+    #[doc = "Bits 16:17 - Trim bits for \"i2c_sda_out\" 50 ns filter 0. See s8i2cs BROS (001-59539) for more details on the trim bit values."]
     #[inline(always)]
     pub fn sda_out_filt0_trim(&mut self) -> SDA_OUT_FILT0_TRIM_W {
         SDA_OUT_FILT0_TRIM_W { w: self }
     }
-    #[doc = "Bits 18:19"]
+    #[doc = "Bits 18:19 - Trim bits for \"i2c_sda_out\" 50 ns filter 1. See s8i2cs BROS (001-59539) for more details on the trim bit values."]
     #[inline(always)]
     pub fn sda_out_filt1_trim(&mut self) -> SDA_OUT_FILT1_TRIM_W {
         SDA_OUT_FILT1_TRIM_W { w: self }
     }
-    #[doc = "Bits 20:21"]
+    #[doc = "Bits 20:21 - Trim bits for \"i2c_sda_out\" 50 ns filter 2. See s8i2cs BROS (001-59539) for more details on the trim bit values."]
     #[inline(always)]
     pub fn sda_out_filt2_trim(&mut self) -> SDA_OUT_FILT2_TRIM_W {
         SDA_OUT_FILT2_TRIM_W { w: self }
     }
-    #[doc = "Bits 28:29"]
+    #[doc = "Bits 28:29 - Selection of cumulative \"i2c_sda_out\" filter delay: \"0\": 0 ns. \"1\": 50 ns (filter 0 enabled). \"2\": 100 ns (filters 0 and 1 enabled). \"3\": 150 ns (filters 0, 1 and 2 enabled)."]
     #[inline(always)]
     pub fn sda_out_filt_sel(&mut self) -> SDA_OUT_FILT_SEL_W {
         SDA_OUT_FILT_SEL_W { w: self }
@@ -360,7 +360,7 @@ impl W {
         self
     }
 }
-#[doc = "\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [i2c_cfg](index.html) module"]
+#[doc = "I2C configuration register. The filters are used to remove glitches and to guarantee I2C compliant SCL and SDA setup and hold times. The filters are trimmable.\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [i2c_cfg](index.html) module"]
 pub struct I2C_CFG_SPEC;
 impl crate::RegisterSpec for I2C_CFG_SPEC {
     type Ux = u32;

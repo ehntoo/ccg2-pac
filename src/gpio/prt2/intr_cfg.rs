@@ -34,7 +34,7 @@ impl From<crate::W<INTR_CFG_SPEC>> for W {
         W(writer)
     }
 }
-#[doc = "\n\nValue on reset: 0"]
+#[doc = "Sets which edge will trigger an IRQ for IO pad 0.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u8)]
 pub enum EDGE0_SEL_A {
@@ -53,7 +53,7 @@ impl From<EDGE0_SEL_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `EDGE0_SEL` reader - "]
+#[doc = "Field `EDGE0_SEL` reader - Sets which edge will trigger an IRQ for IO pad 0."]
 pub struct EDGE0_SEL_R(crate::FieldReader<u8, EDGE0_SEL_A>);
 impl EDGE0_SEL_R {
     #[inline(always)]
@@ -99,7 +99,7 @@ impl core::ops::Deref for EDGE0_SEL_R {
         &self.0
     }
 }
-#[doc = "Field `EDGE0_SEL` writer - "]
+#[doc = "Field `EDGE0_SEL` writer - Sets which edge will trigger an IRQ for IO pad 0."]
 pub struct EDGE0_SEL_W<'a> {
     w: &'a mut W,
 }
@@ -136,7 +136,7 @@ impl<'a> EDGE0_SEL_W<'a> {
         self.w
     }
 }
-#[doc = "Field `EDGE1_SEL` reader - "]
+#[doc = "Field `EDGE1_SEL` reader - Sets which edge will trigger an IRQ for IO pad 1."]
 pub struct EDGE1_SEL_R(crate::FieldReader<u8, u8>);
 impl EDGE1_SEL_R {
     #[inline(always)]
@@ -151,7 +151,7 @@ impl core::ops::Deref for EDGE1_SEL_R {
         &self.0
     }
 }
-#[doc = "Field `EDGE1_SEL` writer - "]
+#[doc = "Field `EDGE1_SEL` writer - Sets which edge will trigger an IRQ for IO pad 1."]
 pub struct EDGE1_SEL_W<'a> {
     w: &'a mut W,
 }
@@ -217,7 +217,7 @@ impl<'a> EDGE3_SEL_W<'a> {
         self.w
     }
 }
-#[doc = "\n\nValue on reset: 0"]
+#[doc = "Same for the glitch filtered pin (selected by FLT_SELECT).\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u8)]
 pub enum FLT_EDGE_SEL_A {
@@ -236,7 +236,7 @@ impl From<FLT_EDGE_SEL_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `FLT_EDGE_SEL` reader - "]
+#[doc = "Field `FLT_EDGE_SEL` reader - Same for the glitch filtered pin (selected by FLT_SELECT)."]
 pub struct FLT_EDGE_SEL_R(crate::FieldReader<u8, FLT_EDGE_SEL_A>);
 impl FLT_EDGE_SEL_R {
     #[inline(always)]
@@ -282,7 +282,7 @@ impl core::ops::Deref for FLT_EDGE_SEL_R {
         &self.0
     }
 }
-#[doc = "Field `FLT_EDGE_SEL` writer - "]
+#[doc = "Field `FLT_EDGE_SEL` writer - Same for the glitch filtered pin (selected by FLT_SELECT)."]
 pub struct FLT_EDGE_SEL_W<'a> {
     w: &'a mut W,
 }
@@ -319,7 +319,7 @@ impl<'a> FLT_EDGE_SEL_W<'a> {
         self.w
     }
 }
-#[doc = "Field `FLT_SEL` reader - "]
+#[doc = "Field `FLT_SEL` reader - Selects which pin is routed through the 50ns glitch filter to provide a glitch-safe interrupt."]
 pub struct FLT_SEL_R(crate::FieldReader<u8, u8>);
 impl FLT_SEL_R {
     #[inline(always)]
@@ -334,7 +334,7 @@ impl core::ops::Deref for FLT_SEL_R {
         &self.0
     }
 }
-#[doc = "Field `FLT_SEL` writer - "]
+#[doc = "Field `FLT_SEL` writer - Selects which pin is routed through the 50ns glitch filter to provide a glitch-safe interrupt."]
 pub struct FLT_SEL_W<'a> {
     w: &'a mut W,
 }
@@ -347,12 +347,12 @@ impl<'a> FLT_SEL_W<'a> {
     }
 }
 impl R {
-    #[doc = "Bits 0:1"]
+    #[doc = "Bits 0:1 - Sets which edge will trigger an IRQ for IO pad 0."]
     #[inline(always)]
     pub fn edge0_sel(&self) -> EDGE0_SEL_R {
         EDGE0_SEL_R::new((self.bits & 0x03) as u8)
     }
-    #[doc = "Bits 2:3"]
+    #[doc = "Bits 2:3 - Sets which edge will trigger an IRQ for IO pad 1."]
     #[inline(always)]
     pub fn edge1_sel(&self) -> EDGE1_SEL_R {
         EDGE1_SEL_R::new(((self.bits >> 2) & 0x03) as u8)
@@ -367,24 +367,24 @@ impl R {
     pub fn edge3_sel(&self) -> EDGE3_SEL_R {
         EDGE3_SEL_R::new(((self.bits >> 6) & 0x03) as u8)
     }
-    #[doc = "Bits 16:17"]
+    #[doc = "Bits 16:17 - Same for the glitch filtered pin (selected by FLT_SELECT)."]
     #[inline(always)]
     pub fn flt_edge_sel(&self) -> FLT_EDGE_SEL_R {
         FLT_EDGE_SEL_R::new(((self.bits >> 16) & 0x03) as u8)
     }
-    #[doc = "Bits 18:20"]
+    #[doc = "Bits 18:20 - Selects which pin is routed through the 50ns glitch filter to provide a glitch-safe interrupt."]
     #[inline(always)]
     pub fn flt_sel(&self) -> FLT_SEL_R {
         FLT_SEL_R::new(((self.bits >> 18) & 0x07) as u8)
     }
 }
 impl W {
-    #[doc = "Bits 0:1"]
+    #[doc = "Bits 0:1 - Sets which edge will trigger an IRQ for IO pad 0."]
     #[inline(always)]
     pub fn edge0_sel(&mut self) -> EDGE0_SEL_W {
         EDGE0_SEL_W { w: self }
     }
-    #[doc = "Bits 2:3"]
+    #[doc = "Bits 2:3 - Sets which edge will trigger an IRQ for IO pad 1."]
     #[inline(always)]
     pub fn edge1_sel(&mut self) -> EDGE1_SEL_W {
         EDGE1_SEL_W { w: self }
@@ -399,12 +399,12 @@ impl W {
     pub fn edge3_sel(&mut self) -> EDGE3_SEL_W {
         EDGE3_SEL_W { w: self }
     }
-    #[doc = "Bits 16:17"]
+    #[doc = "Bits 16:17 - Same for the glitch filtered pin (selected by FLT_SELECT)."]
     #[inline(always)]
     pub fn flt_edge_sel(&mut self) -> FLT_EDGE_SEL_W {
         FLT_EDGE_SEL_W { w: self }
     }
-    #[doc = "Bits 18:20"]
+    #[doc = "Bits 18:20 - Selects which pin is routed through the 50ns glitch filter to provide a glitch-safe interrupt."]
     #[inline(always)]
     pub fn flt_sel(&mut self) -> FLT_SEL_W {
         FLT_SEL_W { w: self }
@@ -416,7 +416,7 @@ impl W {
         self
     }
 }
-#[doc = "\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [intr_cfg](index.html) module"]
+#[doc = "Port interrupt configuration register This register configures the IRQ configuration for all pins in a port, with the IRQ type being individually pin-configurable.\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [intr_cfg](index.html) module"]
 pub struct INTR_CFG_SPEC;
 impl crate::RegisterSpec for INTR_CFG_SPEC {
     type Ux = u32;

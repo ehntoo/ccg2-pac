@@ -34,7 +34,7 @@ impl From<crate::W<WDT_MATCH_SPEC>> for W {
         W(writer)
     }
 }
-#[doc = "Field `MATCH` reader - "]
+#[doc = "Field `MATCH` reader - Match value for Watchdog counter. Every time WDT_COUNTER reaches MATCH an interrupt is generated. Two unserviced interrupts will lead to a system reset (i.e. at the third match)."]
 pub struct MATCH_R(crate::FieldReader<u16, u16>);
 impl MATCH_R {
     #[inline(always)]
@@ -49,7 +49,7 @@ impl core::ops::Deref for MATCH_R {
         &self.0
     }
 }
-#[doc = "Field `MATCH` writer - "]
+#[doc = "Field `MATCH` writer - Match value for Watchdog counter. Every time WDT_COUNTER reaches MATCH an interrupt is generated. Two unserviced interrupts will lead to a system reset (i.e. at the third match)."]
 pub struct MATCH_W<'a> {
     w: &'a mut W,
 }
@@ -61,7 +61,7 @@ impl<'a> MATCH_W<'a> {
         self.w
     }
 }
-#[doc = "Field `IGNORE_BITS` reader - "]
+#[doc = "Field `IGNORE_BITS` reader - The number of MSB bits of the watchdog timer that are NOT checked against MATCH. This value provides control over the time-to-reset of the watchdog (which happens after 3 successive matches). Note that certain products may enforce a minimum value for this register through design time configuration."]
 pub struct IGNORE_BITS_R(crate::FieldReader<u8, u8>);
 impl IGNORE_BITS_R {
     #[inline(always)]
@@ -76,7 +76,7 @@ impl core::ops::Deref for IGNORE_BITS_R {
         &self.0
     }
 }
-#[doc = "Field `IGNORE_BITS` writer - "]
+#[doc = "Field `IGNORE_BITS` writer - The number of MSB bits of the watchdog timer that are NOT checked against MATCH. This value provides control over the time-to-reset of the watchdog (which happens after 3 successive matches). Note that certain products may enforce a minimum value for this register through design time configuration."]
 pub struct IGNORE_BITS_W<'a> {
     w: &'a mut W,
 }
@@ -89,24 +89,24 @@ impl<'a> IGNORE_BITS_W<'a> {
     }
 }
 impl R {
-    #[doc = "Bits 0:15"]
+    #[doc = "Bits 0:15 - Match value for Watchdog counter. Every time WDT_COUNTER reaches MATCH an interrupt is generated. Two unserviced interrupts will lead to a system reset (i.e. at the third match)."]
     #[inline(always)]
     pub fn match_(&self) -> MATCH_R {
         MATCH_R::new((self.bits & 0xffff) as u16)
     }
-    #[doc = "Bits 16:19"]
+    #[doc = "Bits 16:19 - The number of MSB bits of the watchdog timer that are NOT checked against MATCH. This value provides control over the time-to-reset of the watchdog (which happens after 3 successive matches). Note that certain products may enforce a minimum value for this register through design time configuration."]
     #[inline(always)]
     pub fn ignore_bits(&self) -> IGNORE_BITS_R {
         IGNORE_BITS_R::new(((self.bits >> 16) & 0x0f) as u8)
     }
 }
 impl W {
-    #[doc = "Bits 0:15"]
+    #[doc = "Bits 0:15 - Match value for Watchdog counter. Every time WDT_COUNTER reaches MATCH an interrupt is generated. Two unserviced interrupts will lead to a system reset (i.e. at the third match)."]
     #[inline(always)]
     pub fn match_(&mut self) -> MATCH_W {
         MATCH_W { w: self }
     }
-    #[doc = "Bits 16:19"]
+    #[doc = "Bits 16:19 - The number of MSB bits of the watchdog timer that are NOT checked against MATCH. This value provides control over the time-to-reset of the watchdog (which happens after 3 successive matches). Note that certain products may enforce a minimum value for this register through design time configuration."]
     #[inline(always)]
     pub fn ignore_bits(&mut self) -> IGNORE_BITS_W {
         IGNORE_BITS_W { w: self }
@@ -118,7 +118,7 @@ impl W {
         self
     }
 }
-#[doc = "\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [wdt_match](index.html) module"]
+#[doc = "Watchdog Match Register Firmware provided match value that is compared against WDT_COUNTER. The expectation is that firmware modifies this register after each match as part of the WDT interrupt service routine.\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [wdt_match](index.html) module"]
 pub struct WDT_MATCH_SPEC;
 impl crate::RegisterSpec for WDT_MATCH_SPEC {
     type Ux = u32;

@@ -34,7 +34,7 @@ impl From<crate::W<CMD_SPEC>> for W {
         W(writer)
     }
 }
-#[doc = "Field `COUNTER_CAPTURE` reader - "]
+#[doc = "Field `COUNTER_CAPTURE` reader - Counters SW capture trigger. When written with '1', a capture trigger is generated and the HW sets the field to '0' when the SW trigger has taken effect. It should be noted that the HW operates on the counter frequency. If the counter is disabled through CTRL.COUNTER_ENABLED, the field is immediately set to '0'."]
 pub struct COUNTER_CAPTURE_R(crate::FieldReader<u8, u8>);
 impl COUNTER_CAPTURE_R {
     #[inline(always)]
@@ -49,7 +49,7 @@ impl core::ops::Deref for COUNTER_CAPTURE_R {
         &self.0
     }
 }
-#[doc = "Field `COUNTER_CAPTURE` writer - "]
+#[doc = "Field `COUNTER_CAPTURE` writer - Counters SW capture trigger. When written with '1', a capture trigger is generated and the HW sets the field to '0' when the SW trigger has taken effect. It should be noted that the HW operates on the counter frequency. If the counter is disabled through CTRL.COUNTER_ENABLED, the field is immediately set to '0'."]
 pub struct COUNTER_CAPTURE_W<'a> {
     w: &'a mut W,
 }
@@ -61,7 +61,7 @@ impl<'a> COUNTER_CAPTURE_W<'a> {
         self.w
     }
 }
-#[doc = "Field `COUNTER_RELOAD` reader - "]
+#[doc = "Field `COUNTER_RELOAD` reader - Counters SW reload trigger. For HW behavior, see COUNTER_CAPTURE field."]
 pub struct COUNTER_RELOAD_R(crate::FieldReader<u8, u8>);
 impl COUNTER_RELOAD_R {
     #[inline(always)]
@@ -76,7 +76,7 @@ impl core::ops::Deref for COUNTER_RELOAD_R {
         &self.0
     }
 }
-#[doc = "Field `COUNTER_RELOAD` writer - "]
+#[doc = "Field `COUNTER_RELOAD` writer - Counters SW reload trigger. For HW behavior, see COUNTER_CAPTURE field."]
 pub struct COUNTER_RELOAD_W<'a> {
     w: &'a mut W,
 }
@@ -88,7 +88,7 @@ impl<'a> COUNTER_RELOAD_W<'a> {
         self.w
     }
 }
-#[doc = "Field `COUNTER_STOP` reader - "]
+#[doc = "Field `COUNTER_STOP` reader - Counters SW stop trigger. For HW behavior, see COUNTER_CAPTURE field."]
 pub struct COUNTER_STOP_R(crate::FieldReader<u8, u8>);
 impl COUNTER_STOP_R {
     #[inline(always)]
@@ -103,7 +103,7 @@ impl core::ops::Deref for COUNTER_STOP_R {
         &self.0
     }
 }
-#[doc = "Field `COUNTER_STOP` writer - "]
+#[doc = "Field `COUNTER_STOP` writer - Counters SW stop trigger. For HW behavior, see COUNTER_CAPTURE field."]
 pub struct COUNTER_STOP_W<'a> {
     w: &'a mut W,
 }
@@ -115,7 +115,7 @@ impl<'a> COUNTER_STOP_W<'a> {
         self.w
     }
 }
-#[doc = "Field `COUNTER_START` reader - "]
+#[doc = "Field `COUNTER_START` reader - Counters SW start trigger. For HW behavior, see COUNTER_CAPTURE field."]
 pub struct COUNTER_START_R(crate::FieldReader<u8, u8>);
 impl COUNTER_START_R {
     #[inline(always)]
@@ -130,7 +130,7 @@ impl core::ops::Deref for COUNTER_START_R {
         &self.0
     }
 }
-#[doc = "Field `COUNTER_START` writer - "]
+#[doc = "Field `COUNTER_START` writer - Counters SW start trigger. For HW behavior, see COUNTER_CAPTURE field."]
 pub struct COUNTER_START_W<'a> {
     w: &'a mut W,
 }
@@ -143,44 +143,44 @@ impl<'a> COUNTER_START_W<'a> {
     }
 }
 impl R {
-    #[doc = "Bits 0:5"]
+    #[doc = "Bits 0:5 - Counters SW capture trigger. When written with '1', a capture trigger is generated and the HW sets the field to '0' when the SW trigger has taken effect. It should be noted that the HW operates on the counter frequency. If the counter is disabled through CTRL.COUNTER_ENABLED, the field is immediately set to '0'."]
     #[inline(always)]
     pub fn counter_capture(&self) -> COUNTER_CAPTURE_R {
         COUNTER_CAPTURE_R::new((self.bits & 0x3f) as u8)
     }
-    #[doc = "Bits 8:13"]
+    #[doc = "Bits 8:13 - Counters SW reload trigger. For HW behavior, see COUNTER_CAPTURE field."]
     #[inline(always)]
     pub fn counter_reload(&self) -> COUNTER_RELOAD_R {
         COUNTER_RELOAD_R::new(((self.bits >> 8) & 0x3f) as u8)
     }
-    #[doc = "Bits 16:21"]
+    #[doc = "Bits 16:21 - Counters SW stop trigger. For HW behavior, see COUNTER_CAPTURE field."]
     #[inline(always)]
     pub fn counter_stop(&self) -> COUNTER_STOP_R {
         COUNTER_STOP_R::new(((self.bits >> 16) & 0x3f) as u8)
     }
-    #[doc = "Bits 24:29"]
+    #[doc = "Bits 24:29 - Counters SW start trigger. For HW behavior, see COUNTER_CAPTURE field."]
     #[inline(always)]
     pub fn counter_start(&self) -> COUNTER_START_R {
         COUNTER_START_R::new(((self.bits >> 24) & 0x3f) as u8)
     }
 }
 impl W {
-    #[doc = "Bits 0:5"]
+    #[doc = "Bits 0:5 - Counters SW capture trigger. When written with '1', a capture trigger is generated and the HW sets the field to '0' when the SW trigger has taken effect. It should be noted that the HW operates on the counter frequency. If the counter is disabled through CTRL.COUNTER_ENABLED, the field is immediately set to '0'."]
     #[inline(always)]
     pub fn counter_capture(&mut self) -> COUNTER_CAPTURE_W {
         COUNTER_CAPTURE_W { w: self }
     }
-    #[doc = "Bits 8:13"]
+    #[doc = "Bits 8:13 - Counters SW reload trigger. For HW behavior, see COUNTER_CAPTURE field."]
     #[inline(always)]
     pub fn counter_reload(&mut self) -> COUNTER_RELOAD_W {
         COUNTER_RELOAD_W { w: self }
     }
-    #[doc = "Bits 16:21"]
+    #[doc = "Bits 16:21 - Counters SW stop trigger. For HW behavior, see COUNTER_CAPTURE field."]
     #[inline(always)]
     pub fn counter_stop(&mut self) -> COUNTER_STOP_W {
         COUNTER_STOP_W { w: self }
     }
-    #[doc = "Bits 24:29"]
+    #[doc = "Bits 24:29 - Counters SW start trigger. For HW behavior, see COUNTER_CAPTURE field."]
     #[inline(always)]
     pub fn counter_start(&mut self) -> COUNTER_START_W {
         COUNTER_START_W { w: self }
@@ -192,7 +192,7 @@ impl W {
         self
     }
 }
-#[doc = "\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [cmd](index.html) module"]
+#[doc = "TCPWM command register. Enables software controlled counter operation.\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [cmd](index.html) module"]
 pub struct CMD_SPEC;
 impl crate::RegisterSpec for CMD_SPEC {
     type Ux = u32;

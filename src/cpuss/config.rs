@@ -34,7 +34,7 @@ impl From<crate::W<CONFIG_SPEC>> for W {
         W(writer)
     }
 }
-#[doc = "Field `VECT_IN_RAM` reader - "]
+#[doc = "Field `VECT_IN_RAM` reader - 0': Vector Table is located at 0x0000:0000 in flash '1': Vector Table is located at 0x2000:0000 in SRAM Note that vectors for RESET and FAULT are always fetched from ROM. Value in flash/RAM is ignored for these vectors."]
 pub struct VECT_IN_RAM_R(crate::FieldReader<bool, bool>);
 impl VECT_IN_RAM_R {
     #[inline(always)]
@@ -49,7 +49,7 @@ impl core::ops::Deref for VECT_IN_RAM_R {
         &self.0
     }
 }
-#[doc = "Field `VECT_IN_RAM` writer - "]
+#[doc = "Field `VECT_IN_RAM` writer - 0': Vector Table is located at 0x0000:0000 in flash '1': Vector Table is located at 0x2000:0000 in SRAM Note that vectors for RESET and FAULT are always fetched from ROM. Value in flash/RAM is ignored for these vectors."]
 pub struct VECT_IN_RAM_W<'a> {
     w: &'a mut W,
 }
@@ -72,14 +72,14 @@ impl<'a> VECT_IN_RAM_W<'a> {
     }
 }
 impl R {
-    #[doc = "Bit 0"]
+    #[doc = "Bit 0 - 0': Vector Table is located at 0x0000:0000 in flash '1': Vector Table is located at 0x2000:0000 in SRAM Note that vectors for RESET and FAULT are always fetched from ROM. Value in flash/RAM is ignored for these vectors."]
     #[inline(always)]
     pub fn vect_in_ram(&self) -> VECT_IN_RAM_R {
         VECT_IN_RAM_R::new((self.bits & 0x01) != 0)
     }
 }
 impl W {
-    #[doc = "Bit 0"]
+    #[doc = "Bit 0 - 0': Vector Table is located at 0x0000:0000 in flash '1': Vector Table is located at 0x2000:0000 in SRAM Note that vectors for RESET and FAULT are always fetched from ROM. Value in flash/RAM is ignored for these vectors."]
     #[inline(always)]
     pub fn vect_in_ram(&mut self) -> VECT_IN_RAM_W {
         VECT_IN_RAM_W { w: self }
@@ -91,7 +91,7 @@ impl W {
         self
     }
 }
-#[doc = "\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [config](index.html) module"]
+#[doc = "Configuration register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [config](index.html) module"]
 pub struct CONFIG_SPEC;
 impl crate::RegisterSpec for CONFIG_SPEC {
     type Ux = u32;

@@ -34,7 +34,7 @@ impl From<crate::W<CC_SPEC>> for W {
         W(writer)
     }
 }
-#[doc = "Field `CC` reader - "]
+#[doc = "Field `CC` reader - In CAPTURE mode, captures the counter value. In other modes, compared to counter value."]
 pub struct CC_R(crate::FieldReader<u16, u16>);
 impl CC_R {
     #[inline(always)]
@@ -49,7 +49,7 @@ impl core::ops::Deref for CC_R {
         &self.0
     }
 }
-#[doc = "Field `CC` writer - "]
+#[doc = "Field `CC` writer - In CAPTURE mode, captures the counter value. In other modes, compared to counter value."]
 pub struct CC_W<'a> {
     w: &'a mut W,
 }
@@ -62,14 +62,14 @@ impl<'a> CC_W<'a> {
     }
 }
 impl R {
-    #[doc = "Bits 0:15"]
+    #[doc = "Bits 0:15 - In CAPTURE mode, captures the counter value. In other modes, compared to counter value."]
     #[inline(always)]
     pub fn cc(&self) -> CC_R {
         CC_R::new((self.bits & 0xffff) as u16)
     }
 }
 impl W {
-    #[doc = "Bits 0:15"]
+    #[doc = "Bits 0:15 - In CAPTURE mode, captures the counter value. In other modes, compared to counter value."]
     #[inline(always)]
     pub fn cc(&mut self) -> CC_W {
         CC_W { w: self }
@@ -81,7 +81,7 @@ impl W {
         self
     }
 }
-#[doc = "\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [cc](index.html) module"]
+#[doc = "Counter compare/capture register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [cc](index.html) module"]
 pub struct CC_SPEC;
 impl crate::RegisterSpec for CC_SPEC {
     type Ux = u32;

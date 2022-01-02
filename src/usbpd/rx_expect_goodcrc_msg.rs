@@ -34,7 +34,7 @@ impl From<crate::W<RX_EXPECT_GOODCRC_MSG_SPEC>> for W {
         W(writer)
     }
 }
-#[doc = "Field `EXPECTED_HEADER` reader - "]
+#[doc = "Field `EXPECTED_HEADER` reader - The expected GoodCRC Messgae Header on the RX side. The expected message ID is handled by Firmware. The CRC timer will stop on: 1: On the reception of GoodCRC Messegae with good CRC32 where its header matches with this register AND 2: The SOP of the GoodCRC Messgae matches with the EXPECTED_SOP."]
 pub struct EXPECTED_HEADER_R(crate::FieldReader<u16, u16>);
 impl EXPECTED_HEADER_R {
     #[inline(always)]
@@ -49,7 +49,7 @@ impl core::ops::Deref for EXPECTED_HEADER_R {
         &self.0
     }
 }
-#[doc = "Field `EXPECTED_HEADER` writer - "]
+#[doc = "Field `EXPECTED_HEADER` writer - The expected GoodCRC Messgae Header on the RX side. The expected message ID is handled by Firmware. The CRC timer will stop on: 1: On the reception of GoodCRC Messegae with good CRC32 where its header matches with this register AND 2: The SOP of the GoodCRC Messgae matches with the EXPECTED_SOP."]
 pub struct EXPECTED_HEADER_W<'a> {
     w: &'a mut W,
 }
@@ -61,7 +61,7 @@ impl<'a> EXPECTED_HEADER_W<'a> {
         self.w
     }
 }
-#[doc = "\n\nValue on reset: 0"]
+#[doc = "The expected SOP of GoodCRC Messgae on the RX side.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u8)]
 pub enum EXPECTED_SOP_A {
@@ -88,7 +88,7 @@ impl From<EXPECTED_SOP_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `EXPECTED_SOP` reader - "]
+#[doc = "Field `EXPECTED_SOP` reader - The expected SOP of GoodCRC Messgae on the RX side."]
 pub struct EXPECTED_SOP_R(crate::FieldReader<u8, EXPECTED_SOP_A>);
 impl EXPECTED_SOP_R {
     #[inline(always)]
@@ -158,7 +158,7 @@ impl core::ops::Deref for EXPECTED_SOP_R {
         &self.0
     }
 }
-#[doc = "Field `EXPECTED_SOP` writer - "]
+#[doc = "Field `EXPECTED_SOP` writer - The expected SOP of GoodCRC Messgae on the RX side."]
 pub struct EXPECTED_SOP_W<'a> {
     w: &'a mut W,
 }
@@ -215,7 +215,7 @@ impl<'a> EXPECTED_SOP_W<'a> {
         self.w
     }
 }
-#[doc = "Field `DISABLE_RX_CRC_TIMER` reader - "]
+#[doc = "Field `DISABLE_RX_CRC_TIMER` reader - FW should toggle this bit before commiting a new packet to be transferred from TX_MEM. 0: Don�t disable the RX CRC count down 1: Disable the RX CRC count down. FW can disable the RX CRC timer whenever it detects the required condition."]
 pub struct DISABLE_RX_CRC_TIMER_R(crate::FieldReader<bool, bool>);
 impl DISABLE_RX_CRC_TIMER_R {
     #[inline(always)]
@@ -230,7 +230,7 @@ impl core::ops::Deref for DISABLE_RX_CRC_TIMER_R {
         &self.0
     }
 }
-#[doc = "Field `DISABLE_RX_CRC_TIMER` writer - "]
+#[doc = "Field `DISABLE_RX_CRC_TIMER` writer - FW should toggle this bit before commiting a new packet to be transferred from TX_MEM. 0: Don�t disable the RX CRC count down 1: Disable the RX CRC count down. FW can disable the RX CRC timer whenever it detects the required condition."]
 pub struct DISABLE_RX_CRC_TIMER_W<'a> {
     w: &'a mut W,
 }
@@ -253,34 +253,34 @@ impl<'a> DISABLE_RX_CRC_TIMER_W<'a> {
     }
 }
 impl R {
-    #[doc = "Bits 0:15"]
+    #[doc = "Bits 0:15 - The expected GoodCRC Messgae Header on the RX side. The expected message ID is handled by Firmware. The CRC timer will stop on: 1: On the reception of GoodCRC Messegae with good CRC32 where its header matches with this register AND 2: The SOP of the GoodCRC Messgae matches with the EXPECTED_SOP."]
     #[inline(always)]
     pub fn expected_header(&self) -> EXPECTED_HEADER_R {
         EXPECTED_HEADER_R::new((self.bits & 0xffff) as u16)
     }
-    #[doc = "Bits 16:18"]
+    #[doc = "Bits 16:18 - The expected SOP of GoodCRC Messgae on the RX side."]
     #[inline(always)]
     pub fn expected_sop(&self) -> EXPECTED_SOP_R {
         EXPECTED_SOP_R::new(((self.bits >> 16) & 0x07) as u8)
     }
-    #[doc = "Bit 19"]
+    #[doc = "Bit 19 - FW should toggle this bit before commiting a new packet to be transferred from TX_MEM. 0: Don�t disable the RX CRC count down 1: Disable the RX CRC count down. FW can disable the RX CRC timer whenever it detects the required condition."]
     #[inline(always)]
     pub fn disable_rx_crc_timer(&self) -> DISABLE_RX_CRC_TIMER_R {
         DISABLE_RX_CRC_TIMER_R::new(((self.bits >> 19) & 0x01) != 0)
     }
 }
 impl W {
-    #[doc = "Bits 0:15"]
+    #[doc = "Bits 0:15 - The expected GoodCRC Messgae Header on the RX side. The expected message ID is handled by Firmware. The CRC timer will stop on: 1: On the reception of GoodCRC Messegae with good CRC32 where its header matches with this register AND 2: The SOP of the GoodCRC Messgae matches with the EXPECTED_SOP."]
     #[inline(always)]
     pub fn expected_header(&mut self) -> EXPECTED_HEADER_W {
         EXPECTED_HEADER_W { w: self }
     }
-    #[doc = "Bits 16:18"]
+    #[doc = "Bits 16:18 - The expected SOP of GoodCRC Messgae on the RX side."]
     #[inline(always)]
     pub fn expected_sop(&mut self) -> EXPECTED_SOP_W {
         EXPECTED_SOP_W { w: self }
     }
-    #[doc = "Bit 19"]
+    #[doc = "Bit 19 - FW should toggle this bit before commiting a new packet to be transferred from TX_MEM. 0: Don�t disable the RX CRC count down 1: Disable the RX CRC count down. FW can disable the RX CRC timer whenever it detects the required condition."]
     #[inline(always)]
     pub fn disable_rx_crc_timer(&mut self) -> DISABLE_RX_CRC_TIMER_W {
         DISABLE_RX_CRC_TIMER_W { w: self }
@@ -292,7 +292,7 @@ impl W {
         self
     }
 }
-#[doc = "\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [rx_expect_goodcrc_msg](index.html) module"]
+#[doc = "RX Excepted good CRC message to stop the CRC timers\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [rx_expect_goodcrc_msg](index.html) module"]
 pub struct RX_EXPECT_GOODCRC_MSG_SPEC;
 impl crate::RegisterSpec for RX_EXPECT_GOODCRC_MSG_SPEC {
     type Ux = u32;

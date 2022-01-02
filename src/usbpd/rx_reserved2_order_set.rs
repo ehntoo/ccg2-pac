@@ -34,7 +34,7 @@ impl From<crate::W<RX_RESERVED2_ORDER_SET_SPEC>> for W {
         W(writer)
     }
 }
-#[doc = "Field `RX_RESERVED2_OS` reader - "]
+#[doc = "Field `RX_RESERVED2_OS` reader - Receive Reserved2 order set"]
 pub struct RX_RESERVED2_OS_R(crate::FieldReader<u32, u32>);
 impl RX_RESERVED2_OS_R {
     #[inline(always)]
@@ -49,7 +49,7 @@ impl core::ops::Deref for RX_RESERVED2_OS_R {
         &self.0
     }
 }
-#[doc = "Field `RX_RESERVED2_OS` writer - "]
+#[doc = "Field `RX_RESERVED2_OS` writer - Receive Reserved2 order set"]
 pub struct RX_RESERVED2_OS_W<'a> {
     w: &'a mut W,
 }
@@ -62,14 +62,14 @@ impl<'a> RX_RESERVED2_OS_W<'a> {
     }
 }
 impl R {
-    #[doc = "Bits 0:19"]
+    #[doc = "Bits 0:19 - Receive Reserved2 order set"]
     #[inline(always)]
     pub fn rx_reserved2_os(&self) -> RX_RESERVED2_OS_R {
         RX_RESERVED2_OS_R::new((self.bits & 0x000f_ffff) as u32)
     }
 }
 impl W {
-    #[doc = "Bits 0:19"]
+    #[doc = "Bits 0:19 - Receive Reserved2 order set"]
     #[inline(always)]
     pub fn rx_reserved2_os(&mut self) -> RX_RESERVED2_OS_W {
         RX_RESERVED2_OS_W { w: self }
@@ -81,7 +81,7 @@ impl W {
         self
     }
 }
-#[doc = "\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [rx_reserved2_order_set](index.html) module"]
+#[doc = "Receive Reserved2 order set\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [rx_reserved2_order_set](index.html) module"]
 pub struct RX_RESERVED2_ORDER_SET_SPEC;
 impl crate::RegisterSpec for RX_RESERVED2_ORDER_SET_SPEC {
     type Ux = u32;

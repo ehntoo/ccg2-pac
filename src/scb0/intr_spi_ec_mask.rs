@@ -34,7 +34,7 @@ impl From<crate::W<INTR_SPI_EC_MASK_SPEC>> for W {
         W(writer)
     }
 }
-#[doc = "Field `WAKE_UP` reader - "]
+#[doc = "Field `WAKE_UP` reader - Mask bit for corresponding bit in interrupt request register."]
 pub struct WAKE_UP_R(crate::FieldReader<bool, bool>);
 impl WAKE_UP_R {
     #[inline(always)]
@@ -49,7 +49,7 @@ impl core::ops::Deref for WAKE_UP_R {
         &self.0
     }
 }
-#[doc = "Field `WAKE_UP` writer - "]
+#[doc = "Field `WAKE_UP` writer - Mask bit for corresponding bit in interrupt request register."]
 pub struct WAKE_UP_W<'a> {
     w: &'a mut W,
 }
@@ -71,7 +71,7 @@ impl<'a> WAKE_UP_W<'a> {
         self.w
     }
 }
-#[doc = "Field `EZ_STOP` reader - "]
+#[doc = "Field `EZ_STOP` reader - Mask bit for corresponding bit in interrupt request register."]
 pub struct EZ_STOP_R(crate::FieldReader<bool, bool>);
 impl EZ_STOP_R {
     #[inline(always)]
@@ -86,7 +86,7 @@ impl core::ops::Deref for EZ_STOP_R {
         &self.0
     }
 }
-#[doc = "Field `EZ_STOP` writer - "]
+#[doc = "Field `EZ_STOP` writer - Mask bit for corresponding bit in interrupt request register."]
 pub struct EZ_STOP_W<'a> {
     w: &'a mut W,
 }
@@ -108,7 +108,7 @@ impl<'a> EZ_STOP_W<'a> {
         self.w
     }
 }
-#[doc = "Field `EZ_WRITE_STOP` reader - "]
+#[doc = "Field `EZ_WRITE_STOP` reader - Mask bit for corresponding bit in interrupt request register."]
 pub struct EZ_WRITE_STOP_R(crate::FieldReader<bool, bool>);
 impl EZ_WRITE_STOP_R {
     #[inline(always)]
@@ -123,7 +123,7 @@ impl core::ops::Deref for EZ_WRITE_STOP_R {
         &self.0
     }
 }
-#[doc = "Field `EZ_WRITE_STOP` writer - "]
+#[doc = "Field `EZ_WRITE_STOP` writer - Mask bit for corresponding bit in interrupt request register."]
 pub struct EZ_WRITE_STOP_W<'a> {
     w: &'a mut W,
 }
@@ -145,7 +145,7 @@ impl<'a> EZ_WRITE_STOP_W<'a> {
         self.w
     }
 }
-#[doc = "Field `EZ_READ_STOP` reader - "]
+#[doc = "Field `EZ_READ_STOP` reader - Mask bit for corresponding bit in interrupt request register."]
 pub struct EZ_READ_STOP_R(crate::FieldReader<bool, bool>);
 impl EZ_READ_STOP_R {
     #[inline(always)]
@@ -160,7 +160,7 @@ impl core::ops::Deref for EZ_READ_STOP_R {
         &self.0
     }
 }
-#[doc = "Field `EZ_READ_STOP` writer - "]
+#[doc = "Field `EZ_READ_STOP` writer - Mask bit for corresponding bit in interrupt request register."]
 pub struct EZ_READ_STOP_W<'a> {
     w: &'a mut W,
 }
@@ -183,44 +183,44 @@ impl<'a> EZ_READ_STOP_W<'a> {
     }
 }
 impl R {
-    #[doc = "Bit 0"]
+    #[doc = "Bit 0 - Mask bit for corresponding bit in interrupt request register."]
     #[inline(always)]
     pub fn wake_up(&self) -> WAKE_UP_R {
         WAKE_UP_R::new((self.bits & 0x01) != 0)
     }
-    #[doc = "Bit 1"]
+    #[doc = "Bit 1 - Mask bit for corresponding bit in interrupt request register."]
     #[inline(always)]
     pub fn ez_stop(&self) -> EZ_STOP_R {
         EZ_STOP_R::new(((self.bits >> 1) & 0x01) != 0)
     }
-    #[doc = "Bit 2"]
+    #[doc = "Bit 2 - Mask bit for corresponding bit in interrupt request register."]
     #[inline(always)]
     pub fn ez_write_stop(&self) -> EZ_WRITE_STOP_R {
         EZ_WRITE_STOP_R::new(((self.bits >> 2) & 0x01) != 0)
     }
-    #[doc = "Bit 3"]
+    #[doc = "Bit 3 - Mask bit for corresponding bit in interrupt request register."]
     #[inline(always)]
     pub fn ez_read_stop(&self) -> EZ_READ_STOP_R {
         EZ_READ_STOP_R::new(((self.bits >> 3) & 0x01) != 0)
     }
 }
 impl W {
-    #[doc = "Bit 0"]
+    #[doc = "Bit 0 - Mask bit for corresponding bit in interrupt request register."]
     #[inline(always)]
     pub fn wake_up(&mut self) -> WAKE_UP_W {
         WAKE_UP_W { w: self }
     }
-    #[doc = "Bit 1"]
+    #[doc = "Bit 1 - Mask bit for corresponding bit in interrupt request register."]
     #[inline(always)]
     pub fn ez_stop(&mut self) -> EZ_STOP_W {
         EZ_STOP_W { w: self }
     }
-    #[doc = "Bit 2"]
+    #[doc = "Bit 2 - Mask bit for corresponding bit in interrupt request register."]
     #[inline(always)]
     pub fn ez_write_stop(&mut self) -> EZ_WRITE_STOP_W {
         EZ_WRITE_STOP_W { w: self }
     }
-    #[doc = "Bit 3"]
+    #[doc = "Bit 3 - Mask bit for corresponding bit in interrupt request register."]
     #[inline(always)]
     pub fn ez_read_stop(&mut self) -> EZ_READ_STOP_W {
         EZ_READ_STOP_W { w: self }
@@ -232,7 +232,7 @@ impl W {
         self
     }
 }
-#[doc = "\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [intr_spi_ec_mask](index.html) module"]
+#[doc = "Externally clocked SPI interrupt mask register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [intr_spi_ec_mask](index.html) module"]
 pub struct INTR_SPI_EC_MASK_SPEC;
 impl crate::RegisterSpec for INTR_SPI_EC_MASK_SPEC {
     type Ux = u32;

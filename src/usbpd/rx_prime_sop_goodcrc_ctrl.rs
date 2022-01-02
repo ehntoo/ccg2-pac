@@ -34,7 +34,7 @@ impl From<crate::W<RX_PRIME_SOP_GOODCRC_CTRL_SPEC>> for W {
         W(writer)
     }
 }
-#[doc = "Field `SEND_GOOD_CRC_PER_CTRL_MSG_TYP` reader - "]
+#[doc = "Field `SEND_GOOD_CRC_PER_CTRL_MSG_TYP` reader - The Message type of a control message is a 4-bit field. Every bit of this register mapps to the control message types. CPU can used this register to select for which one of the the message types of a control message should hardware send a GOODCRC message."]
 pub struct SEND_GOOD_CRC_PER_CTRL_MSG_TYP_R(crate::FieldReader<u16, u16>);
 impl SEND_GOOD_CRC_PER_CTRL_MSG_TYP_R {
     #[inline(always)]
@@ -49,7 +49,7 @@ impl core::ops::Deref for SEND_GOOD_CRC_PER_CTRL_MSG_TYP_R {
         &self.0
     }
 }
-#[doc = "Field `SEND_GOOD_CRC_PER_CTRL_MSG_TYP` writer - "]
+#[doc = "Field `SEND_GOOD_CRC_PER_CTRL_MSG_TYP` writer - The Message type of a control message is a 4-bit field. Every bit of this register mapps to the control message types. CPU can used this register to select for which one of the the message types of a control message should hardware send a GOODCRC message."]
 pub struct SEND_GOOD_CRC_PER_CTRL_MSG_TYP_W<'a> {
     w: &'a mut W,
 }
@@ -61,7 +61,7 @@ impl<'a> SEND_GOOD_CRC_PER_CTRL_MSG_TYP_W<'a> {
         self.w
     }
 }
-#[doc = "Field `SEND_GOOD_CRC_PER_DATA_MSG_TYP` reader - "]
+#[doc = "Field `SEND_GOOD_CRC_PER_DATA_MSG_TYP` reader - The Message type of a data message is a 4-bit field. Every bit of this register mapps to the data message types. CPU can used this register to select for which one of the the message types of a data message should hardware send a GOODCRC message."]
 pub struct SEND_GOOD_CRC_PER_DATA_MSG_TYP_R(crate::FieldReader<u16, u16>);
 impl SEND_GOOD_CRC_PER_DATA_MSG_TYP_R {
     #[inline(always)]
@@ -76,7 +76,7 @@ impl core::ops::Deref for SEND_GOOD_CRC_PER_DATA_MSG_TYP_R {
         &self.0
     }
 }
-#[doc = "Field `SEND_GOOD_CRC_PER_DATA_MSG_TYP` writer - "]
+#[doc = "Field `SEND_GOOD_CRC_PER_DATA_MSG_TYP` writer - The Message type of a data message is a 4-bit field. Every bit of this register mapps to the data message types. CPU can used this register to select for which one of the the message types of a data message should hardware send a GOODCRC message."]
 pub struct SEND_GOOD_CRC_PER_DATA_MSG_TYP_W<'a> {
     w: &'a mut W,
 }
@@ -89,24 +89,24 @@ impl<'a> SEND_GOOD_CRC_PER_DATA_MSG_TYP_W<'a> {
     }
 }
 impl R {
-    #[doc = "Bits 0:15"]
+    #[doc = "Bits 0:15 - The Message type of a control message is a 4-bit field. Every bit of this register mapps to the control message types. CPU can used this register to select for which one of the the message types of a control message should hardware send a GOODCRC message."]
     #[inline(always)]
     pub fn send_good_crc_per_ctrl_msg_typ(&self) -> SEND_GOOD_CRC_PER_CTRL_MSG_TYP_R {
         SEND_GOOD_CRC_PER_CTRL_MSG_TYP_R::new((self.bits & 0xffff) as u16)
     }
-    #[doc = "Bits 16:31"]
+    #[doc = "Bits 16:31 - The Message type of a data message is a 4-bit field. Every bit of this register mapps to the data message types. CPU can used this register to select for which one of the the message types of a data message should hardware send a GOODCRC message."]
     #[inline(always)]
     pub fn send_good_crc_per_data_msg_typ(&self) -> SEND_GOOD_CRC_PER_DATA_MSG_TYP_R {
         SEND_GOOD_CRC_PER_DATA_MSG_TYP_R::new(((self.bits >> 16) & 0xffff) as u16)
     }
 }
 impl W {
-    #[doc = "Bits 0:15"]
+    #[doc = "Bits 0:15 - The Message type of a control message is a 4-bit field. Every bit of this register mapps to the control message types. CPU can used this register to select for which one of the the message types of a control message should hardware send a GOODCRC message."]
     #[inline(always)]
     pub fn send_good_crc_per_ctrl_msg_typ(&mut self) -> SEND_GOOD_CRC_PER_CTRL_MSG_TYP_W {
         SEND_GOOD_CRC_PER_CTRL_MSG_TYP_W { w: self }
     }
-    #[doc = "Bits 16:31"]
+    #[doc = "Bits 16:31 - The Message type of a data message is a 4-bit field. Every bit of this register mapps to the data message types. CPU can used this register to select for which one of the the message types of a data message should hardware send a GOODCRC message."]
     #[inline(always)]
     pub fn send_good_crc_per_data_msg_typ(&mut self) -> SEND_GOOD_CRC_PER_DATA_MSG_TYP_W {
         SEND_GOOD_CRC_PER_DATA_MSG_TYP_W { w: self }
@@ -118,7 +118,7 @@ impl W {
         self
     }
 }
-#[doc = "\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [rx_prime_sop_goodcrc_ctrl](index.html) module"]
+#[doc = "RX Prime SOP GoodCRC Control\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [rx_prime_sop_goodcrc_ctrl](index.html) module"]
 pub struct RX_PRIME_SOP_GOODCRC_CTRL_SPEC;
 impl crate::RegisterSpec for RX_PRIME_SOP_GOODCRC_CTRL_SPEC {
     type Ux = u32;

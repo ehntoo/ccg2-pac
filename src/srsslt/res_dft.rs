@@ -34,7 +34,7 @@ impl From<crate::W<RES_DFT_SPEC>> for W {
         W(writer)
     }
 }
-#[doc = "Field `DELAY_BLOCK` reader - "]
+#[doc = "Field `DELAY_BLOCK` reader - Setting this bit will disconnect the output of the reset delay line from the reset system blocking soft resets from reaching the logic. Note: XRES/POR/BOD resets still have other effects, but this bit MUST be cleared before XRES or any other reset can be applied to the system after doing the delay line testing. When DELAY_BLOCK=1, reset DDFT output #0 is connected the input of the delay line and output #1 is connected to the output of the delay line."]
 pub struct DELAY_BLOCK_R(crate::FieldReader<bool, bool>);
 impl DELAY_BLOCK_R {
     #[inline(always)]
@@ -49,7 +49,7 @@ impl core::ops::Deref for DELAY_BLOCK_R {
         &self.0
     }
 }
-#[doc = "Field `DELAY_BLOCK` writer - "]
+#[doc = "Field `DELAY_BLOCK` writer - Setting this bit will disconnect the output of the reset delay line from the reset system blocking soft resets from reaching the logic. Note: XRES/POR/BOD resets still have other effects, but this bit MUST be cleared before XRES or any other reset can be applied to the system after doing the delay line testing. When DELAY_BLOCK=1, reset DDFT output #0 is connected the input of the delay line and output #1 is connected to the output of the delay line."]
 pub struct DELAY_BLOCK_W<'a> {
     w: &'a mut W,
 }
@@ -71,7 +71,7 @@ impl<'a> DELAY_BLOCK_W<'a> {
         self.w
     }
 }
-#[doc = "Field `DELAY_IN` reader - "]
+#[doc = "Field `DELAY_IN` reader - When DELAY_BLOCK=1, this bit is connected to the input of the reset delay line. Both the input and output can be observed through the DDFT network to measure their timing relationship."]
 pub struct DELAY_IN_R(crate::FieldReader<bool, bool>);
 impl DELAY_IN_R {
     #[inline(always)]
@@ -86,7 +86,7 @@ impl core::ops::Deref for DELAY_IN_R {
         &self.0
     }
 }
-#[doc = "Field `DELAY_IN` writer - "]
+#[doc = "Field `DELAY_IN` writer - When DELAY_BLOCK=1, this bit is connected to the input of the reset delay line. Both the input and output can be observed through the DDFT network to measure their timing relationship."]
 pub struct DELAY_IN_W<'a> {
     w: &'a mut W,
 }
@@ -109,24 +109,24 @@ impl<'a> DELAY_IN_W<'a> {
     }
 }
 impl R {
-    #[doc = "Bit 0"]
+    #[doc = "Bit 0 - Setting this bit will disconnect the output of the reset delay line from the reset system blocking soft resets from reaching the logic. Note: XRES/POR/BOD resets still have other effects, but this bit MUST be cleared before XRES or any other reset can be applied to the system after doing the delay line testing. When DELAY_BLOCK=1, reset DDFT output #0 is connected the input of the delay line and output #1 is connected to the output of the delay line."]
     #[inline(always)]
     pub fn delay_block(&self) -> DELAY_BLOCK_R {
         DELAY_BLOCK_R::new((self.bits & 0x01) != 0)
     }
-    #[doc = "Bit 1"]
+    #[doc = "Bit 1 - When DELAY_BLOCK=1, this bit is connected to the input of the reset delay line. Both the input and output can be observed through the DDFT network to measure their timing relationship."]
     #[inline(always)]
     pub fn delay_in(&self) -> DELAY_IN_R {
         DELAY_IN_R::new(((self.bits >> 1) & 0x01) != 0)
     }
 }
 impl W {
-    #[doc = "Bit 0"]
+    #[doc = "Bit 0 - Setting this bit will disconnect the output of the reset delay line from the reset system blocking soft resets from reaching the logic. Note: XRES/POR/BOD resets still have other effects, but this bit MUST be cleared before XRES or any other reset can be applied to the system after doing the delay line testing. When DELAY_BLOCK=1, reset DDFT output #0 is connected the input of the delay line and output #1 is connected to the output of the delay line."]
     #[inline(always)]
     pub fn delay_block(&mut self) -> DELAY_BLOCK_W {
         DELAY_BLOCK_W { w: self }
     }
-    #[doc = "Bit 1"]
+    #[doc = "Bit 1 - When DELAY_BLOCK=1, this bit is connected to the input of the reset delay line. Both the input and output can be observed through the DDFT network to measure their timing relationship."]
     #[inline(always)]
     pub fn delay_in(&mut self) -> DELAY_IN_W {
         DELAY_IN_W { w: self }
@@ -138,7 +138,7 @@ impl W {
         self
     }
 }
-#[doc = "\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [res_dft](index.html) module"]
+#[doc = "Reset DFT Register Controls the DFT options for the reset system. Writes to this register are ignored and settings in this register have no effect unless DFT is enabled through a XRES:DFT:* key (see SAS for details). Note that PWR_DDFT_XRES can be used to enter an XRES key if XRES key sequence is not desired.\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [res_dft](index.html) module"]
 pub struct RES_DFT_SPEC;
 impl crate::RegisterSpec for RES_DFT_SPEC {
     type Ux = u32;

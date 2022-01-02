@@ -34,7 +34,7 @@ impl From<crate::W<CC_CTRL_0_SPEC>> for W {
         W(writer)
     }
 }
-#[doc = "Field `TX_EN` reader - "]
+#[doc = "Field `TX_EN` reader - FW can only use this bit when the DEBUG_CC_0.TX_CC_DRIVE_SRC is set to \"1\". 0: Disables the Transceiver to transmit data 1: Enables the Transceiver to transmit data"]
 pub struct TX_EN_R(crate::FieldReader<bool, bool>);
 impl TX_EN_R {
     #[inline(always)]
@@ -49,7 +49,7 @@ impl core::ops::Deref for TX_EN_R {
         &self.0
     }
 }
-#[doc = "Field `TX_EN` writer - "]
+#[doc = "Field `TX_EN` writer - FW can only use this bit when the DEBUG_CC_0.TX_CC_DRIVE_SRC is set to \"1\". 0: Disables the Transceiver to transmit data 1: Enables the Transceiver to transmit data"]
 pub struct TX_EN_W<'a> {
     w: &'a mut W,
 }
@@ -71,7 +71,7 @@ impl<'a> TX_EN_W<'a> {
         self.w
     }
 }
-#[doc = "Field `RX_EN` reader - "]
+#[doc = "Field `RX_EN` reader - Enables the Transceiver to receive data, Active High This bit should be set after CC Line active interrupt (wakeup) in DeepSleep. FW should set this bit at init and not change after across deep sleep and wake."]
 pub struct RX_EN_R(crate::FieldReader<bool, bool>);
 impl RX_EN_R {
     #[inline(always)]
@@ -86,7 +86,7 @@ impl core::ops::Deref for RX_EN_R {
         &self.0
     }
 }
-#[doc = "Field `RX_EN` writer - "]
+#[doc = "Field `RX_EN` writer - Enables the Transceiver to receive data, Active High This bit should be set after CC Line active interrupt (wakeup) in DeepSleep. FW should set this bit at init and not change after across deep sleep and wake."]
 pub struct RX_EN_W<'a> {
     w: &'a mut W,
 }
@@ -108,7 +108,7 @@ impl<'a> RX_EN_W<'a> {
         self.w
     }
 }
-#[doc = "Field `CC_1V2` reader - "]
+#[doc = "Field `CC_1V2` reader - Firmware detects cable attach and specifies whether CC1 or CC2 is connected to the CC-line of the cable. 0 - CC1 1 - CC2"]
 pub struct CC_1V2_R(crate::FieldReader<bool, bool>);
 impl CC_1V2_R {
     #[inline(always)]
@@ -123,7 +123,7 @@ impl core::ops::Deref for CC_1V2_R {
         &self.0
     }
 }
-#[doc = "Field `CC_1V2` writer - "]
+#[doc = "Field `CC_1V2` writer - Firmware detects cable attach and specifies whether CC1 or CC2 is connected to the CC-line of the cable. 0 - CC1 1 - CC2"]
 pub struct CC_1V2_W<'a> {
     w: &'a mut W,
 }
@@ -145,7 +145,7 @@ impl<'a> CC_1V2_W<'a> {
         self.w
     }
 }
-#[doc = "Field `CMP_EN` reader - "]
+#[doc = "Field `CMP_EN` reader - CC line voltage Comparator enable"]
 pub struct CMP_EN_R(crate::FieldReader<bool, bool>);
 impl CMP_EN_R {
     #[inline(always)]
@@ -160,7 +160,7 @@ impl core::ops::Deref for CMP_EN_R {
         &self.0
     }
 }
-#[doc = "Field `CMP_EN` writer - "]
+#[doc = "Field `CMP_EN` writer - CC line voltage Comparator enable"]
 pub struct CMP_EN_W<'a> {
     w: &'a mut W,
 }
@@ -182,7 +182,7 @@ impl<'a> CMP_EN_W<'a> {
         self.w
     }
 }
-#[doc = "Field `CMP_DN_CC1V2` reader - "]
+#[doc = "Field `CMP_DN_CC1V2` reader - Connects cmp_dn comparator to CC1/CC2 0 - CC1 1 - CC2"]
 pub struct CMP_DN_CC1V2_R(crate::FieldReader<bool, bool>);
 impl CMP_DN_CC1V2_R {
     #[inline(always)]
@@ -197,7 +197,7 @@ impl core::ops::Deref for CMP_DN_CC1V2_R {
         &self.0
     }
 }
-#[doc = "Field `CMP_DN_CC1V2` writer - "]
+#[doc = "Field `CMP_DN_CC1V2` writer - Connects cmp_dn comparator to CC1/CC2 0 - CC1 1 - CC2"]
 pub struct CMP_DN_CC1V2_W<'a> {
     w: &'a mut W,
 }
@@ -219,7 +219,7 @@ impl<'a> CMP_DN_CC1V2_W<'a> {
         self.w
     }
 }
-#[doc = "\n\nValue on reset: 0"]
+#[doc = "Selects the voltage threshold for cmp_dn comparator\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u8)]
 pub enum CMP_DN_VSEL_A {
@@ -246,7 +246,7 @@ impl From<CMP_DN_VSEL_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `CMP_DN_VSEL` reader - "]
+#[doc = "Field `CMP_DN_VSEL` reader - Selects the voltage threshold for cmp_dn comparator"]
 pub struct CMP_DN_VSEL_R(crate::FieldReader<u8, CMP_DN_VSEL_A>);
 impl CMP_DN_VSEL_R {
     #[inline(always)]
@@ -316,7 +316,7 @@ impl core::ops::Deref for CMP_DN_VSEL_R {
         &self.0
     }
 }
-#[doc = "Field `CMP_DN_VSEL` writer - "]
+#[doc = "Field `CMP_DN_VSEL` writer - Selects the voltage threshold for cmp_dn comparator"]
 pub struct CMP_DN_VSEL_W<'a> {
     w: &'a mut W,
 }
@@ -373,7 +373,7 @@ impl<'a> CMP_DN_VSEL_W<'a> {
         self.w
     }
 }
-#[doc = "Field `CMP_UP_CC1V2` reader - "]
+#[doc = "Field `CMP_UP_CC1V2` reader - Connects cmp_up comparator to CC1/CC2 0 - CC1 1 - CC2"]
 pub struct CMP_UP_CC1V2_R(crate::FieldReader<bool, bool>);
 impl CMP_UP_CC1V2_R {
     #[inline(always)]
@@ -388,7 +388,7 @@ impl core::ops::Deref for CMP_UP_CC1V2_R {
         &self.0
     }
 }
-#[doc = "Field `CMP_UP_CC1V2` writer - "]
+#[doc = "Field `CMP_UP_CC1V2` writer - Connects cmp_up comparator to CC1/CC2 0 - CC1 1 - CC2"]
 pub struct CMP_UP_CC1V2_W<'a> {
     w: &'a mut W,
 }
@@ -410,7 +410,7 @@ impl<'a> CMP_UP_CC1V2_W<'a> {
         self.w
     }
 }
-#[doc = "\n\nValue on reset: 0"]
+#[doc = "Selects the voltage threshold for cmp_up comparator\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u8)]
 pub enum CMP_UP_VSEL_A {
@@ -437,7 +437,7 @@ impl From<CMP_UP_VSEL_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `CMP_UP_VSEL` reader - "]
+#[doc = "Field `CMP_UP_VSEL` reader - Selects the voltage threshold for cmp_up comparator"]
 pub struct CMP_UP_VSEL_R(crate::FieldReader<u8, CMP_UP_VSEL_A>);
 impl CMP_UP_VSEL_R {
     #[inline(always)]
@@ -507,7 +507,7 @@ impl core::ops::Deref for CMP_UP_VSEL_R {
         &self.0
     }
 }
-#[doc = "Field `CMP_UP_VSEL` writer - "]
+#[doc = "Field `CMP_UP_VSEL` writer - Selects the voltage threshold for cmp_up comparator"]
 pub struct CMP_UP_VSEL_W<'a> {
     w: &'a mut W,
 }
@@ -564,7 +564,7 @@ impl<'a> CMP_UP_VSEL_W<'a> {
         self.w
     }
 }
-#[doc = "\n\nValue on reset: 0"]
+#[doc = "Selects the cmp_up comparator offset:\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u8)]
 pub enum CMP_UP_OFFSET_A {
@@ -591,7 +591,7 @@ impl From<CMP_UP_OFFSET_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `CMP_UP_OFFSET` reader - "]
+#[doc = "Field `CMP_UP_OFFSET` reader - Selects the cmp_up comparator offset:"]
 pub struct CMP_UP_OFFSET_R(crate::FieldReader<u8, CMP_UP_OFFSET_A>);
 impl CMP_UP_OFFSET_R {
     #[inline(always)]
@@ -661,7 +661,7 @@ impl core::ops::Deref for CMP_UP_OFFSET_R {
         &self.0
     }
 }
-#[doc = "Field `CMP_UP_OFFSET` writer - "]
+#[doc = "Field `CMP_UP_OFFSET` writer - Selects the cmp_up comparator offset:"]
 pub struct CMP_UP_OFFSET_W<'a> {
     w: &'a mut W,
 }
@@ -718,7 +718,7 @@ impl<'a> CMP_UP_OFFSET_W<'a> {
         self.w
     }
 }
-#[doc = "Field `CMP_UP_OFFSET_EN` reader - "]
+#[doc = "Field `CMP_UP_OFFSET_EN` reader - Enables the offset generator for the cmp_up comparator 0 - no offset 1 - offset enabled, see CMP_UP_OFFSET register for value"]
 pub struct CMP_UP_OFFSET_EN_R(crate::FieldReader<bool, bool>);
 impl CMP_UP_OFFSET_EN_R {
     #[inline(always)]
@@ -733,7 +733,7 @@ impl core::ops::Deref for CMP_UP_OFFSET_EN_R {
         &self.0
     }
 }
-#[doc = "Field `CMP_UP_OFFSET_EN` writer - "]
+#[doc = "Field `CMP_UP_OFFSET_EN` writer - Enables the offset generator for the cmp_up comparator 0 - no offset 1 - offset enabled, see CMP_UP_OFFSET register for value"]
 pub struct CMP_UP_OFFSET_EN_W<'a> {
     w: &'a mut W,
 }
@@ -755,7 +755,7 @@ impl<'a> CMP_UP_OFFSET_EN_W<'a> {
         self.w
     }
 }
-#[doc = "Field `CMP_LA_CC1V2` reader - "]
+#[doc = "Field `CMP_LA_CC1V2` reader - Connects cmp_la comparator to CC1/CC2 0 - CC1 1 - CC2"]
 pub struct CMP_LA_CC1V2_R(crate::FieldReader<bool, bool>);
 impl CMP_LA_CC1V2_R {
     #[inline(always)]
@@ -770,7 +770,7 @@ impl core::ops::Deref for CMP_LA_CC1V2_R {
         &self.0
     }
 }
-#[doc = "Field `CMP_LA_CC1V2` writer - "]
+#[doc = "Field `CMP_LA_CC1V2` writer - Connects cmp_la comparator to CC1/CC2 0 - CC1 1 - CC2"]
 pub struct CMP_LA_CC1V2_W<'a> {
     w: &'a mut W,
 }
@@ -792,7 +792,7 @@ impl<'a> CMP_LA_CC1V2_W<'a> {
         self.w
     }
 }
-#[doc = "\n\nValue on reset: 2"]
+#[doc = "Selects the voltage threshold for cmp_la comparator\n\nValue on reset: 2"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u8)]
 pub enum CMP_LA_VSEL_A {
@@ -819,7 +819,7 @@ impl From<CMP_LA_VSEL_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `CMP_LA_VSEL` reader - "]
+#[doc = "Field `CMP_LA_VSEL` reader - Selects the voltage threshold for cmp_la comparator"]
 pub struct CMP_LA_VSEL_R(crate::FieldReader<u8, CMP_LA_VSEL_A>);
 impl CMP_LA_VSEL_R {
     #[inline(always)]
@@ -889,7 +889,7 @@ impl core::ops::Deref for CMP_LA_VSEL_R {
         &self.0
     }
 }
-#[doc = "Field `CMP_LA_VSEL` writer - "]
+#[doc = "Field `CMP_LA_VSEL` writer - Selects the voltage threshold for cmp_la comparator"]
 pub struct CMP_LA_VSEL_W<'a> {
     w: &'a mut W,
 }
@@ -946,7 +946,7 @@ impl<'a> CMP_LA_VSEL_W<'a> {
         self.w
     }
 }
-#[doc = "Field `RD_CC1_DB_DIS` reader - "]
+#[doc = "Field `RD_CC1_DB_DIS` reader - Disable Dead Battery Rd termination on CC1"]
 pub struct RD_CC1_DB_DIS_R(crate::FieldReader<bool, bool>);
 impl RD_CC1_DB_DIS_R {
     #[inline(always)]
@@ -961,7 +961,7 @@ impl core::ops::Deref for RD_CC1_DB_DIS_R {
         &self.0
     }
 }
-#[doc = "Field `RD_CC1_DB_DIS` writer - "]
+#[doc = "Field `RD_CC1_DB_DIS` writer - Disable Dead Battery Rd termination on CC1"]
 pub struct RD_CC1_DB_DIS_W<'a> {
     w: &'a mut W,
 }
@@ -983,7 +983,7 @@ impl<'a> RD_CC1_DB_DIS_W<'a> {
         self.w
     }
 }
-#[doc = "Field `RD_CC2_DB_DIS` reader - "]
+#[doc = "Field `RD_CC2_DB_DIS` reader - Disable Dead Battery Rd termination on CC2"]
 pub struct RD_CC2_DB_DIS_R(crate::FieldReader<bool, bool>);
 impl RD_CC2_DB_DIS_R {
     #[inline(always)]
@@ -998,7 +998,7 @@ impl core::ops::Deref for RD_CC2_DB_DIS_R {
         &self.0
     }
 }
-#[doc = "Field `RD_CC2_DB_DIS` writer - "]
+#[doc = "Field `RD_CC2_DB_DIS` writer - Disable Dead Battery Rd termination on CC2"]
 pub struct RD_CC2_DB_DIS_W<'a> {
     w: &'a mut W,
 }
@@ -1020,7 +1020,7 @@ impl<'a> RD_CC2_DB_DIS_W<'a> {
         self.w
     }
 }
-#[doc = "Field `RD_CC1_EN` reader - "]
+#[doc = "Field `RD_CC1_EN` reader - 0: Disable CC1 Trimmed Rd Termination 1: Enable CC1 Trimmed Rd Termination"]
 pub struct RD_CC1_EN_R(crate::FieldReader<bool, bool>);
 impl RD_CC1_EN_R {
     #[inline(always)]
@@ -1035,7 +1035,7 @@ impl core::ops::Deref for RD_CC1_EN_R {
         &self.0
     }
 }
-#[doc = "Field `RD_CC1_EN` writer - "]
+#[doc = "Field `RD_CC1_EN` writer - 0: Disable CC1 Trimmed Rd Termination 1: Enable CC1 Trimmed Rd Termination"]
 pub struct RD_CC1_EN_W<'a> {
     w: &'a mut W,
 }
@@ -1057,7 +1057,7 @@ impl<'a> RD_CC1_EN_W<'a> {
         self.w
     }
 }
-#[doc = "Field `RD_CC2_EN` reader - "]
+#[doc = "Field `RD_CC2_EN` reader - 0: Disable CC2 Trimmed Rd Termination 1: Enable CC2 Trimmed Rd Termination"]
 pub struct RD_CC2_EN_R(crate::FieldReader<bool, bool>);
 impl RD_CC2_EN_R {
     #[inline(always)]
@@ -1072,7 +1072,7 @@ impl core::ops::Deref for RD_CC2_EN_R {
         &self.0
     }
 }
-#[doc = "Field `RD_CC2_EN` writer - "]
+#[doc = "Field `RD_CC2_EN` writer - 0: Disable CC2 Trimmed Rd Termination 1: Enable CC2 Trimmed Rd Termination"]
 pub struct RD_CC2_EN_W<'a> {
     w: &'a mut W,
 }
@@ -1094,7 +1094,7 @@ impl<'a> RD_CC2_EN_W<'a> {
         self.w
     }
 }
-#[doc = "Field `RP_CC1_EN` reader - "]
+#[doc = "Field `RP_CC1_EN` reader - 0: Disable CC1 Pull-up Termination (Rp) 1: Enable CC1 Pull-up Termination"]
 pub struct RP_CC1_EN_R(crate::FieldReader<bool, bool>);
 impl RP_CC1_EN_R {
     #[inline(always)]
@@ -1109,7 +1109,7 @@ impl core::ops::Deref for RP_CC1_EN_R {
         &self.0
     }
 }
-#[doc = "Field `RP_CC1_EN` writer - "]
+#[doc = "Field `RP_CC1_EN` writer - 0: Disable CC1 Pull-up Termination (Rp) 1: Enable CC1 Pull-up Termination"]
 pub struct RP_CC1_EN_W<'a> {
     w: &'a mut W,
 }
@@ -1131,7 +1131,7 @@ impl<'a> RP_CC1_EN_W<'a> {
         self.w
     }
 }
-#[doc = "Field `RP_CC2_EN` reader - "]
+#[doc = "Field `RP_CC2_EN` reader - 0: Disable CC2 Pull-up Termination (Rp) 1: Enable CC2 Pull-up Termination"]
 pub struct RP_CC2_EN_R(crate::FieldReader<bool, bool>);
 impl RP_CC2_EN_R {
     #[inline(always)]
@@ -1146,7 +1146,7 @@ impl core::ops::Deref for RP_CC2_EN_R {
         &self.0
     }
 }
-#[doc = "Field `RP_CC2_EN` writer - "]
+#[doc = "Field `RP_CC2_EN` writer - 0: Disable CC2 Pull-up Termination (Rp) 1: Enable CC2 Pull-up Termination"]
 pub struct RP_CC2_EN_W<'a> {
     w: &'a mut W,
 }
@@ -1168,7 +1168,7 @@ impl<'a> RP_CC2_EN_W<'a> {
         self.w
     }
 }
-#[doc = "\n\nValue on reset: 0"]
+#[doc = "Selects the Pull-up Termination current value 0, 2 - 80uA (Default current broadcast) 1 - 180uA (1.5A current broadcast) 3 - 330uA (3.0A current broadcast)\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u8)]
 pub enum RP_MODE_A {
@@ -1187,7 +1187,7 @@ impl From<RP_MODE_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `RP_MODE` reader - "]
+#[doc = "Field `RP_MODE` reader - Selects the Pull-up Termination current value 0, 2 - 80uA (Default current broadcast) 1 - 180uA (1.5A current broadcast) 3 - 330uA (3.0A current broadcast)"]
 pub struct RP_MODE_R(crate::FieldReader<u8, RP_MODE_A>);
 impl RP_MODE_R {
     #[inline(always)]
@@ -1233,7 +1233,7 @@ impl core::ops::Deref for RP_MODE_R {
         &self.0
     }
 }
-#[doc = "Field `RP_MODE` writer - "]
+#[doc = "Field `RP_MODE` writer - Selects the Pull-up Termination current value 0, 2 - 80uA (Default current broadcast) 1 - 180uA (1.5A current broadcast) 3 - 330uA (3.0A current broadcast)"]
 pub struct RP_MODE_W<'a> {
     w: &'a mut W,
 }
@@ -1270,7 +1270,7 @@ impl<'a> RP_MODE_W<'a> {
         self.w
     }
 }
-#[doc = "Field `EN_HYST` reader - "]
+#[doc = "Field `EN_HYST` reader - Enables the hysteresis mode for the line activity comparator"]
 pub struct EN_HYST_R(crate::FieldReader<bool, bool>);
 impl EN_HYST_R {
     #[inline(always)]
@@ -1285,7 +1285,7 @@ impl core::ops::Deref for EN_HYST_R {
         &self.0
     }
 }
-#[doc = "Field `EN_HYST` writer - "]
+#[doc = "Field `EN_HYST` writer - Enables the hysteresis mode for the line activity comparator"]
 pub struct EN_HYST_W<'a> {
     w: &'a mut W,
 }
@@ -1307,7 +1307,7 @@ impl<'a> EN_HYST_W<'a> {
         self.w
     }
 }
-#[doc = "Field `HYST_MODE` reader - "]
+#[doc = "Field `HYST_MODE` reader - Selects the amount of line activity comparator hysteresis 0: 50mV hystersis 1: 100mV hysteresis\""]
 pub struct HYST_MODE_R(crate::FieldReader<bool, bool>);
 impl HYST_MODE_R {
     #[inline(always)]
@@ -1322,7 +1322,7 @@ impl core::ops::Deref for HYST_MODE_R {
         &self.0
     }
 }
-#[doc = "Field `HYST_MODE` writer - "]
+#[doc = "Field `HYST_MODE` writer - Selects the amount of line activity comparator hysteresis 0: 50mV hystersis 1: 100mV hysteresis\""]
 pub struct HYST_MODE_W<'a> {
     w: &'a mut W,
 }
@@ -1344,7 +1344,7 @@ impl<'a> HYST_MODE_W<'a> {
         self.w
     }
 }
-#[doc = "Field `DFP_EN` reader - "]
+#[doc = "Field `DFP_EN` reader - Controls the reference voltage generator for DFP vs. UFP/Cable operation 0: UFP/Cable - voltage reference is 2.4V 1: DFP - voltage reference is 2.6V\" This register is a user configuration that must be set."]
 pub struct DFP_EN_R(crate::FieldReader<bool, bool>);
 impl DFP_EN_R {
     #[inline(always)]
@@ -1359,7 +1359,7 @@ impl core::ops::Deref for DFP_EN_R {
         &self.0
     }
 }
-#[doc = "Field `DFP_EN` writer - "]
+#[doc = "Field `DFP_EN` writer - Controls the reference voltage generator for DFP vs. UFP/Cable operation 0: UFP/Cable - voltage reference is 2.4V 1: DFP - voltage reference is 2.6V\" This register is a user configuration that must be set."]
 pub struct DFP_EN_W<'a> {
     w: &'a mut W,
 }
@@ -1381,7 +1381,7 @@ impl<'a> DFP_EN_W<'a> {
         self.w
     }
 }
-#[doc = "Field `PWR_DISABLE` reader - "]
+#[doc = "Field `PWR_DISABLE` reader - Disables all active circuitry and DC paths DS_ATTACH_DET_EN is still active"]
 pub struct PWR_DISABLE_R(crate::FieldReader<bool, bool>);
 impl PWR_DISABLE_R {
     #[inline(always)]
@@ -1396,7 +1396,7 @@ impl core::ops::Deref for PWR_DISABLE_R {
         &self.0
     }
 }
-#[doc = "Field `PWR_DISABLE` writer - "]
+#[doc = "Field `PWR_DISABLE` writer - Disables all active circuitry and DC paths DS_ATTACH_DET_EN is still active"]
 pub struct PWR_DISABLE_W<'a> {
     w: &'a mut W,
 }
@@ -1419,234 +1419,234 @@ impl<'a> PWR_DISABLE_W<'a> {
     }
 }
 impl R {
-    #[doc = "Bit 0"]
+    #[doc = "Bit 0 - FW can only use this bit when the DEBUG_CC_0.TX_CC_DRIVE_SRC is set to \"1\". 0: Disables the Transceiver to transmit data 1: Enables the Transceiver to transmit data"]
     #[inline(always)]
     pub fn tx_en(&self) -> TX_EN_R {
         TX_EN_R::new((self.bits & 0x01) != 0)
     }
-    #[doc = "Bit 1"]
+    #[doc = "Bit 1 - Enables the Transceiver to receive data, Active High This bit should be set after CC Line active interrupt (wakeup) in DeepSleep. FW should set this bit at init and not change after across deep sleep and wake."]
     #[inline(always)]
     pub fn rx_en(&self) -> RX_EN_R {
         RX_EN_R::new(((self.bits >> 1) & 0x01) != 0)
     }
-    #[doc = "Bit 2"]
+    #[doc = "Bit 2 - Firmware detects cable attach and specifies whether CC1 or CC2 is connected to the CC-line of the cable. 0 - CC1 1 - CC2"]
     #[inline(always)]
     pub fn cc_1v2(&self) -> CC_1V2_R {
         CC_1V2_R::new(((self.bits >> 2) & 0x01) != 0)
     }
-    #[doc = "Bit 3"]
+    #[doc = "Bit 3 - CC line voltage Comparator enable"]
     #[inline(always)]
     pub fn cmp_en(&self) -> CMP_EN_R {
         CMP_EN_R::new(((self.bits >> 3) & 0x01) != 0)
     }
-    #[doc = "Bit 4"]
+    #[doc = "Bit 4 - Connects cmp_dn comparator to CC1/CC2 0 - CC1 1 - CC2"]
     #[inline(always)]
     pub fn cmp_dn_cc1v2(&self) -> CMP_DN_CC1V2_R {
         CMP_DN_CC1V2_R::new(((self.bits >> 4) & 0x01) != 0)
     }
-    #[doc = "Bits 5:7"]
+    #[doc = "Bits 5:7 - Selects the voltage threshold for cmp_dn comparator"]
     #[inline(always)]
     pub fn cmp_dn_vsel(&self) -> CMP_DN_VSEL_R {
         CMP_DN_VSEL_R::new(((self.bits >> 5) & 0x07) as u8)
     }
-    #[doc = "Bit 8"]
+    #[doc = "Bit 8 - Connects cmp_up comparator to CC1/CC2 0 - CC1 1 - CC2"]
     #[inline(always)]
     pub fn cmp_up_cc1v2(&self) -> CMP_UP_CC1V2_R {
         CMP_UP_CC1V2_R::new(((self.bits >> 8) & 0x01) != 0)
     }
-    #[doc = "Bits 9:11"]
+    #[doc = "Bits 9:11 - Selects the voltage threshold for cmp_up comparator"]
     #[inline(always)]
     pub fn cmp_up_vsel(&self) -> CMP_UP_VSEL_R {
         CMP_UP_VSEL_R::new(((self.bits >> 9) & 0x07) as u8)
     }
-    #[doc = "Bits 12:14"]
+    #[doc = "Bits 12:14 - Selects the cmp_up comparator offset:"]
     #[inline(always)]
     pub fn cmp_up_offset(&self) -> CMP_UP_OFFSET_R {
         CMP_UP_OFFSET_R::new(((self.bits >> 12) & 0x07) as u8)
     }
-    #[doc = "Bit 15"]
+    #[doc = "Bit 15 - Enables the offset generator for the cmp_up comparator 0 - no offset 1 - offset enabled, see CMP_UP_OFFSET register for value"]
     #[inline(always)]
     pub fn cmp_up_offset_en(&self) -> CMP_UP_OFFSET_EN_R {
         CMP_UP_OFFSET_EN_R::new(((self.bits >> 15) & 0x01) != 0)
     }
-    #[doc = "Bit 16"]
+    #[doc = "Bit 16 - Connects cmp_la comparator to CC1/CC2 0 - CC1 1 - CC2"]
     #[inline(always)]
     pub fn cmp_la_cc1v2(&self) -> CMP_LA_CC1V2_R {
         CMP_LA_CC1V2_R::new(((self.bits >> 16) & 0x01) != 0)
     }
-    #[doc = "Bits 17:19"]
+    #[doc = "Bits 17:19 - Selects the voltage threshold for cmp_la comparator"]
     #[inline(always)]
     pub fn cmp_la_vsel(&self) -> CMP_LA_VSEL_R {
         CMP_LA_VSEL_R::new(((self.bits >> 17) & 0x07) as u8)
     }
-    #[doc = "Bit 20"]
+    #[doc = "Bit 20 - Disable Dead Battery Rd termination on CC1"]
     #[inline(always)]
     pub fn rd_cc1_db_dis(&self) -> RD_CC1_DB_DIS_R {
         RD_CC1_DB_DIS_R::new(((self.bits >> 20) & 0x01) != 0)
     }
-    #[doc = "Bit 21"]
+    #[doc = "Bit 21 - Disable Dead Battery Rd termination on CC2"]
     #[inline(always)]
     pub fn rd_cc2_db_dis(&self) -> RD_CC2_DB_DIS_R {
         RD_CC2_DB_DIS_R::new(((self.bits >> 21) & 0x01) != 0)
     }
-    #[doc = "Bit 22"]
+    #[doc = "Bit 22 - 0: Disable CC1 Trimmed Rd Termination 1: Enable CC1 Trimmed Rd Termination"]
     #[inline(always)]
     pub fn rd_cc1_en(&self) -> RD_CC1_EN_R {
         RD_CC1_EN_R::new(((self.bits >> 22) & 0x01) != 0)
     }
-    #[doc = "Bit 23"]
+    #[doc = "Bit 23 - 0: Disable CC2 Trimmed Rd Termination 1: Enable CC2 Trimmed Rd Termination"]
     #[inline(always)]
     pub fn rd_cc2_en(&self) -> RD_CC2_EN_R {
         RD_CC2_EN_R::new(((self.bits >> 23) & 0x01) != 0)
     }
-    #[doc = "Bit 24"]
+    #[doc = "Bit 24 - 0: Disable CC1 Pull-up Termination (Rp) 1: Enable CC1 Pull-up Termination"]
     #[inline(always)]
     pub fn rp_cc1_en(&self) -> RP_CC1_EN_R {
         RP_CC1_EN_R::new(((self.bits >> 24) & 0x01) != 0)
     }
-    #[doc = "Bit 25"]
+    #[doc = "Bit 25 - 0: Disable CC2 Pull-up Termination (Rp) 1: Enable CC2 Pull-up Termination"]
     #[inline(always)]
     pub fn rp_cc2_en(&self) -> RP_CC2_EN_R {
         RP_CC2_EN_R::new(((self.bits >> 25) & 0x01) != 0)
     }
-    #[doc = "Bits 26:27"]
+    #[doc = "Bits 26:27 - Selects the Pull-up Termination current value 0, 2 - 80uA (Default current broadcast) 1 - 180uA (1.5A current broadcast) 3 - 330uA (3.0A current broadcast)"]
     #[inline(always)]
     pub fn rp_mode(&self) -> RP_MODE_R {
         RP_MODE_R::new(((self.bits >> 26) & 0x03) as u8)
     }
-    #[doc = "Bit 28"]
+    #[doc = "Bit 28 - Enables the hysteresis mode for the line activity comparator"]
     #[inline(always)]
     pub fn en_hyst(&self) -> EN_HYST_R {
         EN_HYST_R::new(((self.bits >> 28) & 0x01) != 0)
     }
-    #[doc = "Bit 29"]
+    #[doc = "Bit 29 - Selects the amount of line activity comparator hysteresis 0: 50mV hystersis 1: 100mV hysteresis\""]
     #[inline(always)]
     pub fn hyst_mode(&self) -> HYST_MODE_R {
         HYST_MODE_R::new(((self.bits >> 29) & 0x01) != 0)
     }
-    #[doc = "Bit 30"]
+    #[doc = "Bit 30 - Controls the reference voltage generator for DFP vs. UFP/Cable operation 0: UFP/Cable - voltage reference is 2.4V 1: DFP - voltage reference is 2.6V\" This register is a user configuration that must be set."]
     #[inline(always)]
     pub fn dfp_en(&self) -> DFP_EN_R {
         DFP_EN_R::new(((self.bits >> 30) & 0x01) != 0)
     }
-    #[doc = "Bit 31"]
+    #[doc = "Bit 31 - Disables all active circuitry and DC paths DS_ATTACH_DET_EN is still active"]
     #[inline(always)]
     pub fn pwr_disable(&self) -> PWR_DISABLE_R {
         PWR_DISABLE_R::new(((self.bits >> 31) & 0x01) != 0)
     }
 }
 impl W {
-    #[doc = "Bit 0"]
+    #[doc = "Bit 0 - FW can only use this bit when the DEBUG_CC_0.TX_CC_DRIVE_SRC is set to \"1\". 0: Disables the Transceiver to transmit data 1: Enables the Transceiver to transmit data"]
     #[inline(always)]
     pub fn tx_en(&mut self) -> TX_EN_W {
         TX_EN_W { w: self }
     }
-    #[doc = "Bit 1"]
+    #[doc = "Bit 1 - Enables the Transceiver to receive data, Active High This bit should be set after CC Line active interrupt (wakeup) in DeepSleep. FW should set this bit at init and not change after across deep sleep and wake."]
     #[inline(always)]
     pub fn rx_en(&mut self) -> RX_EN_W {
         RX_EN_W { w: self }
     }
-    #[doc = "Bit 2"]
+    #[doc = "Bit 2 - Firmware detects cable attach and specifies whether CC1 or CC2 is connected to the CC-line of the cable. 0 - CC1 1 - CC2"]
     #[inline(always)]
     pub fn cc_1v2(&mut self) -> CC_1V2_W {
         CC_1V2_W { w: self }
     }
-    #[doc = "Bit 3"]
+    #[doc = "Bit 3 - CC line voltage Comparator enable"]
     #[inline(always)]
     pub fn cmp_en(&mut self) -> CMP_EN_W {
         CMP_EN_W { w: self }
     }
-    #[doc = "Bit 4"]
+    #[doc = "Bit 4 - Connects cmp_dn comparator to CC1/CC2 0 - CC1 1 - CC2"]
     #[inline(always)]
     pub fn cmp_dn_cc1v2(&mut self) -> CMP_DN_CC1V2_W {
         CMP_DN_CC1V2_W { w: self }
     }
-    #[doc = "Bits 5:7"]
+    #[doc = "Bits 5:7 - Selects the voltage threshold for cmp_dn comparator"]
     #[inline(always)]
     pub fn cmp_dn_vsel(&mut self) -> CMP_DN_VSEL_W {
         CMP_DN_VSEL_W { w: self }
     }
-    #[doc = "Bit 8"]
+    #[doc = "Bit 8 - Connects cmp_up comparator to CC1/CC2 0 - CC1 1 - CC2"]
     #[inline(always)]
     pub fn cmp_up_cc1v2(&mut self) -> CMP_UP_CC1V2_W {
         CMP_UP_CC1V2_W { w: self }
     }
-    #[doc = "Bits 9:11"]
+    #[doc = "Bits 9:11 - Selects the voltage threshold for cmp_up comparator"]
     #[inline(always)]
     pub fn cmp_up_vsel(&mut self) -> CMP_UP_VSEL_W {
         CMP_UP_VSEL_W { w: self }
     }
-    #[doc = "Bits 12:14"]
+    #[doc = "Bits 12:14 - Selects the cmp_up comparator offset:"]
     #[inline(always)]
     pub fn cmp_up_offset(&mut self) -> CMP_UP_OFFSET_W {
         CMP_UP_OFFSET_W { w: self }
     }
-    #[doc = "Bit 15"]
+    #[doc = "Bit 15 - Enables the offset generator for the cmp_up comparator 0 - no offset 1 - offset enabled, see CMP_UP_OFFSET register for value"]
     #[inline(always)]
     pub fn cmp_up_offset_en(&mut self) -> CMP_UP_OFFSET_EN_W {
         CMP_UP_OFFSET_EN_W { w: self }
     }
-    #[doc = "Bit 16"]
+    #[doc = "Bit 16 - Connects cmp_la comparator to CC1/CC2 0 - CC1 1 - CC2"]
     #[inline(always)]
     pub fn cmp_la_cc1v2(&mut self) -> CMP_LA_CC1V2_W {
         CMP_LA_CC1V2_W { w: self }
     }
-    #[doc = "Bits 17:19"]
+    #[doc = "Bits 17:19 - Selects the voltage threshold for cmp_la comparator"]
     #[inline(always)]
     pub fn cmp_la_vsel(&mut self) -> CMP_LA_VSEL_W {
         CMP_LA_VSEL_W { w: self }
     }
-    #[doc = "Bit 20"]
+    #[doc = "Bit 20 - Disable Dead Battery Rd termination on CC1"]
     #[inline(always)]
     pub fn rd_cc1_db_dis(&mut self) -> RD_CC1_DB_DIS_W {
         RD_CC1_DB_DIS_W { w: self }
     }
-    #[doc = "Bit 21"]
+    #[doc = "Bit 21 - Disable Dead Battery Rd termination on CC2"]
     #[inline(always)]
     pub fn rd_cc2_db_dis(&mut self) -> RD_CC2_DB_DIS_W {
         RD_CC2_DB_DIS_W { w: self }
     }
-    #[doc = "Bit 22"]
+    #[doc = "Bit 22 - 0: Disable CC1 Trimmed Rd Termination 1: Enable CC1 Trimmed Rd Termination"]
     #[inline(always)]
     pub fn rd_cc1_en(&mut self) -> RD_CC1_EN_W {
         RD_CC1_EN_W { w: self }
     }
-    #[doc = "Bit 23"]
+    #[doc = "Bit 23 - 0: Disable CC2 Trimmed Rd Termination 1: Enable CC2 Trimmed Rd Termination"]
     #[inline(always)]
     pub fn rd_cc2_en(&mut self) -> RD_CC2_EN_W {
         RD_CC2_EN_W { w: self }
     }
-    #[doc = "Bit 24"]
+    #[doc = "Bit 24 - 0: Disable CC1 Pull-up Termination (Rp) 1: Enable CC1 Pull-up Termination"]
     #[inline(always)]
     pub fn rp_cc1_en(&mut self) -> RP_CC1_EN_W {
         RP_CC1_EN_W { w: self }
     }
-    #[doc = "Bit 25"]
+    #[doc = "Bit 25 - 0: Disable CC2 Pull-up Termination (Rp) 1: Enable CC2 Pull-up Termination"]
     #[inline(always)]
     pub fn rp_cc2_en(&mut self) -> RP_CC2_EN_W {
         RP_CC2_EN_W { w: self }
     }
-    #[doc = "Bits 26:27"]
+    #[doc = "Bits 26:27 - Selects the Pull-up Termination current value 0, 2 - 80uA (Default current broadcast) 1 - 180uA (1.5A current broadcast) 3 - 330uA (3.0A current broadcast)"]
     #[inline(always)]
     pub fn rp_mode(&mut self) -> RP_MODE_W {
         RP_MODE_W { w: self }
     }
-    #[doc = "Bit 28"]
+    #[doc = "Bit 28 - Enables the hysteresis mode for the line activity comparator"]
     #[inline(always)]
     pub fn en_hyst(&mut self) -> EN_HYST_W {
         EN_HYST_W { w: self }
     }
-    #[doc = "Bit 29"]
+    #[doc = "Bit 29 - Selects the amount of line activity comparator hysteresis 0: 50mV hystersis 1: 100mV hysteresis\""]
     #[inline(always)]
     pub fn hyst_mode(&mut self) -> HYST_MODE_W {
         HYST_MODE_W { w: self }
     }
-    #[doc = "Bit 30"]
+    #[doc = "Bit 30 - Controls the reference voltage generator for DFP vs. UFP/Cable operation 0: UFP/Cable - voltage reference is 2.4V 1: DFP - voltage reference is 2.6V\" This register is a user configuration that must be set."]
     #[inline(always)]
     pub fn dfp_en(&mut self) -> DFP_EN_W {
         DFP_EN_W { w: self }
     }
-    #[doc = "Bit 31"]
+    #[doc = "Bit 31 - Disables all active circuitry and DC paths DS_ATTACH_DET_EN is still active"]
     #[inline(always)]
     pub fn pwr_disable(&mut self) -> PWR_DISABLE_W {
         PWR_DISABLE_W { w: self }
@@ -1658,7 +1658,7 @@ impl W {
         self
     }
 }
-#[doc = "\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [cc_ctrl_0](index.html) module"]
+#[doc = "S8USBPD C-connector Control Register 0\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [cc_ctrl_0](index.html) module"]
 pub struct CC_CTRL_0_SPEC;
 impl crate::RegisterSpec for CC_CTRL_0_SPEC {
     type Ux = u32;

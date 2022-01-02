@@ -34,7 +34,7 @@ impl From<crate::W<EZ_DATA3_SPEC>> for W {
         W(writer)
     }
 }
-#[doc = "Field `EZ_DATA` reader - "]
+#[doc = "Field `EZ_DATA` reader - Data in buffer memory location. In case of a blocked discarded access, a read access returns 0xffff:ffff and a write access is dropped. Note that the 0xffff:ffff value is unique (not a legal EZ_DATA byte value) and can be detected by SW. Note that a discarded write access can be detected by reading back the written value."]
 pub struct EZ_DATA_R(crate::FieldReader<u8, u8>);
 impl EZ_DATA_R {
     #[inline(always)]
@@ -49,7 +49,7 @@ impl core::ops::Deref for EZ_DATA_R {
         &self.0
     }
 }
-#[doc = "Field `EZ_DATA` writer - "]
+#[doc = "Field `EZ_DATA` writer - Data in buffer memory location. In case of a blocked discarded access, a read access returns 0xffff:ffff and a write access is dropped. Note that the 0xffff:ffff value is unique (not a legal EZ_DATA byte value) and can be detected by SW. Note that a discarded write access can be detected by reading back the written value."]
 pub struct EZ_DATA_W<'a> {
     w: &'a mut W,
 }
@@ -62,14 +62,14 @@ impl<'a> EZ_DATA_W<'a> {
     }
 }
 impl R {
-    #[doc = "Bits 0:7"]
+    #[doc = "Bits 0:7 - Data in buffer memory location. In case of a blocked discarded access, a read access returns 0xffff:ffff and a write access is dropped. Note that the 0xffff:ffff value is unique (not a legal EZ_DATA byte value) and can be detected by SW. Note that a discarded write access can be detected by reading back the written value."]
     #[inline(always)]
     pub fn ez_data(&self) -> EZ_DATA_R {
         EZ_DATA_R::new((self.bits & 0xff) as u8)
     }
 }
 impl W {
-    #[doc = "Bits 0:7"]
+    #[doc = "Bits 0:7 - Data in buffer memory location. In case of a blocked discarded access, a read access returns 0xffff:ffff and a write access is dropped. Note that the 0xffff:ffff value is unique (not a legal EZ_DATA byte value) and can be detected by SW. Note that a discarded write access can be detected by reading back the written value."]
     #[inline(always)]
     pub fn ez_data(&mut self) -> EZ_DATA_W {
         EZ_DATA_W { w: self }
@@ -81,7 +81,7 @@ impl W {
         self
     }
 }
-#[doc = "\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [ez_data3](index.html) module"]
+#[doc = "Memory buffer registers. When the IP is disabled (CTRL.ENABLED is '0'), a read from these registers return 0xffff:ffff. It is under MMIO register control whether accesses to this register should introduce bus wait states or be discarded when the externally clocked logic is accessing the memory structure. These registers should only be used in EZ and CMD_RESP modes (and not in FIFO mode).\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [ez_data3](index.html) module"]
 pub struct EZ_DATA3_SPEC;
 impl crate::RegisterSpec for EZ_DATA3_SPEC {
     type Ux = u32;

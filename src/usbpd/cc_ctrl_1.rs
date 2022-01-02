@@ -34,7 +34,7 @@ impl From<crate::W<CC_CTRL_1_SPEC>> for W {
         W(writer)
     }
 }
-#[doc = "Field `CC_ADFT_EN` reader - "]
+#[doc = "Field `CC_ADFT_EN` reader - Enables ADFT Mode"]
 pub struct CC_ADFT_EN_R(crate::FieldReader<bool, bool>);
 impl CC_ADFT_EN_R {
     #[inline(always)]
@@ -49,7 +49,7 @@ impl core::ops::Deref for CC_ADFT_EN_R {
         &self.0
     }
 }
-#[doc = "Field `CC_ADFT_EN` writer - "]
+#[doc = "Field `CC_ADFT_EN` writer - Enables ADFT Mode"]
 pub struct CC_ADFT_EN_W<'a> {
     w: &'a mut W,
 }
@@ -71,7 +71,7 @@ impl<'a> CC_ADFT_EN_W<'a> {
         self.w
     }
 }
-#[doc = "Field `CC_ADFT_CTRL` reader - "]
+#[doc = "Field `CC_ADFT_CTRL` reader - Selects ADFT connection See s8usbpd BROS for decoding details"]
 pub struct CC_ADFT_CTRL_R(crate::FieldReader<u8, u8>);
 impl CC_ADFT_CTRL_R {
     #[inline(always)]
@@ -86,7 +86,7 @@ impl core::ops::Deref for CC_ADFT_CTRL_R {
         &self.0
     }
 }
-#[doc = "Field `CC_ADFT_CTRL` writer - "]
+#[doc = "Field `CC_ADFT_CTRL` writer - Selects ADFT connection See s8usbpd BROS for decoding details"]
 pub struct CC_ADFT_CTRL_W<'a> {
     w: &'a mut W,
 }
@@ -98,7 +98,7 @@ impl<'a> CC_ADFT_CTRL_W<'a> {
         self.w
     }
 }
-#[doc = "Field `RX_OFFSET_EN` reader - "]
+#[doc = "Field `RX_OFFSET_EN` reader - Enables the offset generator for the RX comparator 0 - no offset 1 - offset enabled, see RX_OFFSET register for value"]
 pub struct RX_OFFSET_EN_R(crate::FieldReader<bool, bool>);
 impl RX_OFFSET_EN_R {
     #[inline(always)]
@@ -113,7 +113,7 @@ impl core::ops::Deref for RX_OFFSET_EN_R {
         &self.0
     }
 }
-#[doc = "Field `RX_OFFSET_EN` writer - "]
+#[doc = "Field `RX_OFFSET_EN` writer - Enables the offset generator for the RX comparator 0 - no offset 1 - offset enabled, see RX_OFFSET register for value"]
 pub struct RX_OFFSET_EN_W<'a> {
     w: &'a mut W,
 }
@@ -135,7 +135,7 @@ impl<'a> RX_OFFSET_EN_W<'a> {
         self.w
     }
 }
-#[doc = "\n\nValue on reset: 0"]
+#[doc = "Selects the RX comparator offset:\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u8)]
 pub enum RX_OFFSET_A {
@@ -162,7 +162,7 @@ impl From<RX_OFFSET_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `RX_OFFSET` reader - "]
+#[doc = "Field `RX_OFFSET` reader - Selects the RX comparator offset:"]
 pub struct RX_OFFSET_R(crate::FieldReader<u8, RX_OFFSET_A>);
 impl RX_OFFSET_R {
     #[inline(always)]
@@ -232,7 +232,7 @@ impl core::ops::Deref for RX_OFFSET_R {
         &self.0
     }
 }
-#[doc = "Field `RX_OFFSET` writer - "]
+#[doc = "Field `RX_OFFSET` writer - Selects the RX comparator offset:"]
 pub struct RX_OFFSET_W<'a> {
     w: &'a mut W,
 }
@@ -289,7 +289,7 @@ impl<'a> RX_OFFSET_W<'a> {
         self.w
     }
 }
-#[doc = "Field `DS_ATTACH_DET_EN` reader - "]
+#[doc = "Field `DS_ATTACH_DET_EN` reader - Enables the deepsleep attach detect pull-up resistor Set HI for a DFP waiting for attach"]
 pub struct DS_ATTACH_DET_EN_R(crate::FieldReader<bool, bool>);
 impl DS_ATTACH_DET_EN_R {
     #[inline(always)]
@@ -304,7 +304,7 @@ impl core::ops::Deref for DS_ATTACH_DET_EN_R {
         &self.0
     }
 }
-#[doc = "Field `DS_ATTACH_DET_EN` writer - "]
+#[doc = "Field `DS_ATTACH_DET_EN` writer - Enables the deepsleep attach detect pull-up resistor Set HI for a DFP waiting for attach"]
 pub struct DS_ATTACH_DET_EN_W<'a> {
     w: &'a mut W,
 }
@@ -326,7 +326,7 @@ impl<'a> DS_ATTACH_DET_EN_W<'a> {
         self.w
     }
 }
-#[doc = "\n\nValue on reset: 2"]
+#[doc = "Transmit voltage select\n\nValue on reset: 2"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u8)]
 pub enum VTX_SEL_A {
@@ -353,7 +353,7 @@ impl From<VTX_SEL_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `VTX_SEL` reader - "]
+#[doc = "Field `VTX_SEL` reader - Transmit voltage select"]
 pub struct VTX_SEL_R(crate::FieldReader<u8, VTX_SEL_A>);
 impl VTX_SEL_R {
     #[inline(always)]
@@ -423,7 +423,7 @@ impl core::ops::Deref for VTX_SEL_R {
         &self.0
     }
 }
-#[doc = "Field `VTX_SEL` writer - "]
+#[doc = "Field `VTX_SEL` writer - Transmit voltage select"]
 pub struct VTX_SEL_W<'a> {
     w: &'a mut W,
 }
@@ -480,7 +480,7 @@ impl<'a> VTX_SEL_W<'a> {
         self.w
     }
 }
-#[doc = "Field `CC_ISO_N` reader - "]
+#[doc = "Field `CC_ISO_N` reader - 0: All outputs are isolated to a known value 1: Normal operation"]
 pub struct CC_ISO_N_R(crate::FieldReader<bool, bool>);
 impl CC_ISO_N_R {
     #[inline(always)]
@@ -495,7 +495,7 @@ impl core::ops::Deref for CC_ISO_N_R {
         &self.0
     }
 }
-#[doc = "Field `CC_ISO_N` writer - "]
+#[doc = "Field `CC_ISO_N` writer - 0: All outputs are isolated to a known value 1: Normal operation"]
 pub struct CC_ISO_N_W<'a> {
     w: &'a mut W,
 }
@@ -518,74 +518,74 @@ impl<'a> CC_ISO_N_W<'a> {
     }
 }
 impl R {
-    #[doc = "Bit 0"]
+    #[doc = "Bit 0 - Enables ADFT Mode"]
     #[inline(always)]
     pub fn cc_adft_en(&self) -> CC_ADFT_EN_R {
         CC_ADFT_EN_R::new((self.bits & 0x01) != 0)
     }
-    #[doc = "Bits 1:4"]
+    #[doc = "Bits 1:4 - Selects ADFT connection See s8usbpd BROS for decoding details"]
     #[inline(always)]
     pub fn cc_adft_ctrl(&self) -> CC_ADFT_CTRL_R {
         CC_ADFT_CTRL_R::new(((self.bits >> 1) & 0x0f) as u8)
     }
-    #[doc = "Bit 6"]
+    #[doc = "Bit 6 - Enables the offset generator for the RX comparator 0 - no offset 1 - offset enabled, see RX_OFFSET register for value"]
     #[inline(always)]
     pub fn rx_offset_en(&self) -> RX_OFFSET_EN_R {
         RX_OFFSET_EN_R::new(((self.bits >> 6) & 0x01) != 0)
     }
-    #[doc = "Bits 7:9"]
+    #[doc = "Bits 7:9 - Selects the RX comparator offset:"]
     #[inline(always)]
     pub fn rx_offset(&self) -> RX_OFFSET_R {
         RX_OFFSET_R::new(((self.bits >> 7) & 0x07) as u8)
     }
-    #[doc = "Bit 10"]
+    #[doc = "Bit 10 - Enables the deepsleep attach detect pull-up resistor Set HI for a DFP waiting for attach"]
     #[inline(always)]
     pub fn ds_attach_det_en(&self) -> DS_ATTACH_DET_EN_R {
         DS_ATTACH_DET_EN_R::new(((self.bits >> 10) & 0x01) != 0)
     }
-    #[doc = "Bits 11:13"]
+    #[doc = "Bits 11:13 - Transmit voltage select"]
     #[inline(always)]
     pub fn vtx_sel(&self) -> VTX_SEL_R {
         VTX_SEL_R::new(((self.bits >> 11) & 0x07) as u8)
     }
-    #[doc = "Bit 14"]
+    #[doc = "Bit 14 - 0: All outputs are isolated to a known value 1: Normal operation"]
     #[inline(always)]
     pub fn cc_iso_n(&self) -> CC_ISO_N_R {
         CC_ISO_N_R::new(((self.bits >> 14) & 0x01) != 0)
     }
 }
 impl W {
-    #[doc = "Bit 0"]
+    #[doc = "Bit 0 - Enables ADFT Mode"]
     #[inline(always)]
     pub fn cc_adft_en(&mut self) -> CC_ADFT_EN_W {
         CC_ADFT_EN_W { w: self }
     }
-    #[doc = "Bits 1:4"]
+    #[doc = "Bits 1:4 - Selects ADFT connection See s8usbpd BROS for decoding details"]
     #[inline(always)]
     pub fn cc_adft_ctrl(&mut self) -> CC_ADFT_CTRL_W {
         CC_ADFT_CTRL_W { w: self }
     }
-    #[doc = "Bit 6"]
+    #[doc = "Bit 6 - Enables the offset generator for the RX comparator 0 - no offset 1 - offset enabled, see RX_OFFSET register for value"]
     #[inline(always)]
     pub fn rx_offset_en(&mut self) -> RX_OFFSET_EN_W {
         RX_OFFSET_EN_W { w: self }
     }
-    #[doc = "Bits 7:9"]
+    #[doc = "Bits 7:9 - Selects the RX comparator offset:"]
     #[inline(always)]
     pub fn rx_offset(&mut self) -> RX_OFFSET_W {
         RX_OFFSET_W { w: self }
     }
-    #[doc = "Bit 10"]
+    #[doc = "Bit 10 - Enables the deepsleep attach detect pull-up resistor Set HI for a DFP waiting for attach"]
     #[inline(always)]
     pub fn ds_attach_det_en(&mut self) -> DS_ATTACH_DET_EN_W {
         DS_ATTACH_DET_EN_W { w: self }
     }
-    #[doc = "Bits 11:13"]
+    #[doc = "Bits 11:13 - Transmit voltage select"]
     #[inline(always)]
     pub fn vtx_sel(&mut self) -> VTX_SEL_W {
         VTX_SEL_W { w: self }
     }
-    #[doc = "Bit 14"]
+    #[doc = "Bit 14 - 0: All outputs are isolated to a known value 1: Normal operation"]
     #[inline(always)]
     pub fn cc_iso_n(&mut self) -> CC_ISO_N_W {
         CC_ISO_N_W { w: self }
@@ -597,7 +597,7 @@ impl W {
         self
     }
 }
-#[doc = "\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [cc_ctrl_1](index.html) module"]
+#[doc = "S8USBPD C-connector Control Register 1\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [cc_ctrl_1](index.html) module"]
 pub struct CC_CTRL_1_SPEC;
 impl crate::RegisterSpec for CC_CTRL_1_SPEC {
     type Ux = u32;

@@ -34,7 +34,7 @@ impl From<crate::W<CLK_IMO_TRIM1_SPEC>> for W {
         W(writer)
     }
 }
-#[doc = "Field `OFFSET` reader - "]
+#[doc = "Field `OFFSET` reader - Frequency trim bits. These bits are determined at manufacturing time for each FREQ setting (IMO_TRIM2) and stored in SFLASH. This field is hardware updated during USB osclock mode. This field is mapped to the most significant bits of the IMO trim imo_clk_trim\\[10:3\\]. The step size of 1 LSB on this field is approximately 120 kHz."]
 pub struct OFFSET_R(crate::FieldReader<u8, u8>);
 impl OFFSET_R {
     #[inline(always)]
@@ -49,7 +49,7 @@ impl core::ops::Deref for OFFSET_R {
         &self.0
     }
 }
-#[doc = "Field `OFFSET` writer - "]
+#[doc = "Field `OFFSET` writer - Frequency trim bits. These bits are determined at manufacturing time for each FREQ setting (IMO_TRIM2) and stored in SFLASH. This field is hardware updated during USB osclock mode. This field is mapped to the most significant bits of the IMO trim imo_clk_trim\\[10:3\\]. The step size of 1 LSB on this field is approximately 120 kHz."]
 pub struct OFFSET_W<'a> {
     w: &'a mut W,
 }
@@ -62,14 +62,14 @@ impl<'a> OFFSET_W<'a> {
     }
 }
 impl R {
-    #[doc = "Bits 0:7"]
+    #[doc = "Bits 0:7 - Frequency trim bits. These bits are determined at manufacturing time for each FREQ setting (IMO_TRIM2) and stored in SFLASH. This field is hardware updated during USB osclock mode. This field is mapped to the most significant bits of the IMO trim imo_clk_trim\\[10:3\\]. The step size of 1 LSB on this field is approximately 120 kHz."]
     #[inline(always)]
     pub fn offset(&self) -> OFFSET_R {
         OFFSET_R::new((self.bits & 0xff) as u8)
     }
 }
 impl W {
-    #[doc = "Bits 0:7"]
+    #[doc = "Bits 0:7 - Frequency trim bits. These bits are determined at manufacturing time for each FREQ setting (IMO_TRIM2) and stored in SFLASH. This field is hardware updated during USB osclock mode. This field is mapped to the most significant bits of the IMO trim imo_clk_trim\\[10:3\\]. The step size of 1 LSB on this field is approximately 120 kHz."]
     #[inline(always)]
     pub fn offset(&mut self) -> OFFSET_W {
         OFFSET_W { w: self }
@@ -81,7 +81,7 @@ impl W {
         self
     }
 }
-#[doc = "\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [clk_imo_trim1](index.html) module"]
+#[doc = "IMO Trim Register Trims IMO frequency to within datasheet accuracy. Must be applied\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [clk_imo_trim1](index.html) module"]
 pub struct CLK_IMO_TRIM1_SPEC;
 impl crate::RegisterSpec for CLK_IMO_TRIM1_SPEC {
     type Ux = u32;

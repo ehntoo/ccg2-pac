@@ -13,7 +13,7 @@ impl From<crate::R<BIST_ADDR_SPEC>> for R {
         R(reader)
     }
 }
-#[doc = "Field `COL_ADDR` reader - "]
+#[doc = "Field `COL_ADDR` reader - Current column address."]
 pub struct COL_ADDR_R(crate::FieldReader<u16, u16>);
 impl COL_ADDR_R {
     #[inline(always)]
@@ -28,7 +28,7 @@ impl core::ops::Deref for COL_ADDR_R {
         &self.0
     }
 }
-#[doc = "Field `ROW_ADDR` reader - "]
+#[doc = "Field `ROW_ADDR` reader - Current row address."]
 pub struct ROW_ADDR_R(crate::FieldReader<u16, u16>);
 impl ROW_ADDR_R {
     #[inline(always)]
@@ -44,18 +44,18 @@ impl core::ops::Deref for ROW_ADDR_R {
     }
 }
 impl R {
-    #[doc = "Bits 0:11"]
+    #[doc = "Bits 0:11 - Current column address."]
     #[inline(always)]
     pub fn col_addr(&self) -> COL_ADDR_R {
         COL_ADDR_R::new((self.bits & 0x0fff) as u16)
     }
-    #[doc = "Bits 16:27"]
+    #[doc = "Bits 16:27 - Current row address."]
     #[inline(always)]
     pub fn row_addr(&self) -> ROW_ADDR_R {
         ROW_ADDR_R::new(((self.bits >> 16) & 0x0fff) as u16)
     }
 }
-#[doc = "\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [bist_addr](index.html) module"]
+#[doc = "BIST address register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [bist_addr](index.html) module"]
 pub struct BIST_ADDR_SPEC;
 impl crate::RegisterSpec for BIST_ADDR_SPEC {
     type Ux = u32;

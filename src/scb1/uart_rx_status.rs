@@ -13,7 +13,7 @@ impl From<crate::R<UART_RX_STATUS_SPEC>> for R {
         R(reader)
     }
 }
-#[doc = "Field `BR_COUNTER` reader - "]
+#[doc = "Field `BR_COUNTER` reader - Amount of peripheral clock periods that constitute the transmission of a 0x55 data frame (sent least signficant bit first) as determined by the receiver. BR_COUNTER / 8 is the amount of peripheral clock periods that constitute a bit period. This field has valid data when INTR_RX.BAUD_DETECT is set to '1'."]
 pub struct BR_COUNTER_R(crate::FieldReader<u16, u16>);
 impl BR_COUNTER_R {
     #[inline(always)]
@@ -29,13 +29,13 @@ impl core::ops::Deref for BR_COUNTER_R {
     }
 }
 impl R {
-    #[doc = "Bits 0:11"]
+    #[doc = "Bits 0:11 - Amount of peripheral clock periods that constitute the transmission of a 0x55 data frame (sent least signficant bit first) as determined by the receiver. BR_COUNTER / 8 is the amount of peripheral clock periods that constitute a bit period. This field has valid data when INTR_RX.BAUD_DETECT is set to '1'."]
     #[inline(always)]
     pub fn br_counter(&self) -> BR_COUNTER_R {
         BR_COUNTER_R::new((self.bits & 0x0fff) as u16)
     }
 }
-#[doc = "\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [uart_rx_status](index.html) module"]
+#[doc = "UART receiver status register.\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [uart_rx_status](index.html) module"]
 pub struct UART_RX_STATUS_SPEC;
 impl crate::RegisterSpec for UART_RX_STATUS_SPEC {
     type Ux = u32;

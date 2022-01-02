@@ -34,7 +34,7 @@ impl From<crate::W<BIST_STATUS_SPEC>> for W {
         W(writer)
     }
 }
-#[doc = "Field `SUB_STEP` reader - "]
+#[doc = "Field `SUB_STEP` reader - BIST substep (either R0, R1, W0, or W1)."]
 pub struct SUB_STEP_R(crate::FieldReader<u8, u8>);
 impl SUB_STEP_R {
     #[inline(always)]
@@ -49,7 +49,7 @@ impl core::ops::Deref for SUB_STEP_R {
         &self.0
     }
 }
-#[doc = "Field `STEP` reader - "]
+#[doc = "Field `STEP` reader - BIST step (step i uses BIST_STEPi_CTL)."]
 pub struct STEP_R(crate::FieldReader<u8, u8>);
 impl STEP_R {
     #[inline(always)]
@@ -64,7 +64,7 @@ impl core::ops::Deref for STEP_R {
         &self.0
     }
 }
-#[doc = "\n\nValue on reset: 0"]
+#[doc = "SRAM identifier.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u8)]
 pub enum SRAM_A {
@@ -107,7 +107,7 @@ impl From<SRAM_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `SRAM` reader - "]
+#[doc = "Field `SRAM` reader - SRAM identifier."]
 pub struct SRAM_R(crate::FieldReader<u8, SRAM_A>);
 impl SRAM_R {
     #[inline(always)]
@@ -225,7 +225,7 @@ impl core::ops::Deref for SRAM_R {
         &self.0
     }
 }
-#[doc = "Field `FAIL` reader - "]
+#[doc = "Field `FAIL` reader - 0': BIST passed. '1': BIST failed (SRAM match error or ROM MISR check error). BIST error information is found in SRAM, STEP, SUB_STEP fields and BIST_DATA_ACT, BIST_DATA_EXP and BIST_ADDR registers."]
 pub struct FAIL_R(crate::FieldReader<bool, bool>);
 impl FAIL_R {
     #[inline(always)]
@@ -240,7 +240,7 @@ impl core::ops::Deref for FAIL_R {
         &self.0
     }
 }
-#[doc = "Field `FAIL` writer - "]
+#[doc = "Field `FAIL` writer - 0': BIST passed. '1': BIST failed (SRAM match error or ROM MISR check error). BIST error information is found in SRAM, STEP, SUB_STEP fields and BIST_DATA_ACT, BIST_DATA_EXP and BIST_ADDR registers."]
 pub struct FAIL_W<'a> {
     w: &'a mut W,
 }
@@ -263,29 +263,29 @@ impl<'a> FAIL_W<'a> {
     }
 }
 impl R {
-    #[doc = "Bits 0:2"]
+    #[doc = "Bits 0:2 - BIST substep (either R0, R1, W0, or W1)."]
     #[inline(always)]
     pub fn sub_step(&self) -> SUB_STEP_R {
         SUB_STEP_R::new((self.bits & 0x07) as u8)
     }
-    #[doc = "Bits 8:10"]
+    #[doc = "Bits 8:10 - BIST step (step i uses BIST_STEPi_CTL)."]
     #[inline(always)]
     pub fn step(&self) -> STEP_R {
         STEP_R::new(((self.bits >> 8) & 0x07) as u8)
     }
-    #[doc = "Bits 16:19"]
+    #[doc = "Bits 16:19 - SRAM identifier."]
     #[inline(always)]
     pub fn sram(&self) -> SRAM_R {
         SRAM_R::new(((self.bits >> 16) & 0x0f) as u8)
     }
-    #[doc = "Bit 24"]
+    #[doc = "Bit 24 - 0': BIST passed. '1': BIST failed (SRAM match error or ROM MISR check error). BIST error information is found in SRAM, STEP, SUB_STEP fields and BIST_DATA_ACT, BIST_DATA_EXP and BIST_ADDR registers."]
     #[inline(always)]
     pub fn fail(&self) -> FAIL_R {
         FAIL_R::new(((self.bits >> 24) & 0x01) != 0)
     }
 }
 impl W {
-    #[doc = "Bit 24"]
+    #[doc = "Bit 24 - 0': BIST passed. '1': BIST failed (SRAM match error or ROM MISR check error). BIST error information is found in SRAM, STEP, SUB_STEP fields and BIST_DATA_ACT, BIST_DATA_EXP and BIST_ADDR registers."]
     #[inline(always)]
     pub fn fail(&mut self) -> FAIL_W {
         FAIL_W { w: self }
@@ -297,7 +297,7 @@ impl W {
         self
     }
 }
-#[doc = "\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [bist_status](index.html) module"]
+#[doc = "BIST status register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [bist_status](index.html) module"]
 pub struct BIST_STATUS_SPEC;
 impl crate::RegisterSpec for BIST_STATUS_SPEC {
     type Ux = u32;

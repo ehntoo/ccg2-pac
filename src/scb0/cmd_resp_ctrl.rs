@@ -34,7 +34,7 @@ impl From<crate::W<CMD_RESP_CTRL_SPEC>> for W {
         W(writer)
     }
 }
-#[doc = "Field `BASE_RD_ADDR` reader - "]
+#[doc = "Field `BASE_RD_ADDR` reader - I2C/SPI read base address for CMD_RESP mode. Address is used by a I2C CMD_RESP mode read transfer (CTRL.MODE is I2C) or a SPI CMD_RESP mode read transfer (CTRL.MODE is SPI): at the start of a read transfer BASE_RD_ADDR is copied to CMD_RESP_STATUS.CURR_RD_ADDR. This field should not be modified during ongoing bus transfers."]
 pub struct BASE_RD_ADDR_R(crate::FieldReader<u8, u8>);
 impl BASE_RD_ADDR_R {
     #[inline(always)]
@@ -49,7 +49,7 @@ impl core::ops::Deref for BASE_RD_ADDR_R {
         &self.0
     }
 }
-#[doc = "Field `BASE_RD_ADDR` writer - "]
+#[doc = "Field `BASE_RD_ADDR` writer - I2C/SPI read base address for CMD_RESP mode. Address is used by a I2C CMD_RESP mode read transfer (CTRL.MODE is I2C) or a SPI CMD_RESP mode read transfer (CTRL.MODE is SPI): at the start of a read transfer BASE_RD_ADDR is copied to CMD_RESP_STATUS.CURR_RD_ADDR. This field should not be modified during ongoing bus transfers."]
 pub struct BASE_RD_ADDR_W<'a> {
     w: &'a mut W,
 }
@@ -61,7 +61,7 @@ impl<'a> BASE_RD_ADDR_W<'a> {
         self.w
     }
 }
-#[doc = "Field `BASE_WR_ADDR` reader - "]
+#[doc = "Field `BASE_WR_ADDR` reader - I2C/SPI read base address for CMD_RESP mode. Address is used by a I2C CMD_RESP mode write transfer (CTRL.MODE is I2C) or a SPI CMD_RESP mode write transfer (CTRL.MODE is SPI): at the start of a write transfer BASE_WE_ADDR is copied to CMD_RESP_STATUS.CURR_WR_ADDR. This field should not be modified during ongoing bus transfers."]
 pub struct BASE_WR_ADDR_R(crate::FieldReader<u8, u8>);
 impl BASE_WR_ADDR_R {
     #[inline(always)]
@@ -76,7 +76,7 @@ impl core::ops::Deref for BASE_WR_ADDR_R {
         &self.0
     }
 }
-#[doc = "Field `BASE_WR_ADDR` writer - "]
+#[doc = "Field `BASE_WR_ADDR` writer - I2C/SPI read base address for CMD_RESP mode. Address is used by a I2C CMD_RESP mode write transfer (CTRL.MODE is I2C) or a SPI CMD_RESP mode write transfer (CTRL.MODE is SPI): at the start of a write transfer BASE_WE_ADDR is copied to CMD_RESP_STATUS.CURR_WR_ADDR. This field should not be modified during ongoing bus transfers."]
 pub struct BASE_WR_ADDR_W<'a> {
     w: &'a mut W,
 }
@@ -89,24 +89,24 @@ impl<'a> BASE_WR_ADDR_W<'a> {
     }
 }
 impl R {
-    #[doc = "Bits 0:4"]
+    #[doc = "Bits 0:4 - I2C/SPI read base address for CMD_RESP mode. Address is used by a I2C CMD_RESP mode read transfer (CTRL.MODE is I2C) or a SPI CMD_RESP mode read transfer (CTRL.MODE is SPI): at the start of a read transfer BASE_RD_ADDR is copied to CMD_RESP_STATUS.CURR_RD_ADDR. This field should not be modified during ongoing bus transfers."]
     #[inline(always)]
     pub fn base_rd_addr(&self) -> BASE_RD_ADDR_R {
         BASE_RD_ADDR_R::new((self.bits & 0x1f) as u8)
     }
-    #[doc = "Bits 16:20"]
+    #[doc = "Bits 16:20 - I2C/SPI read base address for CMD_RESP mode. Address is used by a I2C CMD_RESP mode write transfer (CTRL.MODE is I2C) or a SPI CMD_RESP mode write transfer (CTRL.MODE is SPI): at the start of a write transfer BASE_WE_ADDR is copied to CMD_RESP_STATUS.CURR_WR_ADDR. This field should not be modified during ongoing bus transfers."]
     #[inline(always)]
     pub fn base_wr_addr(&self) -> BASE_WR_ADDR_R {
         BASE_WR_ADDR_R::new(((self.bits >> 16) & 0x1f) as u8)
     }
 }
 impl W {
-    #[doc = "Bits 0:4"]
+    #[doc = "Bits 0:4 - I2C/SPI read base address for CMD_RESP mode. Address is used by a I2C CMD_RESP mode read transfer (CTRL.MODE is I2C) or a SPI CMD_RESP mode read transfer (CTRL.MODE is SPI): at the start of a read transfer BASE_RD_ADDR is copied to CMD_RESP_STATUS.CURR_RD_ADDR. This field should not be modified during ongoing bus transfers."]
     #[inline(always)]
     pub fn base_rd_addr(&mut self) -> BASE_RD_ADDR_W {
         BASE_RD_ADDR_W { w: self }
     }
-    #[doc = "Bits 16:20"]
+    #[doc = "Bits 16:20 - I2C/SPI read base address for CMD_RESP mode. Address is used by a I2C CMD_RESP mode write transfer (CTRL.MODE is I2C) or a SPI CMD_RESP mode write transfer (CTRL.MODE is SPI): at the start of a write transfer BASE_WE_ADDR is copied to CMD_RESP_STATUS.CURR_WR_ADDR. This field should not be modified during ongoing bus transfers."]
     #[inline(always)]
     pub fn base_wr_addr(&mut self) -> BASE_WR_ADDR_W {
         BASE_WR_ADDR_W { w: self }
@@ -118,7 +118,7 @@ impl W {
         self
     }
 }
-#[doc = "\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [cmd_resp_ctrl](index.html) module"]
+#[doc = "Command/response control register.\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [cmd_resp_ctrl](index.html) module"]
 pub struct CMD_RESP_CTRL_SPEC;
 impl crate::RegisterSpec for CMD_RESP_CTRL_SPEC {
     type Ux = u32;

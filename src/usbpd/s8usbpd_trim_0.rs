@@ -34,7 +34,7 @@ impl From<crate::W<S8USBPD_TRIM_0_SPEC>> for W {
         W(writer)
     }
 }
-#[doc = "Field `ZDRV_TRIM` reader - "]
+#[doc = "Field `ZDRV_TRIM` reader - Trim bits for Driver termination impedance"]
 pub struct ZDRV_TRIM_R(crate::FieldReader<u8, u8>);
 impl ZDRV_TRIM_R {
     #[inline(always)]
@@ -49,7 +49,7 @@ impl core::ops::Deref for ZDRV_TRIM_R {
         &self.0
     }
 }
-#[doc = "Field `ZDRV_TRIM` writer - "]
+#[doc = "Field `ZDRV_TRIM` writer - Trim bits for Driver termination impedance"]
 pub struct ZDRV_TRIM_W<'a> {
     w: &'a mut W,
 }
@@ -61,7 +61,7 @@ impl<'a> ZDRV_TRIM_W<'a> {
         self.w
     }
 }
-#[doc = "Field `TX_TRIM` reader - "]
+#[doc = "Field `TX_TRIM` reader - Trim bits for TX Driver rise/fall slew rate"]
 pub struct TX_TRIM_R(crate::FieldReader<u8, u8>);
 impl TX_TRIM_R {
     #[inline(always)]
@@ -76,7 +76,7 @@ impl core::ops::Deref for TX_TRIM_R {
         &self.0
     }
 }
-#[doc = "Field `TX_TRIM` writer - "]
+#[doc = "Field `TX_TRIM` writer - Trim bits for TX Driver rise/fall slew rate"]
 pub struct TX_TRIM_W<'a> {
     w: &'a mut W,
 }
@@ -88,7 +88,7 @@ impl<'a> TX_TRIM_W<'a> {
         self.w
     }
 }
-#[doc = "Field `RD_TRIM` reader - "]
+#[doc = "Field `RD_TRIM` reader - Trim bits for Rd pull-down resistor"]
 pub struct RD_TRIM_R(crate::FieldReader<u8, u8>);
 impl RD_TRIM_R {
     #[inline(always)]
@@ -103,7 +103,7 @@ impl core::ops::Deref for RD_TRIM_R {
         &self.0
     }
 }
-#[doc = "Field `RD_TRIM` writer - "]
+#[doc = "Field `RD_TRIM` writer - Trim bits for Rd pull-down resistor"]
 pub struct RD_TRIM_W<'a> {
     w: &'a mut W,
 }
@@ -116,34 +116,34 @@ impl<'a> RD_TRIM_W<'a> {
     }
 }
 impl R {
-    #[doc = "Bits 0:1"]
+    #[doc = "Bits 0:1 - Trim bits for Driver termination impedance"]
     #[inline(always)]
     pub fn zdrv_trim(&self) -> ZDRV_TRIM_R {
         ZDRV_TRIM_R::new((self.bits & 0x03) as u8)
     }
-    #[doc = "Bits 2:3"]
+    #[doc = "Bits 2:3 - Trim bits for TX Driver rise/fall slew rate"]
     #[inline(always)]
     pub fn tx_trim(&self) -> TX_TRIM_R {
         TX_TRIM_R::new(((self.bits >> 2) & 0x03) as u8)
     }
-    #[doc = "Bits 4:7"]
+    #[doc = "Bits 4:7 - Trim bits for Rd pull-down resistor"]
     #[inline(always)]
     pub fn rd_trim(&self) -> RD_TRIM_R {
         RD_TRIM_R::new(((self.bits >> 4) & 0x0f) as u8)
     }
 }
 impl W {
-    #[doc = "Bits 0:1"]
+    #[doc = "Bits 0:1 - Trim bits for Driver termination impedance"]
     #[inline(always)]
     pub fn zdrv_trim(&mut self) -> ZDRV_TRIM_W {
         ZDRV_TRIM_W { w: self }
     }
-    #[doc = "Bits 2:3"]
+    #[doc = "Bits 2:3 - Trim bits for TX Driver rise/fall slew rate"]
     #[inline(always)]
     pub fn tx_trim(&mut self) -> TX_TRIM_W {
         TX_TRIM_W { w: self }
     }
-    #[doc = "Bits 4:7"]
+    #[doc = "Bits 4:7 - Trim bits for Rd pull-down resistor"]
     #[inline(always)]
     pub fn rd_trim(&mut self) -> RD_TRIM_W {
         RD_TRIM_W { w: self }
@@ -155,7 +155,7 @@ impl W {
         self
     }
 }
-#[doc = "\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [s8usbpd_trim_0](index.html) module"]
+#[doc = "S8USBPD Trim Register0 . Production trims stored in flash\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [s8usbpd_trim_0](index.html) module"]
 pub struct S8USBPD_TRIM_0_SPEC;
 impl crate::RegisterSpec for S8USBPD_TRIM_0_SPEC {
     type Ux = u32;

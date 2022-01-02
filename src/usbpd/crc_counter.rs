@@ -34,7 +34,7 @@ impl From<crate::W<CRC_COUNTER_SPEC>> for W {
         W(writer)
     }
 }
-#[doc = "Field `CRC_COUNTER` reader - "]
+#[doc = "Field `CRC_COUNTER` reader - If TX_BYPASS_EN = 0: This counter will run on TX_CLK/2 (PD bit period) clock. This counter is used for CRCReceiveTimer(tReceive)/BISTReceiveErrorTimertBistReceive 0: Counter is disabled. Hardware will NOT wait for the CRC_COUNTER to expire. Other: Hardware will wait for the CRC_COUNTER to expire. Once the CRC_COUNTER reaches zero and no Valid CoodCRC message is not received, The CRC_RX_TIMER_EXP interrupt gets set. If TX_BYPASS_EN = 1: \\[10:0\\]: Total number of bits"]
 pub struct CRC_COUNTER_R(crate::FieldReader<u16, u16>);
 impl CRC_COUNTER_R {
     #[inline(always)]
@@ -49,7 +49,7 @@ impl core::ops::Deref for CRC_COUNTER_R {
         &self.0
     }
 }
-#[doc = "Field `CRC_COUNTER` writer - "]
+#[doc = "Field `CRC_COUNTER` writer - If TX_BYPASS_EN = 0: This counter will run on TX_CLK/2 (PD bit period) clock. This counter is used for CRCReceiveTimer(tReceive)/BISTReceiveErrorTimertBistReceive 0: Counter is disabled. Hardware will NOT wait for the CRC_COUNTER to expire. Other: Hardware will wait for the CRC_COUNTER to expire. Once the CRC_COUNTER reaches zero and no Valid CoodCRC message is not received, The CRC_RX_TIMER_EXP interrupt gets set. If TX_BYPASS_EN = 1: \\[10:0\\]: Total number of bits"]
 pub struct CRC_COUNTER_W<'a> {
     w: &'a mut W,
 }
@@ -62,14 +62,14 @@ impl<'a> CRC_COUNTER_W<'a> {
     }
 }
 impl R {
-    #[doc = "Bits 0:15"]
+    #[doc = "Bits 0:15 - If TX_BYPASS_EN = 0: This counter will run on TX_CLK/2 (PD bit period) clock. This counter is used for CRCReceiveTimer(tReceive)/BISTReceiveErrorTimertBistReceive 0: Counter is disabled. Hardware will NOT wait for the CRC_COUNTER to expire. Other: Hardware will wait for the CRC_COUNTER to expire. Once the CRC_COUNTER reaches zero and no Valid CoodCRC message is not received, The CRC_RX_TIMER_EXP interrupt gets set. If TX_BYPASS_EN = 1: \\[10:0\\]: Total number of bits"]
     #[inline(always)]
     pub fn crc_counter(&self) -> CRC_COUNTER_R {
         CRC_COUNTER_R::new((self.bits & 0xffff) as u16)
     }
 }
 impl W {
-    #[doc = "Bits 0:15"]
+    #[doc = "Bits 0:15 - If TX_BYPASS_EN = 0: This counter will run on TX_CLK/2 (PD bit period) clock. This counter is used for CRCReceiveTimer(tReceive)/BISTReceiveErrorTimertBistReceive 0: Counter is disabled. Hardware will NOT wait for the CRC_COUNTER to expire. Other: Hardware will wait for the CRC_COUNTER to expire. Once the CRC_COUNTER reaches zero and no Valid CoodCRC message is not received, The CRC_RX_TIMER_EXP interrupt gets set. If TX_BYPASS_EN = 1: \\[10:0\\]: Total number of bits"]
     #[inline(always)]
     pub fn crc_counter(&mut self) -> CRC_COUNTER_W {
         CRC_COUNTER_W { w: self }
@@ -81,7 +81,7 @@ impl W {
         self
     }
 }
-#[doc = "\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [crc_counter](index.html) module"]
+#[doc = "The CRC timer counters/Bypass configuration Counters used for the timmers needed by this IP\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [crc_counter](index.html) module"]
 pub struct CRC_COUNTER_SPEC;
 impl crate::RegisterSpec for CRC_COUNTER_SPEC {
     type Ux = u32;

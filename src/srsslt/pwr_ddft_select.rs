@@ -34,7 +34,7 @@ impl From<crate::W<PWR_DDFT_SELECT_SPEC>> for W {
         W(writer)
     }
 }
-#[doc = "\n\nValue on reset: 0"]
+#[doc = "Select signal for power DDFT output #0\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u8)]
 pub enum DDFT0_SEL_A {
@@ -77,7 +77,7 @@ impl From<DDFT0_SEL_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `DDFT0_SEL` reader - "]
+#[doc = "Field `DDFT0_SEL` reader - Select signal for power DDFT output #0"]
 pub struct DDFT0_SEL_R(crate::FieldReader<u8, DDFT0_SEL_A>);
 impl DDFT0_SEL_R {
     #[inline(always)]
@@ -195,7 +195,7 @@ impl core::ops::Deref for DDFT0_SEL_R {
         &self.0
     }
 }
-#[doc = "Field `DDFT0_SEL` writer - "]
+#[doc = "Field `DDFT0_SEL` writer - Select signal for power DDFT output #0"]
 pub struct DDFT0_SEL_W<'a> {
     w: &'a mut W,
 }
@@ -292,7 +292,7 @@ impl<'a> DDFT0_SEL_W<'a> {
         self.w
     }
 }
-#[doc = "\n\nValue on reset: 0"]
+#[doc = "Select signal for power DDFT output #1\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u8)]
 pub enum DDFT1_SEL_A {
@@ -335,7 +335,7 @@ impl From<DDFT1_SEL_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `DDFT1_SEL` reader - "]
+#[doc = "Field `DDFT1_SEL` reader - Select signal for power DDFT output #1"]
 pub struct DDFT1_SEL_R(crate::FieldReader<u8, DDFT1_SEL_A>);
 impl DDFT1_SEL_R {
     #[inline(always)]
@@ -453,7 +453,7 @@ impl core::ops::Deref for DDFT1_SEL_R {
         &self.0
     }
 }
-#[doc = "Field `DDFT1_SEL` writer - "]
+#[doc = "Field `DDFT1_SEL` writer - Select signal for power DDFT output #1"]
 pub struct DDFT1_SEL_W<'a> {
     w: &'a mut W,
 }
@@ -551,24 +551,24 @@ impl<'a> DDFT1_SEL_W<'a> {
     }
 }
 impl R {
-    #[doc = "Bits 0:3"]
+    #[doc = "Bits 0:3 - Select signal for power DDFT output #0"]
     #[inline(always)]
     pub fn ddft0_sel(&self) -> DDFT0_SEL_R {
         DDFT0_SEL_R::new((self.bits & 0x0f) as u8)
     }
-    #[doc = "Bits 4:7"]
+    #[doc = "Bits 4:7 - Select signal for power DDFT output #1"]
     #[inline(always)]
     pub fn ddft1_sel(&self) -> DDFT1_SEL_R {
         DDFT1_SEL_R::new(((self.bits >> 4) & 0x0f) as u8)
     }
 }
 impl W {
-    #[doc = "Bits 0:3"]
+    #[doc = "Bits 0:3 - Select signal for power DDFT output #0"]
     #[inline(always)]
     pub fn ddft0_sel(&mut self) -> DDFT0_SEL_W {
         DDFT0_SEL_W { w: self }
     }
-    #[doc = "Bits 4:7"]
+    #[doc = "Bits 4:7 - Select signal for power DDFT output #1"]
     #[inline(always)]
     pub fn ddft1_sel(&mut self) -> DDFT1_SEL_W {
         DDFT1_SEL_W { w: self }
@@ -580,7 +580,7 @@ impl W {
         self
     }
 }
-#[doc = "\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [pwr_ddft_select](index.html) module"]
+#[doc = "Power DDFT Mode Selection Register Selects the signal sources output to the DDFT outputs of the power subsystem. Entire register is engineering only.\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [pwr_ddft_select](index.html) module"]
 pub struct PWR_DDFT_SELECT_SPEC;
 impl crate::RegisterSpec for PWR_DDFT_SELECT_SPEC {
     type Ux = u32;

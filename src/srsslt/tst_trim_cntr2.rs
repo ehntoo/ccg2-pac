@@ -13,7 +13,7 @@ impl From<crate::R<TST_TRIM_CNTR2_SPEC>> for R {
         R(reader)
     }
 }
-#[doc = "Field `COUNTER` reader - "]
+#[doc = "Field `COUNTER` reader - Up-counter clocked on Clock DDFT output #1. When TRIM_CNTR1.COUNT_DONE==1 counter stopped and can be read by SW"]
 pub struct COUNTER_R(crate::FieldReader<u16, u16>);
 impl COUNTER_R {
     #[inline(always)]
@@ -29,13 +29,13 @@ impl core::ops::Deref for COUNTER_R {
     }
 }
 impl R {
-    #[doc = "Bits 0:15"]
+    #[doc = "Bits 0:15 - Up-counter clocked on Clock DDFT output #1. When TRIM_CNTR1.COUNT_DONE==1 counter stopped and can be read by SW"]
     #[inline(always)]
     pub fn counter(&self) -> COUNTER_R {
         COUNTER_R::new((self.bits & 0xffff) as u16)
     }
 }
-#[doc = "\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [tst_trim_cntr2](index.html) module"]
+#[doc = "IMO trim up-counter (ddft)\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [tst_trim_cntr2](index.html) module"]
 pub struct TST_TRIM_CNTR2_SPEC;
 impl crate::RegisterSpec for TST_TRIM_CNTR2_SPEC {
     type Ux = u32;

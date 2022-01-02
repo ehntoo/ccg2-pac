@@ -34,7 +34,7 @@ impl From<crate::W<INTR_0_1_CFG_SPEC>> for W {
         W(writer)
     }
 }
-#[doc = "Field `INTR0_TX_PACKET_DONE_CFG` reader - "]
+#[doc = "Field `INTR0_TX_PACKET_DONE_CFG` reader - Source of INTR0.TX_PACKET_DONE 0: TX EOP 1: CC Output Enable de-assert"]
 pub struct INTR0_TX_PACKET_DONE_CFG_R(crate::FieldReader<bool, bool>);
 impl INTR0_TX_PACKET_DONE_CFG_R {
     #[inline(always)]
@@ -49,7 +49,7 @@ impl core::ops::Deref for INTR0_TX_PACKET_DONE_CFG_R {
         &self.0
     }
 }
-#[doc = "Field `INTR0_TX_PACKET_DONE_CFG` writer - "]
+#[doc = "Field `INTR0_TX_PACKET_DONE_CFG` writer - Source of INTR0.TX_PACKET_DONE 0: TX EOP 1: CC Output Enable de-assert"]
 pub struct INTR0_TX_PACKET_DONE_CFG_W<'a> {
     w: &'a mut W,
 }
@@ -71,7 +71,7 @@ impl<'a> INTR0_TX_PACKET_DONE_CFG_W<'a> {
         self.w
     }
 }
-#[doc = "Field `INTR0_TX_CC_DATA_OEN_CFG` reader - "]
+#[doc = "Field `INTR0_TX_CC_DATA_OEN_CFG` reader - Source of INTR0.TX_CC_DATA_OEN 0: CC Output Enable de-assert 1: TX EOP"]
 pub struct INTR0_TX_CC_DATA_OEN_CFG_R(crate::FieldReader<bool, bool>);
 impl INTR0_TX_CC_DATA_OEN_CFG_R {
     #[inline(always)]
@@ -86,7 +86,7 @@ impl core::ops::Deref for INTR0_TX_CC_DATA_OEN_CFG_R {
         &self.0
     }
 }
-#[doc = "Field `INTR0_TX_CC_DATA_OEN_CFG` writer - "]
+#[doc = "Field `INTR0_TX_CC_DATA_OEN_CFG` writer - Source of INTR0.TX_CC_DATA_OEN 0: CC Output Enable de-assert 1: TX EOP"]
 pub struct INTR0_TX_CC_DATA_OEN_CFG_W<'a> {
     w: &'a mut W,
 }
@@ -108,7 +108,7 @@ impl<'a> INTR0_TX_CC_DATA_OEN_CFG_W<'a> {
         self.w
     }
 }
-#[doc = "\n\nValue on reset: 2"]
+#[doc = "Edge detect2 positive/negative enable/disable\n\nValue on reset: 2"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u8)]
 pub enum VCONN1_CFG_A {
@@ -127,7 +127,7 @@ impl From<VCONN1_CFG_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `VCONN1_CFG` reader - "]
+#[doc = "Field `VCONN1_CFG` reader - Edge detect2 positive/negative enable/disable"]
 pub struct VCONN1_CFG_R(crate::FieldReader<u8, VCONN1_CFG_A>);
 impl VCONN1_CFG_R {
     #[inline(always)]
@@ -173,7 +173,7 @@ impl core::ops::Deref for VCONN1_CFG_R {
         &self.0
     }
 }
-#[doc = "Field `VCONN1_CFG` writer - "]
+#[doc = "Field `VCONN1_CFG` writer - Edge detect2 positive/negative enable/disable"]
 pub struct VCONN1_CFG_W<'a> {
     w: &'a mut W,
 }
@@ -210,7 +210,7 @@ impl<'a> VCONN1_CFG_W<'a> {
         self.w
     }
 }
-#[doc = "\n\nValue on reset: 2"]
+#[doc = "Edge detect2 positive/negative enable/disable\n\nValue on reset: 2"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u8)]
 pub enum VCONN2_CFG_A {
@@ -229,7 +229,7 @@ impl From<VCONN2_CFG_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `VCONN2_CFG` reader - "]
+#[doc = "Field `VCONN2_CFG` reader - Edge detect2 positive/negative enable/disable"]
 pub struct VCONN2_CFG_R(crate::FieldReader<u8, VCONN2_CFG_A>);
 impl VCONN2_CFG_R {
     #[inline(always)]
@@ -275,7 +275,7 @@ impl core::ops::Deref for VCONN2_CFG_R {
         &self.0
     }
 }
-#[doc = "Field `VCONN2_CFG` writer - "]
+#[doc = "Field `VCONN2_CFG` writer - Edge detect2 positive/negative enable/disable"]
 pub struct VCONN2_CFG_W<'a> {
     w: &'a mut W,
 }
@@ -312,7 +312,7 @@ impl<'a> VCONN2_CFG_W<'a> {
         self.w
     }
 }
-#[doc = "\n\nValue on reset: 2"]
+#[doc = "Edge detect2 positive/negative enable/disable\n\nValue on reset: 2"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u8)]
 pub enum CC1_CFG_A {
@@ -331,7 +331,7 @@ impl From<CC1_CFG_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `CC1_CFG` reader - "]
+#[doc = "Field `CC1_CFG` reader - Edge detect2 positive/negative enable/disable"]
 pub struct CC1_CFG_R(crate::FieldReader<u8, CC1_CFG_A>);
 impl CC1_CFG_R {
     #[inline(always)]
@@ -377,7 +377,7 @@ impl core::ops::Deref for CC1_CFG_R {
         &self.0
     }
 }
-#[doc = "Field `CC1_CFG` writer - "]
+#[doc = "Field `CC1_CFG` writer - Edge detect2 positive/negative enable/disable"]
 pub struct CC1_CFG_W<'a> {
     w: &'a mut W,
 }
@@ -414,7 +414,7 @@ impl<'a> CC1_CFG_W<'a> {
         self.w
     }
 }
-#[doc = "\n\nValue on reset: 2"]
+#[doc = "Edge detect2 positive/negative enable/disable\n\nValue on reset: 2"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u8)]
 pub enum CC2_CFG_A {
@@ -433,7 +433,7 @@ impl From<CC2_CFG_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `CC2_CFG` reader - "]
+#[doc = "Field `CC2_CFG` reader - Edge detect2 positive/negative enable/disable"]
 pub struct CC2_CFG_R(crate::FieldReader<u8, CC2_CFG_A>);
 impl CC2_CFG_R {
     #[inline(always)]
@@ -479,7 +479,7 @@ impl core::ops::Deref for CC2_CFG_R {
         &self.0
     }
 }
-#[doc = "Field `CC2_CFG` writer - "]
+#[doc = "Field `CC2_CFG` writer - Edge detect2 positive/negative enable/disable"]
 pub struct CC2_CFG_W<'a> {
     w: &'a mut W,
 }
@@ -516,7 +516,7 @@ impl<'a> CC2_CFG_W<'a> {
         self.w
     }
 }
-#[doc = "\n\nValue on reset: 2"]
+#[doc = "Edge detect2 positive/negative enable/disable\n\nValue on reset: 2"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u8)]
 pub enum VCMP_UP_CFG_A {
@@ -535,7 +535,7 @@ impl From<VCMP_UP_CFG_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `VCMP_UP_CFG` reader - "]
+#[doc = "Field `VCMP_UP_CFG` reader - Edge detect2 positive/negative enable/disable"]
 pub struct VCMP_UP_CFG_R(crate::FieldReader<u8, VCMP_UP_CFG_A>);
 impl VCMP_UP_CFG_R {
     #[inline(always)]
@@ -581,7 +581,7 @@ impl core::ops::Deref for VCMP_UP_CFG_R {
         &self.0
     }
 }
-#[doc = "Field `VCMP_UP_CFG` writer - "]
+#[doc = "Field `VCMP_UP_CFG` writer - Edge detect2 positive/negative enable/disable"]
 pub struct VCMP_UP_CFG_W<'a> {
     w: &'a mut W,
 }
@@ -618,7 +618,7 @@ impl<'a> VCMP_UP_CFG_W<'a> {
         self.w
     }
 }
-#[doc = "\n\nValue on reset: 2"]
+#[doc = "Edge detect2 positive/negative enable/disable\n\nValue on reset: 2"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u8)]
 pub enum VCMP_DN_CFG_A {
@@ -637,7 +637,7 @@ impl From<VCMP_DN_CFG_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `VCMP_DN_CFG` reader - "]
+#[doc = "Field `VCMP_DN_CFG` reader - Edge detect2 positive/negative enable/disable"]
 pub struct VCMP_DN_CFG_R(crate::FieldReader<u8, VCMP_DN_CFG_A>);
 impl VCMP_DN_CFG_R {
     #[inline(always)]
@@ -683,7 +683,7 @@ impl core::ops::Deref for VCMP_DN_CFG_R {
         &self.0
     }
 }
-#[doc = "Field `VCMP_DN_CFG` writer - "]
+#[doc = "Field `VCMP_DN_CFG` writer - Edge detect2 positive/negative enable/disable"]
 pub struct VCMP_DN_CFG_W<'a> {
     w: &'a mut W,
 }
@@ -720,7 +720,7 @@ impl<'a> VCMP_DN_CFG_W<'a> {
         self.w
     }
 }
-#[doc = "\n\nValue on reset: 2"]
+#[doc = "Edge detect2 positive/negative enable/disable\n\nValue on reset: 2"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u8)]
 pub enum VCMP_LA_CFG_A {
@@ -739,7 +739,7 @@ impl From<VCMP_LA_CFG_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `VCMP_LA_CFG` reader - "]
+#[doc = "Field `VCMP_LA_CFG` reader - Edge detect2 positive/negative enable/disable"]
 pub struct VCMP_LA_CFG_R(crate::FieldReader<u8, VCMP_LA_CFG_A>);
 impl VCMP_LA_CFG_R {
     #[inline(always)]
@@ -785,7 +785,7 @@ impl core::ops::Deref for VCMP_LA_CFG_R {
         &self.0
     }
 }
-#[doc = "Field `VCMP_LA_CFG` writer - "]
+#[doc = "Field `VCMP_LA_CFG` writer - Edge detect2 positive/negative enable/disable"]
 pub struct VCMP_LA_CFG_W<'a> {
     w: &'a mut W,
 }
@@ -822,7 +822,7 @@ impl<'a> VCMP_LA_CFG_W<'a> {
         self.w
     }
 }
-#[doc = "Field `VCONN1_FILT_EN` reader - "]
+#[doc = "Field `VCONN1_FILT_EN` reader - Filtering the VCONN1_DET from s8usbpd.: 0: No Filtering 1: Enable 3 cycles of clk_lf filtering"]
 pub struct VCONN1_FILT_EN_R(crate::FieldReader<bool, bool>);
 impl VCONN1_FILT_EN_R {
     #[inline(always)]
@@ -837,7 +837,7 @@ impl core::ops::Deref for VCONN1_FILT_EN_R {
         &self.0
     }
 }
-#[doc = "Field `VCONN1_FILT_EN` writer - "]
+#[doc = "Field `VCONN1_FILT_EN` writer - Filtering the VCONN1_DET from s8usbpd.: 0: No Filtering 1: Enable 3 cycles of clk_lf filtering"]
 pub struct VCONN1_FILT_EN_W<'a> {
     w: &'a mut W,
 }
@@ -859,7 +859,7 @@ impl<'a> VCONN1_FILT_EN_W<'a> {
         self.w
     }
 }
-#[doc = "Field `VCONN2_FILT_EN` reader - "]
+#[doc = "Field `VCONN2_FILT_EN` reader - Filtering the VCONN2_DET from s8usbpd.: 0: No Filtering 1: Enable 3 cycles of clk_lf filtering"]
 pub struct VCONN2_FILT_EN_R(crate::FieldReader<bool, bool>);
 impl VCONN2_FILT_EN_R {
     #[inline(always)]
@@ -874,7 +874,7 @@ impl core::ops::Deref for VCONN2_FILT_EN_R {
         &self.0
     }
 }
-#[doc = "Field `VCONN2_FILT_EN` writer - "]
+#[doc = "Field `VCONN2_FILT_EN` writer - Filtering the VCONN2_DET from s8usbpd.: 0: No Filtering 1: Enable 3 cycles of clk_lf filtering"]
 pub struct VCONN2_FILT_EN_W<'a> {
     w: &'a mut W,
 }
@@ -896,7 +896,7 @@ impl<'a> VCONN2_FILT_EN_W<'a> {
         self.w
     }
 }
-#[doc = "Field `CC1_CFG_FILT_EN` reader - "]
+#[doc = "Field `CC1_CFG_FILT_EN` reader - Filtering the CC1_ATTACH from s8usbpd.: 0: No Filtering 1: Enable 3 cycles of clk_lf filtering"]
 pub struct CC1_CFG_FILT_EN_R(crate::FieldReader<bool, bool>);
 impl CC1_CFG_FILT_EN_R {
     #[inline(always)]
@@ -911,7 +911,7 @@ impl core::ops::Deref for CC1_CFG_FILT_EN_R {
         &self.0
     }
 }
-#[doc = "Field `CC1_CFG_FILT_EN` writer - "]
+#[doc = "Field `CC1_CFG_FILT_EN` writer - Filtering the CC1_ATTACH from s8usbpd.: 0: No Filtering 1: Enable 3 cycles of clk_lf filtering"]
 pub struct CC1_CFG_FILT_EN_W<'a> {
     w: &'a mut W,
 }
@@ -933,7 +933,7 @@ impl<'a> CC1_CFG_FILT_EN_W<'a> {
         self.w
     }
 }
-#[doc = "Field `CC2_FILT_EN` reader - "]
+#[doc = "Field `CC2_FILT_EN` reader - Filtering the CC2_ATTACH from s8usbpd.: 0: No Filtering 1: Enable 3 cycles of clk_lf filtering"]
 pub struct CC2_FILT_EN_R(crate::FieldReader<bool, bool>);
 impl CC2_FILT_EN_R {
     #[inline(always)]
@@ -948,7 +948,7 @@ impl core::ops::Deref for CC2_FILT_EN_R {
         &self.0
     }
 }
-#[doc = "Field `CC2_FILT_EN` writer - "]
+#[doc = "Field `CC2_FILT_EN` writer - Filtering the CC2_ATTACH from s8usbpd.: 0: No Filtering 1: Enable 3 cycles of clk_lf filtering"]
 pub struct CC2_FILT_EN_W<'a> {
     w: &'a mut W,
 }
@@ -970,7 +970,7 @@ impl<'a> CC2_FILT_EN_W<'a> {
         self.w
     }
 }
-#[doc = "Field `VCMP_UP_FILT_EN` reader - "]
+#[doc = "Field `VCMP_UP_FILT_EN` reader - Filtering the VCMP_UP from s8usbpd.: 0: No Filtering 1: Enable 3 cycles of clk_lf filtering"]
 pub struct VCMP_UP_FILT_EN_R(crate::FieldReader<bool, bool>);
 impl VCMP_UP_FILT_EN_R {
     #[inline(always)]
@@ -985,7 +985,7 @@ impl core::ops::Deref for VCMP_UP_FILT_EN_R {
         &self.0
     }
 }
-#[doc = "Field `VCMP_UP_FILT_EN` writer - "]
+#[doc = "Field `VCMP_UP_FILT_EN` writer - Filtering the VCMP_UP from s8usbpd.: 0: No Filtering 1: Enable 3 cycles of clk_lf filtering"]
 pub struct VCMP_UP_FILT_EN_W<'a> {
     w: &'a mut W,
 }
@@ -1007,7 +1007,7 @@ impl<'a> VCMP_UP_FILT_EN_W<'a> {
         self.w
     }
 }
-#[doc = "Field `VCMP_DN_FILT_EN` reader - "]
+#[doc = "Field `VCMP_DN_FILT_EN` reader - Filtering the VCMP_DNfrom s8usbpd.: 0: No Filtering 1: Enable 3 cycles of clk_lf filtering"]
 pub struct VCMP_DN_FILT_EN_R(crate::FieldReader<bool, bool>);
 impl VCMP_DN_FILT_EN_R {
     #[inline(always)]
@@ -1022,7 +1022,7 @@ impl core::ops::Deref for VCMP_DN_FILT_EN_R {
         &self.0
     }
 }
-#[doc = "Field `VCMP_DN_FILT_EN` writer - "]
+#[doc = "Field `VCMP_DN_FILT_EN` writer - Filtering the VCMP_DNfrom s8usbpd.: 0: No Filtering 1: Enable 3 cycles of clk_lf filtering"]
 pub struct VCMP_DN_FILT_EN_W<'a> {
     w: &'a mut W,
 }
@@ -1045,154 +1045,154 @@ impl<'a> VCMP_DN_FILT_EN_W<'a> {
     }
 }
 impl R {
-    #[doc = "Bit 0"]
+    #[doc = "Bit 0 - Source of INTR0.TX_PACKET_DONE 0: TX EOP 1: CC Output Enable de-assert"]
     #[inline(always)]
     pub fn intr0_tx_packet_done_cfg(&self) -> INTR0_TX_PACKET_DONE_CFG_R {
         INTR0_TX_PACKET_DONE_CFG_R::new((self.bits & 0x01) != 0)
     }
-    #[doc = "Bit 1"]
+    #[doc = "Bit 1 - Source of INTR0.TX_CC_DATA_OEN 0: CC Output Enable de-assert 1: TX EOP"]
     #[inline(always)]
     pub fn intr0_tx_cc_data_oen_cfg(&self) -> INTR0_TX_CC_DATA_OEN_CFG_R {
         INTR0_TX_CC_DATA_OEN_CFG_R::new(((self.bits >> 1) & 0x01) != 0)
     }
-    #[doc = "Bits 2:3"]
+    #[doc = "Bits 2:3 - Edge detect2 positive/negative enable/disable"]
     #[inline(always)]
     pub fn vconn1_cfg(&self) -> VCONN1_CFG_R {
         VCONN1_CFG_R::new(((self.bits >> 2) & 0x03) as u8)
     }
-    #[doc = "Bits 4:5"]
+    #[doc = "Bits 4:5 - Edge detect2 positive/negative enable/disable"]
     #[inline(always)]
     pub fn vconn2_cfg(&self) -> VCONN2_CFG_R {
         VCONN2_CFG_R::new(((self.bits >> 4) & 0x03) as u8)
     }
-    #[doc = "Bits 6:7"]
+    #[doc = "Bits 6:7 - Edge detect2 positive/negative enable/disable"]
     #[inline(always)]
     pub fn cc1_cfg(&self) -> CC1_CFG_R {
         CC1_CFG_R::new(((self.bits >> 6) & 0x03) as u8)
     }
-    #[doc = "Bits 8:9"]
+    #[doc = "Bits 8:9 - Edge detect2 positive/negative enable/disable"]
     #[inline(always)]
     pub fn cc2_cfg(&self) -> CC2_CFG_R {
         CC2_CFG_R::new(((self.bits >> 8) & 0x03) as u8)
     }
-    #[doc = "Bits 10:11"]
+    #[doc = "Bits 10:11 - Edge detect2 positive/negative enable/disable"]
     #[inline(always)]
     pub fn vcmp_up_cfg(&self) -> VCMP_UP_CFG_R {
         VCMP_UP_CFG_R::new(((self.bits >> 10) & 0x03) as u8)
     }
-    #[doc = "Bits 12:13"]
+    #[doc = "Bits 12:13 - Edge detect2 positive/negative enable/disable"]
     #[inline(always)]
     pub fn vcmp_dn_cfg(&self) -> VCMP_DN_CFG_R {
         VCMP_DN_CFG_R::new(((self.bits >> 12) & 0x03) as u8)
     }
-    #[doc = "Bits 14:15"]
+    #[doc = "Bits 14:15 - Edge detect2 positive/negative enable/disable"]
     #[inline(always)]
     pub fn vcmp_la_cfg(&self) -> VCMP_LA_CFG_R {
         VCMP_LA_CFG_R::new(((self.bits >> 14) & 0x03) as u8)
     }
-    #[doc = "Bit 16"]
+    #[doc = "Bit 16 - Filtering the VCONN1_DET from s8usbpd.: 0: No Filtering 1: Enable 3 cycles of clk_lf filtering"]
     #[inline(always)]
     pub fn vconn1_filt_en(&self) -> VCONN1_FILT_EN_R {
         VCONN1_FILT_EN_R::new(((self.bits >> 16) & 0x01) != 0)
     }
-    #[doc = "Bit 17"]
+    #[doc = "Bit 17 - Filtering the VCONN2_DET from s8usbpd.: 0: No Filtering 1: Enable 3 cycles of clk_lf filtering"]
     #[inline(always)]
     pub fn vconn2_filt_en(&self) -> VCONN2_FILT_EN_R {
         VCONN2_FILT_EN_R::new(((self.bits >> 17) & 0x01) != 0)
     }
-    #[doc = "Bit 18"]
+    #[doc = "Bit 18 - Filtering the CC1_ATTACH from s8usbpd.: 0: No Filtering 1: Enable 3 cycles of clk_lf filtering"]
     #[inline(always)]
     pub fn cc1_cfg_filt_en(&self) -> CC1_CFG_FILT_EN_R {
         CC1_CFG_FILT_EN_R::new(((self.bits >> 18) & 0x01) != 0)
     }
-    #[doc = "Bit 19"]
+    #[doc = "Bit 19 - Filtering the CC2_ATTACH from s8usbpd.: 0: No Filtering 1: Enable 3 cycles of clk_lf filtering"]
     #[inline(always)]
     pub fn cc2_filt_en(&self) -> CC2_FILT_EN_R {
         CC2_FILT_EN_R::new(((self.bits >> 19) & 0x01) != 0)
     }
-    #[doc = "Bit 20"]
+    #[doc = "Bit 20 - Filtering the VCMP_UP from s8usbpd.: 0: No Filtering 1: Enable 3 cycles of clk_lf filtering"]
     #[inline(always)]
     pub fn vcmp_up_filt_en(&self) -> VCMP_UP_FILT_EN_R {
         VCMP_UP_FILT_EN_R::new(((self.bits >> 20) & 0x01) != 0)
     }
-    #[doc = "Bit 21"]
+    #[doc = "Bit 21 - Filtering the VCMP_DNfrom s8usbpd.: 0: No Filtering 1: Enable 3 cycles of clk_lf filtering"]
     #[inline(always)]
     pub fn vcmp_dn_filt_en(&self) -> VCMP_DN_FILT_EN_R {
         VCMP_DN_FILT_EN_R::new(((self.bits >> 21) & 0x01) != 0)
     }
 }
 impl W {
-    #[doc = "Bit 0"]
+    #[doc = "Bit 0 - Source of INTR0.TX_PACKET_DONE 0: TX EOP 1: CC Output Enable de-assert"]
     #[inline(always)]
     pub fn intr0_tx_packet_done_cfg(&mut self) -> INTR0_TX_PACKET_DONE_CFG_W {
         INTR0_TX_PACKET_DONE_CFG_W { w: self }
     }
-    #[doc = "Bit 1"]
+    #[doc = "Bit 1 - Source of INTR0.TX_CC_DATA_OEN 0: CC Output Enable de-assert 1: TX EOP"]
     #[inline(always)]
     pub fn intr0_tx_cc_data_oen_cfg(&mut self) -> INTR0_TX_CC_DATA_OEN_CFG_W {
         INTR0_TX_CC_DATA_OEN_CFG_W { w: self }
     }
-    #[doc = "Bits 2:3"]
+    #[doc = "Bits 2:3 - Edge detect2 positive/negative enable/disable"]
     #[inline(always)]
     pub fn vconn1_cfg(&mut self) -> VCONN1_CFG_W {
         VCONN1_CFG_W { w: self }
     }
-    #[doc = "Bits 4:5"]
+    #[doc = "Bits 4:5 - Edge detect2 positive/negative enable/disable"]
     #[inline(always)]
     pub fn vconn2_cfg(&mut self) -> VCONN2_CFG_W {
         VCONN2_CFG_W { w: self }
     }
-    #[doc = "Bits 6:7"]
+    #[doc = "Bits 6:7 - Edge detect2 positive/negative enable/disable"]
     #[inline(always)]
     pub fn cc1_cfg(&mut self) -> CC1_CFG_W {
         CC1_CFG_W { w: self }
     }
-    #[doc = "Bits 8:9"]
+    #[doc = "Bits 8:9 - Edge detect2 positive/negative enable/disable"]
     #[inline(always)]
     pub fn cc2_cfg(&mut self) -> CC2_CFG_W {
         CC2_CFG_W { w: self }
     }
-    #[doc = "Bits 10:11"]
+    #[doc = "Bits 10:11 - Edge detect2 positive/negative enable/disable"]
     #[inline(always)]
     pub fn vcmp_up_cfg(&mut self) -> VCMP_UP_CFG_W {
         VCMP_UP_CFG_W { w: self }
     }
-    #[doc = "Bits 12:13"]
+    #[doc = "Bits 12:13 - Edge detect2 positive/negative enable/disable"]
     #[inline(always)]
     pub fn vcmp_dn_cfg(&mut self) -> VCMP_DN_CFG_W {
         VCMP_DN_CFG_W { w: self }
     }
-    #[doc = "Bits 14:15"]
+    #[doc = "Bits 14:15 - Edge detect2 positive/negative enable/disable"]
     #[inline(always)]
     pub fn vcmp_la_cfg(&mut self) -> VCMP_LA_CFG_W {
         VCMP_LA_CFG_W { w: self }
     }
-    #[doc = "Bit 16"]
+    #[doc = "Bit 16 - Filtering the VCONN1_DET from s8usbpd.: 0: No Filtering 1: Enable 3 cycles of clk_lf filtering"]
     #[inline(always)]
     pub fn vconn1_filt_en(&mut self) -> VCONN1_FILT_EN_W {
         VCONN1_FILT_EN_W { w: self }
     }
-    #[doc = "Bit 17"]
+    #[doc = "Bit 17 - Filtering the VCONN2_DET from s8usbpd.: 0: No Filtering 1: Enable 3 cycles of clk_lf filtering"]
     #[inline(always)]
     pub fn vconn2_filt_en(&mut self) -> VCONN2_FILT_EN_W {
         VCONN2_FILT_EN_W { w: self }
     }
-    #[doc = "Bit 18"]
+    #[doc = "Bit 18 - Filtering the CC1_ATTACH from s8usbpd.: 0: No Filtering 1: Enable 3 cycles of clk_lf filtering"]
     #[inline(always)]
     pub fn cc1_cfg_filt_en(&mut self) -> CC1_CFG_FILT_EN_W {
         CC1_CFG_FILT_EN_W { w: self }
     }
-    #[doc = "Bit 19"]
+    #[doc = "Bit 19 - Filtering the CC2_ATTACH from s8usbpd.: 0: No Filtering 1: Enable 3 cycles of clk_lf filtering"]
     #[inline(always)]
     pub fn cc2_filt_en(&mut self) -> CC2_FILT_EN_W {
         CC2_FILT_EN_W { w: self }
     }
-    #[doc = "Bit 20"]
+    #[doc = "Bit 20 - Filtering the VCMP_UP from s8usbpd.: 0: No Filtering 1: Enable 3 cycles of clk_lf filtering"]
     #[inline(always)]
     pub fn vcmp_up_filt_en(&mut self) -> VCMP_UP_FILT_EN_W {
         VCMP_UP_FILT_EN_W { w: self }
     }
-    #[doc = "Bit 21"]
+    #[doc = "Bit 21 - Filtering the VCMP_DNfrom s8usbpd.: 0: No Filtering 1: Enable 3 cycles of clk_lf filtering"]
     #[inline(always)]
     pub fn vcmp_dn_filt_en(&mut self) -> VCMP_DN_FILT_EN_W {
         VCMP_DN_FILT_EN_W { w: self }
@@ -1204,7 +1204,7 @@ impl W {
         self
     }
 }
-#[doc = "\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [intr_0_1_cfg](index.html) module"]
+#[doc = "Wakeup Interrupts edge and filter configuration and Intr0 configuration\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [intr_0_1_cfg](index.html) module"]
 pub struct INTR_0_1_CFG_SPEC;
 impl crate::RegisterSpec for INTR_0_1_CFG_SPEC {
     type Ux = u32;

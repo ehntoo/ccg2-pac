@@ -34,7 +34,7 @@ impl From<crate::W<CLK_IMO_TRIM2_SPEC>> for W {
         W(writer)
     }
 }
-#[doc = "Field `FSOFFSET` reader - "]
+#[doc = "Field `FSOFFSET` reader - Frequency trim bits. These bits are not trimmed during manufacturing and kept at 0 under normal operation. This field is hardware updated during USB osclock mode. This field is mapped to the least significant bits of the IMO trim imo_clk_trim\\[2:0\\]. The step size of 1 LSB on this field is approximately 15 kHz."]
 pub struct FSOFFSET_R(crate::FieldReader<u8, u8>);
 impl FSOFFSET_R {
     #[inline(always)]
@@ -49,7 +49,7 @@ impl core::ops::Deref for FSOFFSET_R {
         &self.0
     }
 }
-#[doc = "Field `FSOFFSET` writer - "]
+#[doc = "Field `FSOFFSET` writer - Frequency trim bits. These bits are not trimmed during manufacturing and kept at 0 under normal operation. This field is hardware updated during USB osclock mode. This field is mapped to the least significant bits of the IMO trim imo_clk_trim\\[2:0\\]. The step size of 1 LSB on this field is approximately 15 kHz."]
 pub struct FSOFFSET_W<'a> {
     w: &'a mut W,
 }
@@ -62,14 +62,14 @@ impl<'a> FSOFFSET_W<'a> {
     }
 }
 impl R {
-    #[doc = "Bits 0:2"]
+    #[doc = "Bits 0:2 - Frequency trim bits. These bits are not trimmed during manufacturing and kept at 0 under normal operation. This field is hardware updated during USB osclock mode. This field is mapped to the least significant bits of the IMO trim imo_clk_trim\\[2:0\\]. The step size of 1 LSB on this field is approximately 15 kHz."]
     #[inline(always)]
     pub fn fsoffset(&self) -> FSOFFSET_R {
         FSOFFSET_R::new((self.bits & 0x07) as u8)
     }
 }
 impl W {
-    #[doc = "Bits 0:2"]
+    #[doc = "Bits 0:2 - Frequency trim bits. These bits are not trimmed during manufacturing and kept at 0 under normal operation. This field is hardware updated during USB osclock mode. This field is mapped to the least significant bits of the IMO trim imo_clk_trim\\[2:0\\]. The step size of 1 LSB on this field is approximately 15 kHz."]
     #[inline(always)]
     pub fn fsoffset(&mut self) -> FSOFFSET_W {
         FSOFFSET_W { w: self }
@@ -81,7 +81,7 @@ impl W {
         self
     }
 }
-#[doc = "\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [clk_imo_trim2](index.html) module"]
+#[doc = "IMO Trim Register IMO Trim Bits. Entire register is engineering only.\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [clk_imo_trim2](index.html) module"]
 pub struct CLK_IMO_TRIM2_SPEC;
 impl crate::RegisterSpec for CLK_IMO_TRIM2_SPEC {
     type Ux = u32;

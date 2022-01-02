@@ -34,7 +34,7 @@ impl From<crate::W<CTRL_SPEC>> for W {
         W(writer)
     }
 }
-#[doc = "Field `COUNTER_ENABLED` reader - "]
+#[doc = "Field `COUNTER_ENABLED` reader - Counter enables for counters 0 up to CNT_NR-1. '0': counter disabled. '1': counter enabled. Counter static configuration information (e.g. CTRL.MODE, all TR_CTRL0, TR_CTRL1, and TR_CTRL2 register fields) should only be modified when the counter is disabled. When a counter is disabled, command and status information associated to the counter is cleared by HW, this includes: - the associated counter triggers in the CMD register are set to '0'. - the counter's interrupt cause fields in counter's INTR register. - the counter's status fields in counter's STATUS register.. - the counter's trigger outputs (\"tr_overflow\", \"tr_underflow\" and \"tr_compare_match\"). - the counter's line outputs (\"line_out\" and \"line_compl_out\")."]
 pub struct COUNTER_ENABLED_R(crate::FieldReader<u8, u8>);
 impl COUNTER_ENABLED_R {
     #[inline(always)]
@@ -49,7 +49,7 @@ impl core::ops::Deref for COUNTER_ENABLED_R {
         &self.0
     }
 }
-#[doc = "Field `COUNTER_ENABLED` writer - "]
+#[doc = "Field `COUNTER_ENABLED` writer - Counter enables for counters 0 up to CNT_NR-1. '0': counter disabled. '1': counter enabled. Counter static configuration information (e.g. CTRL.MODE, all TR_CTRL0, TR_CTRL1, and TR_CTRL2 register fields) should only be modified when the counter is disabled. When a counter is disabled, command and status information associated to the counter is cleared by HW, this includes: - the associated counter triggers in the CMD register are set to '0'. - the counter's interrupt cause fields in counter's INTR register. - the counter's status fields in counter's STATUS register.. - the counter's trigger outputs (\"tr_overflow\", \"tr_underflow\" and \"tr_compare_match\"). - the counter's line outputs (\"line_out\" and \"line_compl_out\")."]
 pub struct COUNTER_ENABLED_W<'a> {
     w: &'a mut W,
 }
@@ -62,14 +62,14 @@ impl<'a> COUNTER_ENABLED_W<'a> {
     }
 }
 impl R {
-    #[doc = "Bits 0:5"]
+    #[doc = "Bits 0:5 - Counter enables for counters 0 up to CNT_NR-1. '0': counter disabled. '1': counter enabled. Counter static configuration information (e.g. CTRL.MODE, all TR_CTRL0, TR_CTRL1, and TR_CTRL2 register fields) should only be modified when the counter is disabled. When a counter is disabled, command and status information associated to the counter is cleared by HW, this includes: - the associated counter triggers in the CMD register are set to '0'. - the counter's interrupt cause fields in counter's INTR register. - the counter's status fields in counter's STATUS register.. - the counter's trigger outputs (\"tr_overflow\", \"tr_underflow\" and \"tr_compare_match\"). - the counter's line outputs (\"line_out\" and \"line_compl_out\")."]
     #[inline(always)]
     pub fn counter_enabled(&self) -> COUNTER_ENABLED_R {
         COUNTER_ENABLED_R::new((self.bits & 0x3f) as u8)
     }
 }
 impl W {
-    #[doc = "Bits 0:5"]
+    #[doc = "Bits 0:5 - Counter enables for counters 0 up to CNT_NR-1. '0': counter disabled. '1': counter enabled. Counter static configuration information (e.g. CTRL.MODE, all TR_CTRL0, TR_CTRL1, and TR_CTRL2 register fields) should only be modified when the counter is disabled. When a counter is disabled, command and status information associated to the counter is cleared by HW, this includes: - the associated counter triggers in the CMD register are set to '0'. - the counter's interrupt cause fields in counter's INTR register. - the counter's status fields in counter's STATUS register.. - the counter's trigger outputs (\"tr_overflow\", \"tr_underflow\" and \"tr_compare_match\"). - the counter's line outputs (\"line_out\" and \"line_compl_out\")."]
     #[inline(always)]
     pub fn counter_enabled(&mut self) -> COUNTER_ENABLED_W {
         COUNTER_ENABLED_W { w: self }
@@ -81,7 +81,7 @@ impl W {
         self
     }
 }
-#[doc = "\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [ctrl](index.html) module"]
+#[doc = "TCPWM control register 0. Used to disbale/enable the counters.\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [ctrl](index.html) module"]
 pub struct CTRL_SPEC;
 impl crate::RegisterSpec for CTRL_SPEC {
     type Ux = u32;

@@ -34,7 +34,7 @@ impl From<crate::W<CTRL_SPEC>> for W {
         W(writer)
     }
 }
-#[doc = "Field `TX_BYPASS_EN` reader - "]
+#[doc = "Field `TX_BYPASS_EN` reader - Setting this register will bypass 5b/4b, CRC."]
 pub struct TX_BYPASS_EN_R(crate::FieldReader<bool, bool>);
 impl TX_BYPASS_EN_R {
     #[inline(always)]
@@ -49,7 +49,7 @@ impl core::ops::Deref for TX_BYPASS_EN_R {
         &self.0
     }
 }
-#[doc = "Field `TX_BYPASS_EN` writer - "]
+#[doc = "Field `TX_BYPASS_EN` writer - Setting this register will bypass 5b/4b, CRC."]
 pub struct TX_BYPASS_EN_W<'a> {
     w: &'a mut W,
 }
@@ -71,7 +71,7 @@ impl<'a> TX_BYPASS_EN_W<'a> {
         self.w
     }
 }
-#[doc = "\n\nValue on reset: 0"]
+#[doc = "Setting this register will bypass 5b/4b, CRC.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u8)]
 pub enum RX_BYPASS_EN_A {
@@ -90,7 +90,7 @@ impl From<RX_BYPASS_EN_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `RX_BYPASS_EN` reader - "]
+#[doc = "Field `RX_BYPASS_EN` reader - Setting this register will bypass 5b/4b, CRC."]
 pub struct RX_BYPASS_EN_R(crate::FieldReader<u8, RX_BYPASS_EN_A>);
 impl RX_BYPASS_EN_R {
     #[inline(always)]
@@ -136,7 +136,7 @@ impl core::ops::Deref for RX_BYPASS_EN_R {
         &self.0
     }
 }
-#[doc = "Field `RX_BYPASS_EN` writer - "]
+#[doc = "Field `RX_BYPASS_EN` writer - Setting this register will bypass 5b/4b, CRC."]
 pub struct RX_BYPASS_EN_W<'a> {
     w: &'a mut W,
 }
@@ -173,7 +173,7 @@ impl<'a> RX_BYPASS_EN_W<'a> {
         self.w
     }
 }
-#[doc = "Field `IP_ENABLED` reader - "]
+#[doc = "Field `IP_ENABLED` reader - IP enabled ('1') or not ('0'). \"0\" Resets the IP. The reset is an async reset. Note that when the IP is disabled, all the interrupt sources are also disabled."]
 pub struct IP_ENABLED_R(crate::FieldReader<bool, bool>);
 impl IP_ENABLED_R {
     #[inline(always)]
@@ -188,7 +188,7 @@ impl core::ops::Deref for IP_ENABLED_R {
         &self.0
     }
 }
-#[doc = "Field `IP_ENABLED` writer - "]
+#[doc = "Field `IP_ENABLED` writer - IP enabled ('1') or not ('0'). \"0\" Resets the IP. The reset is an async reset. Note that when the IP is disabled, all the interrupt sources are also disabled."]
 pub struct IP_ENABLED_W<'a> {
     w: &'a mut W,
 }
@@ -211,34 +211,34 @@ impl<'a> IP_ENABLED_W<'a> {
     }
 }
 impl R {
-    #[doc = "Bit 0"]
+    #[doc = "Bit 0 - Setting this register will bypass 5b/4b, CRC."]
     #[inline(always)]
     pub fn tx_bypass_en(&self) -> TX_BYPASS_EN_R {
         TX_BYPASS_EN_R::new((self.bits & 0x01) != 0)
     }
-    #[doc = "Bits 1:2"]
+    #[doc = "Bits 1:2 - Setting this register will bypass 5b/4b, CRC."]
     #[inline(always)]
     pub fn rx_bypass_en(&self) -> RX_BYPASS_EN_R {
         RX_BYPASS_EN_R::new(((self.bits >> 1) & 0x03) as u8)
     }
-    #[doc = "Bit 31"]
+    #[doc = "Bit 31 - IP enabled ('1') or not ('0'). \"0\" Resets the IP. The reset is an async reset. Note that when the IP is disabled, all the interrupt sources are also disabled."]
     #[inline(always)]
     pub fn ip_enabled(&self) -> IP_ENABLED_R {
         IP_ENABLED_R::new(((self.bits >> 31) & 0x01) != 0)
     }
 }
 impl W {
-    #[doc = "Bit 0"]
+    #[doc = "Bit 0 - Setting this register will bypass 5b/4b, CRC."]
     #[inline(always)]
     pub fn tx_bypass_en(&mut self) -> TX_BYPASS_EN_W {
         TX_BYPASS_EN_W { w: self }
     }
-    #[doc = "Bits 1:2"]
+    #[doc = "Bits 1:2 - Setting this register will bypass 5b/4b, CRC."]
     #[inline(always)]
     pub fn rx_bypass_en(&mut self) -> RX_BYPASS_EN_W {
         RX_BYPASS_EN_W { w: self }
     }
-    #[doc = "Bit 31"]
+    #[doc = "Bit 31 - IP enabled ('1') or not ('0'). \"0\" Resets the IP. The reset is an async reset. Note that when the IP is disabled, all the interrupt sources are also disabled."]
     #[inline(always)]
     pub fn ip_enabled(&mut self) -> IP_ENABLED_W {
         IP_ENABLED_W { w: self }
@@ -250,7 +250,7 @@ impl W {
         self
     }
 }
-#[doc = "\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [ctrl](index.html) module"]
+#[doc = "Generic control register.\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [ctrl](index.html) module"]
 pub struct CTRL_SPEC;
 impl crate::RegisterSpec for CTRL_SPEC {
     type Ux = u32;
